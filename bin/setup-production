@@ -13,7 +13,10 @@
 # and prints the commands that give MongoDB and Redis the generated passwords.
 #
 # It never overwrites conf/secrets.conf: the password secret in it must not change once
-# people have accounts (their passwords would stop working).
+# people have accounts (their passwords would stop working). When conf/secrets.conf already
+# exists, for example copied from another server, it rebuilds the other two files from it:
+# the secrets file is all a new server needs (see deploy/aws/README.md, "Moving to another
+# server").
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
@@ -33,9 +36,81 @@ case "$ws_domain" in
     ;;
 esac
 command -v openssl >/dev/null || { echo "openssl is needed" >&2; exit 1; }
+
+# lila-ws's settings and the nginx site follow from the domain and the passwords
+write_ws_conf() {
+  (umask 077 && cat >ws/production.conf <<EOF
+# lila-ws production settings, written by bin/setup-production.
+# Start lila-ws with -Dconfig.file=ws/production.conf
+include classpath("application.conf")
+csrf.origin = "https://${domain}"
+http.use-nginx-forwarded-ip = yes
+mongo.uri = "mongodb://gogame:${mongo_password}@127.0.0.1:27017/gogame?authSource=admin&appName=gogame-ws"
+redis.uri = "redis://:${redis_password}@127.0.0.1"
+EOF
+  )
+}
+write_nginx_site() {
+  cat >conf/nginx-gogame.conf <<EOF
+# nginx site for GoGame, written by bin/setup-production. Copy it to
+# /etc/nginx/sites-enabled/, reload nginx, then let certbot add HTTPS (certificates from
+# Let's Encrypt, renewed automatically) and the redirect from http:
+#   sudo certbot --nginx --redirect -d ${domain} -d ${ws_domain}
+server {
+  listen 80;
+  server_name ${domain};
+  client_max_body_size 8m;
+  location / {
+    proxy_pass http://127.0.0.1:9663;
+    proxy_set_header Host \$host;
+    proxy_set_header X-Forwarded-For \$remote_addr;
+    proxy_set_header X-Forwarded-Proto \$scheme;
+  }
+}
+server {
+  listen 80;
+  server_name ${ws_domain};
+  location / {
+    proxy_pass http://127.0.0.1:9664;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade \$http_upgrade;
+    proxy_set_header Connection "upgrade";
+    proxy_set_header X-Forwarded-For \$remote_addr;
+    proxy_read_timeout 600s;
+  }
+}
+EOF
+}
+include_secrets() {
+  # conf/application.conf includes conf/secrets.conf last, so its values win
+  [ -e conf/application.conf ] || cp conf/application.conf.default conf/application.conf
+  if ! grep -q '^include "secrets"' conf/application.conf; then
+    printf '\n# production settings and secrets (bin/setup-production)\ninclude "secrets"\n' >>conf/application.conf
+  fi
+}
+
 if [ -e conf/secrets.conf ]; then
-  echo "conf/secrets.conf already exists: not overwriting it (its password secret must not change)." >&2
-  exit 1
+  # an existing configuration (a rerun, or a file brought from another server): keep it, and
+  # rebuild what derives from it
+  saved_domain=$(sed -nE 's/^ *domain = "([^"]+)".*/\1/p' conf/secrets.conf | head -1)
+  saved_ws_domain=$(sed -nE 's/^ *socket\.domains = \["([^"]+)"\].*/\1/p' conf/secrets.conf | head -1)
+  mongo_password=$(grep -oE 'mongodb://gogame:[0-9a-f]+@' conf/secrets.conf | head -1 | sed -E 's/.*gogame:([0-9a-f]+)@/\1/')
+  redis_password=$(grep -oE 'redis://:[0-9a-f]+@' conf/secrets.conf | head -1 | sed -E 's|redis://:([0-9a-f]+)@|\1|')
+  if [ -z "$saved_domain" ] || [ -z "$saved_ws_domain" ] || [ -z "$mongo_password" ] || [ -z "$redis_password" ]; then
+    echo "conf/secrets.conf is missing net.domain, net.socket.domains, mongodb.uri or redis.uri" >&2
+    exit 1
+  fi
+  if [ "$saved_domain" != "$domain" ] || [ "$saved_ws_domain" != "$ws_domain" ]; then
+    echo "conf/secrets.conf is for $saved_domain and $saved_ws_domain, not $domain and $ws_domain." >&2
+    echo "Use the same names, or change net.domain, net.socket.domains and net.base_url in it first." >&2
+    exit 1
+  fi
+  written=""
+  [ -e ws/production.conf ] || { write_ws_conf; written="$written ws/production.conf"; }
+  [ -e conf/nginx-gogame.conf ] || { write_nginx_site; written="$written conf/nginx-gogame.conf"; }
+  include_secrets
+  echo "Kept the existing conf/secrets.conf.${written:+ Rebuilt from it:$written.}"
+  exit 0
 fi
 
 hex() { openssl rand -hex "$1"; }
@@ -110,52 +185,10 @@ turnstile {
 # security.pwned.range_url = "https://api.pwnedpasswords.com/range/"
 EOF
 
-cat >ws/production.conf <<EOF
-# lila-ws production settings, written by bin/setup-production.
-# Start lila-ws with -Dconfig.file=ws/production.conf
-include classpath("application.conf")
-csrf.origin = "https://${domain}"
-http.use-nginx-forwarded-ip = yes
-mongo.uri = "mongodb://gogame:${mongo_password}@127.0.0.1:27017/gogame?authSource=admin&appName=gogame-ws"
-redis.uri = "redis://:${redis_password}@127.0.0.1"
-EOF
-
 umask 022
-cat >conf/nginx-gogame.conf <<EOF
-# nginx site for GoGame, written by bin/setup-production. Copy it to
-# /etc/nginx/sites-enabled/, reload nginx, then let certbot add HTTPS (certificates from
-# Let's Encrypt, renewed automatically) and the redirect from http:
-#   sudo certbot --nginx --redirect -d ${domain} -d ${ws_domain}
-server {
-  listen 80;
-  server_name ${domain};
-  client_max_body_size 8m;
-  location / {
-    proxy_pass http://127.0.0.1:9663;
-    proxy_set_header Host \$host;
-    proxy_set_header X-Forwarded-For \$remote_addr;
-    proxy_set_header X-Forwarded-Proto \$scheme;
-  }
-}
-server {
-  listen 80;
-  server_name ${ws_domain};
-  location / {
-    proxy_pass http://127.0.0.1:9664;
-    proxy_http_version 1.1;
-    proxy_set_header Upgrade \$http_upgrade;
-    proxy_set_header Connection "upgrade";
-    proxy_set_header X-Forwarded-For \$remote_addr;
-    proxy_read_timeout 600s;
-  }
-}
-EOF
-
-# conf/application.conf includes the new file last, so its values win
-[ -e conf/application.conf ] || cp conf/application.conf.default conf/application.conf
-if ! grep -q '^include "secrets"' conf/application.conf; then
-  printf '\n# production settings and secrets (bin/setup-production)\ninclude "secrets"\n' >>conf/application.conf
-fi
+write_ws_conf
+write_nginx_site
+include_secrets
 
 cat <<EOF
 Written: conf/secrets.conf, ws/production.conf, conf/nginx-gogame.conf

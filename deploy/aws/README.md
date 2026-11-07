@@ -130,6 +130,16 @@ and open `https://example.com`. Logs: `journalctl -u gogame -f`.
 
 ## 5. Email (SES)
 
+**You don't need an email account for this.** SES sends as `noreply@example.com` once it has
+verified the domain through DNS records; nobody has to receive mail there. Two related points:
+
+- **Receiving** at your contact address (`net.email`, shown on the Contact page): with a
+  Cloudflare domain, **Email → Email Routing** forwards `contact@example.com` to your own
+  inbox (Gmail or any other), for free. Or set `net.email` to an address you already have.
+- **Until SES works**, leave `mock = true` and `security.email_confirm.enabled = false` (the
+  installer's defaults): people can sign up and play, accounts need no confirmation, and
+  emails such as password resets are only written to the log (`journalctl -u gogame`).
+
 1. **SES → Identities → Create identity → Domain**: your domain, with **Easy DKIM**. If the
    domain is in Route 53, SES publishes the three DKIM records itself. With Cloudflare, add
    the three `CNAME` records SES shows in **Cloudflare → DNS → Records**, each set to
@@ -243,10 +253,10 @@ Try a restore once on a spare server, so you know the steps before you need them
 ## 7. Administrator account
 
 Sign up on the site, then give the account the administrator role. Use your username in
-lowercase, and the MongoDB password from `conf/secrets.conf`:
+lowercase (the command reads the database address and password from `conf/secrets.conf`):
 
 ```bash
-mongosh "mongodb://gogame:PASSWORD@127.0.0.1/gogame?authSource=admin" --eval 'db.user4.updateOne({_id: "yourname"}, {$set: {roles: ["ROLE_SUPER_ADMIN"]}})'
+sudo mongosh "$(sudo grep -oE 'mongodb://[^"]+' /opt/gogame/conf/secrets.conf | head -1)" --eval 'db.user4.updateOne({_id: "yourname"}, {$set: {roles: ["ROLE_SUPER_ADMIN"]}})'
 ```
 
 Then turn on **two-factor authentication** in that account's security settings. In
@@ -271,6 +281,100 @@ it, on the free plan too. Turn it on only after the site works with HTTPS:
 
 Let's Encrypt renewals keep working through the proxy. The signup captcha (Turnstile, see
 the production setup in the main README) is in the same Cloudflare account.
+
+## Your secrets: what they are, and keeping them
+
+`bin/install-server` generates every secret on the server, in `/opt/gogame/conf/secrets.conf`;
+you only add the values from outside services (SMTP, Turnstile). What each one does:
+
+| Setting | Used for | If it is lost or changed |
+| --- | --- | --- |
+| `user.password.bpass.secret` | encrypting the stored password hashes | **nobody can sign in any more**: keep it forever |
+| `play.http.secret.key` | signing some cookies | people may have to sign in again |
+| `security.password_reset`, `email_confirm`, `email_change`, `login_token` secrets | signing the links in emails | links already sent stop working |
+| `security.turnstile_cookie.secret` | the captcha's cookie | nothing visible |
+| `kamon.prometheus.lilaKey` | the secret part of the metrics address | change it where you read metrics |
+| `memo.picfit.secretKey`, `storm.secret`, `oauth.signedClients.takex3.secrets` | lichess features GoGame doesn't use | nothing |
+| the MongoDB and Redis passwords (`mongodb.uri`, `redis.uri`) | the app's access to its database and Redis, on this server | the app can't connect until the database has the same password |
+| `mailer.primary` user and password | sending email (from SES) | create new SMTP credentials in SES |
+| `turnstile` keys | the signup captcha (from Cloudflare) | get the keys again in Cloudflare |
+
+Other secrets live outside that file, and a new server simply makes new ones: the backup
+user's password (`/etc/gogame/mongodump.yaml`) and MongoDB's replica set key
+(`/etc/mongod.key`). `ws/production.conf` and `conf/nginx-gogame.conf` are rebuilt from
+`secrets.conf`.
+
+**Keep a copy of `secrets.conf`**: in a password manager (as a secure note or an attached
+file), or anywhere private and encrypted. Print it with:
+
+```bash
+sudo cat /opt/gogame/conf/secrets.conf
+```
+
+Never commit it (git ignores it) and never paste it into a chat or an issue. With this one
+file and a database backup, you can rebuild the site on any server.
+
+## Moving to another server
+
+From Lightsail to EC2, to a bigger plan, or to another provider: the same steps, as long as
+the new server runs Ubuntu 24.04 on x86. The domain stays the same.
+
+1. **Prepare the new server** (steps 2 and 4 above, without running the installer yet): get
+   the code into `/opt/gogame`.
+2. **Copy `secrets.conf` to it before installing**, from your saved copy or from the old
+   server, to `/opt/gogame/conf/secrets.conf`:
+
+   ```bash
+   sudo install -m 600 secrets.conf /opt/gogame/conf/secrets.conf
+   ```
+
+3. **Install** with the same domain: it keeps the secrets, gives MongoDB and Redis the same
+   passwords, and rebuilds the other files. HTTPS comes in step 6.
+
+   ```bash
+   sudo /opt/gogame/bin/install-server example.com
+   ```
+
+4. **Take a last backup on the old server**, with the site stopped so nothing changes after
+   it:
+
+   ```bash
+   sudo systemctl stop gogame gogame-ws && sudo systemctl start gogame-backup
+   ```
+
+   ```bash
+   sudo cp /var/backups/gogame/gogame-$(date -u +%F).archive.gz /home/ubuntu/ && sudo chown ubuntu /home/ubuntu/gogame-*.archive.gz
+   ```
+
+   Copy that file to the new server (e.g. `scp` through your computer, or from S3 if your
+   backups go there), into `/home/ubuntu/`.
+5. **Restore it on the new server**:
+
+   ```bash
+   sudo systemctl stop gogame gogame-ws
+   ```
+
+   ```bash
+   sudo install -o gogame -m 600 /home/ubuntu/gogame-*.archive.gz /var/backups/gogame/
+   ```
+
+   ```bash
+   sudo -u gogame /opt/gogame/bin/restore-database /var/backups/gogame/gogame-DATE.archive.gz
+   ```
+
+   ```bash
+   sudo systemctl start gogame gogame-ws
+   ```
+
+6. **Switch the DNS**: point both A records (`@` and `ws`) at the new server's static IP, wait
+   a few minutes, then get the certificates on the new server:
+
+   ```bash
+   sudo certbot --nginx --redirect -d example.com -d ws.example.com
+   ```
+
+7. Put back `/etc/gogame/backup.env` (and the AWS key for S3 on Lightsail), check the site,
+   then delete the old server.
 
 ## Updating
 

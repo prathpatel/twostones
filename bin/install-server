@@ -104,10 +104,10 @@ as_user "cd ws && sbt stage </dev/null"
 say "KataGo"
 as_user bin/setup-katago
 
-if [ ! -f "$dir/conf/secrets.conf" ]; then
-  say "Production configuration"
-  as_user bin/setup-production "$domain" "$ws_domain"
-fi
+# new secrets on a first install; with a conf/secrets.conf already there (a rerun, or one
+# brought from another server), it is kept and the files derived from it are rebuilt
+say "Production configuration"
+as_user bin/setup-production "$domain" "$ws_domain"
 mongo_password=$(grep -oE 'mongodb://gogame:[0-9a-f]+@' "$dir/conf/secrets.conf" | head -1 | sed -E 's/.*gogame:([0-9a-f]+)@/\1/')
 redis_password=$(grep -oE 'redis://:[0-9a-f]+@' "$dir/conf/secrets.conf" | head -1 | sed -E 's/redis:\/\/:([0-9a-f]+)@/\1/')
 [ -n "$mongo_password" ] && [ -n "$redis_password" ] || die "could not read the passwords from conf/secrets.conf"
