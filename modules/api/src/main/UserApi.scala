@@ -1,0 +1,190 @@
+package lila.api
+
+import play.api.i18n.Lang
+import play.api.libs.json.*
+import scalalib.data.Preload
+
+import lila.common.Json.given
+import lila.core.LightUser
+import lila.core.config.*
+import lila.core.perf.UserWithPerfs
+import lila.core.user.PublicFideIdOf
+import lila.rating.PerfType
+import lila.round.UrgentGames
+import lila.user.Trophy
+
+final class UserApi(
+    jsonView: lila.user.JsonView,
+    relationApi: lila.relation.RelationApi,
+    bookmarkApi: lila.bookmark.BookmarkApi,
+    crosstableApi: lila.game.CrosstableApi,
+    gameCache: lila.game.Cached,
+    playingUsers: lila.round.PlayingUsers,
+    userApi: lila.user.UserApi,
+    userRepo: lila.user.UserRepo,
+    userCache: lila.user.Cached,
+    prefApi: lila.pref.PrefApi,
+    gameProxyRepo: lila.round.GameProxyRepo,
+    trophyApi: lila.user.TrophyApi,
+    challengeGranter: lila.challenge.ChallengeGranter,
+    playbanApi: lila.playban.PlaybanApi,
+    rankingsOf: UserId => lila.core.rating.UserRankMap,
+    net: NetConfig
+)(using Executor, lila.core.i18n.Translator):
+
+  export userApi.withPerfs
+  import UserApi.Opts
+
+  def one(u: UserWithPerfs | LightUser, joinedAt: Option[Instant] = None)(using Option[Me]): JsObject = {
+    val (light, userJson) = u match
+      case u: UserWithPerfs => (u.user.light, jsonView.full(u.user, u.perfs.some, withProfile = false))
+      case u: LightUser => (u, Json.toJsObject(u))
+    userJson ++ Json.obj("url" -> makeUrl(s"@/${light.name}")) // for app BC
+  }.add("joinedTeamAt", joinedAt)
+
+  def extended(username: UserStr, opts: Opts)(using Option[Me], Lang): Fu[Option[JsObject]] =
+    userApi
+      .withPerfs(username)
+      .flatMapz:
+        extended(_, opts).dmap(some)
+
+  def extended(u: User | UserWithPerfs, opts: Opts)(using as: Option[Me], lang: Lang): Fu[JsObject] =
+    u.match
+      case u: User => userApi.withPerfs(u)
+      case u: UserWithPerfs => fuccess(u)
+    .flatMap: u =>
+        if u.enabled.no
+        then fuccess(jsonView.disabled(u.light))
+        else
+          import opts.*
+          (
+            opts.urgent.orLoad(gameProxyRepo.urgentGames(u)).dmap(_.value.headOption),
+            as.filter(me => u.user.isnt(me)).so(me => crosstableApi.nbGames(me.userId, u.id)),
+            (opts.withRelation && as.isDefined).so(prefApi.followable(u.id)),
+            opts.withRelation.so(as).map(_.userId).so(relationApi.fetchRelation(_, u.id)),
+            bookmarkApi.countByUser(u.user),
+            if as.isDefined then playingUsers.nbPlayingAll(u.id) else playingUsers.nbPlayingRealtime(u.id),
+            gameCache.nbImportedBy(u.id),
+            (withTrophies && !u.lame).optionFu(getTrophiesAndAwards(u.user)),
+            withCanChallenge.so(challengeGranter.mayChallenge(u.user).dmap(some)),
+            forWiki.optionFu(userRepo.email(u.id)),
+            withPlayban.so(playbanApi.currentBan(u))
+          ).mapN:
+            (
+                gameOption,
+                nbGamesWithMe,
+                followable,
+                relation,
+                nbBookmarks,
+                nbPlaying,
+                nbImported,
+                trophiesAndAwards,
+                canChallenge,
+                email,
+                playban
+            ) =>
+              val rankMap = withRank.option(rankingsOf(u.id))
+              jsonView.full(u.user, u.perfs.some, withProfile = withProfile, rankMap) ++ {
+                Json
+                  .obj(
+                    "url" -> makeUrl(s"@/${u.username}"), // for app BC
+                    "playing" -> gameOption.map(g => makeUrl(s"${g.gameId}/${g.color.name}")),
+                    "count" -> Json.obj(
+                      "all" -> u.count.game,
+                      "rated" -> u.count.rated,
+                      "draw" -> u.count.draw,
+                      "loss" -> u.count.loss,
+                      "win" -> u.count.win,
+                      "bookmark" -> nbBookmarks,
+                      "playing" -> nbPlaying,
+                      "import" -> nbImported,
+                      "me" -> nbGamesWithMe
+                    )
+                  )
+                  .add("kid", u.kid)
+                  .add("email", email)
+                  .add("groups", forWiki.option(wikiGroups(u.user)))
+                  .add("trophies", trophiesAndAwards.map(trophiesJson))
+                  .add("canChallenge", canChallenge)
+                  .add("playban", playban)
+                  ++
+                  (opts.withRelation && as.isDefined).so:
+                    Json.obj(
+                      "followable" -> followable,
+                      "following" -> relation.exists(_.isFollow),
+                      "blocking" -> relation.exists(!_.isFollow)
+                    )
+              }.noNull
+
+  def mobile(user: UserWithPerfs, urgent: Preload[UrgentGames])(using me: Option[Me])(using Lang) = extended(
+    user,
+    Opts(
+      withTrophies = false,
+      withCanChallenge = me.exists(_.isnt(user)),
+      withRelation = true,
+      withPlayban = me.exists(_.is(user)),
+      urgent = urgent
+    )
+  )
+
+  def getTrophiesAndAwards(u: User) =
+    trophyApi
+      .findByUser(u)
+      .map: trophies =>
+        val roleTrophies = trophyApi.roleBasedTrophies(u)
+        UserApi.TrophiesAndAwards(userCache.rankingsOf(u.id), trophies ::: roleTrophies)
+
+  private def trophiesJson(all: UserApi.TrophiesAndAwards)(using Lang): JsArray =
+    JsArray:
+      all.ranks.toList
+        .sortBy(_._2)
+        .map: (perf, rank) =>
+          PerfType(perf) -> rank
+        .collect {
+          case (perf, rank) if rank == 1 => perfTopTrophy(perf, 1, "Champion")
+          case (perf, rank) if rank <= 10 => perfTopTrophy(perf, 10, "Top 10")
+          case (perf, rank) if rank <= 50 => perfTopTrophy(perf, 50, "Top 50")
+          case (perf, rank) if rank <= 100 => perfTopTrophy(perf, 100, "Top 100")
+        } ::: all.trophies.map { t =>
+        Json
+          .obj(
+            "type" -> t.kind._id,
+            "name" -> t.kind.name,
+            "date" -> t.date
+          )
+          .add("icon" -> t.kind.icon)
+          .add("url" -> t.anyUrl)
+      }
+
+  private def perfTopTrophy(perf: PerfType, top: Int, name: String)(using Lang) = Json.obj(
+    "type" -> "perfTop",
+    "perf" -> perf.key,
+    "top" -> top,
+    "name" -> s"${perf.trans} $name"
+  )
+
+  private def makeUrl(path: String): String = s"${net.baseUrl}/$path"
+
+  private def wikiGroups(u: User): List[String] =
+    val perms = lila.security.Permission.expanded(u).map(_.name).toList
+    val wikiAdminGroup = "Administrators"
+    if perms.contains("Admin") then wikiAdminGroup :: perms else perms
+
+object UserApi:
+  case class TrophiesAndAwards(
+      ranks: lila.core.rating.UserRankMap,
+      trophies: List[Trophy]
+  ):
+    def countTrophiesAndPerfCups = trophies.size + ranks.count(_._2 <= 100)
+
+  case class Opts(
+      withTrophies: Boolean,
+      withCanChallenge: Boolean,
+      withRelation: Boolean,
+      withProfile: Boolean = true,
+      withRank: Boolean = false,
+      withPlayban: Boolean = false,
+      withFideId: Boolean = false,
+      forWiki: Boolean = false,
+      urgent: Preload[UrgentGames] = Preload.none
+  )

@@ -1,0 +1,37 @@
+// Go stone styles
+#dasher_app .sub.go-stones .list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+
+  button.go-stone-style {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 10px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    background: #dcb35c;
+    cursor: pointer;
+    color: #2a1d0d;
+    font-weight: bold;
+
+    .stones {
+      display: flex;
+      gap: 3px;
+    }
+
+    .stone {
+      display: block;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid #000;
+    }
+
+    &.active {
+      border-color: $c-secondary;
+    }
+  }
+}

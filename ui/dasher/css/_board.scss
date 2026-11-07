@@ -1,0 +1,48 @@
+// Go board styles: a grid of small board previews (see ui/dasher/src/board.ts)
+#dasher_app .sub.go-boards .list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  padding: 8px;
+
+  button.go-board-style {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    min-width: 0;
+    padding: 6px 2px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    background: none;
+    cursor: pointer;
+    color: inherit;
+
+    .preview {
+      display: block;
+      width: 56px;
+      height: 56px;
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      transition: transform 150ms;
+    }
+
+    .name {
+      font-size: 0.85em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+    }
+
+    &:hover .preview {
+      transform: scale(1.06);
+    }
+
+    &.active {
+      border-color: $c-secondary;
+      background: $c-bg-zebra;
+    }
+  }
+}

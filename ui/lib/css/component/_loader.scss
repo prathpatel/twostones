@@ -1,0 +1,59 @@
+/* circular loader: a black and a white stone circling each other */
+@keyframes spinner-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  width: 70px;
+  height: 70px;
+  margin: auto;
+
+  &__track {
+    fill: none;
+    stroke: $c-border;
+    stroke-width: 1.5;
+  }
+
+  &__orbit {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: spinner-orbit 1.4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  }
+
+  &__black {
+    fill: #111;
+  }
+
+  &__white {
+    fill: #f4f2ec;
+    stroke: #8c8578;
+    stroke-width: 1;
+  }
+}
+
+/* small horizontal loader */
+@keyframes ddloader {
+  0% {
+    background-position: left;
+  }
+
+  100% {
+    background-position: right;
+  }
+}
+
+.ddloader {
+  background: url('../images/loader/whitex1.png') no-repeat;
+
+  @include if-light {
+    background: url('../images/loader/blackx1.png') no-repeat;
+  }
+
+  animation: ddloader 0.5s steps(15) infinite !important;
+  vertical-align: middle;
+  display: inline-block;
+  width: 32px;
+  height: 8px;
+}

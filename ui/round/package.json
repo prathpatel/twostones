@@ -1,0 +1,14 @@
+{
+  "name": "round",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "lib": "workspace:*"
+  },
+  "build": {
+    "bundle": "src/round.ts"
+  },
+  "exports": {
+    ".": "./dist/interfaces.d.ts"
+  }
+}

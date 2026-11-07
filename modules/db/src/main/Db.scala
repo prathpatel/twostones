@@ -1,0 +1,54 @@
+package lila.db
+
+import reactivemongo.api.*
+
+import lila.core.config.CollName
+import lila.db.dsl.Coll
+
+object Db:
+  /** the database used when the mongodb uri names none */
+  val defaultName = "gogame"
+
+final class AsyncDb(
+    name: String,
+    uri: String,
+    driver: AsyncDriver
+)(using Executor):
+
+  private lazy val connection: Fu[(MongoConnection, Option[String])] =
+    MongoConnection.fromString(uri).flatMap { parsedUri =>
+      driver.connect(parsedUri, name.some).dmap(_ -> parsedUri.db)
+    }
+
+  private def makeDb: Future[DB] =
+    connection.flatMap: (conn, dbName) =>
+      conn.database(dbName.getOrElse(Db.defaultName))
+
+  private val dbCache = new SingleFutureCache[DB](
+    compute = () => makeDb,
+    expireAfterMillis = 1000
+  )
+
+  def apply(name: CollName) = new AsyncColl(name, () => dbCache.get.map(_.collection(name.value)))
+
+final class Db(
+    name: String,
+    uri: String,
+    driver: AsyncDriver
+)(using Executor):
+
+  private lazy val db: DB =
+    lila.log.system.info(s"MongoDB $name connecting to $uri")
+    val connected = scala.concurrent.Await.result(
+      MongoConnection
+        .fromString(uri)
+        .flatMap: parsedUri =>
+          driver
+            .connect(parsedUri, name.some)
+            .flatMap(_.database(parsedUri.db.getOrElse(Db.defaultName))),
+      5.seconds
+    )
+    lila.log.system.info(s"MongoDB $name connected  to $uri")
+    connected
+
+  def apply(name: CollName): Coll = db.collection(name.value)

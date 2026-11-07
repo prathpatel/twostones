@@ -1,0 +1,219 @@
+// Shared Go board styles: the interactive goban and the mini boards.
+//
+// Board styles follow the "Board" setting (body[data-board]), stone styles the
+// "Stones" setting (body[data-piece-set]). Names match modules/pref Theme / PieceSet.
+
+$goban-line: #3b2a14;
+
+:root,
+body[data-board='kaya'] {
+  --goban-wood: #dcb35c;
+  --goban-line: #3b2a14;
+}
+
+body[data-board='shin-kaya'] {
+  --goban-wood: #ecd29a;
+  --goban-line: #4a3820;
+}
+
+body[data-board='katsura'] {
+  --goban-wood: #e3b27a;
+  --goban-line: #45301b;
+}
+
+body[data-board='walnut'] {
+  --goban-wood: #a8743e;
+  --goban-line: #24170a;
+}
+
+body[data-board='bamboo'] {
+  --goban-wood: #d4ba74;
+  --goban-line: #3e3015;
+}
+
+body[data-board='paper'] {
+  --goban-wood: #f2ead8;
+  --goban-line: #5a5246;
+}
+
+body[data-board='slate'] {
+  --goban-wood: #9fb0bb;
+  --goban-line: #23313b;
+}
+
+body[data-board='green'] {
+  --goban-wood: #9fb57e;
+  --goban-line: #233016;
+}
+
+body[data-board='night'] {
+  --goban-wood: #343a42;
+  --goban-line: #a7b0ba;
+}
+
+.goban-wrap {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+svg.goban,
+svg.goban-mini {
+  display: block;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+}
+
+.goban__wood,
+.goban-mini__bg {
+  fill: var(--goban-wood);
+}
+
+.goban__line,
+.goban-mini__lines line {
+  stroke: var(--goban-line);
+  stroke-width: 0.35;
+}
+
+.goban__star,
+.goban-mini__star {
+  fill: var(--goban-line);
+}
+
+.goban__coord {
+  font-size: 3px;
+  fill: var(--goban-line);
+  opacity: 0.7;
+  text-anchor: middle;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.goban__stone,
+.goban-mini__stone {
+  stroke-width: 0.3;
+
+  &.black {
+    fill: #111;
+    stroke: #000;
+  }
+
+  &.white {
+    fill: #f6f4ee;
+    stroke: #8c8578;
+  }
+
+  &.dead {
+    opacity: 0.4;
+  }
+}
+
+.goban__last,
+.goban-mini__last {
+  fill: none;
+  stroke-width: 0.6;
+
+  &.black {
+    stroke: #f6f4ee;
+  }
+
+  &.white {
+    stroke: #111;
+  }
+}
+
+.goban__ko {
+  fill: none;
+  stroke: var(--goban-line);
+  stroke-width: 0.5;
+}
+
+.goban__ghost {
+  opacity: 0.45;
+
+  &.black {
+    fill: #111;
+  }
+
+  &.white {
+    fill: #fff;
+  }
+}
+
+.goban__territory {
+  &.black {
+    fill: #111;
+  }
+
+  &.white {
+    fill: #fff;
+    stroke: #555;
+    stroke-width: 0.2;
+  }
+}
+
+svg.goban.playable,
+svg.goban.scoring {
+  cursor: pointer;
+}
+
+// mini boards in game lists
+.mini-game .goban-wrap,
+.game-row__board .goban-wrap,
+.now-playing .goban-wrap {
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+// Stone styles for the main board. The gradients are <defs> in the board's SVG (ui/round/src/view.ts).
+body[data-piece-set='shell-slate'] svg.goban,
+body:not([data-piece-set]) svg.goban {
+  .goban__stone.black {
+    fill: url(#goban-slate);
+  }
+
+  .goban__stone.white {
+    fill: url(#goban-shell);
+  }
+}
+
+body[data-piece-set='yunzi'] svg.goban {
+  .goban__stone.black {
+    fill: url(#goban-yunzi-black);
+    stroke: none;
+  }
+
+  .goban__stone.white {
+    fill: url(#goban-yunzi-white);
+    stroke: #b9b2a2;
+  }
+}
+
+body[data-piece-set='glass'] svg.goban {
+  .goban__stone.black {
+    fill: url(#goban-glass-black);
+  }
+
+  .goban__stone.white {
+    fill: url(#goban-glass-white);
+  }
+}
+
+body[data-piece-set='outline'] svg.goban,
+body[data-piece-set='outline'] svg.goban-mini {
+  .goban__stone.black,
+  .goban-mini__stone.black {
+    fill: #111;
+    stroke: #111;
+  }
+
+  .goban__stone.white,
+  .goban-mini__stone.white {
+    fill: transparent;
+    stroke: #111;
+    stroke-width: 0.8;
+  }
+}
+
+// 'flat' uses the plain fills above

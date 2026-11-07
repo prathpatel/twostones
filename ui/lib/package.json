@@ -1,0 +1,66 @@
+{
+  "name": "lib",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@badrap/result": "^0.3.1",
+    "@types/debounce-promise": "^3.1.9",
+    "debounce-promise": "^3.1.2",
+    "idb-keyval": "^6.2.1",
+    "tablesort": "5.7.0"
+  },
+  "build": {
+    "sync": {},
+    "hash": [
+      "/public/font/*.woff2",
+      "/public/images/**",
+      "/public/javascripts/**",
+      "/public/npm/*",
+      "/public/sound/**/*.mp3"
+    ]
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": {
+        "source": "./src/index.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./ceval": {
+      "types": "./dist/ceval/index.dts",
+      "import": {
+        "source": "./src/ceval/index.ts",
+        "default": "./dist/ceval/index.js"
+      }
+    },
+    "./game": {
+      "types": "./dist/game/index.dts",
+      "import": {
+        "source": "./src/game/index.ts",
+        "default": "./dist/game/index.js"
+      }
+    },
+    "./view": {
+      "types": "./dist/view/index.dts",
+      "import": {
+        "source": "./src/view/index.ts",
+        "default": "./dist/view/index.js"
+      }
+    },
+    "./tree": {
+      "types": "./dist/tree/index.dts",
+      "import": {
+        "source": "./src/tree/index.ts",
+        "default": "./dist/tree/index.js"
+      }
+    },
+    "./*": {
+      "types": "./*.d.ts",
+      "import": {
+        "source": "./src/*.ts",
+        "default": "./dist/*.js"
+      }
+    }
+  }
+}
