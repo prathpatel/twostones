@@ -426,7 +426,7 @@ function resultText(ctrl: RoundCtrl): string {
 
 /** "KataGo 20k" => "Played by KataGo, imitating a 20k human player" */
 function aiTitle(engine?: string): string {
-  if (!engine) return 'Played by the built-in bot';
+  if (!engine) return 'Played by KataGo';
   const [name, rank] = engine.split(' ');
   return rank ? `Played by ${name}, imitating a ${rank} human player` : `Played by ${name} at full strength`;
 }

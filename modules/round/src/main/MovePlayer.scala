@@ -105,16 +105,15 @@ final private class MovePlayer(
         // give the human a moment to see their own move
         lila.common.LilaFuture
           .delay(300.millis)(aiEngine.move(snapshot, level))
-          .recover: e =>
-            // never leave the game waiting: the built-in bot answers instead
-            logger.warn(s"AI move failed in ${game.id} at ply $ply (${e.getMessage}), the built-in bot plays")
-            AiEngine.Choice.Play(goban.Bot.move(snapshot, level).move)
-          .foreach:
-            case AiEngine.Choice.Play(move) =>
+          .onComplete:
+            case scala.util.Success(AiEngine.Choice.Play(move)) =>
               lila.mon.fishnet.move(level).increment()
               round ! RoundBus.AiPlay(move, ply)
-            case AiEngine.Choice.Resign => round ! RoundAsyncActor.AiResign(ply)
-        // if no move arrived by then (a lost request, a stuck engine), ask again
+            case scala.util.Success(AiEngine.Choice.Resign) => round ! RoundAsyncActor.AiResign(ply)
+            // the watchdog below asks again
+            case scala.util.Failure(e) =>
+              logger.warn(s"AI move failed in ${game.id} at ply $ply: ${e.getMessage}")
+        // if no move arrived by then (KataGo failed, is missing or stuck), ask again
         summon[Scheduler].scheduleOnce(aiEngine.watchdogDelay):
           round ! RoundAsyncActor.AiCheck(ply)
         ()

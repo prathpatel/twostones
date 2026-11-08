@@ -139,35 +139,3 @@ class GobanTest extends munit.FunSuite:
     val parsed = Sgf.read("(;SZ[9]KM[6.5];B[ee](;W[cc];B[gg])(;W[dd]))").toOption.get
     assertEquals(parsed.moves.map(_.key(9)), List("ee", "cc", "gg"))
     assertEquals(parsed.komi.value, 6.5)
-
-  test("bot plays a legal move and captures when it can"):
-    // white stone in atari at E5: black should take it
-    val g = play("D5", "E5", "F5", "A1", "E4", "A2").toOption.get
-    val r = Bot.move(g, 6, seed = 1L)
-    assert(g.position.play(r.move).isRight)
-    assertEquals(r.move, Move.Play(pt("E6")))
-
-  test("bot passes back at the end of a won game"):
-    val rows = (1 to 9).map(_ => "....b.w..")
-    val g0 = Game(nine, Komi(0.5), 0, None).copy(position = Position(board(rows*), Color.Black, consecutivePasses = 1))
-    assertEquals(Bot.move(g0, 5, seed = 3L).move, Move.Pass)
-
-  test("dead stone estimation finds a lone invader"):
-    val rows = Seq(
-      "...bw....",
-      "...bw....",
-      "...bw....",
-      "...bw....",
-      "...bw.b..",
-      "...bw....",
-      "...bw....",
-      "...bw....",
-      "...bw...."
-    )
-    val g = Game(nine, Komi(7.5), 0, None).copy(position = Position(board(rows*), Color.Black, consecutivePasses = 2))
-    assertEquals(Bot.estimateDead(g), Set(pt("G5")))
-
-  test("bot does not pass early in the game, even at level 1"):
-    val g = play("E5", "C3").toOption.get
-    (1L to 20L).foreach: seed =>
-      assertNotEquals(Bot.move(g, 1, seed).move, Move.Pass, s"seed $seed")

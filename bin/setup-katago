@@ -3,7 +3,7 @@
 #   katago/katago          the engine (a wrapper script when it needs bundled libraries)
 #   katago/model.bin.gz    the main network: full strength, and counting
 #   katago/human.bin.gz    the human-style network: plays like a human of a given rank
-# Then plays one test move. Run it again to repair or update an install; files already
+# Then sends one test query to its analysis engine. Run it again to repair or update an install; files already
 # downloaded are kept.
 #
 #   bin/setup-katago                      CPU build (eigen, or eigenavx2 when the CPU has AVX2)
@@ -120,13 +120,15 @@ say "Networks"
 download "$MODEL_URL" "$DIR/model.bin.gz"
 download "$HUMAN_URL" "$DIR/human.bin.gz"
 
-say "Test move (the first start can take a while: the GPU builds tune themselves)"
-answer=$(printf 'boardsize 9\nkata-set-param humanSLProfile rank_10k\ngenmove b\nquit\n' |
-  (cd "$DIR" && ./katago gtp -model model.bin.gz -human-model human.bin.gz -config ../conf/katago.cfg 2>gtp-test.log) |
-  grep -E '^= [A-T][0-9]' || true)
+say "Test query (the first start can take a while: the GPU builds tune themselves)"
+# one 9x9 position, as the server asks it: the answer must include the human-style policy
+query='{"id":"test","moves":[["B","E5"]],"rules":"chinese","komi":7.5,"boardXSize":9,"boardYSize":9,"maxVisits":1,"includePolicy":true,"overrideSettings":{"humanSLProfile":"rank_10k"}}'
+answer=$(printf '%s\n' "$query" |
+  (cd "$DIR" && ./katago analysis -model model.bin.gz -human-model human.bin.gz -config ../conf/katago.cfg 2>analysis-test.log) |
+  grep '"humanPolicy"' || true)
 if [ -n "$answer" ]; then
-  rm -f "$DIR/gtp-test.log"
-  say "KataGo works: it played ${answer#= }. Restart lila to use it."
+  rm -f "$DIR/analysis-test.log"
+  say "KataGo works. Restart lila to use it."
 else
-  die "KataGo did not answer, see $DIR/gtp-test.log"
+  die "KataGo did not answer, see $DIR/analysis-test.log"
 fi

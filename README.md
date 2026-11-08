@@ -22,8 +22,8 @@ clocks, correspondence games, notifications, messages — and swaps the game its
   10+15, 20+20 and 30+30 on 19×19 (`modules/pool/src/main/PoolList.scala`). Byo-yomi is
   not implemented yet
 - Play against the computer, levels 1–8, played by **[KataGo](https://github.com/lightvector/KataGo)**:
-  levels 1–7 imitate human players from 20 kyu to 9 dan, level 8 is full strength. A
-  small built-in bot takes over if KataGo isn't installed or fails
+  levels 1–7 imitate human players from 20 kyu to 9 dan, level 8 is full strength. One
+  KataGo analysis engine serves every game at once, so many people can play it together
 - Real time, correspondence, or unlimited games, Glicko-2 ratings per speed
 - Pass, resign, abort, takebacks, rematch
 - **Counting phase** after two passes: the server proposes dead stones, players click
@@ -39,7 +39,7 @@ clocks, correspondence games, notifications, messages — and swaps the game its
 
 | Path | What it is |
 | --- | --- |
-| `modules/goban` | **New.** The Go rules engine: board, captures, suicide, positional superko, handicap placement, area scoring, SGF read/write, the Monte-Carlo bot, and a GTP client for external engines such as KataGo. Pure Scala, unit tested. |
+| `modules/goban` | **New.** The Go rules engine: board, captures, suicide, positional superko, handicap placement, area scoring, SGF read/write. Pure Scala, unit tested. The computer opponent (KataGo's analysis engine) is in `modules/round` (`AiEngine`, `KataGo`). |
 | `modules/core`, `game`, `round`, `lobby`, `setup`, `challenge`, `pool` | Lichess modules converted from chess to Go. `core.Game` now wraps `goban.Game`; games are stored as SGF move keys plus board size, komi, handicap and dead stones. |
 | `modules/*` (others) | Lichess platform modules kept as-is or lightly trimmed: users, security, OAuth, prefs, ratings, chat, messages, notifications, relations, reports, playbans, i18n, web. |
 | `app/` | The Play application: controllers, views and routes for the kept features. |
@@ -64,8 +64,8 @@ browser ── websocket ──> lila-ws ── redis ──> lila (round module
 
 The client sends SGF coordinates (`"pd"`) or `"pass"`. The server is authoritative;
 the client also checks legality (occupied, suicide, ko) to avoid sending illegal moves.
-After two consecutive passes, `round` enters the counting phase, estimates dead stones
-with playouts, and finishes the game when both players accept the score.
+After two consecutive passes, `round` enters the counting phase, asks KataGo which stones
+are dead, and finishes the game when both players accept the score.
 
 ## Running it locally
 
@@ -85,7 +85,8 @@ Requirements: **Java 21**, **sbt**, **Node.js 24.20+** with **pnpm 12**, **Mongo
    bin/setup-katago
    ```
 
-   Without it everything still works, but the computer is the much weaker built-in bot.
+   Without it everything else works, but the computer doesn't move, and counting starts
+   with no dead stones marked.
 3. Build the front end:
 
    ```bash
@@ -167,36 +168,44 @@ The engine settings are in `conf/katago.cfg`. The levels are set in `base.conf`:
 
 In a game, the computer's name reads **KataGo 10k · level 3** and so on.
 
-The server starts one KataGo process and sets the same rules as the server (area scoring,
-positional superko, no suicide). Before each move it sends the position and the level's rank
-and search size. KataGo also proposes the dead stones when counting starts.
+The server starts one KataGo **analysis engine** (`katago analysis`, in
+`modules/round/src/main/KataGo.scala`) for all games. For each computer move it sends the
+whole position as one JSON query, with the server's rules (area scoring, positional superko,
+no suicide) and the level's rank and search size; answers come back in any order, matched
+by id. KataGo searches several positions at the same time (`numAnalysisThreads` in
+`conf/katago.cfg`) and batches their network evaluations, so many people can play the
+computer together; raise it with more cores or a GPU.
 
-The built-in Monte-Carlo bot (`modules/goban/src/main/Bot.scala`) is only a fallback. It
-plays a move whenever KataGo is missing, crashes, answers an illegal move or takes longer
-than `timeout`; then the engine restarts for the next move. The name then reads
-**Computer level N**. Set `round.ai.katago.enabled = false` to always use it.
+The server then picks the move from KataGo's answer. At a rank, it draws a move from the
+human-style network's policy for that rank, and passes only when KataGo's own best move is a
+pass. At full strength, it draws among the moves KataGo's search liked best. When counting
+starts, KataGo's ownership estimate gives the dead stones.
+
+There is no other engine. If KataGo is missing, crashes or takes longer than `timeout`, the
+computer doesn't move; the server asks again shortly after (and restarts KataGo if it stopped
+answering), and counting starts with no stones marked dead.
 
 Speed, on a 4-core CPU with the default settings: levels 1–7 answer in 1 to 2 seconds;
-level 8 in about 2 seconds on 9×9 and 6 seconds on 19×19. With a GPU build you can raise
-level 8's `visits` for a much stronger engine.
+level 8 takes a few seconds on 19×19. With a GPU build you can raise level 8's `visits` for
+a much stronger engine, and `numAnalysisThreads` to serve more games at once.
 
 #### Checking that KataGo is playing
 
-1. `bin/setup-katago` ends with a test move: it prints `KataGo works: it played E5`.
-2. Restart lila. Its log prints `AI engine ready: KataGo` once the networks are loaded
+1. `bin/setup-katago` ends with a test query: it prints `KataGo works`.
+2. Restart lila. Its log prints `AI engine ready: KataGo 1.15.3` once the networks are loaded
    (a few seconds). If it prints `AI engine failed to start` instead, run
-   `bin/setup-katago` again; KataGo's own messages appear in the log too.
+   `bin/setup-katago` again; the message ends with KataGo's last error lines.
 3. Play the computer: its name in the game reads **KataGo … · level N**. Hover over it to
    see the rank it imitates.
-4. With `logAllGTPCommunication = true` in `conf/katago.cfg`, every command the server
-   sends is written to `katago/gtp_logs/`.
+4. With `logAllRequests = true` and `logAllResponses = true` in `conf/katago.cfg`, every
+   query and answer is written to `katago/gtp_logs/`.
 
 Tests:
 
 ```bash
-./lila.sh test           # server, including the goban engine tests
-KATAGO_COMMAND="$PWD/katago/katago gtp -model $PWD/katago/model.bin.gz -human-model $PWD/katago/human.bin.gz -config $PWD/conf/katago.cfg" \
-  ./lila.sh "goban/testOnly goban.GtpTest"   # also run the real-KataGo test
+./lila.sh test           # server, including the goban and KataGo client tests
+KATAGO_COMMAND="$PWD/katago/katago analysis -model $PWD/katago/model.bin.gz -human-model $PWD/katago/human.bin.gz -config $PWD/conf/katago.cfg" \
+  ./lila.sh "round/testOnly lila.round.KataGoTest"   # also run the real-KataGo test
 ./ui/build --tsc         # front-end type checking
 ```
 
