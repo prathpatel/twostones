@@ -16,7 +16,6 @@
   <string name="strength">Fuerza</string>
   <string name="chat">Chat</string>
   <string name="resign">Abandonar</string>
-  <string name="checkmate">Escaque y mate</string>
   <string name="stalemate">Rei afogau</string>
   <string name="white">Blancas</string>
   <string name="black">Negras</string>
@@ -371,7 +370,6 @@
   <string name="onlyExistingConversations">Nomás las conversas existents</string>
   <string name="onlyFriends">Nomás amigos</string>
   <string name="menu">Menú</string>
-  <string name="castling">Enroque</string>
   <string name="tpTimeSpentPlaying">Tiempo total chugau: %s</string>
   <string name="watchGames">Veyer partidas</string>
   <string name="watch">Veyer</string>

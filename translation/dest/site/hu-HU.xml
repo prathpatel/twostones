@@ -16,7 +16,6 @@
   <string name="strength">Nehézség</string>
   <string name="chat">Csevegés</string>
   <string name="resign">Feladás</string>
-  <string name="checkmate">Sakk-matt</string>
   <string name="stalemate">Patt</string>
   <string name="white">Világos</string>
   <string name="black">Sötét</string>
@@ -366,7 +365,6 @@
   <string name="onlyExistingConversations">Csak megkezdett csevegések</string>
   <string name="onlyFriends">Csak ismerősöktől</string>
   <string name="menu">Menü</string>
-  <string name="castling">Sáncolás</string>
   <string name="tpTimeSpentPlaying">Játékkal töltött idő: %s</string>
   <string name="watchGames">Játszmák megtekintése</string>
   <string name="watch">Műsor</string>

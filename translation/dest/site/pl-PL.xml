@@ -16,7 +16,6 @@
   <string name="strength">Siła</string>
   <string name="chat">Czat</string>
   <string name="resign">Poddaj się</string>
-  <string name="checkmate">Mat</string>
   <string name="stalemate">Pat</string>
   <string name="white">Białe</string>
   <string name="black">Czarne</string>
@@ -422,7 +421,6 @@ Znajomi grający: %2$s</string>
   <string name="onlyExistingConversations">Tylko istniejące rozmowy</string>
   <string name="onlyFriends">Tylko znajomi</string>
   <string name="menu">Menu</string>
-  <string name="castling">Roszada</string>
   <string name="tpTimeSpentPlaying">Łączny czas gry: %s</string>
   <string name="watchGames">Oglądaj partie</string>
   <string name="watch">Oglądaj</string>

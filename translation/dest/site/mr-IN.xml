@@ -16,7 +16,6 @@
   <string name="strength">सामर्थ्य</string>
   <string name="chat">गप्पा</string>
   <string name="resign">हार माना</string>
-  <string name="checkmate">शहमात</string>
   <string name="stalemate">अर्धवट मात</string>
   <string name="white">पांढरा</string>
   <string name="black">काळा</string>
@@ -385,7 +384,6 @@
   <string name="onlyExistingConversations">केवळ विद्यमान संभाषणे</string>
   <string name="onlyFriends">फक्त मित्र</string>
   <string name="menu">सूची</string>
-  <string name="castling">किल्लेकोट</string>
   <string name="tpTimeSpentPlaying">खेळण्यात घालवलेला वेळ: %s</string>
   <string name="watchGames">खेळ बघा</string>
   <string name="watch">पहा</string>

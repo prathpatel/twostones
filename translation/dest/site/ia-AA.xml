@@ -9,7 +9,6 @@
   <string name="strength">Fortia</string>
   <string name="chat">Chat</string>
   <string name="resign">Resignar se</string>
-  <string name="checkmate">Chaco mat</string>
   <string name="stalemate">Pat</string>
   <string name="white">Blanco</string>
   <string name="black">Nigro</string>
@@ -282,7 +281,6 @@
   <string name="onlyExistingConversations">Solmente conversationes existente</string>
   <string name="onlyFriends">Solmente amicos</string>
   <string name="menu">Menu</string>
-  <string name="castling">Roc</string>
   <string name="tpTimeSpentPlaying">Tempore jocante: %s</string>
   <string name="watchGames">Spectar jocos</string>
   <string name="watch">Spectar</string>

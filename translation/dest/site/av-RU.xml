@@ -9,7 +9,6 @@
   <string name="strength">Къуват</string>
   <string name="chat">Чат</string>
   <string name="resign">Къун чӀезе</string>
-  <string name="checkmate">Мат</string>
   <string name="stalemate">Пат</string>
   <string name="white">ХъахӀал</string>
   <string name="black">ЧӀегӀерал</string>
@@ -346,7 +345,6 @@
   <string name="onlyExistingConversations">ЦохӀо ругел гара-чӀвариял</string>
   <string name="onlyFriends">ЦохӀо гьудулзабазе</string>
   <string name="menu">Мену</string>
-  <string name="castling">Рокировка</string>
   <string name="tpTimeSpentPlaying">ХӀан бараб заман: %s</string>
   <string name="watchGames">ХӀаязухъ балагьизе</string>
   <string name="watch">Балагьизе</string>

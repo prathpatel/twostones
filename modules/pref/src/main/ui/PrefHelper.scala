@@ -52,12 +52,6 @@ trait PrefHelper:
       (lila.core.pref.Message.ALWAYS, trans.site.always.txt())
     )
 
-  private def privacyBaseChoices(using Translate) =
-    List(
-      (lila.core.pref.StudyInvite.NEVER, trans.site.never.txt()),
-      (lila.core.pref.StudyInvite.FRIEND, trans.site.onlyFriends.txt()),
-      (lila.core.pref.StudyInvite.ALWAYS, trans.site.always.txt())
-    )
 
   def translatedSayGGChoices(using Translate) =
     List(

@@ -5,7 +5,6 @@
   <string name="actions">Дії</string>
   <string name="promotion">Щоб провести пішака в будь-що окрім ферзя, використайте дорівнює. Наприклад а-8-дорівнює-n, щоб провести пішака в коня.</string>
   <string name="king">король</string>
-  <string name="rook">тура</string>
   <string name="bishop">слон</string>
   <string name="knight">кінь</string>
   <string name="copyToClipboard">Копіювати %s</string>

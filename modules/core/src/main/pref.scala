@@ -7,14 +7,11 @@ import lila.core.userId.UserId
 trait Pref:
   val id: UserId
   val coords: Int
-  val keyboardMove: Int
   val voice: Option[Int]
-  val rookCastle: Int
   val animation: Int
   val destination: Boolean
   val moveEvent: Int
   val highlight: Boolean
-  val is3d: Boolean
   val resizeHandle: Int
   val uiRoundness: Int
   val theme: String
@@ -23,34 +20,24 @@ trait Pref:
   val blogFilter: ublog.QualityFilter
   val bg: Int
 
-  def hasKeyboardMove: Boolean
   def hasVoice: Boolean
   def hasSpeech: Boolean
   def hideRatingsInGame: Boolean
   def showRatings: Boolean
   def animationMillis: Int
-  def animationMillisForSpeedPuzzles: Int
-  def pieceNotationIsLetter: Boolean
   def bgOpacity: Int
 
 trait PrefApi:
   def followable(userId: UserId): Fu[Boolean]
   def mentionableIds(userIds: Set[UserId]): Fu[Set[UserId]]
   def getMessage(userId: UserId): Fu[Int]
-  def getInsightShare(userId: UserId): Fu[Int]
   def getChallenge(userId: UserId): Fu[Int]
-  def getStudyInvite(userId: UserId): Fu[Int]
   def isolate(user: User): Funit
 
 object Message:
   val NEVER = 1
   val FRIEND = 2
   val ALWAYS = 3
-
-object InsightShare:
-  val NOBODY = 0
-  val FRIENDS = 1
-  val EVERYBODY = 2
 
 object Challenge:
   val NEVER = 1
@@ -59,7 +46,3 @@ object Challenge:
   val REGISTERED = 4
   val ALWAYS = 5
 
-object StudyInvite:
-  val NEVER = 1
-  val FRIEND = 2
-  val ALWAYS = 3

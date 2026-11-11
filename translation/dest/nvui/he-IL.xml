@@ -2,7 +2,6 @@
 <resources>
   <string name="pieces">כלים</string>
   <string name="king">מלך</string>
-  <string name="rook">צריח</string>
   <string name="bishop">רץ</string>
   <string name="knight">פרש</string>
 </resources>

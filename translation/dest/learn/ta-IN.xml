@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">சதுரங்கம் கற்றுக்கொள்ளுங்கள்</string>
-  <string name="byPlaying">விளையாடுவதன் மூலம்!</string>
   <string name="menu">பட்டியல்</string>
   <string name="play">விளையாடு!</string>
   <string name="capture">கைப்பற்றுதல்</string>
   <string name="protection">பாதுகாப்பு</string>
   <string name="escape">நீங்கள் தாக்குதலுக்கு ஆளாகியுள்ளீர்கள்! தப்பியுங்கள்!</string>
   <string name="intermediate">இடைநிலை</string>
-  <string name="castling">கோட்டை கட்டுதல்</string>
   <string name="stalemate">முட்டுக்கட்டை</string>
   <string name="register">பதிவு செய்யுங்கள்</string>
   <string name="practice">பயிற்சி</string>

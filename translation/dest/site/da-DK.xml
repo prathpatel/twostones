@@ -16,7 +16,6 @@
   <string name="strength">Styrke</string>
   <string name="chat">Chat</string>
   <string name="resign">Giv op</string>
-  <string name="checkmate">Skakmat</string>
   <string name="stalemate">Pat</string>
   <string name="white">Hvid</string>
   <string name="black">Sort</string>
@@ -388,7 +387,6 @@ Venner der spiller: %2$s</string>
   <string name="onlyExistingConversations">Kun eksisterende samtaler</string>
   <string name="onlyFriends">Kun venner</string>
   <string name="menu">Menu</string>
-  <string name="castling">Rokade</string>
   <string name="tpTimeSpentPlaying">Spilletid: %s</string>
   <string name="watchGames">Se partier</string>
   <string name="watch">Se</string>

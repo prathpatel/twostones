@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="castling">Enrocant</string>
   <string name="equality">Igualtat</string>
   <string name="endgame">Final</string>
   <string name="fork">Doble</string>

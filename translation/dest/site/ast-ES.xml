@@ -14,7 +14,6 @@
   <string name="strength">Dificultá</string>
   <string name="chat">Chat</string>
   <string name="resign">Abandonar</string>
-  <string name="checkmate">Xaque mate</string>
   <string name="stalemate">Xuego afogáu</string>
   <string name="white">Blanques</string>
   <string name="black">Prietes</string>
@@ -357,7 +356,6 @@
   <string name="onlyExistingConversations">Solo conversaciones esistentes</string>
   <string name="onlyFriends">Solo amigos</string>
   <string name="menu">Menú</string>
-  <string name="castling">Enroque</string>
   <string name="tpTimeSpentPlaying">Tiempu total xugao: %s</string>
   <string name="watchGames">Ver partíes</string>
   <string name="watch">Ver</string>

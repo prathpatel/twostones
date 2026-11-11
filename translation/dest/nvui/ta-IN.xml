@@ -3,7 +3,6 @@
   <string name="pieces">உருப்படிகள்</string>
   <string name="promotion">ராணியைத் தவிர வேறு எதற்கும் பதவி உயர்வு அளிக்க, சமங்களைப் பயன்படுத்தவும். உதாரணமாக a-8-equals-n குதிரையை ஊக்குவிக்கிறது.</string>
   <string name="king">ராஜா</string>
-  <string name="rook">யானை</string>
   <string name="bishop">மந்திரி</string>
   <string name="knight">குதிரை</string>
   <string name="copyToClipboard">%s ஐ கிளிப்போர்டுக்கு நகலெடுக்கவும்</string>

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Õpi malet</string>
-  <string name="byPlaying">mängides!</string>
   <string name="menu">Menüü</string>
   <string name="play">mängi!</string>
   <string name="capture">Löömine</string>
@@ -9,7 +7,6 @@
   <string name="escape">Sa oled rünnaku all!
 Põgene ohtu!</string>
   <string name="intermediate">Kesktase</string>
-  <string name="castling">Vangerdus</string>
   <string name="stalemate">Patt</string>
   <string name="register">Registreeru</string>
   <string name="practice">Harjuta</string>

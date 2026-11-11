@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="castling">Rokiruotės</string>
   <string name="equality">Lygybė</string>
   <string name="endgame">Endšpilis</string>
   <string name="fork">Šakutė</string>

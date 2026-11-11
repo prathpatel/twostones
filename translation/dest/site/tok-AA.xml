@@ -15,7 +15,6 @@
   <string name="strength">wawa</string>
   <string name="chat">tomo toki</string>
   <string name="resign">o anpa</string>
-  <string name="checkmate">lawa mije li moli</string>
   <string name="stalemate">jan ala li ken tawa</string>
   <string name="white">walo</string>
   <string name="black">pimeja</string>
@@ -369,7 +368,6 @@
   <string name="onlyExistingConversations">toki pi tenpo ni taso</string>
   <string name="onlyFriends">jan pona taso</string>
   <string name="menu">lipu open</string>
-  <string name="castling">tawa pi tomo utala en lawa mije lon tenpo sama</string>
   <string name="tpTimeSpentPlaying">tenpo musi: %s</string>
   <string name="watchGames">o lukin e musi pi jan ni</string>
   <string name="watch">o lukin</string>

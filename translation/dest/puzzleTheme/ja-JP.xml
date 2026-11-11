@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="castling">キャスリング</string>
   <string name="equality">互角</string>
   <string name="endgame">エンドゲーム</string>
   <string name="fork">フォーク（両取り）</string>

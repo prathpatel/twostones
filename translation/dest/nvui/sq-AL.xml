@@ -4,7 +4,6 @@
   <string name="lastMove">Lëvizja e fundit</string>
   <string name="actions">Veprime</string>
   <string name="king">mbret</string>
-  <string name="rook">torre</string>
   <string name="bishop">oficer</string>
   <string name="knight">kalë</string>
   <string name="copyToClipboard">Kopjojey %s në të papastër</string>

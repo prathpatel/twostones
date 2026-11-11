@@ -16,7 +16,6 @@
   <string name="strength">強度</string>
   <string name="chat">聊天</string>
   <string name="resign">認輸</string>
-  <string name="checkmate">將死</string>
   <string name="stalemate">逼和</string>
   <string name="white">執白</string>
   <string name="black">執黑</string>
@@ -361,7 +360,6 @@
   <string name="onlyExistingConversations">僅目前對話</string>
   <string name="onlyFriends">只允許好友</string>
   <string name="menu">選單</string>
-  <string name="castling">王車易位</string>
   <string name="tpTimeSpentPlaying">花在下棋上的時間：%s</string>
   <string name="watchGames">觀看對局直播</string>
   <string name="watch">觀看</string>

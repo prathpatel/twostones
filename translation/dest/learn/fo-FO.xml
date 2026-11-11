@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Lær at telva</string>
-  <string name="byPlaying">við at telva!</string>
   <string name="menu">Valmynd</string>
   <string name="play">telva!</string>
   <string name="capture">At taka</string>
   <string name="protection">At verja</string>
   <string name="escape">Tú ert undir álopi! Rým undan vandanum!</string>
   <string name="intermediate">Millumstig</string>
-  <string name="castling">At leypa í borg</string>
   <string name="stalemate">Pattstøða</string>
   <string name="register">Skráset teg</string>
   <string name="practice">Ven</string>

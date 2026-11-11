@@ -5,7 +5,6 @@
   <string name="actions">الإجراءات</string>
   <string name="promotion">لترقية أي شيء آخر غير الوزير، استخدم equals. على سبيل المثال a-8-equals-n يقوم بترقية لحصان.</string>
   <string name="king">ملك</string>
-  <string name="rook">قلعه</string>
   <string name="bishop">فيل</string>
   <string name="knight">حصان</string>
   <string name="copyToClipboard">نسخ %s إلى الحافظة</string>

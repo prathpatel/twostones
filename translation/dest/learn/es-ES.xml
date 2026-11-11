@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Aprende ajedrez</string>
-  <string name="byPlaying">¡jugando!</string>
   <string name="menu">Menú</string>
   <string name="play">¡jugar!</string>
   <string name="capture">Captura</string>
   <string name="protection">Protección</string>
   <string name="escape">¡Te atacan! ¡Líbrate de la amenaza!</string>
   <string name="intermediate">Intermedio</string>
-  <string name="castling">Enroque</string>
   <string name="stalemate">Ahogado</string>
   <string name="register">Registrarse</string>
   <string name="practice">Practicar</string>

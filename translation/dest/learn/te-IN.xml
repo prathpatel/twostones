@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">చదరంగం నేర్చుకొండి</string>
-  <string name="byPlaying">ఆటలు ఆడుతూ!</string>
   <string name="menu">మెను</string>
   <string name="play">ఆడు!</string>
   <string name="capture">పట్టుకో</string>

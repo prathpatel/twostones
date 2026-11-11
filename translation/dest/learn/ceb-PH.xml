@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Magkat-on ug chess</string>
-  <string name="byPlaying">sa pagduwa!</string>
   <string name="menu">Menu</string>
   <string name="play">magduwa!</string>
   <string name="capture">Dakpon</string>
   <string name="protection">Proteksyon</string>
   <string name="escape">Ikaw gi ataki! Ipsot gikan sa threat!</string>
-  <string name="castling">Pag-enrook</string>
 </resources>

@@ -22,7 +22,7 @@ final class AuthUi(helpers: Helpers):
         span(cls := "auth__brand__name")("lichess.org")
       )
     case Some(c) =>
-      frag(customLogo(c), h2(cls := "oauth__connection__to-lichess")("Connect to lichess.org"))
+      frag(customLogo(c), h2(cls := "oauth__connection__to-site")("Connect to TwoStones"))
 
   def customLogo(c: AuthCustomUi) =
     div(cls := "oauth__connection")(
@@ -34,7 +34,7 @@ final class AuthUi(helpers: Helpers):
       div(cls := "oauth__connection__between"):
         iconTag(Icon.Checkmark)(cls := "oauth__connection__check")
       ,
-      lila.web.ui.bits.logo
+      img(src := assetPath("logo/twostones-favicon.svg"), alt := "TwoStones", cls := "oauth__connection__site")
     )
 
   def login(form: Form[?], isRememberMe: Boolean = true)(using

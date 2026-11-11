@@ -5,7 +5,6 @@
   <string name="actions">ક્રિયાઓ</string>
   <string name="promotion">રાણી સિવાય અન્ય કોઈપણમાં પ્રમોટ કરવા માટે, બરાબર (equals) નો ઉપયોગ કરો. ઉદાહરણ તરીકે \'a-8-equals-n\' ઘોડો માં પ્રમોટ કરે છે.</string>
   <string name="king">રાજા</string>
-  <string name="rook">હાથી</string>
   <string name="bishop">ઊંટ</string>
   <string name="knight">ઘોડો</string>
   <string name="copyToClipboard">%s ને ક્લિપબોર્ડ પર કૉપિ કરો</string>

@@ -16,7 +16,6 @@
   <string name="strength">Putere</string>
   <string name="chat">Discuție</string>
   <string name="resign">Cedează jocul</string>
-  <string name="checkmate">Șah mat</string>
   <string name="stalemate">Pat</string>
   <string name="white">Alb</string>
   <string name="black">Negru</string>
@@ -406,7 +405,6 @@ Prieteni jucând: %2$s</string>
   <string name="onlyExistingConversations">Doar conversații existente</string>
   <string name="onlyFriends">Doar prieteni</string>
   <string name="menu">Meniu</string>
-  <string name="castling">Rocadă</string>
   <string name="tpTimeSpentPlaying">Timp petrecut jucând: %s</string>
   <string name="watchGames">Vezi partide</string>
   <string name="watch">Privește</string>

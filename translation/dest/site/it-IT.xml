@@ -16,7 +16,6 @@
   <string name="strength">Forza</string>
   <string name="chat">Chat</string>
   <string name="resign">Abbandona</string>
-  <string name="checkmate">Scacco matto</string>
   <string name="stalemate">Stallo</string>
   <string name="white">Bianco</string>
   <string name="black">Nero</string>
@@ -377,7 +376,6 @@
   <string name="onlyExistingConversations">Solo conversazioni esistenti</string>
   <string name="onlyFriends">Solo amici</string>
   <string name="menu">Menù</string>
-  <string name="castling">Arrocco</string>
   <string name="tpTimeSpentPlaying">Tempo in partita: %s</string>
   <string name="watchGames">Guarda le partite</string>
   <string name="watch">Guarda</string>

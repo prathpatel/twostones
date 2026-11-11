@@ -12,7 +12,6 @@
   <string name="strength">Jačina</string>
   <string name="chat">Chat</string>
   <string name="resign">Predaj partiju</string>
-  <string name="checkmate">Šah mat</string>
   <string name="stalemate">Pat</string>
   <string name="white">Bijeli</string>
   <string name="black">Crni</string>
@@ -367,7 +366,6 @@
   <string name="onlyExistingConversations">Samo već postojeći razgovori</string>
   <string name="onlyFriends">Samo prijatelji</string>
   <string name="menu">Izbornik</string>
-  <string name="castling">Rokada</string>
   <string name="tpTimeSpentPlaying">Vrijeme provedeno igrajući: %s</string>
   <string name="watchGames">Gledaj partije</string>
   <string name="watch">Gledaj</string>

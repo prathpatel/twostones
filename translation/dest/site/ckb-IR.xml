@@ -12,7 +12,6 @@
   <string name="strength">هێز</string>
   <string name="chat">گفتووگۆ</string>
   <string name="resign">خۆبەدەستەوەدان</string>
-  <string name="checkmate">کش مات</string>
   <string name="stalemate">یەکسانبوون</string>
   <string name="white">سپی</string>
   <string name="black">رەش</string>
@@ -354,7 +353,6 @@
   <string name="onlyExistingConversations">گفتۆگۆکانی ئێستا بە تەنها</string>
   <string name="onlyFriends">تەنها هاوڕێکانم</string>
   <string name="menu">پێڕست</string>
-  <string name="castling">کاستڵینگ</string>
   <string name="tpTimeSpentPlaying">ئەوکاتەی کە بەیاریکردن بەسەرتبردووە: %s</string>
   <string name="watchGames">سەیری یارییەکان بکە</string>
   <string name="watch">سەیکردن</string>

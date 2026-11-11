@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="castling">การเข้าป้อม</string>
   <string name="equality">ความสมดุล</string>
   <string name="endgame">ท้ายเกม</string>
   <string name="fork">การโจมตีสองทาง</string>

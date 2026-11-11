@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Μάθετε σκάκι</string>
-  <string name="byPlaying">παίζοντας!</string>
   <string name="menu">Μενού</string>
   <string name="play">παίξτε!</string>
   <string name="capture">Αιχμαλώτιση</string>
@@ -9,7 +7,6 @@
   <string name="escape">Δέχεστε επίθεση!
 Ξεφύγετε από την απειλή!</string>
   <string name="intermediate">Ενδιάμεσο στάδιο</string>
-  <string name="castling">Pοκέ</string>
   <string name="stalemate">Πατ</string>
   <string name="register">Εγγραφείτε</string>
   <string name="practice">Εξάσκηση</string>

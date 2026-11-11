@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Léier Schach</string>
-  <string name="byPlaying">duerch Spillen!</string>
   <string name="menu">Menü</string>
   <string name="play">Spill!</string>
   <string name="capture">Schlagzuch</string>
@@ -9,7 +7,6 @@
   <string name="escape">Du bass ugegraff!
 Entkomm der Bedrohung!</string>
   <string name="intermediate">Mëttleren Niveau</string>
-  <string name="castling">Rochade</string>
   <string name="stalemate">Patt</string>
   <string name="register">Registréieren</string>
   <string name="practice">Üben</string>

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Leer skaak</string>
-  <string name="byPlaying">deur te speel!</string>
   <string name="menu">Kieslys</string>
   <string name="play">speel!</string>
   <string name="capture">Vat</string>
@@ -9,7 +7,6 @@
   <string name="escape">Jy is onder aanval!
 Ontsnap die bedreiging!</string>
   <string name="intermediate">Intermediêr</string>
-  <string name="castling">Rokering</string>
   <string name="stalemate">Pat</string>
   <string name="register">Registreer</string>
   <string name="practice">Oefen</string>

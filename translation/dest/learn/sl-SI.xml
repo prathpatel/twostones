@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Naučimo se šah</string>
-  <string name="byPlaying">z igranjem!</string>
   <string name="menu">Meni</string>
   <string name="play">igraj!</string>
   <string name="capture">Jemanje</string>
@@ -9,7 +7,6 @@
   <string name="escape">Napadeni ste!
 Pobegnite grožnji!</string>
   <string name="intermediate">Srednji nivo</string>
-  <string name="castling">Rokada</string>
   <string name="stalemate">Pat</string>
   <string name="register">Registrirajte se</string>
   <string name="practice">Treniraje</string>

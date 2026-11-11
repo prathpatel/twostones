@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="castling">कैसलिंग</string>
   <string name="equality">समानता</string>
   <string name="endgame">एंडगेम</string>
   <string name="fork">कांटा</string>

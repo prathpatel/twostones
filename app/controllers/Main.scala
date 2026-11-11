@@ -96,10 +96,6 @@ final class Main(env: Env, assetsC: ExternalAssets) extends LilaController(env):
     then Ok(lila.web.PrometheusReporter.latestScrapeData()).publicCache(59.seconds)
     else NotFound("Invalid prometheus key")
 
-  def legacyQaQuestion(id: Int, @annotation.nowarn slug: String) = Anon:
-    MovedPermanently:
-      env.web.static.legacyQaQuestion(id)
-
   def devAsset(@annotation.nowarn v: String, path: String, file: String) = assetsC.at(path, file)
 
   def uploadImage(realm: MarkdownRealm) = AuthBody(lila.web.HashedMultiPart(parse)) { ctx ?=> me ?=>

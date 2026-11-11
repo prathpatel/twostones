@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="castling">Linnoitus</string>
   <string name="equality">Tasoitus</string>
   <string name="endgame">Loppupeli</string>
   <string name="fork">Haarukka</string>

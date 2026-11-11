@@ -5,7 +5,6 @@
   <string name="actions">Eylemler</string>
   <string name="promotion">Vezirden başka bir şeye terfi etmek için eşittir kullanın. Örneğin a-8-eşittir-n bir ata terfi eder.</string>
   <string name="king">şah</string>
-  <string name="rook">kale</string>
   <string name="bishop">fil</string>
   <string name="knight">at</string>
   <string name="copyToClipboard">Panoya kopyala %s</string>

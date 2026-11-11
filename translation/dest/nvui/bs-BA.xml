@@ -5,7 +5,6 @@
   <string name="actions">Akcije</string>
   <string name="promotion">Za promociju u bilo šta osim dame, koristite izraz jednako je. Na primjer, a-8-jednako-n promoviše u skakača.</string>
   <string name="king">kralj</string>
-  <string name="rook">vrana</string>
   <string name="bishop">biskup</string>
   <string name="knight">vitez</string>
   <string name="copyToClipboard">Kopiraj %s u međuspremnik</string>

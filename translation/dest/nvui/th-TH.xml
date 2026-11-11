@@ -5,7 +5,6 @@
   <string name="actions">ดำเนินการ</string>
   <string name="promotion">เพื่อเลื่อนขั้นเป็นหมากตัวอื่นนอกเหนือจากควีน ให้ใช้เครื่องหมายเท่ากับ เช่น a-8-เท่ากับ-n เพื่อเลื่อนขั้นเป็นม้า</string>
   <string name="king">คิง</string>
-  <string name="rook">เรือ</string>
   <string name="bishop">บิชอป</string>
   <string name="knight">ม้า</string>
   <string name="copyToClipboard">คัดลอก %s ไปยังคลิปบอร์ด</string>

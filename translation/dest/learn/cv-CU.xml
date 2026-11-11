@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Шахматла выльаса</string>
-  <string name="byPlaying">шахмата вӗрен!</string>
   <string name="menu">Менӳ</string>
   <string name="play">выльас!</string>
   <string name="capture">Тытса илӳ</string>
   <string name="protection">Хӳтӗленӳ</string>
   <string name="escape">Сана тапӑнаҫҫӗ! 
 Хӑратӑва сир!</string>
-  <string name="castling">Рокировка</string>
   <string name="stalemate">Пат</string>
   <string name="register">Регистратсилесси</string>
   <string name="practice">Практика</string>

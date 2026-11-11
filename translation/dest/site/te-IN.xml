@@ -16,7 +16,6 @@
   <string name="strength">బలము</string>
   <string name="chat">మాట్లాడండి</string>
   <string name="resign">ఓటమిని ఒప్పుకొను</string>
-  <string name="checkmate">ఆటకట్టు</string>
   <string name="stalemate">దిగ్బంధం (ఎటు పోవడానికి దారి లేదు)</string>
   <string name="white">తెలుపు</string>
   <string name="black">నలుపు</string>
@@ -372,7 +371,6 @@
   <string name="onlyExistingConversations">ఇప్పటికే ఉన్న సంభాషణలు మాత్రమే</string>
   <string name="onlyFriends">స్నేహితులు మాత్రమే</string>
   <string name="menu">మెనూ</string>
-  <string name="castling">కాస్లింగ్</string>
   <string name="tpTimeSpentPlaying">ఆడుతూ గడిపిన సమయం: %s</string>
   <string name="watchGames">ఆటలు చూడండి</string>
   <string name="watch">వీక్షించండి</string>

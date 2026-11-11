@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">ისწავლე ჭადრაკი</string>
-  <string name="byPlaying">თამაშით!</string>
   <string name="menu">მენიუ</string>
   <string name="play">ითამაშე!</string>
   <string name="capture">აყვანა</string>
@@ -9,7 +7,6 @@
   <string name="escape">გიტევენ!
 დააღწიე თავი!</string>
   <string name="intermediate">საშუალო</string>
-  <string name="castling">როქი</string>
   <string name="stalemate">პატი</string>
   <string name="register">დარეგისტრირდი</string>
   <string name="practice">პრაქტიკა</string>

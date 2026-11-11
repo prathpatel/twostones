@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Amparà i scacchi</string>
-  <string name="byPlaying">ghjuchendu!</string>
   <string name="menu">Listinu</string>
   <string name="play">ghjucate!</string>
   <string name="capture">Catturà</string>
@@ -9,7 +7,6 @@
   <string name="escape">Site minacciatu!
 Truvate una risposta à a minaccia!</string>
   <string name="intermediate">Mezanu</string>
-  <string name="castling">Arruccamentu</string>
   <string name="stalemate">Pattu</string>
   <string name="register">Arregistrà</string>
   <string name="practice">Praticà</string>

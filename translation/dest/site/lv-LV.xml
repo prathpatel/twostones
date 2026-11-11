@@ -10,7 +10,6 @@
   <string name="strength">Stiprums</string>
   <string name="chat">Saruna</string>
   <string name="resign">Padoties</string>
-  <string name="checkmate">Šahs un mats</string>
   <string name="stalemate">Pats</string>
   <string name="white">Baltie</string>
   <string name="black">Melnie</string>
@@ -360,7 +359,6 @@
   <string name="onlyExistingConversations">Tikai iesāktajās sarunās</string>
   <string name="onlyFriends">Tikai draugi</string>
   <string name="menu">Izvēlne</string>
-  <string name="castling">Rokāde</string>
   <string name="tpTimeSpentPlaying">Spēlējot pavadītais laiks: %s</string>
   <string name="watchGames">Skatīties spēles</string>
   <string name="watch">Skatīties</string>

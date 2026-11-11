@@ -75,7 +75,7 @@ object page:
           preventIndexing.option(noRobots),
           noTranslate,
           p.openGraph.map(lila.web.ui.openGraph),
-          atomLinkTag.tupled(p.atomLink | dailyNewsAtom),
+          p.atomLink.map(atomLinkTag.tupled),
           pref.isTransparentBg
             .option(pref.bgImgUrl)
             .map: loc =>
@@ -98,7 +98,6 @@ object page:
             List(
               s"coords-${pref.coordsClass}" -> true,
               "simple-board" -> pref.simpleBoard,
-              "piece-letter" -> pref.pieceNotationIsLetter,
               "blind-mode" -> ctx.blind,
               "kid" -> ctx.kid.yes,
               "mobile" -> lila.common.HTTPRequest.isMobileBrowser(ctx.req),
@@ -120,8 +119,6 @@ object page:
           dataTheme := pref.currentThemeData,
           dataBoard := pref.currentTheme.name,
           dataPieceSet := pref.currentPieceSet.name,
-          dataBoard3d := pref.is3d.option(pref.currentTheme3d.name),
-          dataPieceSet3d := pref.is3d.option(pref.currentPieceSet3d.name),
           dataAnnounce := lila.web.AnnounceApi.get.map(a => safeJsonValue(a.json)),
           attr("data-i18n-catalog") := assetHelper.manifest
             .js(s"i18n/${ctx.lang.code}")
@@ -147,8 +144,7 @@ object page:
             id := "main-wrap",
             cls := List(
               "full-screen-force" -> p.flags(PageFlags.fullScreen),
-              "is2d" -> pref.is2d,
-              "is3d" -> pref.is3d
+              "is2d" -> true // the Go board is always 2D
             )
           )(p.transform(p.body)),
           bottomHtml,

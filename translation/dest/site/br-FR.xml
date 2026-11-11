@@ -9,7 +9,6 @@
   <string name="strength">Live</string>
   <string name="chat">Kaozeadenn</string>
   <string name="resign">Dilezel</string>
-  <string name="checkmate">Lamm d\'ar roue</string>
   <string name="stalemate">Gwalllamm</string>
   <string name="white">Ar re wenn</string>
   <string name="black">Ar re zu</string>
@@ -380,7 +379,6 @@
   <string name="onlyExistingConversations">Kaozeadennoù o ren hepken</string>
   <string name="onlyFriends">Mignoned hepken</string>
   <string name="menu">Lañser</string>
-  <string name="castling">Rokañ</string>
   <string name="tpTimeSpentPlaying">Amzer o c\'hoari: %s</string>
   <string name="watchGames">Sellet ouzh krogadoù</string>
   <string name="watch">Sellet</string>

@@ -16,7 +16,6 @@
   <string name="strength">শক্তি</string>
   <string name="chat">আড্ডা</string>
   <string name="resign">হার স্বীকার করুন</string>
-  <string name="checkmate">কিস্তিমাত</string>
   <string name="stalemate">চালমাত - সমান</string>
   <string name="white">সাদা</string>
   <string name="black">কালো</string>
@@ -377,7 +376,6 @@
   <string name="onlyExistingConversations">বিদ্যমান কথোপকথন</string>
   <string name="onlyFriends">শুধু বন্ধুরা</string>
   <string name="menu">মেনু</string>
-  <string name="castling">কাস্টেলিং</string>
   <string name="tpTimeSpentPlaying">খেলার সময় অতিবাহিত: %s</string>
   <string name="watchGames">খেলাগুলো দেখুন</string>
   <string name="watch">দেখুন</string>

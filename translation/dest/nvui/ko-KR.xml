@@ -5,7 +5,6 @@
   <string name="actions">액션</string>
   <string name="promotion">퀸 이외에 다른 기물로 승진하기 위해서, 등호 기호를 사용하세요. 예를 들어, a-8-등호-n 을 입력하여 나이트로 승진할 수 있습니다.</string>
   <string name="king">킹</string>
-  <string name="rook">룩</string>
   <string name="bishop">비숍</string>
   <string name="knight">나이트</string>
   <string name="copyToClipboard">%s를 클립보드를 복사</string>

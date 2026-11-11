@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="castling">Nhập thành</string>
   <string name="equality">Cân bằng</string>
   <string name="endgame">Tàn cuộc</string>
   <string name="fork">Tấn công đôi</string>

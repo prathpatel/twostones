@@ -16,7 +16,6 @@
   <string name="strength">Độ mạnh</string>
   <string name="chat">Tán gẫu</string>
   <string name="resign">Đầu hàng</string>
-  <string name="checkmate">Chiếu hết</string>
   <string name="stalemate">Hết nước đi</string>
   <string name="white">Quân Trắng</string>
   <string name="black">Quân Đen</string>
@@ -371,7 +370,6 @@ Bạn bè đang chơi: %2$s</string>
   <string name="onlyExistingConversations">Chỉ từ các cuộc trò chuyện hiện tại</string>
   <string name="onlyFriends">Chỉ bạn bè</string>
   <string name="menu">Mục lục</string>
-  <string name="castling">Nhập thành</string>
   <string name="tpTimeSpentPlaying">Thời gian đã chơi: %s</string>
   <string name="watchGames">Xem các ván đấu</string>
   <string name="watch">Xem</string>

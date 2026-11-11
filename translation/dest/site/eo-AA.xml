@@ -16,7 +16,6 @@
   <string name="strength">Forto</string>
   <string name="chat">Babilejo</string>
   <string name="resign">Rezigni</string>
-  <string name="checkmate">Ŝakmato</string>
   <string name="stalemate">Pato</string>
   <string name="white">Blanka</string>
   <string name="black">Nigro</string>
@@ -388,7 +387,6 @@ Amikoj ludantaj: %2$s</string>
   <string name="onlyExistingConversations">Nur jamestantaj konversacioj</string>
   <string name="onlyFriends">Nur amikoj</string>
   <string name="menu">Menuo</string>
-  <string name="castling">Arokado</string>
   <string name="tpTimeSpentPlaying">Tempo pasinta dum ludado: %s</string>
   <string name="watchGames">Spekti ludojn</string>
   <string name="watch">Spekti</string>

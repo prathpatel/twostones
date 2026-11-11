@@ -9,7 +9,6 @@
   <string name="strength">Тых</string>
   <string name="chat">Фыстæг арвитын</string>
   <string name="resign">Банымайын дæрæн</string>
-  <string name="checkmate">Мат</string>
   <string name="stalemate">Пат</string>
   <string name="white">Урсытæ</string>
   <string name="black">Саутæ</string>
@@ -276,7 +275,6 @@
   <string name="onlyExistingConversations">Æрмæст дæууон ныхæстæ</string>
   <string name="onlyFriends">Æрмæст æмбалттæ</string>
   <string name="menu">Меню</string>
-  <string name="castling">Рокировкæ</string>
   <string name="watchGames">Хъæзтытæ кæсын</string>
   <string name="watch">Æркаст</string>
   <string name="about">Сайты тыххæй</string>

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">ಚೆಸ್ ಕಲಿಯಿರಿ</string>
-  <string name="byPlaying">ಆಡುವ ಮೂಲಕ!</string>
   <string name="menu">ಮೆನು</string>
   <string name="play">ಆಟವಾಡಿ!</string>
   <string name="capture">ಸೆರೆಹಿಡಿಯಿರಿ</string>
@@ -9,7 +7,6 @@
   <string name="escape">ನೀವು ದಾಳಿಯಲ್ಲಿದ್ದೀರಿ!
 ಬೆದರಿಕೆಯಿಂದ ಪಾರು!</string>
   <string name="intermediate">ಮಧ್ಯಂತರ</string>
-  <string name="castling">ಕ್ಯಾಸ್ಲಿಂಗ್</string>
   <string name="stalemate">ನಿಶ್ಚಲತೆ</string>
   <string name="register">ನೋಂದಣಿ</string>
   <string name="practice">ಅಭ್ಯಾಸ ಮಾಡಿ</string>

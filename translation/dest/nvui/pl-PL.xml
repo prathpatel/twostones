@@ -5,7 +5,6 @@
   <string name="actions">Akcje</string>
   <string name="promotion">Aby promować piona do innej figury niż hetman, użyj słowa equals. Na przykład a-8-equals-N promuje piona do skoczka.</string>
   <string name="king">król</string>
-  <string name="rook">wieża</string>
   <string name="bishop">goniec</string>
   <string name="knight">skoczek</string>
   <string name="copyToClipboard">Skopiuj %s do schowka</string>

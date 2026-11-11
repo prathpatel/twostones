@@ -16,7 +16,6 @@
   <string name="strength">Schpillstärchi</string>
   <string name="chat">Chat</string>
   <string name="resign">Ufgeh</string>
-  <string name="checkmate">Schachmatt</string>
   <string name="stalemate">Patt</string>
   <string name="white">Wiss</string>
   <string name="black">Schwarz</string>
@@ -390,7 +389,6 @@ Fründe im Schpiel: %2$s</string>
   <string name="onlyExistingConversations">Nur bestehendi Underhaltige</string>
   <string name="onlyFriends">Nur Fründe</string>
   <string name="menu">Menü</string>
-  <string name="castling">Rochade</string>
   <string name="tpTimeSpentPlaying">Gsamti-Schpillzit: %s</string>
   <string name="watchGames">Schpiel beobachte</string>
   <string name="watch">Zueluege</string>

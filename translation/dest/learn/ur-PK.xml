@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">شطرنج سیکھیں</string>
-  <string name="byPlaying">کھیل کر!</string>
   <string name="menu">مشمولات</string>
   <string name="play">کھیلیں!</string>
   <string name="escape">آپ پر حملہ ہے! خطرے سے بچ جائیں!</string>

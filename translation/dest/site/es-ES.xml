@@ -16,7 +16,6 @@
   <string name="strength">Nivel</string>
   <string name="chat">Chat</string>
   <string name="resign">Abandonar</string>
-  <string name="checkmate">Jaque mate</string>
   <string name="stalemate">Ahogado</string>
   <string name="white">Blancas</string>
   <string name="black">Negras</string>
@@ -389,7 +388,6 @@ Amigos jugando: %2$s</string>
   <string name="onlyExistingConversations">Solo conversaciones existentes</string>
   <string name="onlyFriends">Sólo amigos</string>
   <string name="menu">Menú</string>
-  <string name="castling">Enroque</string>
   <string name="tpTimeSpentPlaying">Tiempo total jugado: %s</string>
   <string name="watchGames">Ver partidas</string>
   <string name="watch">Ver</string>

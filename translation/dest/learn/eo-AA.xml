@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Lernu ŝakon</string>
-  <string name="byPlaying">per ludado!</string>
   <string name="menu">Menuo</string>
   <string name="play">ludi!</string>
   <string name="capture">Kapti</string>
@@ -9,7 +7,6 @@
   <string name="escape">Vi estas sub atako!
 Eskapu la minacon!</string>
   <string name="intermediate">Meznivela</string>
-  <string name="castling">Aroki</string>
   <string name="stalemate">Pato</string>
   <string name="register">Registriĝi</string>
   <string name="practice">Praktiki</string>

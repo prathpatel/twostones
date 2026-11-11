@@ -9,7 +9,6 @@
   <string name="strength">Kúshi</string>
   <string name="chat">Sáwbetlesiw</string>
   <string name="resign">Táslim bolıw</string>
-  <string name="checkmate">Mat</string>
   <string name="stalemate">Pat</string>
   <string name="white">Aq</string>
   <string name="black">Qara</string>
@@ -193,7 +192,6 @@
   <string name="tools">Ásbaplar</string>
   <string name="onlyFriends">Tek ǵana doslar</string>
   <string name="menu">Menyu</string>
-  <string name="castling">Rokirovka</string>
   <string name="about">Haqqında</string>
   <string name="aboutX">%s haqqında</string>
   <string name="accuracy">Anıqlıq</string>

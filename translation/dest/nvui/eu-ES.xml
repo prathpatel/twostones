@@ -5,7 +5,6 @@
   <string name="actions">Akzioak</string>
   <string name="promotion">Dama ez den zerbait sustatzeko erabili berdin. Adibidez: a-8-berdin-z, zalduna sustatuko du.</string>
   <string name="king">erregea</string>
-  <string name="rook">gaztelua</string>
   <string name="bishop">alfila</string>
   <string name="knight">zaldia</string>
   <string name="copyToClipboard">Kopiatu %s arbelera</string>

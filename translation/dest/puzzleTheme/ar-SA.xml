@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="castling">تبييت</string>
   <string name="equality">المساواة</string>
   <string name="endgame">مرحلة نهاية المباراة</string>
   <string name="fork">شوكة</string>

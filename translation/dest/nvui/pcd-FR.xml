@@ -5,7 +5,6 @@
   <string name="actions">Options</string>
   <string name="promotion">Pour promouvoir un pion à une autre pièce qu\'une dame, utilisez \"equal\". Par exemple, a-8-equal-n promeut le pion à un cavalier.</string>
   <string name="king">roi</string>
-  <string name="rook">tour</string>
   <string name="bishop">fou</string>
   <string name="knight">cavalier</string>
   <string name="copyToClipboard">Copier %s dans le presse-papiers</string>

@@ -5,7 +5,6 @@
   <string name="actions">Handlinger</string>
   <string name="promotion">For at fremme til andet end en dronning, brug equals. For eksempel a-8-equals-n forfremmer til en springer.</string>
   <string name="king">konge</string>
-  <string name="rook">tårn</string>
   <string name="bishop">løber</string>
   <string name="knight">springer</string>
   <string name="copyToClipboard">Kopier %s til udklipsholder</string>

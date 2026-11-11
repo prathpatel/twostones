@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Научете шаха</string>
-  <string name="byPlaying">като играете!</string>
   <string name="menu">Меню</string>
   <string name="play">играй!</string>
   <string name="capture">Взимане</string>
   <string name="protection">Защита</string>
   <string name="escape">Под атака сте! Спасете се от заплахата!</string>
   <string name="intermediate">Средно ниво</string>
-  <string name="castling">Рокада</string>
   <string name="stalemate">Пат</string>
   <string name="register">Регистрирайте се</string>
   <string name="practice">Упражнявайте се</string>

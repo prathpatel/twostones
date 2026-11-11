@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Mësoni shah</string>
-  <string name="byPlaying">duke luajtur!</string>
   <string name="menu">Menu</string>
   <string name="play">luaj!</string>
   <string name="capture">Kapni</string>
@@ -9,7 +7,6 @@
   <string name="escape">Ju jeni nën sulm!
 Shpëtoni kërcënimit!</string>
   <string name="intermediate">Levizje ndermjetese</string>
-  <string name="castling">Rokada</string>
   <string name="stalemate">Pat</string>
   <string name="register">Regjistrohuni</string>
   <string name="practice">Ushtrohuni</string>

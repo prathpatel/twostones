@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Matuto ng chess</string>
-  <string name="byPlaying">sa paglalaro!</string>
   <string name="menu">Menu</string>
   <string name="play">maglaro!</string>
   <string name="capture">Dakpin</string>
@@ -9,7 +7,6 @@
   <string name="escape">Ikaw ay inaatake!
 Takasan ang banta!</string>
   <string name="intermediate">Medyo marunong</string>
-  <string name="castling">Pag-enrock</string>
   <string name="stalemate">Tabla</string>
   <string name="register">Magrehistro</string>
   <string name="practice">Mag-ensayo</string>

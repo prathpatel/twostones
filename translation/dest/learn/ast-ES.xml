@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Deprende axedrez</string>
-  <string name="byPlaying">¡xugando!</string>
   <string name="menu">Menú</string>
   <string name="play">¡xugar!</string>
   <string name="capture">Garra</string>
@@ -9,7 +7,6 @@
   <string name="escape">¡Tas amenazáu!
 ¡Escapa de l\'amenaza!</string>
   <string name="intermediate">Intermediu</string>
-  <string name="castling">Enroque</string>
   <string name="stalemate">Afogáu</string>
   <string name="register">Rexistrase</string>
   <string name="practice">Prauticar</string>

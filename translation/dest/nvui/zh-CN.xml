@@ -5,7 +5,6 @@
   <string name="actions">操作</string>
   <string name="promotion">若要升变为皇后以外的棋子，请使用等于号。例如 a8=n 升变为马。</string>
   <string name="king">王</string>
-  <string name="rook">车</string>
   <string name="bishop">象</string>
   <string name="knight">马</string>
   <string name="copyToClipboard">复制 %s 到剪贴板</string>

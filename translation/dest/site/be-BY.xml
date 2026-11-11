@@ -15,7 +15,6 @@
   <string name="strength">Сіла</string>
   <string name="chat">Чат</string>
   <string name="resign">Здацца</string>
-  <string name="checkmate">Мат</string>
   <string name="stalemate">Пат</string>
   <string name="white">Белыя</string>
   <string name="black">Чорныя</string>
@@ -378,7 +377,6 @@
   <string name="onlyExistingConversations">Толькі існыя размовы</string>
   <string name="onlyFriends">Толькі сябрам</string>
   <string name="menu">Меню</string>
-  <string name="castling">Ракіроўка</string>
   <string name="tpTimeSpentPlaying">Агульны час у гульні: %s</string>
   <string name="watchGames">Назіраць за гульнямі</string>
   <string name="watch">Глядзець</string>

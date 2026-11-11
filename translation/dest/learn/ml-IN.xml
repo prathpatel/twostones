@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">ചതുരംഗം പഠിക്കാം</string>
-  <string name="byPlaying">കളിച്ചുകൊണ്ട്!</string>
   <string name="menu">മെനു</string>
   <string name="play">തുടങ്ങാം!</string>
   <string name="capture">കീഴ്പെടുത്തൽ</string>
@@ -9,7 +7,6 @@
   <string name="escape">നിങ്ങൾ ആക്രമണത്തിൽ അകപ്പെട്ടിരിക്കുന്നു!
 ഭീഷണിയിൽ നിന്നും രക്ഷ നേടൂ!</string>
   <string name="intermediate">ശരാശരി അറിവുള്ളവർക്ക്</string>
-  <string name="castling">കാസ്റ്റലിങ്</string>
   <string name="stalemate">സ്റ്റേൽമേറ്റ്</string>
   <string name="register">ചേരുക</string>
   <string name="practice">അഭ്യസിക്കുക</string>

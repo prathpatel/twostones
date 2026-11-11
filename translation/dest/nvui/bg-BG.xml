@@ -5,7 +5,6 @@
   <string name="actions">Действия</string>
   <string name="promotion">За да произведете фигура, различна от дама, използвайте знака равно. Например a-8-равно-n произвежда кон.</string>
   <string name="king">цар</string>
-  <string name="rook">топ</string>
   <string name="bishop">офицер</string>
   <string name="knight">кон</string>
   <string name="copyToClipboard">Копирай %s</string>

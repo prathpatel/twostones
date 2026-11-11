@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Shaxmattı úyreniw</string>
-  <string name="byPlaying">oynaw arqalı!</string>
   <string name="menu">Menyu</string>
   <string name="play">oynaw!</string>
 </resources>

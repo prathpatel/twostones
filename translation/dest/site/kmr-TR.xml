@@ -16,7 +16,6 @@
   <string name="strength">Hêz</string>
   <string name="chat">Axaftin</string>
   <string name="resign">Vekişe</string>
-  <string name="checkmate">Şahmat</string>
   <string name="stalemate">Wekhevî</string>
   <string name="white">Spî</string>
   <string name="black">Reş</string>
@@ -369,7 +368,6 @@
   <string name="onlyExistingConversations">Tenê sohbetên mewcûd</string>
   <string name="onlyFriends">Tenê hevalan</string>
   <string name="menu">Menu</string>
-  <string name="castling">Rokkirin</string>
   <string name="tpTimeSpentPlaying">Wextê ji bo lîstinê xercbûyî: %s</string>
   <string name="watchGames">Lîstikan temaşe bike</string>
   <string name="watch">Temaşe bike</string>

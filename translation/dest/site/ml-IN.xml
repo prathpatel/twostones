@@ -12,7 +12,6 @@
   <string name="strength">ശക്തി</string>
   <string name="chat">സല്ലപിക്കുക</string>
   <string name="resign">കീഴടങ്ങുക</string>
-  <string name="checkmate">അടിയറവു്</string>
   <string name="stalemate">സമനില</string>
   <string name="white">വെളുപ്പ്‌</string>
   <string name="black">കറുപ്പ്</string>
@@ -347,7 +346,6 @@
   <string name="onlyExistingConversations">നിലവിലുള്ള സംഭാഷങ്ങൾ മാത്രം</string>
   <string name="onlyFriends">കൂട്ടുകാർ മാത്രം</string>
   <string name="menu">പട്ടിക</string>
-  <string name="castling">കേസ്‌ലിങ്</string>
   <string name="tpTimeSpentPlaying">ചെലവിട്ട സമയം: %s</string>
   <string name="watchGames">കളികൾ കാണാം</string>
   <string name="watch">നോക്കാം</string>

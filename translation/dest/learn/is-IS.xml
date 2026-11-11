@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Lærðu skák</string>
-  <string name="byPlaying">með því að tefla!</string>
   <string name="menu">Valmynd</string>
   <string name="play">tefla!</string>
   <string name="capture">Að drepa</string>
@@ -9,7 +7,6 @@
   <string name="escape">Nú er ráðist á þig!
 Verstu ógninni!</string>
   <string name="intermediate">Mitt á milli</string>
-  <string name="castling">Hrókering</string>
   <string name="stalemate">Pattstaða</string>
   <string name="register">Nýskráning</string>
   <string name="practice">Æfing</string>

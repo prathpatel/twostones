@@ -16,7 +16,6 @@
   <string name="strength">Сложность</string>
   <string name="chat">Отправить сообщение</string>
   <string name="resign">Сдаться</string>
-  <string name="checkmate">Мат</string>
   <string name="stalemate">Пат</string>
   <string name="white">Белые</string>
   <string name="black">Чёрные</string>
@@ -423,7 +422,6 @@
   <string name="onlyExistingConversations">Только существующие обсуждения</string>
   <string name="onlyFriends">Только друзьям</string>
   <string name="menu">Меню</string>
-  <string name="castling">Рокировка</string>
   <string name="tpTimeSpentPlaying">Проведённое за игрой время: %s</string>
   <string name="watchGames">Смотреть игры</string>
   <string name="watch">Просмотр</string>

@@ -5,7 +5,6 @@
   <string name="actions">Acties</string>
   <string name="promotion">Om te promoveren naar iets anders dan een dame, gebruik je gelijken. Bijvoorbeeld a-8-equivalent-n promoveert naar een paard.</string>
   <string name="king">koning</string>
-  <string name="rook">toren</string>
   <string name="bishop">loper</string>
   <string name="knight">ridder</string>
   <string name="copyToClipboard">%s naar klembord kopiëren</string>

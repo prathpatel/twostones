@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Baro jesta</string>
-  <string name="byPlaying">adigoo ciyaaraya!</string>
   <string name="menu">Kala dooro</string>
   <string name="play">ciyaar!</string>
   <string name="capture">Dilidda</string>

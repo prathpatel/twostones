@@ -163,15 +163,12 @@ object I18nKey:
     val `lagCompensationExplanation`: I18nKey = "lag:lagCompensationExplanation"
 
   object learn:
-    val `learnChess`: I18nKey = "learn:learnChess"
-    val `byPlaying`: I18nKey = "learn:byPlaying"
     val `menu`: I18nKey = "learn:menu"
     val `play`: I18nKey = "learn:play"
     val `capture`: I18nKey = "learn:capture"
     val `protection`: I18nKey = "learn:protection"
     val `escape`: I18nKey = "learn:escape"
     val `intermediate`: I18nKey = "learn:intermediate"
-    val `castling`: I18nKey = "learn:castling"
     val `stalemate`: I18nKey = "learn:stalemate"
     val `register`: I18nKey = "learn:register"
     val `practice`: I18nKey = "learn:practice"
@@ -200,7 +197,6 @@ object I18nKey:
     val `actions`: I18nKey = "nvui:actions"
     val `promotion`: I18nKey = "nvui:promotion"
     val `king`: I18nKey = "nvui:king"
-    val `rook`: I18nKey = "nvui:rook"
     val `bishop`: I18nKey = "nvui:bishop"
     val `knight`: I18nKey = "nvui:knight"
     val `copyToClipboard`: I18nKey = "nvui:copyToClipboard"
@@ -341,7 +337,6 @@ object I18nKey:
     val `failed`: I18nKey = "puzzle:failed"
 
   object puzzleTheme:
-    val `castling`: I18nKey = "puzzleTheme:castling"
     val `equality`: I18nKey = "puzzleTheme:equality"
     val `endgame`: I18nKey = "puzzleTheme:endgame"
     val `fork`: I18nKey = "puzzleTheme:fork"
@@ -436,7 +431,6 @@ object I18nKey:
     val `strength`: I18nKey = "strength"
     val `chat`: I18nKey = "chat"
     val `resign`: I18nKey = "resign"
-    val `checkmate`: I18nKey = "checkmate"
     val `stalemate`: I18nKey = "stalemate"
     val `white`: I18nKey = "white"
     val `black`: I18nKey = "black"
@@ -751,7 +745,6 @@ object I18nKey:
     val `onlyExistingConversations`: I18nKey = "onlyExistingConversations"
     val `onlyFriends`: I18nKey = "onlyFriends"
     val `menu`: I18nKey = "menu"
-    val `castling`: I18nKey = "castling"
     val `tpTimeSpentPlaying`: I18nKey = "tpTimeSpentPlaying"
     val `watchGames`: I18nKey = "watchGames"
     val `watch`: I18nKey = "watch"

@@ -16,7 +16,6 @@
   <string name="strength">Ισχύς</string>
   <string name="chat">Συνομιλία</string>
   <string name="resign">Παραίτηση</string>
-  <string name="checkmate">Ματ</string>
   <string name="stalemate">Πατ</string>
   <string name="white">Λευκά</string>
   <string name="black">Μαύρα</string>
@@ -386,7 +385,6 @@
   <string name="onlyExistingConversations">Μόνο σε υπάρχουσες συνομιλίες</string>
   <string name="onlyFriends">Μόνο φίλοι</string>
   <string name="menu">Κατάλογος</string>
-  <string name="castling">Pοκέ</string>
   <string name="tpTimeSpentPlaying">Χρόνος που διατέθηκε παίζοντας: %s</string>
   <string name="watchGames">Παρακολουθήστε παιχνίδια</string>
   <string name="watch">Παρακολουθήστε</string>

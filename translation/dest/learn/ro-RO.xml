@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Învață șah</string>
-  <string name="byPlaying">jucând!</string>
   <string name="menu">Meniu</string>
   <string name="play">joacă!</string>
   <string name="capture">Capturează</string>
@@ -9,7 +7,6 @@
   <string name="escape">Ești atacat!
 Scapă de amenințare!</string>
   <string name="intermediate">Intermediar</string>
-  <string name="castling">Rocada</string>
   <string name="stalemate">Pat</string>
   <string name="register">Înregistrează-te</string>
   <string name="practice">Antrenament</string>

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Учитесь шахматам</string>
-  <string name="byPlaying">играя!</string>
   <string name="menu">Меню</string>
   <string name="play">играть!</string>
   <string name="capture">Взятие</string>
@@ -9,7 +7,6 @@
   <string name="escape">Вас атакуют!
 Сбегите от угрозы!</string>
   <string name="intermediate">Средний уровень</string>
-  <string name="castling">Рокировка</string>
   <string name="stalemate">Пат</string>
   <string name="register">Регистрация</string>
   <string name="practice">Упражнения</string>

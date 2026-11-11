@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="castling">Rokāde</string>
   <string name="equality">Vienlīdzība</string>
   <string name="endgame">Beigu spēle</string>
   <string name="fork">Dakša</string>

@@ -16,7 +16,6 @@
   <string name="strength">Pasipriešinimo stiprumas</string>
   <string name="chat">Pokalbis</string>
   <string name="resign">Pasiduoti</string>
-  <string name="checkmate">Šachas ir matas</string>
   <string name="stalemate">Patas</string>
   <string name="white">Baltieji</string>
   <string name="black">Juodieji</string>
@@ -394,7 +393,6 @@
   <string name="onlyExistingConversations">Tik esami pokalbiai</string>
   <string name="onlyFriends">Tik draugai</string>
   <string name="menu">Meniu</string>
-  <string name="castling">Rokiruotė</string>
   <string name="tpTimeSpentPlaying">Laikas, praleistas žaidžiant: %s</string>
   <string name="watchGames">Stebėti partijas</string>
   <string name="watch">Žiūrėk</string>

@@ -9,7 +9,6 @@
   <string name="strength">طاقت</string>
   <string name="chat">مکالمہ</string>
   <string name="resign">دستبردار ہوں</string>
-  <string name="checkmate">شہ مات</string>
   <string name="stalemate">مُعلق بازی</string>
   <string name="white">سفید</string>
   <string name="black">سیاہ</string>
@@ -280,7 +279,6 @@
   <string name="ifRatingIsPlusMinusX">اگر حریف کا میعار ± %s ہو</string>
   <string name="onlyFriends">صرف دوست</string>
   <string name="menu">فہرست</string>
-  <string name="castling">قلعہ بندی</string>
   <string name="tpTimeSpentPlaying">کھیل میں صرف وقت: %s</string>
   <string name="watchGames">کھیل ملاحظہ کریں</string>
   <string name="watch">ملاحظہ</string>

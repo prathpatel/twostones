@@ -16,7 +16,6 @@
   <string name="strength">Spielstärke</string>
   <string name="chat">Chat</string>
   <string name="resign">Aufgeben</string>
-  <string name="checkmate">Schachmatt</string>
   <string name="stalemate">Patt</string>
   <string name="white">Weiß</string>
   <string name="black">Schwarz</string>
@@ -389,7 +388,6 @@ Freunde am Spielen: %2$s</string>
   <string name="onlyExistingConversations">Nur bestehende Konversationen</string>
   <string name="onlyFriends">Nur Freunde</string>
   <string name="menu">Menü</string>
-  <string name="castling">Rochade</string>
   <string name="tpTimeSpentPlaying">Gesamte Spielzeit: %s</string>
   <string name="watchGames">Partien ansehen</string>
   <string name="watch">Zuschauen</string>

@@ -16,7 +16,6 @@
   <string name="strength">난이도</string>
   <string name="chat">채팅</string>
   <string name="resign">기권하기</string>
-  <string name="checkmate">체크메이트</string>
   <string name="stalemate">스테일메이트</string>
   <string name="white">백</string>
   <string name="black">흑</string>
@@ -372,7 +371,6 @@
   <string name="onlyExistingConversations">기존에 대화한 경우만</string>
   <string name="onlyFriends">친구만</string>
   <string name="menu">메뉴</string>
-  <string name="castling">캐슬링 권리</string>
   <string name="tpTimeSpentPlaying">플레이한 시간 : %s</string>
   <string name="watchGames">관전</string>
   <string name="watch">중계</string>

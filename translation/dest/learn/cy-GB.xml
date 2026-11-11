@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Dysgwch Gwyddbwyll</string>
-  <string name="byPlaying">wrth chwarae!</string>
   <string name="menu">Dewislen</string>
   <string name="play">chwarae!</string>
   <string name="capture">Cymryd</string>
   <string name="protection">Amddiffyniad</string>
   <string name="intermediate">Canolradd</string>
-  <string name="castling">Castellu</string>
   <string name="stalemate">Methmat</string>
   <string name="register">Cofrestru</string>
   <string name="practice">Ymarfer</string>

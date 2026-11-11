@@ -63,7 +63,7 @@ export default new (class implements SoundI {
     if (!this.enabled()) return undefined;
     let dir = this.theme;
     if (this.isSpeech()) {
-      if (['move', 'capture', 'check', 'checkmate'].includes(name)) return undefined;
+      if (['move', 'capture'].includes(name)) return undefined;
       dir = 'standard';
     }
     return this.url(`${dir}/${name[0].toUpperCase() + name.slice(1)}.mp3`);
@@ -190,7 +190,7 @@ export default new (class implements SoundI {
   };
 
   preloadBoardSounds() {
-    for (const name of ['move', 'capture', 'check', 'checkmate', 'genericNotify']) this.load(name);
+    for (const name of ['move', 'capture', 'genericNotify']) this.load(name);
   }
 
   async resumeWithTest(): Promise<boolean> {

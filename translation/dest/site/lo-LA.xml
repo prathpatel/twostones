@@ -14,7 +14,6 @@
   <string name="strength">ລະດັບຄວາມເກັ່ງ</string>
   <string name="chat">ສົນທະນາ</string>
   <string name="resign">ຍອມແພ້</string>
-  <string name="checkmate">ຮຸກຈົນ</string>
   <string name="stalemate">ອັບ (ສະເໝີ)</string>
   <string name="white">ຝ່າຍຂາວ</string>
   <string name="black">ຝ່າຍດຳ</string>
@@ -340,7 +339,6 @@
   <string name="onlyExistingConversations">ສະເພາະການສົນທະນາທີ່ມີຢູ່ແລ້ວ</string>
   <string name="onlyFriends">ສະເພາະໝູ່ເພື່ອນ</string>
   <string name="menu">ເມນູ</string>
-  <string name="castling">ການເຂົ້າປ້ອມ (Castling)</string>
   <string name="tpTimeSpentPlaying">ເວລາທີ່ໃຊ້ໃນການຫຼິ້ນ: %s</string>
   <string name="watchGames">ເບິ່ງການຫຼິ້ນ</string>
   <string name="watch">ເບິ່ງ</string>

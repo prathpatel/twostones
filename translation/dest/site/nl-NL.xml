@@ -16,7 +16,6 @@
   <string name="strength">Speelsterkte</string>
   <string name="chat">Chat</string>
   <string name="resign">Geef op</string>
-  <string name="checkmate">Schaakmat</string>
   <string name="stalemate">Pat</string>
   <string name="white">Wit</string>
   <string name="black">Zwart</string>
@@ -389,7 +388,6 @@ Vrienden die spelen: %2$s</string>
   <string name="onlyExistingConversations">Alleen bestaande gesprekken</string>
   <string name="onlyFriends">Alleen vrienden</string>
   <string name="menu">Menu</string>
-  <string name="castling">Rokeren</string>
   <string name="tpTimeSpentPlaying">Tijd schakend besteed: %s</string>
   <string name="watchGames">Bekijk partijen</string>
   <string name="watch">Kijken</string>

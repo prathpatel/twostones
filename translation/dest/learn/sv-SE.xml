@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Lär dig schack</string>
-  <string name="byPlaying">genom att spela!</string>
   <string name="menu">Meny</string>
   <string name="play">spela!</string>
   <string name="capture">Slag</string>
   <string name="protection">Försvar</string>
   <string name="escape">Du är under attack! Fly undan hotet!</string>
   <string name="intermediate">Medelsvår</string>
-  <string name="castling">Rockad</string>
   <string name="stalemate">Patt</string>
   <string name="register">Registrera dig</string>
   <string name="practice">Öva</string>

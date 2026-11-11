@@ -13,7 +13,6 @@
   <string name="strength">Күші</string>
   <string name="chat">Чат</string>
   <string name="resign">Берілу</string>
-  <string name="checkmate">Мат</string>
   <string name="stalemate">Пат</string>
   <string name="white">Ақ</string>
   <string name="black">Қара</string>
@@ -350,7 +349,6 @@
   <string name="onlyExistingConversations">Тек бар әңгімелесуден</string>
   <string name="onlyFriends">Достар ғана</string>
   <string name="menu">Мәзір</string>
-  <string name="castling">Бекіну</string>
   <string name="tpTimeSpentPlaying">Ойынмен өткен уақыт: %s</string>
   <string name="watchGames">Ойындарын бақылау</string>
   <string name="watch">Бақылау</string>

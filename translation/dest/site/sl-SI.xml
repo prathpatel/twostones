@@ -16,7 +16,6 @@
   <string name="strength">Moč</string>
   <string name="chat">Klepet</string>
   <string name="resign">Predaj</string>
-  <string name="checkmate">Mat</string>
   <string name="stalemate">Pat</string>
   <string name="white">Beli</string>
   <string name="black">Črni</string>
@@ -410,7 +409,6 @@ Igranje rangiranih iger bo povečalo stabilnost.</string>
   <string name="onlyExistingConversations">Samo obstoječi pogovori</string>
   <string name="onlyFriends">Samo prijatelji</string>
   <string name="menu">Meni</string>
-  <string name="castling">Rokada</string>
   <string name="tpTimeSpentPlaying">Čas igranja: %s</string>
   <string name="watchGames">Glej partije</string>
   <string name="watch">Glej</string>

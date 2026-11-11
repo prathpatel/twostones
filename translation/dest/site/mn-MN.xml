@@ -10,7 +10,6 @@
   <string name="strength">Чадал</string>
   <string name="chat">Чат</string>
   <string name="resign">Бууж өгөх</string>
-  <string name="checkmate">Мад</string>
   <string name="stalemate">Хайнцаа</string>
   <string name="white">Цагаан</string>
   <string name="black">Хар</string>
@@ -313,7 +312,6 @@
   <string name="ifRegistered">Хэрэв бүртгэлтэй бол</string>
   <string name="onlyFriends">Зөвхөн найзууд</string>
   <string name="menu">Цэс</string>
-  <string name="castling">Ноён тэргийн байр солилт</string>
   <string name="tpTimeSpentPlaying">Шатар тоглосон хугацаа: %s</string>
   <string name="watchGames">Өрөг үзэх</string>
   <string name="watch">Үзэх</string>

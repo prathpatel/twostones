@@ -16,7 +16,6 @@
   <string name="strength">ระดับความยาก</string>
   <string name="chat">สนทนา</string>
   <string name="resign">ยอมแพ้</string>
-  <string name="checkmate">รุกจน</string>
   <string name="stalemate">อับ</string>
   <string name="white">ขาว</string>
   <string name="black">ดำ</string>
@@ -371,7 +370,6 @@
   <string name="onlyExistingConversations">การสนทนาที่มีอยู่เท่านั้น</string>
   <string name="onlyFriends">เฉพาะเพื่อน</string>
   <string name="menu">เมนู</string>
-  <string name="castling">การเข้าป้อม</string>
   <string name="tpTimeSpentPlaying">เวลาที่ใช้เล่น: %s</string>
   <string name="watchGames">รับชมเกม</string>
   <string name="watch">รับชม</string>

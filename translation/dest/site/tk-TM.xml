@@ -9,7 +9,6 @@
   <string name="strength">Güýç</string>
   <string name="chat">Çät</string>
   <string name="resign">Çekil</string>
-  <string name="checkmate">Mat</string>
   <string name="stalemate">Pat</string>
   <string name="white">Ak</string>
   <string name="black">Gara</string>
@@ -266,7 +265,6 @@
   <string name="ifRatingIsPlusMinusX">Eger reýting ± %s bolsa</string>
   <string name="onlyFriends">Diňe dostlar</string>
   <string name="menu">Menýu</string>
-  <string name="castling">Rakirowka</string>
   <string name="tpTimeSpentPlaying">Oýnap geçirlen wagt: %s</string>
   <string name="watchGames">Oýunlara tomaşa et</string>
   <string name="watch">Tomaşa et</string>

@@ -5,7 +5,6 @@
   <string name="actions">Ενέργειες</string>
   <string name="promotion">Για να προάγετε ένα πιόνι σε οτιδήποτε άλλο εκτός από βασίλισσα, χρησιμοποιήστε το σύμβολο ίσον. Για παράδειγμα, ο συνδυασμός a-8-ίσον προάγει το πιόνι σε ίππο.</string>
   <string name="king">βασιλιάς</string>
-  <string name="rook">πύργος</string>
   <string name="bishop">αξιωματικός</string>
   <string name="knight">ίππος</string>
   <string name="copyToClipboard">Αντιγραφή %s στο πρόχειρο</string>

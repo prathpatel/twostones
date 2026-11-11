@@ -16,7 +16,6 @@
   <string name="strength">القوة</string>
   <string name="chat">دردشة</string>
   <string name="resign">استسلم</string>
-  <string name="checkmate">كش مات</string>
   <string name="stalemate">الملك مخنوق</string>
   <string name="white">الأبيض</string>
   <string name="black">أسود</string>
@@ -459,7 +458,6 @@ https://lichess. org/report.</string>
   <string name="onlyExistingConversations">المحادثات الحالية فقط</string>
   <string name="onlyFriends">الأصدقاء فقط</string>
   <string name="menu">القائمة</string>
-  <string name="castling">تبييت</string>
   <string name="tpTimeSpentPlaying">الوقت المقضي في اللعب:  %s</string>
   <string name="watchGames">شاهد الألعاب</string>
   <string name="watch">شاهد</string>

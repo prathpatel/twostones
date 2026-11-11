@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="castling">किल्लेकोट</string>
   <string name="equality">समानता</string>
   <string name="endgame">अंत्यखेळ</string>
   <string name="fork">फोर्क</string>

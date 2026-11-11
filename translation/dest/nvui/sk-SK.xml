@@ -4,7 +4,6 @@
   <string name="lastMove">Posledný ťah</string>
   <string name="actions">Úkony</string>
   <string name="king">kráľ</string>
-  <string name="rook">veža</string>
   <string name="bishop">strelec</string>
   <string name="knight">jazdec</string>
   <string name="copyToClipboard">Kopírovať %s do schránky</string>

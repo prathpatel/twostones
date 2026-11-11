@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="castling">易位</string>
   <string name="equality">均勢</string>
   <string name="endgame">殘局</string>
   <string name="fork">捉雙</string>

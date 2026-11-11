@@ -5,7 +5,6 @@
   <string name="actions">Handlinger</string>
   <string name="promotion">Bruk equals for å forvandle til noe annet enn en dronning. For eksempel forvandler a-8-equals-n bonden til en springer.</string>
   <string name="king">konge</string>
-  <string name="rook">tårn</string>
   <string name="bishop">løper</string>
   <string name="knight">springer</string>
   <string name="copyToClipboard">Kopier %s til utklippstavlen</string>

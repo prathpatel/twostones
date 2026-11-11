@@ -20,11 +20,8 @@ object RequestPref:
       default.copy(
         bg = paramOrSession("bg").flatMap(Pref.Bg.fromString.get) | default.bg,
         theme = paramOrSession("theme") | default.theme,
-        theme3d = session("theme3d") | default.theme3d,
         pieceSet = paramOrSession("pieceSet") | default.pieceSet,
-        pieceSet3d = session("pieceSet3d") | default.pieceSet3d,
         soundSet = session("soundSet") | default.soundSet,
-        is3d = session("is3d").has("true"),
         uiRoundness = session("uiRoundness").flatMap(_.toIntOption) | default.uiRoundness,
         board = default.board.copy(
           opacity = session("boardOpacity").flatMap(_.toIntOption) | default.board.opacity,

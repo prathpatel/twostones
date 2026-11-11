@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">o kama sona</string>
-  <string name="byPlaying">tan musi!</string>
   <string name="menu">lipu open</string>
   <string name="play">o musi!</string>
   <string name="capture">o anpa e ijo</string>
@@ -9,7 +7,6 @@
   <string name="escape">ijo sina li awen ala!
 o tawa ma pona!</string>
   <string name="intermediate">sona pi insa wawa</string>
-  <string name="castling">tawa pi \"tomo awen\"</string>
   <string name="stalemate">ken ala tawa</string>
   <string name="register">kama tawa</string>
   <string name="practice">kama sona</string>

@@ -8,20 +8,14 @@ case class Pref(
     @Key("_id") id: UserId,
     bg: Int,
     bgImg: Option[String],
-    is3d: Boolean,
     theme: String,
     pieceSet: String,
-    theme3d: String,
-    pieceSet3d: String,
     soundSet: String,
-    autoQueen: Int,
-    autoThreefold: Int,
     takeback: Int,
     moretime: Int,
     clockTenths: Int,
     clockBar: Boolean,
     clockSound: Boolean,
-    premove: Boolean,
     animation: Int,
     captured: Boolean,
     follow: Boolean,
@@ -31,18 +25,13 @@ case class Pref(
     replay: Int,
     challenge: Int,
     message: Int,
-    studyInvite: Int,
     submitMove: Int,
     confirmResign: Int,
-    insightShare: Int,
-    keyboardMove: Int,
     voice: Option[Int],
     zen: Int,
     ratings: Int,
     flairs: Boolean,
-    rookCastle: Int,
     moveEvent: Int,
-    pieceNotation: Int,
     resizeHandle: Int,
     uiRoundness: Int,
     agreement: Int,
@@ -57,8 +46,6 @@ case class Pref(
 
   def realTheme = Theme(theme)
   def realPieceSet = PieceSet.get(pieceSet)
-  def realTheme3d = Theme3d(theme3d)
-  def realPieceSet3d = PieceSet3d.get(pieceSet3d)
 
   val themeColorLight = "#dbd7d1"
   val themeColorDark = "#2e2a24"
@@ -76,19 +63,11 @@ case class Pref(
       case Animation.SLOW => 500
       case _ => 250
 
-  def animationMillisForSpeedPuzzles: Int =
-    animation match
-      case Animation.NONE => 0
-      case Animation.SLOW => 120
-      case _ => 70
-
   def bgImgUrlOpt = bgImg.map(_.takeWhile(_ != ' ')).filter(_.nonEmpty)
   def bgImgUrl = bgImgUrlOpt | defaultBgImgUrl
   def setBgImgUrl(url: String) = copy(bgImg = s"${~url.some.filterNot(_.isBlank)} $bgOpacity".some)
   def bgOpacity = bgImg.flatMap(_.split(" ").lift(1)).flatMap(_.toIntOption).getOrElse(defaultBgOpacity)
   def setBgOpacity(opacity: Int) = copy(bgImg = s"${~bgImgUrlOpt} $opacity".some)
-
-  def pieceNotationIsLetter: Boolean = pieceNotation == PieceNotation.LETTER
 
   def isZen = zen == Zen.YES
   def isZenAuto = zen == Zen.GAME_AUTO
@@ -96,9 +75,6 @@ case class Pref(
   def showRatings = ratings != Ratings.NO
   def hideRatingsInGame = ratings == Ratings.EXCEPT_GAME
 
-  def is2d = !is3d
-
-  def hasKeyboardMove = keyboardMove == KeyboardMove.YES
   def hasVoice = voice.has(Voice.YES)
   def hasSpeech = soundSet == SoundSet.speech.toString
 
@@ -109,17 +85,14 @@ case class Pref(
     else
       copy(
         follow = false,
-        message = lila.core.pref.Message.FRIEND,
-        studyInvite = lila.core.pref.StudyInvite.NEVER
+        message = lila.core.pref.Message.FRIEND
       )
 
   def simpleBoard =
     board.hue == 0 && board.brightness == 100 && board.contrast == 100 && board.opacity == 100
 
   def currentTheme = Theme(theme)
-  def currentTheme3d = Theme3d(theme3d)
   def currentPieceSet = PieceSet.get(pieceSet)
-  def currentPieceSet3d = PieceSet3d.get(pieceSet3d)
   def currentSoundSet = SoundSet(soundSet)
   def currentThemeData: String =
     if bg == Bg.DARK_TRANSP then "transp dark"
@@ -189,17 +162,6 @@ object Pref:
 
     val asString = fromString.map(_.swap)
 
-  object AutoQueen:
-    val NEVER = 1
-    val PREMOVE = 2
-    val ALWAYS = 3
-
-    val choices = Seq(
-      NEVER -> "Never",
-      ALWAYS -> "Always",
-      PREMOVE -> "When premoving"
-    )
-
   object SubmitMove:
     val UNLIMITED = 1
     val CORRESPONDENCE = 2
@@ -235,26 +197,7 @@ object Pref:
 
   object ConfirmResign extends BooleanPref
 
-  object InsightShare:
-    import lila.core.pref.InsightShare.*
-
-    val choices = Seq(
-      NOBODY -> "With nobody",
-      FRIENDS -> "With friends",
-      EVERYBODY -> "With everybody"
-    )
-
-  object KeyboardMove extends BooleanPref
   object Voice extends BooleanPref
-
-  object RookCastle:
-    val NO = 0
-    val YES = 1
-
-    val choices = Seq(
-      NO -> "Castle by moving by two squares",
-      YES -> "Castle by moving onto the rook"
-    )
 
   object MoveEvent:
     val CLICK = 0
@@ -265,26 +208,6 @@ object Pref:
       CLICK -> "Click two squares",
       DRAG -> "Drag a piece",
       BOTH -> "Both clicks and drag"
-    )
-
-  object PieceNotation:
-    val SYMBOL = 0
-    val LETTER = 1
-
-    val choices = Seq(
-      SYMBOL -> "Chess piece symbol",
-      LETTER -> "PGN letter (K, Q, R, B, N)"
-    )
-
-  object AutoThreefold:
-    val NEVER = 1
-    val TIME = 2
-    val ALWAYS = 3
-
-    val choices = Seq(
-      NEVER -> "Never",
-      ALWAYS -> "Always",
-      TIME -> "When time remaining < 30 seconds"
     )
 
   object Takeback:
@@ -386,15 +309,6 @@ object Pref:
       ALWAYS -> "Always"
     )
 
-  object StudyInvite:
-    import lila.core.pref.StudyInvite.*
-
-    val choices = Seq(
-      NEVER -> "Never",
-      FRIEND -> "Only friends",
-      ALWAYS -> "Always"
-    )
-
   object ResizeHandle:
     val NEVER = 0
     val INITIAL = 1
@@ -456,19 +370,13 @@ object Pref:
     id = UserId(""),
     bg = Bg.SYSTEM,
     bgImg = none,
-    is3d = false,
     theme = Theme.default.name,
     pieceSet = PieceSet.default.name,
-    theme3d = Theme3d.default.name,
-    pieceSet3d = PieceSet3d.default.name,
     soundSet = SoundSet.default.key,
-    autoQueen = AutoQueen.PREMOVE,
-    autoThreefold = AutoThreefold.ALWAYS,
     takeback = Takeback.ALWAYS,
     moretime = Moretime.ALWAYS,
     clockBar = true,
     clockSound = true,
-    premove = true,
     animation = Animation.NORMAL,
     captured = true,
     follow = true,
@@ -479,18 +387,13 @@ object Pref:
     clockTenths = ClockTenths.LOWTIME,
     challenge = lila.core.pref.Challenge.REGISTERED,
     message = lila.core.pref.Message.ALWAYS,
-    studyInvite = lila.core.pref.StudyInvite.ALWAYS,
     submitMove = SubmitMove.CORRESPONDENCE,
     confirmResign = ConfirmResign.YES,
-    insightShare = lila.core.pref.InsightShare.FRIENDS,
-    keyboardMove = KeyboardMove.NO,
     voice = None,
     zen = Zen.NO,
     ratings = Ratings.YES,
     flairs = true,
-    rookCastle = RookCastle.YES,
     moveEvent = MoveEvent.BOTH,
-    pieceNotation = PieceNotation.SYMBOL,
     resizeHandle = ResizeHandle.INITIAL,
     uiRoundness = 8,
     agreement = Agreement.current,

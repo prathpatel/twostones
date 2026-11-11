@@ -16,7 +16,6 @@
   <string name="strength">Kekuatan</string>
   <string name="chat">Ruangan bual</string>
   <string name="resign">Menyerah kalah</string>
-  <string name="checkmate">Syahmat</string>
   <string name="stalemate">Kebuntuan (stalemate)</string>
   <string name="white">Putih</string>
   <string name="black">Hitam</string>
@@ -330,7 +329,6 @@
   <string name="onlyExistingConversations">Hanya perbualan yang wujud</string>
   <string name="onlyFriends">Hanya rakan-rakan</string>
   <string name="menu">Menu</string>
-  <string name="castling">Castling</string>
   <string name="tpTimeSpentPlaying">Masa diguna bermain: %s</string>
   <string name="watchGames">Tonton permainan</string>
   <string name="watch">Tonton</string>

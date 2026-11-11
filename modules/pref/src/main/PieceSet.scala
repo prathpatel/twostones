@@ -34,19 +34,3 @@ object PieceSet extends PieceSetObject:
     PieceSet("glass", Featured.Yes),
     PieceSet("outline", Featured.Yes)
   )
-
-object PieceSet3d extends PieceSetObject:
-
-  val all = List(
-    PieceSet("Basic", Featured.Yes),
-    PieceSet("Wood", Featured.Yes),
-    PieceSet("Metal"),
-    PieceSet("RedVBlue", Featured.Yes),
-    PieceSet("ModernJade"),
-    PieceSet("ModernWood", Featured.Yes),
-    PieceSet("Glass"),
-    PieceSet("Trimmed", Featured.Yes),
-    PieceSet("Experimental", Featured.Yes),
-    PieceSet("Staunton", Featured.Yes),
-    PieceSet("CubesAndPi", Featured.Yes)
-  )

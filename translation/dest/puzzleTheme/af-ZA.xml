@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="castling">Kasteel</string>
   <string name="equality">Gelykheid</string>
   <string name="endgame">Eindspel</string>
   <string name="fork">Vurk</string>

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Học cờ vua</string>
-  <string name="byPlaying">bằng cách chơi!</string>
   <string name="menu">Mục lục</string>
   <string name="play">chơi!</string>
   <string name="capture">Ăn quân</string>
@@ -9,7 +7,6 @@
   <string name="escape">Bạn đang bị tấn công! 
 Hãy thoát khỏi mối đe dọa đó!</string>
   <string name="intermediate">Trung cấp</string>
-  <string name="castling">Nhập thành</string>
   <string name="stalemate">Thủ hòa</string>
   <string name="register">Đăng kí</string>
   <string name="practice">Tập luyện</string>

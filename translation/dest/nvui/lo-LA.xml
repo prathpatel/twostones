@@ -5,7 +5,6 @@
   <string name="actions">ການກະທຳ</string>
   <string name="promotion">ເພື່ອປ່ຽນຕົວໝາກເປັນຢ່າງອື່ນທີ່ບໍ່ແມ່ນຄວີນ, ໃຫ້ໃຊ້ຄຳວ່າ ເທົ່າກັບ. ຕົວຢ່າງ a-8-ເທົ່າກັບ-n ຈະປ່ຽນເປັນມ້າ.</string>
   <string name="king">ຄິງ</string>
-  <string name="rook">ເຮືອ</string>
   <string name="bishop">ບິຊອບ</string>
   <string name="knight">ມ້າ</string>
   <string name="copyToClipboard">ຄັດລອກ %s ໄປທີ່ຄລິບບອດ</string>
