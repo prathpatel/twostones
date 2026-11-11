@@ -109,7 +109,7 @@ Get the code into `/opt/gogame`. For a private repository, use a GitHub personal
 token or a deploy key:
 
 ```bash
-sudo git clone -b claude/zen-cannon-yv99ta https://github.com/prathpatel/GoGame /opt/gogame
+sudo git clone https://github.com/prathpatel/twostones /opt/gogame
 ```
 
 Install. `--email` is for Let's Encrypt, which only works once the DNS records of step 3
@@ -127,6 +127,13 @@ systemctl status gogame gogame-ws
 ```
 
 and open `https://example.com`. Logs: `journalctl -u gogame -f`.
+
+**Memory.** The installer limits MongoDB's cache to 4 GB
+(`storage.wiredTiger.engineConfig.cacheSizeGB: 4` in `/etc/mongod.conf`; by default MongoDB
+takes about half the memory), so that a 16 GB server also fits lila (4 GB), lila-ws (1 GB) and
+KataGo (about 2 GB, see `nnCacheSizePowerOfTwo` in `conf/katago.cfg`). It adds the setting once,
+inside the existing `storage:` block. On a bigger server, raise it there and run
+`sudo systemctl restart mongod`.
 
 ## 5. Email (SES)
 

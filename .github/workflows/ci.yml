@@ -14,14 +14,17 @@ jobs:
           distribution: temurin
           java-version: 21
       - uses: sbt/setup-sbt@v1
+      # --server: run sbt in this step's process instead of sbt 2's default thin client, which
+      # leaves a build server running in the background (lila's takes up to 8 GB, .sbtopts):
+      # a second one for lila-ws then ran the runner out of memory
       - name: Compile and test lila
         run: |
           cp .sbtopts.default .sbtopts
           cp conf/application.conf.default conf/application.conf
-          sbt "test; compile"
+          sbt --server "test; compile"
       - name: Compile lila-ws
         working-directory: ws
-        run: sbt compile
+        run: sbt --server compile
 
   ui:
     runs-on: ubuntu-latest

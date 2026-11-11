@@ -79,7 +79,8 @@ class KataGoTest extends munit.FunSuite:
 
   test("two passes in a row are left out, so KataGo doesn't see a finished game"):
     val g = Game.replay(nine, Komi(7.5), 0, Game.parseMoves("ee pass pass cc pass pass", nine)).toOption.get
-    assertEquals(KataGo.history(g), List(chess.Color.Black -> Move.Play(pt("E5")), chess.Color.White -> Move.Play(pt("C3"))))
+    // SGF rows count from the top: "cc" on 9x9 is C7
+    assertEquals(KataGo.history(g), List(chess.Color.Black -> Move.Play(pt("E5")), chess.Color.White -> Move.Play(pt("C7"))))
     // komi in half points only
     assertEquals((KataGo.query(g.copy(komi = Komi(6.4)), 1) \ "komi").as[Double], 6.5)
 
@@ -186,4 +187,57 @@ class KataGoTest extends munit.FunSuite:
     val dead = Await.result(ai.deadStones(game), 2.minutes)
     assert(dead.contains(pt("B7")), s"dead: $dead")
     assert(dead.forall(_ == pt("B7")), s"dead: $dead")
+    ai.close()
+
+  /** The default levels (conf/base.conf), played by the engine in KATAGO_COMMAND. Resigning
+    * is off, so that games go on until both players pass.
+    */
+  def defaultLevels(using Executor) =
+    val conf = play.api.Configuration(com.typesafe.config.ConfigFactory.parseFile(java.io.File("conf/base.conf")))
+    val command = sys.env("KATAGO_COMMAND").split(' ').toList.filter(_.nonEmpty)
+    AiEngine(AiEngine.config(conf).copy(command = command, workDir = None, timeout = 2.minutes, resign = false))
+
+  /** The computer plays both colors at `level`, until both pass or `maxMoves`. */
+  def selfPlay(ai: AiEngine, start: Game, level: Int, maxMoves: Int): Game =
+    val n = start.board.width
+    var g = start
+    while !g.bothPassed && g.moves.size < maxMoves do
+      Await.result(ai.move(g, level), 2.minutes) match
+        case AiEngine.Choice.Play(m) =>
+          g = g.play(m).fold(e => fail(s"illegal move ${m.human(n)} after ${g.moveKeys}: $e"), identity)
+        case AiEngine.Choice.Resign => fail("resigned, with resigning off")
+    g
+
+  for level <- List(1, 8) do
+    test(s"real engine: a complete 9x9 game at level $level ends with passes and sensible dead stones"):
+      assume(sys.env.contains("KATAGO_COMMAND"), "KATAGO_COMMAND is not set")
+      given scala.concurrent.ExecutionContextExecutor = scala.concurrent.ExecutionContext.global
+      val ai = defaultLevels
+      val g = selfPlay(ai, Game(nine, Komi(7.5), 0, None), level, lila.game.Game.maxPlies.value)
+      val board = g.board
+      val dead = Await.result(ai.deadStones(g), 2.minutes)
+      val score = goban.Scoring.area(board, dead, g.komi)
+      println(s"level $level: ${g.moves.size} moves, ${score.result}, dead ${dead.map(_.human(9)).toList.sorted}\n$board")
+      // over by passing, long before the server's move limit, and not by passing early
+      assert(g.bothPassed, s"no end after ${g.moves.size} moves")
+      assert(board.stoneCount(chess.Color.Black) + board.stoneCount(chess.Color.White) >= 20, board.toString)
+      // dead stones: whole groups, each in its opponent's area once the dead are removed
+      dead.foreach: p =>
+        assert(!board.isEmpty(p))
+        assert(board.group(p).stones.subsetOf(dead), s"${p.human(9)}: part of a group")
+        assertEquals(score.owner.get(p), board.colorAt(p).map(!_), s"${p.human(9)} is not in its opponent's area")
+      ai.close()
+
+  test("real engine: a 19x19 handicap game starts with white, at a human level and at full strength"):
+    assume(sys.env.contains("KATAGO_COMMAND"), "KATAGO_COMMAND is not set")
+    given scala.concurrent.ExecutionContextExecutor = scala.concurrent.ExecutionContext.global
+    val ai = defaultLevels
+    val start = Game(BoardSize.Nineteen, Komi(0.5), 4, None)
+    assertEquals(start.player, chess.Color.White)
+    for level <- List(3, 8) do
+      val g = selfPlay(ai, start, level, 6)
+      assertEquals(g.moves.size, 6)
+      assert(!g.moves.exists(_.isPass), g.moveKeys)
+      // the four handicap stones and the six moves
+      assertEquals(g.board.stoneCount(chess.Color.Black) + g.board.stoneCount(chess.Color.White), 10)
     ai.close()

@@ -9,8 +9,6 @@ It keeps Lichess's architecture and platform features — accounts, ratings, a r
 lobby with seeks and quick pairing, friend challenges, rematches, chat, takebacks,
 clocks, correspondence games, notifications, messages — and swaps the game itself.
 
-> This branch replaces the earlier Flutter app that lives on `main` / `development`.
-
 ![A 9×9 game against the computer](docs/screenshots/game.png)
 
 ## What you can do
@@ -270,10 +268,11 @@ run a modified version as a network service you must offer its source to your us
 GoGame is not affiliated with or endorsed by Lichess. The Lichess name and logo are
 not used for this project.
 
-The first commit on this branch imports lila at
-`2e3e641c32b361c113e696cee34f9fddefef6727` and lila-ws at
-`95f3f97121825c5bb5b8d5c006a47300bc05050c` unchanged (minus Lichess's Git LFS assets),
-so every later change can be reviewed against upstream.
+GoGame started from lila at `2e3e641c32b361c113e696cee34f9fddefef6727` and lila-ws at
+`95f3f97121825c5bb5b8d5c006a47300bc05050c` (minus Lichess's Git LFS assets). This
+repository starts from a single commit of the converted code; the step-by-step history of
+the conversion, reviewable against upstream, is in
+[prathpatel/GoGame](https://github.com/prathpatel/GoGame) (branch `claude/zen-cannon-yv99ta`).
 
 **AI disclosure:** the conversion to Go (the `goban` engine, the module and UI changes,
 this README) was written with Claude Code, an AI coding assistant, and has been compiled
