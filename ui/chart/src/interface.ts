@@ -60,10 +60,9 @@ export interface DistributionData {
   otherRating: number | null;
 }
 
-export type PerfOrPuzzle = Perf | 'puzzle';
 
 export interface PerfRatingHistory {
-  name: PerfOrPuzzle;
+  name: Perf;
   points: [number, number, number, number][];
 }
 

@@ -40,7 +40,7 @@ private[lobby] object LobbyUser:
 
   private def perfMapOf(perfs: UserPerfs): PerfMap =
     perfs.perfsList.view.collect {
-      case (pk, perf) if pk != PerfKey.puzzle && perf.nonEmpty =>
+      case (pk, perf) if perf.nonEmpty =>
         pk -> LobbyPerf(perf.intRating, perf.provisional)
     }.toMap
 

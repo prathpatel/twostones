@@ -15,9 +15,6 @@ final class AccountPref(helpers: Helpers, helper: PrefHelper, bits: AccountUi):
   private def categFieldset(categ: lila.pref.PrefCateg, active: lila.pref.PrefCateg) =
     div(cls := List("none" -> (categ != active)))
 
-  // chess-only settings: still posted with the form (every field is required), never shown
-  private val hiddenChess = style := "display:none"
-
   // the Go board shows coordinates around the board, or not at all
   private def goCoordinateChoices(using Translate) =
     List((Pref.Coords.NONE, trans.site.no.txt()), (Pref.Coords.INSIDE, trans.site.yes.txt()))
@@ -36,50 +33,15 @@ final class AccountPref(helpers: Helpers, helper: PrefHelper, bits: AccountUi):
         postForm(cls := "autosubmit", action := routes.Pref.formApply)(
           categFieldset(PrefCateg.Display, categ)(
             setting(
-              trp.pieceAnimation(),
-              radios(form("display.animation"), translatedAnimationChoices),
-              "pieceAnimation"
-            )(hiddenChess),
-            setting(
-              trp.materialDifference(),
-              radios(form("display.captured"), booleanChoices),
-              "materialDifference"
-            )(hiddenChess),
-            setting(
-              trp.boardHighlights(),
-              radios(form("display.highlight"), booleanChoices),
-              "boardHighlights"
-            )(hiddenChess),
-            setting(
-              trp.pieceDestinations(),
-              radios(form("display.destination"), booleanChoices),
-              "pieceDestinations"
-            )(hiddenChess),
-            setting(
               "Board coordinates",
               radios(form("display.coords"), goCoordinateChoices),
               "boardCoordinates"
             ),
             setting(
-              trp.moveListWhilePlaying(),
-              radios(form("display.replay"), translatedMoveListWhilePlayingChoices),
-              "moveListWhilePlaying"
-            )(hiddenChess),
-            setting(
-              trp.pgnPieceNotation(),
-              radios(form("display.pieceNotation"), translatedPieceNotationChoices),
-              "pgnPieceNotation"
-            )(hiddenChess),
-            setting(
               trp.zenMode(),
               radios(form("display.zen"), translatedZenChoices),
               "zenMode"
             ),
-            setting(
-              trp.displayBoardResizeHandle(),
-              radios(form("display.resizeHandle"), translatedBoardResizeHandleChoices),
-              "displayBoardResizeHandle"
-            )(hiddenChess),
             setting(
               trp.showPlayerRatings(),
               frag(
@@ -97,110 +59,24 @@ final class AccountPref(helpers: Helpers, helper: PrefHelper, bits: AccountUi):
               "showFlairs"
             )
           ),
-          categFieldset(PrefCateg.ChessClock, categ)(
+          categFieldset(PrefCateg.Clock, categ)(
             setting(
               trp.tenthsOfSeconds(),
               radios(form("clock.tenths"), translatedClockTenthsChoices),
               "tenthsOfSeconds"
-            ),
-            setting(
-              trp.horizontalGreenProgressBars(),
-              radios(form("clock.bar"), booleanChoices),
-              "horizontalGreenProgressBars"
-            )(hiddenChess),
-            setting(
-              trp.soundWhenTimeGetsCritical(),
-              radios(form("clock.sound"), booleanChoices),
-              "soundWhenTimeGetsCritical"
-            )(hiddenChess),
-            setting(
-              trp.giveMoreTime(),
-              radios(form("clock.moretime"), translatedMoretimeChoices),
-              "giveMoreTime"
-            )(hiddenChess),
-            setting(
-              trp.showClockOnTheLeft(),
-              radios(form("clock.swapClock"), booleanChoices),
-              "swapClock"
-            )(hiddenChess)
+            )
           ),
           categFieldset(PrefCateg.GameBehavior, categ)(
-            setting(
-              trp.howDoYouMovePieces(),
-              radios(form("behavior.moveEvent"), translatedMoveEventChoices),
-              "howDoYouMovePieces"
-            )(hiddenChess),
-            setting(
-              trp.premovesPlayingDuringOpponentTurn(),
-              radios(form("behavior.premove"), booleanChoices),
-              "premovesPlayingDuringOpponentTurn"
-            )(hiddenChess),
             setting(
               trp.takebacksWithOpponentApproval(),
               radios(form("behavior.takeback"), translatedTakebackChoices),
               "takebacksWithOpponentApproval"
             ),
             setting(
-              trp.promoteToQueenAutomatically(),
-              frag(
-                radios(form("behavior.autoQueen"), translatedAutoQueenChoices),
-                div(cls := "help text shy", dataIcon := Icon.InfoCircle)(
-                  trp.explainPromoteToQueenAutomatically()
-                )
-              ),
-              "promoteToQueenAutomatically"
-            )(hiddenChess),
-            setting(
-              trp.claimDrawOnThreefoldRepetitionAutomatically(),
-              radios(form("behavior.autoThreefold"), translatedAutoThreefoldChoices),
-              "claimDrawOnThreefoldRepetitionAutomatically"
-            )(hiddenChess),
-            setting(
-              trp.moveConfirmation(),
-              frag(
-                bitCheckboxes(form("behavior.submitMove"), submitMoveChoices),
-                div(cls := "help text shy", dataIcon := Icon.InfoCircle)(
-                  trp.multipleChoices(),
-                  trp.explainCanThenBeTemporarilyDisabled()
-                )
-              ),
-              "moveConfirmation"
-            )(hiddenChess),
-            setting(
-              trp.confirmResignationAndDrawOffers(),
-              radios(form("behavior.confirmResign"), confirmResignChoices),
-              "confirmResignationAndDrawOffers"
-            )(hiddenChess),
-            setting(
-              trp.castleByMovingTheKingTwoSquaresOrOntoTheRook(),
-              radios(form("behavior.rookCastle"), translatedRookCastleChoices),
-              "castleByMovingTheKingTwoSquaresOrOntoTheRook"
-            )(hiddenChess),
-            setting(
-              trp.inputMovesWithTheKeyboard(),
-              radios(form("behavior.keyboardMove"), booleanChoices),
-              "inputMovesWithTheKeyboard"
-            )(hiddenChess),
-            setting(
-              trp.inputMovesWithVoice(),
-              radios(form("behavior.voice"), booleanChoices),
-              "inputMovesWithVoice"
-            )(hiddenChess),
-            setting(
-              trp.snapArrowsToValidMoves(),
-              radios(form("behavior.arrowSnap"), booleanChoices),
-              "snapArrowsToValidMoves"
-            )(hiddenChess)(cls := "arrow-snap"),
-            setting(
               trp.sayGgWpAfterLosingOrDrawing(),
               radios(form("behavior.sayGG"), translatedSayGGChoices),
               "sayGG"
-            ),
-            setting(
-              trp.scrollOnTheBoardToReplayMoves(),
-              radios(form("behavior.scrollMoves"), booleanChoices),
-              "scrollOnTheBoardToReplayMoves"
-            )(hiddenChess)
+            )
           ),
           categFieldset(PrefCateg.Privacy, categ)(
             setting(
@@ -217,17 +93,7 @@ final class AccountPref(helpers: Helpers, helper: PrefHelper, bits: AccountUi):
               trans.site.letOtherPlayersMessageYou(),
               radios(form("message"), translatedMessageChoices),
               "letOtherPlayersMessageYou"
-            ),
-            setting(
-              trans.site.letOtherPlayersInviteYouToStudy(),
-              radios(form("studyInvite"), translatedStudyInviteChoices),
-              "letOtherPlayersInviteYouToStudy"
-            )(hiddenChess),
-            setting(
-              trans.site.shareYourInsightsData(),
-              radios(form("insightShare"), translatedInsightShareChoices),
-              "shareYourInsightsData"
-            )(hiddenChess)
+            )
           ),
           p(cls := "saved text none", dataIcon := Icon.Checkmark)(trp.yourPreferencesHaveBeenSaved())
         )
@@ -257,14 +123,7 @@ final class AccountPref(helpers: Helpers, helper: PrefHelper, bits: AccountUi):
                     trp.notifyDirectMessage() -> "privateMessage",
                     trp.notifyChallenge() -> "challenge",
                     trp.notifyGameEvent() -> "gameEvent"
-                  ).map(makeRow(form)) ::: List(
-                    "streamStart",
-                    "mention",
-                    "invitedStudy",
-                    "tournamentSoon",
-                    "broadcastRound",
-                    "teamUpdate"
-                  ).map(key => makeRow(form)(frag(key), key)(hiddenChess))
+                  ).map(makeRow(form))
                 )
               ),
               div(

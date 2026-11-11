@@ -50,7 +50,6 @@ private object ChallengeJoiner:
         rated = c.rated.map(_ && c.handicap == 0),
         source = lila.core.game.Source.Friend,
         daysPerTurn = c.daysPerTurn,
-        pgnImport = None,
         rules = c.rules
       )
       .withId(c.gameId)

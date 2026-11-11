@@ -22,5 +22,4 @@
   <string name="declineVariant">ฉันไม่ยินดีที่จะเล่นโดยใช้ตัวแปรกติกานี้ในตอนนี้</string>
   <string name="declineNoBot">ฉันไม่รับคำท้าประลองจากหุ่นยนต์</string>
   <string name="declineOnlyBot">ฉันรับคำท้าประลองจากหุ่นยนต์เท่านั้น</string>
-  <string name="inviteLichessUser">หรือเชิญผู้เล่นบน Lichess</string>
 </resources>

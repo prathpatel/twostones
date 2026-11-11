@@ -48,7 +48,7 @@ case class Game(
 
   /** Go has no chess variants; kept so lila's rating plumbing keeps working. */
   def variant: Variant = Standard
-  export metadata.{ tournamentId, simulId, swissId, drawOffers, source, pgnImport, hasRule }
+  export metadata.{ tournamentId, simulId, swissId, drawOffers, source, hasRule }
   export players.{ white as whitePlayer, black as blackPlayer, apply as player }
 
   lazy val clockHistory = go.clock.flatMap(loadClockHistory)
@@ -173,7 +173,7 @@ case class Game(
 
   def finishedOrAborted = finished || aborted
 
-  def replayable = isPgnImport || finished || (aborted && bothPlayersHaveMoved)
+  def replayable = finished || (aborted && bothPlayersHaveMoved)
 
   def fromPosition = handicap > 0 || source.has(Source.Position)
 
@@ -236,7 +236,7 @@ case class Game(
 
   def playerHasMoved(color: Color) = playerMoves(color) > 0
 
-  def isBeingPlayed = !isPgnImport && !finishedOrAborted
+  def isBeingPlayed = !finishedOrAborted
 
   def forecastable = started && playable && isCorrespondence && !hasAi
 
@@ -256,7 +256,6 @@ case class Game(
   def isStrongOrRecent = averageUsersRating.exists(_.value >= 2000) ||
     createdAt.isAfter(nowInstant.minus(10.days))
 
-  def isPgnImport = pgnImport.isDefined
 
   def hasFewerMovesThanExpected = playedPlies <= reasonableMinimumNumberOfMoves(boardSize)
 

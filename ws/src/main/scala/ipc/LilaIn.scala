@@ -16,24 +16,10 @@ object LilaIn:
   sealed trait Lobby extends LilaIn
 
   sealed trait Room extends LilaIn
-  sealed trait Simul extends Room
-  sealed trait Team extends Room
-  sealed trait Swiss extends Room
-  sealed trait Tour extends Room
-  sealed trait Study extends Room
   sealed trait Round extends Room
   sealed trait Challenge extends Room
-  sealed trait Racer extends Room
 
-  sealed trait AnyRoom
-      extends Simul
-      with Team
-      with Swiss
-      with Tour
-      with Study
-      with Round
-      with Challenge
-      with Racer
+  sealed trait AnyRoom extends Round with Challenge
 
   case class TellSri(sri: Sri, user: Option[User.Id], payload: JsValue) extends Site with Lobby:
     def write = s"tell/sri $sri ${optional(user.map(_.value))} ${Json.stringify(payload)}"
@@ -79,7 +65,7 @@ object LilaIn:
       extends AnyRoom:
     def write = s"chat/timeout $roomId $userId $suspectId $reason $text"
 
-  case class TellRoomSri(roomId: RoomId, tellSri: TellSri) extends Study with Round:
+  case class TellRoomSri(roomId: RoomId, tellSri: TellSri) extends Round:
     import tellSri.*
     def write = s"tell/room/sri $roomId $sri ${optional(user.map(_.value))} ${Json.stringify(payload)}"
 
@@ -88,9 +74,6 @@ object LilaIn:
       s"room/versions ${commas(versions.map { (r, v) =>
           s"$r:$v"
         })}"
-
-  case class WaitingUsers(roomId: RoomId, waiting: Set[User.Id]) extends Tour:
-    def write = s"tour/waiting $roomId ${commas(waiting)}"
 
   case class RoundPlayerDo(fullId: Game.FullId, payload: JsValue) extends Round:
     def write = s"r/do $fullId ${Json.stringify(payload)}"
@@ -141,16 +124,7 @@ object LilaIn:
   case class ChallengePings(ids: Iterable[RoomId]) extends Challenge:
     def write = s"challenge/pings ${commas(ids)}"
 
-  case class RacerScore(raceId: Racer.Id, playerId: Racer.PlayerId, score: Int) extends Racer:
-    def write = s"racer/score $raceId ${playerId.key} $score"
-
-  case class RacerJoin(raceId: Racer.Id, playerId: Racer.PlayerId) extends Racer:
-    def write = s"racer/join $raceId ${playerId.key}"
-
-  case class RacerStart(raceId: Racer.Id, playerId: Racer.PlayerId) extends Racer:
-    def write = s"racer/start $raceId ${playerId.key}"
-
-  case class ReqResponse(reqId: Int, value: String) extends Study with Simul with Site:
+  case class ReqResponse(reqId: Int, value: String) extends Site:
     def write = s"req/response $reqId $value"
 
   private def commas(as: Iterable[Any]): String = if as.isEmpty then "-" else as.mkString(",")

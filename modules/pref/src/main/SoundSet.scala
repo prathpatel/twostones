@@ -22,7 +22,6 @@ object SoundSet:
     new SoundSet("lisp", "Lisp"),
     new SoundSet("woodland", "WoodLand"),
     new SoundSet("robot", "Robot"),
-    new SoundSet("music", "Pentatonic"),
     speech
   )
 

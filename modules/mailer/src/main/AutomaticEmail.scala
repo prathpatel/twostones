@@ -18,10 +18,12 @@ final class AutomaticEmail(
 )(using Executor)(using translator: Translator):
 
   import Mailer.html.*
+  // the footer of every email links to this site's pages
+  private given RouteUrl = routeUrl
 
   val regards = """Regards,
 
-The Lichess team"""
+The TwoStones team"""
 
   def welcomeEmail(user: User, email: EmailAddress)(using Lang): Funit =
     mailer.canSend.so:
@@ -52,7 +54,7 @@ The Lichess team"""
   If you already have an account linked to this email, you can try to log in with it, or reset your password if you forgot it."""
         Mailer.Message(
           to = email,
-          subject = "Could not verify your new Lichess account",
+          subject = "Could not verify your new TwoStones account",
           text = text,
           htmlBody = standardEmail(text).some
         )
@@ -62,7 +64,7 @@ The Lichess team"""
     mailer.canSend.so:
       mailer.sendOrSkip:
         val text =
-          """Your new Lichess account has already been verified, so you can log in and start playing right away."""
+          """Your new TwoStones account has already been verified, so you can log in and start playing right away."""
         Mailer.Message(
           to = email,
           subject = "Your account is verified and ready to use",
@@ -77,7 +79,7 @@ The Lichess team"""
       body = alsoSendAsPrivateMessage(user): _ =>
         s"""Hello,
 
-Thank you for confirming your $title title on Lichess.
+Thank you for confirming your $title title on TwoStones.
 It is now visible on your profile page: ${routeUrl(routes.User.show(user.username))}.
 
 $regards
@@ -87,7 +89,7 @@ $regards
         mailer.sendOrSkip:
           Mailer.Message(
             to = email,
-            subject = s"$title title confirmed on lichess.org",
+            subject = s"$title title confirmed on TwoStones",
             text = Mailer.txt.addServiceNote(body),
             htmlBody = standardEmail(body).some
           )
@@ -99,10 +101,10 @@ $regards
 
   def onBecomeCoach(user: User): Funit =
     sendAsPrivateMessageAndEmail(user)(
-      subject = _ => "Coach profile unlocked on lichess.org",
+      subject = _ => "Coach profile unlocked on TwoStones",
       body = _ => s"""Hello,
 
-It is our pleasure to welcome you as a Lichess coach.
+It is our pleasure to welcome you as a TwoStones coach.
 Your coach profile awaits you on ${routeUrl(lila.ui.deadLink)}.
 
 $regards
@@ -130,7 +132,7 @@ $regards
   def onAppealReply(user: User): Funit =
     val url = routeUrl(lila.ui.deadLink)
     sendAsPrivateMessageAndEmail(user)(
-      subject = _ => "Appeal response on lichess.org",
+      subject = _ => "Appeal response on TwoStones",
       body = _ => s"""Hello,
 
 Your appeal has received a response from the moderation team, to see it click here: $url
@@ -143,7 +145,7 @@ $regards
     val body =
       s"""Hello,
 
-Following your request, the Lichess account "${user.username}" will be deleted in 7 days from now.
+Following your request, the TwoStones account "${user.username}" will be deleted in 7 days from now.
 
 $regards
 """
@@ -152,7 +154,7 @@ $regards
       mailer.sendOrSkip:
         Mailer.Message(
           to = email,
-          subject = "lichess.org account deletion",
+          subject = "TwoStones account deletion",
           text = Mailer.txt.addServiceNote(body),
           htmlBody = standardEmail(body).some
         )
@@ -219,7 +221,7 @@ ${routeUrl(lila.ui.deadLink)}"""
           .so: email =>
             given Lang = userLang(userWithEmail.user)
             val hello =
-              "Hello and thank you for playing correspondence chess on Lichess!"
+              "Hello and thank you for playing correspondence games on TwoStones!"
             val disableSettingNotice =
               "You are receiving this email because you have correspondence email notification turned on. You can turn it off in your settings:"
             val disableLink =

@@ -11,7 +11,6 @@
   <string name="reportSelfHarm">Itsemurha / Itsensä vahingoittaminen</string>
   <string name="reportHate">Vihapuhe / Seksismi</string>
   <string name="reportSpam">Roskapostitus / Spämmäys</string>
-  <string name="readMoreAboutLichessReports">Lue lisää ilmoituksien tekemisestä Lichessissä</string>
   <string name="reportMaximumCharacters">Korkeintaan 3 000 merkkiä.</string>
   <string name="reportCheatBoostHelp">Liitä linkki peliin/peleihin ja kerro, mikä tämän käyttäjän toiminnassa on pielessä. Älä vain sano hänen huijaavan, vaan kerro meille, miksi olet päätellyt niin.</string>
   <string name="reportUsernameHelp">Selitä, mikä tässä käyttäjätunnuksessa on loukkaavaa. Älä vain sano sen olevan loukkaava tai sopimaton, vaan kerro meille, mihin näkemyksesi perustuu, varsinkin jos loukkaus on verhottu, muun kuin englanninkielinen, slangia, tai jos siinä viitataan kulttuuriin tai historiaan.</string>

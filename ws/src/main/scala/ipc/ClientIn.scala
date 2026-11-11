@@ -37,10 +37,11 @@ object ClientIn:
   case class Announce(json: JsonString) extends ClientIn:
     lazy val write = cliMsg("announce", json)
 
-  case class Fen(gameId: Game.Id, position: Position) extends ClientIn:
+  /** a live game's new position, for its mini boards */
+  case class MiniGamePosition(gameId: Game.Id, position: Position) extends ClientIn:
     def write =
       cliMsg(
-        "fen",
+        "position",
         Json
           .obj(
             "id" -> gameId.value,
@@ -109,16 +110,6 @@ object ClientIn:
   def onlyFor(select: OnlyFor.Endpoint.type => OnlyFor.Endpoint, payload: Payload) =
     OnlyFor(select(OnlyFor.Endpoint), payload)
 
-  case class TourReminder(tourId: Tour.Id, tourName: String) extends ClientIn:
-    lazy val write = cliMsg(
-      "tournamentReminder",
-      Json.obj(
-        "id" -> tourId,
-        "name" -> tourName
-      )
-    )
-
-  def tvSelect(data: JsonString) = payload("tvSelect", data)
 
   case class Ack(id: Option[Int]) extends ClientIn:
     def write = id.fold(cliMsg("ack")) { cliMsg("ack", _) }
@@ -137,10 +128,8 @@ object ClientIn:
   ) extends HasVersion:
     val full = Payload(JsonString(cliMsg(tpe, data, version)))
     lazy val skip = Payload(JsonString(s"""{"v":$version}"""))
-    lazy val noDests = Payload(JsonString(destsRemover.replaceAllIn(full.write, "")))
   case object RoundPingFrameNoFlush extends ClientIn:
     val write = "" // not actually sent
-  def roundTourStanding(data: JsonString) = payload("tourStanding", data)
 
   def roundFull(data: JsonString) = payload("full", data)
 
@@ -180,19 +169,6 @@ object ClientIn:
     case class Leaves(user: User.Id) extends Event("leaves")
     case class Playing(user: User.Id) extends Event("playing")
     case class StoppedPlaying(user: User.Id) extends Event("stopped_playing")
-
-  case class StormKey(signed: String) extends ClientIn:
-    def write = cliMsg("sk1", signed)
-
-  case class EvalHit(data: JsObject) extends ClientIn:
-    val write = cliMsg("evalHit", data)
-
-  case class EvalHitMulti(data: JsObject) extends ClientIn:
-    val write = cliMsg("evalHitMulti", data)
-
-  def racerState(data: JsonString) = payload("racerState", data)
-
-  private val destsRemover = ""","dests":\{[^\}]+}""".r
 
   private def cliMsg[A: Writes](t: String, data: A): String = cliMsg(t, Json.toJson(data))
   private def cliMsg(t: String, js: JsValue): String = s"""{"t":"$t","d":${Json.stringify(js)}}"""

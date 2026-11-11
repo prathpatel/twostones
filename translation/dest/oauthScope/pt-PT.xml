@@ -39,7 +39,6 @@
   <string name="apiDocumentationLinks" comment="The first parameter links to a personal token app example. The second parameter links to the API documentation">Aqui está um %1$s e a %2$s.</string>
   <string name="personalTokenAppExample">exemplo numa aplicação com token pessoal</string>
   <string name="apiDocumentation">documentação da API</string>
-  <string name="newToken">Novo token de acesso</string>
   <string name="apiAccessTokens">Tokens de acesso à API</string>
   <string name="created">Criado %s</string>
   <string name="lastUsed">Ultima utilização %s</string>

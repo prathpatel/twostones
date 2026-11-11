@@ -60,12 +60,10 @@ final class UserApi(userRepo: UserRepo, perfsRepo: UserPerfsRepo, cacheApi: Cach
     perfOf,
     perfsOf,
     setPerf,
-    dubiousPuzzle,
     glicko,
     withPerf,
     usingPerfOf,
     perfOptionOf,
-    addPuzRun,
     withPerfs
   }
   export gamePlayers.{ apply as gamePlayersAny, loggedIn as gamePlayersLoggedIn }

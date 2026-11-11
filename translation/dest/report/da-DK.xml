@@ -10,7 +10,6 @@
   <string name="reportSelfHarm">Selvmord / Selvskade</string>
   <string name="reportHate">Hadtale / Sexisme</string>
   <string name="reportSpam">Spamming</string>
-  <string name="readMoreAboutLichessReports">Læs mere om Lichess-anmeldelser</string>
   <string name="reportMaximumCharacters">Højst 3000 tegn.</string>
   <string name="reportCheatBoostHelp">Indsæt linket til partiet/partierne og forklar, hvad der er galt med denne brugers adfærd. Skriv ikke blot \"de snyder\", men fortæl os, hvordan du er nået frem til denne konklusion.</string>
   <string name="reportUsernameHelp">Forklar, hvorfor dette brugernavn er stødende. Sig ikke blot \"det er stødende/upassende,\" men fortæl os, hvordan du er nået frem til denne konklusion, især hvis det stødende indhold er svært at forstå, ikke er på engelsk, er slang eller en historisk/kulturel henvisning.</string>

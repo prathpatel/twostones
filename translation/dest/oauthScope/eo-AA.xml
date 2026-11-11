@@ -38,7 +38,6 @@
   <string name="apiDocumentationLinks" comment="The first parameter links to a personal token app example. The second parameter links to the API documentation">Ĉi tie estas %1$s kaj la %2$s.</string>
   <string name="personalTokenAppExample">ekzamplo de persona ĵetona apo</string>
   <string name="apiDocumentation">API dokumentado</string>
-  <string name="newToken">Nova atinga ĵetono</string>
   <string name="apiAccessTokens">API atingaj ĵetonoj</string>
   <string name="created">Kreita %s</string>
   <string name="lastUsed">Laste uzita %s</string>

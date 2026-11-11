@@ -9,9 +9,7 @@
   <string name="oauthCatUserAccount">Benutzerkonto</string>
   <string name="oauthCatInteractions">Interaktionen</string>
   <string name="oauthCatPlayGames">Partien spielen</string>
-  <string name="oauthCatStudiesBroadcasts">Studien &amp; Übertragungen</string>
   <string name="oauthCatExternalPlay">Externes Spielen</string>
-  <string name="oauthCatExternalEngine">Externe Schach-Engine</string>
   <string name="doNotShareIt">Der Zugangsschlüssel wird Zugriff auf dein Konto ermöglichen. Teile ihn NIEMALS!</string>
   <string name="copyTokenNow">Stelle sicher, dass du deinen persönlichen Zugangsschlüssel jetzt kopierst. Du wirst ihn nicht erneut sehen können!</string>
   <string name="preferenceRead">Einstellungen lesen</string>
@@ -48,7 +46,6 @@
   <string name="apiDocumentationLinks" comment="The first parameter links to a personal token app example. The second parameter links to the API documentation">Hier ist ein %1$s und die %2$s.</string>
   <string name="personalTokenAppExample">Beispiel für eine Anwendung mit persönlichem Zugangs-Schlüssel</string>
   <string name="apiDocumentation">API-Dokumentation</string>
-  <string name="newToken">Neuer Zugangs-Schlüssel</string>
   <string name="apiAccessTokens">API-Zugangs-Schlüssel</string>
   <string name="created">Erstellt: %s</string>
   <string name="lastUsed">Zuletzt benutzt: %s</string>

@@ -51,60 +51,6 @@ final class Controller(
         )
       )
 
-  def simul(id: Simul.Id, header: RequestHeader) =
-    WebSocket(header): req =>
-      (mongo.simulExists(id), mongo.troll.is(req.user)).mapN:
-        case (true, isTroll) =>
-          endpoint(
-            name = "simul",
-            behavior = emit =>
-              SimulClientActor.start(RoomActor.State(id.into(RoomId), isTroll), fromVersion(header)):
-                Deps(emit, req, services)
-            ,
-            req,
-            credits = 30,
-            interval = 20.seconds
-          )
-        case _ => notFound
-
-  def tournament(id: Tour.Id, header: RequestHeader) =
-    WebSocket(header): req =>
-      mongo
-        .tourExists(id)
-        .zip(mongo.troll.is(req.user))
-        .map:
-          case (true, isTroll) =>
-            endpoint(
-              name = "tour",
-              behavior = emit =>
-                TourClientActor.start(RoomActor.State(id.into(RoomId), isTroll), fromVersion(header)):
-                  Deps(emit, req, services)
-              ,
-              req,
-              credits = 30,
-              interval = 20.seconds
-            )
-          case _ => notFound
-
-  def study(id: Study.Id, header: RequestHeader) =
-    WebSocket(header): req =>
-      mongo
-        .studyExistsFor(id, req.user)
-        .zip(mongo.troll.is(req.user))
-        .map:
-          case (true, isTroll) =>
-            endpoint(
-              name = "study",
-              behavior = emit =>
-                StudyClientActor.start(RoomActor.State(id.into(RoomId), isTroll), fromVersion(header)):
-                  Deps(emit, req, services)
-              ,
-              req,
-              credits = 60,
-              interval = 15.seconds
-            )
-          case _ => notFound
-
   private def roundFrom(id: Game.AnyId, req: Req): Future[Either[Option[SocketVersion], JsonString]] =
     if req.isLichessMobile || req.header.queryParameter("load").contains("true") then
       LilaRequest
@@ -187,65 +133,6 @@ final class Controller(
               credits = 50,
               interval = 30.seconds
             )
-
-  def team(id: Team.Id, header: RequestHeader) =
-    WebSocket(header): req =>
-      mongo
-        .teamView(id, req.user)
-        .zip(mongo.troll.is(req.user))
-        .map: (view, isTroll) =>
-          if view.exists(_.yes) then
-            endpoint(
-              name = "team",
-              behavior = emit =>
-                TeamClientActor.start(RoomActor.State(id.into(RoomId), isTroll), fromVersion(header)):
-                  Deps(emit, req, services)
-              ,
-              req,
-              credits = 30,
-              interval = 20.seconds
-            )
-          else siteEndpoint(req)
-
-  def swiss(id: Swiss.Id, header: RequestHeader) =
-    WebSocket(header): req =>
-      mongo
-        .swissExists(id)
-        .zip(mongo.troll.is(req.user))
-        .map:
-          case (true, isTroll) =>
-            endpoint(
-              name = "swiss",
-              behavior = emit =>
-                SwissClientActor.start(RoomActor.State(id.into(RoomId), isTroll), fromVersion(header)):
-                  Deps(emit, req, services)
-              ,
-              req,
-              credits = 30,
-              interval = 20.seconds
-            )
-          case _ => notFound
-
-  def racer(id: Racer.Id, header: RequestHeader) =
-    WebSocket(header): req =>
-      Future.successful:
-        req.user
-          .match
-            case Some(u) => Option(Racer.PlayerId.User(u))
-            case None => auth.sidFromReq(header).map(Racer.PlayerId.Anon.apply)
-          .match
-            case None => notFound
-            case Some(pid) =>
-              endpoint(
-                name = "racer",
-                behavior = emit =>
-                  RacerClientActor.start(RoomActor.State(id.into(RoomId), IsTroll(false)), pid):
-                    Deps(emit, req, services)
-                ,
-                req,
-                credits = 30,
-                interval = 15.seconds
-              )
 
   def api(header: RequestHeader) =
     val req = Req(header, Sri.random(), None).copy(flag = Some(Flag.api))

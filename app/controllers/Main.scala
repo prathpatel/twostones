@@ -88,12 +88,6 @@ final class Main(env: Env, assetsC: ExternalAssets) extends LilaController(env):
   def temporarilyDisabled(@annotation.nowarn path: String) = Open:
     NotImplemented.page(views.site.message.temporarilyDisabled)
 
-  def helpPath(path: String) = Open:
-    path match
-      case "keyboard-move" => Ok.snip(lila.web.ui.help.keyboardMove)
-      case "voice/move" => Ok.snip(lila.web.ui.help.voiceMove)
-      case _ => notFound
-
   def movedPermanently(to: String) = Anon:
     MovedPermanently(to)
 

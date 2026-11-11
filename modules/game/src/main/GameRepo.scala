@@ -189,8 +189,7 @@ final class GameRepo(c: Coll)(using Executor) extends lila.core.game.GameRepo(c)
     sortedCursor(
       Query.user(user.id) ++
         Query.finished ++
-        Query.turnsGt(2) ++
-        Query.variant(lila.rating.PerfType.variantOf(pk)),
+        Query.turnsGt(2),
       Query.sortChronological
     )
 
@@ -414,8 +413,7 @@ final class GameRepo(c: Coll)(using Executor) extends lila.core.game.GameRepo(c)
       else g
     val userIds = g2.userIds.distinct
     val checkInHours =
-      if g2.isPgnImport then none
-      else if g2.sourceIs(_.Api) then some(24 * 7)
+      if g2.sourceIs(_.Api) then some(24 * 7)
       else if g2.hasClock then 1.some
       else some(24 * 10)
     val bson = gameHandler.write(g2) ++ bdoc(
@@ -545,10 +543,8 @@ final class GameRepo(c: Coll)(using Executor) extends lila.core.game.GameRepo(c)
 
   def deleteAllSinglePlayerOf(id: UserId): Fu[List[GameId]] = for
     aiIds <- coll.primitive[GameId](Query.user(id) ++ Query.hasAi, "_id")
-    importIds <- coll.primitive[GameId](Query.imported(id), "_id")
-    allIds = aiIds ::: importIds
-    _ <- coll.delete.one(inIds(allIds))
-  yield allIds
+    _ <- coll.delete.one(inIds(aiIds))
+  yield aiIds
 
   // expensive, enumerates all the player's games
   def swissIdsOf(id: UserId): Fu[Set[SwissId]] =

@@ -2,7 +2,6 @@
 
 import { scrollToInnerSelector, requestIdleCallbackSafe, once } from 'lib';
 import { prefersLightThemeQuery } from 'lib/device';
-import { licon } from 'lib/licon';
 import { pubsub } from 'lib/pubsub';
 import { eventuallySetupDefaultConnection } from 'lib/socket';
 import { initMiniBoards, initMiniGames, updateMiniGame, finishMiniGame, toggleBoxInit } from 'lib/view';
@@ -70,39 +69,13 @@ export function boot() {
       site.unload.expected = true;
       site.redirect(d);
     });
-    pubsub.on('socket.in.fen', e =>
+    pubsub.on('socket.in.position', e =>
       document.querySelectorAll('.mini-game-' + e.id).forEach((el: HTMLElement) => updateMiniGame(el, e)),
     );
     pubsub.on('socket.in.finish', e =>
       document.querySelectorAll('.mini-game-' + e.id).forEach((el: HTMLElement) => finishMiniGame(el, e.win)),
     );
     pubsub.on('socket.in.announce', announceDisplay);
-    pubsub.on('socket.in.tournamentReminder', (data: { id: string; name: string }) => {
-      if ($('#announce').length || document.body.dataset.tournamentId === data.id) return;
-      const url = '/tournament/' + data.id;
-      $('body').append(
-        $('<div id="announce">')
-          .append($(`<a data-icon="${licon.Trophy}" class="text">`).attr('href', url).text(data.name))
-          .append(
-            $('<div class="actions">')
-              .append(
-                $(`<a class="withdraw text" data-icon="${licon.Pause}">`)
-                  .attr('href', url + '/withdraw')
-                  .text(i18n.site.pause)
-                  .on('click', function (this: HTMLAnchorElement) {
-                    xhrText(this.href, { method: 'post' });
-                    $('#announce').remove();
-                    return false;
-                  }),
-              )
-              .append(
-                $(`<a class="text" data-icon="${licon.PlayTriangle}">`)
-                  .attr('href', url)
-                  .text(i18n.site.resume),
-              ),
-          ),
-      );
-    });
 
     const mql = prefersLightThemeQuery();
     if (document.body.dataset.theme?.includes('system')) applySystemThemeClasses(mql.matches);

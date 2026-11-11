@@ -38,7 +38,6 @@
   <string name="apiDocumentationLinks" comment="The first parameter links to a personal token app example. The second parameter links to the API documentation">ນີ້ແມ່ນ %1$s ແລະ %2$s.</string>
   <string name="personalTokenAppExample">ຕົວຢ່າງແອັບໂທເຄັນສ່ວນຕົວ</string>
   <string name="apiDocumentation">ເອກະສານແນະນຳ API</string>
-  <string name="newToken">ໂທເຄັນເຂົ້າເຖິງໃໝ່</string>
   <string name="apiAccessTokens">ໂທເຄັນເຂົ້າເຖິງ API</string>
   <string name="created">ສ້າງເມື່ອ %s</string>
   <string name="lastUsed">ໃຊ້ລ່າສຸດເມື່ອ %s</string>

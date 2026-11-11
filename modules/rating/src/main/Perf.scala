@@ -4,7 +4,7 @@ import chess.IntRating
 import chess.rating.glicko.Glicko
 import reactivemongo.api.bson.{ BSONDocument, BSONDocumentHandler, Macros }
 
-import lila.core.perf.{ Perf, PuzPerf }
+import lila.core.perf.Perf
 import lila.db.BSON
 import lila.db.dsl.given
 import lila.rating.GlickoExt.*
@@ -57,7 +57,6 @@ object Perf:
 
   /* Set a latest date as a hack so that these are written to the db even though there are no games */
   val defaultManaged = new Perf(lila.rating.Glicko.defaultManaged, 0, Nil, nowInstant.some)
-  val defaultManagedPuzzle = new Perf(lila.rating.Glicko.defaultManagedPuzzle, 0, Nil, nowInstant.some)
   val defaultBot = new Perf(lila.rating.Glicko.defaultBot, 0, Nil, nowInstant.some)
 
   val recentMaxSize = 12
@@ -83,4 +82,3 @@ object Perf:
         "la" -> o.latest.map(w.date)
       )
 
-  given BSONDocumentHandler[PuzPerf] = Macros.handler[PuzPerf]

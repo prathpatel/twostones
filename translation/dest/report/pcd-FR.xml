@@ -11,7 +11,6 @@
   <string name="reportSelfHarm">Suicide/Automutilation</string>
   <string name="reportHate">Discours haineux/Sexisme</string>
   <string name="reportSpam">Pollupostage</string>
-  <string name="readMoreAboutLichessReports">En savoir plus sur les rapports de Lichess</string>
   <string name="reportMaximumCharacters">Maximum de 3 000 caractères.</string>
   <string name="reportCheatBoostHelp">Collez le lien vers la ou les parties et expliquez pourquoi le comportement de l\'utilisateur est inapproprié. Ne dites pas juste « il triche »; expliquez comment vous êtes arrivé à cette conclusion.</string>
   <string name="reportUsernameHelp">Expliquez pourquoi ce nom d\'utilisateur est offensant. Ne dites pas simplement qu\'il est choquant ou inapproprié; expliquez comment vous êtes arrivé à cette conclusion, surtout si l\'insulte n\'est pas claire, n\'est pas en anglais, est en argot ou a une connotation historique ou culturelle.</string>

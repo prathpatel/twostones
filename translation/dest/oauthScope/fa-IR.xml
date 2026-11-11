@@ -9,9 +9,7 @@
   <string name="oauthCatUserAccount">حساب کاربر</string>
   <string name="oauthCatInteractions">تعامل</string>
   <string name="oauthCatPlayGames">انجام بازی</string>
-  <string name="oauthCatStudiesBroadcasts">مطالعه و پخش زنده</string>
   <string name="oauthCatExternalPlay">بازیِ بیرونی</string>
-  <string name="oauthCatExternalEngine">موتور بیرونی</string>
   <string name="doNotShareIt">نمودافزار اجازه دسترسی به حساب‌تان را می‌دهد. آن را با کسی به اشتراک نگذارید!</string>
   <string name="copyTokenNow">مطمعن شوید توکن را هم اکنون ذخیره کرده اید. در آینده دسترسی به آن امکان پذیر نیست!</string>
   <string name="preferenceRead">خواندن تنظیمات</string>
@@ -48,7 +46,6 @@
   <string name="apiDocumentationLinks" comment="The first parameter links to a personal token app example. The second parameter links to the API documentation">اینجا یک %1$s و %2$s.</string>
   <string name="personalTokenAppExample">نمونه بَرکِ نمودافزار شخصی</string>
   <string name="apiDocumentation">مستندات میم.ب.کاف</string>
-  <string name="newToken">نمودافزار دسترسی تازه</string>
   <string name="apiAccessTokens">نمودافزارهای دسترسی میم.ب.کاف</string>
   <string name="created">%s ایجاد شده</string>
   <string name="lastUsed">آخرین استفاده %s</string>

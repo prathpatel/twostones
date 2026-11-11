@@ -19,6 +19,8 @@ final class PasswordReset(
 )(using Executor, lila.core.i18n.Translator, lila.core.config.RateLimit):
 
   import Mailer.html.*
+  // the footer of every email links to this site's pages
+  private given RouteUrl = routeUrl
 
   def send(user: User, email: EmailAddress)(using lang: Lang): Funit =
     tokener.make(user.id).flatMap { token =>

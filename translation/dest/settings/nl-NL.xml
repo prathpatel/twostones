@@ -11,7 +11,6 @@
   <string name="closeAccountForeverLabel">Sluit voor altijd: maak heractiveren onmogelijk</string>
   <string name="closeAccountForeverWarning">Voorkom het opnieuw activeren van je account. Als je dit vakje aanvinkt, kunnen zelfs beheerders je account niet heropenen op jouw verzoek.</string>
   <string name="deleteYourAccount">Verwijder je account</string>
-  <string name="deleteAccountWarning">Zodra je je account verwijdert, wordt deze van Lichess gehaald en kunnen onze beheerders hem niet meer voor je terugbrengen.</string>
   <string name="wouldYouLikeToXInstead" comment="%s is close your account">Wil je in plaats daarvan je %s?</string>
   <string name="closeYourAccount">account sluiten</string>
   <string name="deleteAccountConfirmText">Ik begrijp dat verwijderde accounts niet te herstellen zijn</string>

@@ -11,7 +11,6 @@
   <string name="closeAccountForeverLabel">Fermer définitivement : rend la réouverture impossible</string>
   <string name="closeAccountForeverWarning">Empêcher la réouverture du compte. Si vous cochez cette case, même les administrateurs ne pourront pas rouvrir votre compte à votre demande.</string>
   <string name="deleteYourAccount">Supprimer votre compte</string>
-  <string name="deleteAccountWarning">Une fois votre compte supprimé, il est retiré de Lichess et les administrateurs ne peuvent pas le rétablir à votre demande.</string>
   <string name="wouldYouLikeToXInstead" comment="%s is close your account">Voulez-vous plutôt %s?</string>
   <string name="closeYourAccount">fermer votre compte</string>
   <string name="deleteAccountConfirmText">Je comprends qu\'un compte supprimé n\'est pas récupérable.</string>

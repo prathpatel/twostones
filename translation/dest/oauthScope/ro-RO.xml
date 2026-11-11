@@ -9,9 +9,7 @@
   <string name="oauthCatUserAccount">Contul de utilizator</string>
   <string name="oauthCatInteractions">Interacțiuni</string>
   <string name="oauthCatPlayGames">Joacă jocuri</string>
-  <string name="oauthCatStudiesBroadcasts">Studiile &amp; Transmisiuni</string>
   <string name="oauthCatExternalPlay">Joc prin interfețe externe</string>
-  <string name="oauthCatExternalEngine">Motor extern</string>
   <string name="doNotShareIt">Tokenul va permite accesul la contul tău. NU îl partaja cu nimeni!</string>
   <string name="copyTokenNow">Nu uitați să copiați acum noul token de acces personal. Nu îl veți mai putea vedea din nou!</string>
   <string name="preferenceRead">Citește preferințele</string>
@@ -48,7 +46,6 @@
   <string name="apiDocumentationLinks" comment="The first parameter links to a personal token app example. The second parameter links to the API documentation">Aici este %1$s şi %2$s.</string>
   <string name="personalTokenAppExample">exemplu de token app personal</string>
   <string name="apiDocumentation">Documentație API</string>
-  <string name="newToken">Token de acces nou</string>
   <string name="apiAccessTokens">Token-uri de acces API</string>
   <string name="created">Creat %s</string>
   <string name="lastUsed">Ultimul folosit %s</string>

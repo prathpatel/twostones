@@ -31,7 +31,6 @@ class ComputeMoveTimesTest extends munit.FunSuite:
       ByColor(c => Player(GamePlayerId("abcd"), c, aiLevel = none)),
       rated = Rated.No,
       source = Source.Api,
-      pgnImport = none
     ).sloppy
       .copy(
         status = status,

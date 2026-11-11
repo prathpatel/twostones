@@ -29,7 +29,7 @@ Allow: /game/export/gif/thumbnail/
 
   val manifest = Json.obj(
     "name" -> net.domain,
-    "short_name" -> "GoGame",
+    "short_name" -> "TwoStones",
     "start_url" -> "/",
     "display" -> "standalone",
     "background_color" -> "#161512",
@@ -37,7 +37,7 @@ Allow: /game/export/gif/thumbnail/
     "description" -> "A free, open source server for the game of Go.",
     "icons" -> List(32, 64, 128, 192, 256, 512).map: size =>
       Json.obj(
-        "src" -> s"//${net.domain}/assets/logo/gogame-favicon-$size.png",
+        "src" -> s"//${net.domain}/assets/logo/twostones-favicon-$size.png",
         "sizes" -> s"${size}x$size",
         "type" -> "image/png"
       ),
@@ -139,8 +139,8 @@ Allow: /game/export/gif/thumbnail/
         "https://huggingface.co/Lichess",
         "https://www.kaggle.com/organizations/lichess"
       ),
-      "logo" -> s"${net.baseUrl}/assets/logo/gogame-favicon.svg",
-      "name" -> "GoGame",
+      "logo" -> s"${net.baseUrl}/assets/logo/twostones-favicon.svg",
+      "name" -> "TwoStones",
       "legalName" -> "LICHESS.ORG",
       "description" -> "A free, open source server for the game of Go.", // should be kept in English unless /about receives more localisations
       "email" -> "contact@lichess.org",

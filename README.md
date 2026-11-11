@@ -1,6 +1,6 @@
-# GoGame — a Go server forked from Lichess
+# TwoStones — a Go server forked from Lichess
 
-GoGame is a free, open source server for the game of **Go** (Baduk, Weiqi), built by
+TwoStones is a free, open source server for the game of **Go** (Baduk, Weiqi), built by
 forking [lila](https://github.com/lichess-org/lila), the server behind
 [lichess.org](https://lichess.org), and its websocket server
 [lila-ws](https://github.com/lichess-org/lila-ws), and replacing chess with Go.
@@ -71,10 +71,10 @@ Requirements: **Java 21**, **sbt**, **Node.js 24.20+** with **pnpm 12**, **Mongo
 (7.x works) and **Redis**.
 
 1. Start MongoDB on `localhost:27017` and Redis on `localhost:6379`. The data goes in the
-   `gogame` database. Optionally, create its indexes once (faster queries):
+   `twostones` database. Optionally, create its indexes once (faster queries):
 
    ```bash
-   mongosh gogame bin/mongodb/indexes-gogame.js
+   mongosh twostones bin/mongodb/indexes-twostones.js
    ```
 
 2. Install KataGo, the computer opponent, into `katago/` (about 300 MB of downloads):
@@ -105,30 +105,32 @@ Requirements: **Java 21**, **sbt**, **Node.js 24.20+** with **pnpm 12**, **Mongo
 
 6. Open <http://localhost:9663>.
 
-### Upgrading from the "lichess" database
+### Upgrading from an older database
 
-Earlier versions of GoGame stored everything in a database named `lichess`. To keep your
-accounts and games, stop lila and lila-ws, then move them into `gogame`:
+TwoStones was called GoGame, and stored everything in a database named `gogame` (and before
+that, `lichess`). To keep your accounts and games, stop lila and lila-ws, then move them into
+`twostones`:
 
 ```bash
-mongosh bin/mongodb/rename-to-gogame.js
+mongosh bin/mongodb/rename-to-twostones.js
 ```
 
-It moves every collection with its indexes, and can be run again safely. Without it the
-servers start on an empty `gogame` database, and the old data stays in `lichess`.
+It moves every collection with its indexes, from `gogame` and then `lichess`, and can be run
+again safely. Without it the servers start on an empty `twostones` database, and the old data
+stays where it was.
 
 ### Playing from other devices
 
 To open the site from a phone, a tablet or another computer on the same network, start both
-servers with `GOGAME_HOST` set to this computer's address on the network (for example
+servers with `TWOSTONES_HOST` set to this computer's address on the network (for example
 `192.168.1.20`; see `ip addr` on Linux, `ipconfig getifaddr en0` on macOS):
 
 ```bash
-GOGAME_HOST=192.168.1.20 ./lila.sh run
+TWOSTONES_HOST=192.168.1.20 ./lila.sh run
 ```
 
 ```bash
-cd ws && GOGAME_HOST=192.168.1.20 sbt run
+cd ws && TWOSTONES_HOST=192.168.1.20 sbt run
 ```
 
 Then open <http://192.168.1.20:9663> on the other device. The variable sets the address the
@@ -223,7 +225,7 @@ protects MongoDB and Redis with passwords, and sets up the services (`deploy/sys
 nginx, HTTPS, the firewall and nightly database backups:
 
 ```bash
-sudo /opt/gogame/bin/install-server go.example.com --email you@example.com
+sudo /opt/twostones/bin/install-server go.example.com --email you@example.com
 ```
 
 For AWS (EC2, Route 53, SES email, S3 backups) follow [deploy/aws/README.md](deploy/aws/README.md).
@@ -240,7 +242,7 @@ It writes, with new random secrets, all ignored by git:
   Back it up: if `user.password.bpass.secret` is lost or changed, no password works anymore.
 - `ws/production.conf`: lila-ws's settings; start lila-ws with
   `-Dconfig.file=ws/production.conf`.
-- `conf/nginx-gogame.conf`: the nginx site for `go.example.com` and `ws.go.example.com`.
+- `conf/nginx-twostones.conf`: the nginx site for `go.example.com` and `ws.go.example.com`.
 
 It also prints the commands that give MongoDB and Redis their generated passwords.
 
@@ -258,17 +260,17 @@ The leaked-password check, the disposable email list and the Tor list need no ke
 
 ## License and credits
 
-GoGame is derived from **lila** and **lila-ws** by the Lichess authors
+TwoStones is derived from **lila** and **lila-ws** by the Lichess authors
 (Copyright © 2012–2026 the lila authors), and is distributed under the
 **GNU Affero General Public License v3 or later**, like the originals. See
 [`LICENSE`](LICENSE) and [`COPYING.md`](COPYING.md) for the full terms and for the
 fonts and assets that carry their own licenses. Because this is AGPL software, if you
 run a modified version as a network service you must offer its source to your users.
 
-GoGame is not affiliated with or endorsed by Lichess. The Lichess name and logo are
+TwoStones is not affiliated with or endorsed by Lichess. The Lichess name and logo are
 not used for this project.
 
-GoGame started from lila at `2e3e641c32b361c113e696cee34f9fddefef6727` and lila-ws at
+TwoStones started from lila at `2e3e641c32b361c113e696cee34f9fddefef6727` and lila-ws at
 `95f3f97121825c5bb5b8d5c006a47300bc05050c` (minus Lichess's Git LFS assets). This
 repository starts from a single commit of the converted code; the step-by-step history of
 the conversion, reviewable against upstream, is in

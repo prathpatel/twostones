@@ -17,17 +17,15 @@ def newGame(
     players: ByColor[Player],
     rated: Rated,
     source: Source,
-    pgnImport: Option[PgnImport],
     daysPerTurn: Option[Days] = None,
     rules: Set[GameRule] = Set.empty
-): NewGame = NewGame(newSloppy(go, players, rated, source, pgnImport, daysPerTurn, rules))
+): NewGame = NewGame(newSloppy(go, players, rated, source, daysPerTurn, rules))
 
 def newSloppy(
     go: _root_.goban.Game,
     players: ByColor[Player],
     rated: Rated,
     source: Source,
-    pgnImport: Option[PgnImport],
     daysPerTurn: Option[Days] = None,
     rules: Set[GameRule] = Set.empty
 ): Game =
@@ -39,7 +37,7 @@ def newSloppy(
     status = Status.Created,
     daysPerTurn = daysPerTurn,
     rated = rated,
-    metadata = newMetadata(source).copy(pgnImport = pgnImport, rules = rules),
+    metadata = newMetadata(source).copy(rules = rules),
     createdAt = createdAt,
     movedAt = createdAt
   )

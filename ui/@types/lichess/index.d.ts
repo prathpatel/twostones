@@ -85,15 +85,6 @@ interface LichessPowertip {
   forcePlacementHook?: (el: HTMLElement) => PowerTip.Placement | null;
 }
 
-type SoundMoveOpts = {
-  name?: string; // either provide this or valid san/uci
-  san?: string;
-  uci?: string;
-  volume?: number;
-  filter?: 'music' | 'game';
-};
-
-type SoundMove = (opts?: SoundMoveOpts) => void;
 type SoundListener = (event: 'start' | 'stop', text?: string) => void;
 
 interface SoundI {
@@ -101,7 +92,6 @@ interface SoundI {
   listeners: Set<SoundListener>;
   theme: string;
   voiceRateRange: { min: number; max: number };
-  move: SoundMove;
   load(name: string, path?: string): Promise<any>;
   play(name: string, volume?: number): Promise<void>;
   playAndDelayMateResultIfNecessary(name: string, volume?: number): Promise<void>;
@@ -115,14 +105,9 @@ interface SoundI {
   isSpeech(): boolean;
   changeSet(s: string): void;
   say(text: string, cut?: boolean, force?: boolean, translated?: boolean): void;
-  saySan(san?: San, cut?: boolean, force?: boolean): void;
   sayOrPlay(name: string, text: string, cut?: boolean): void;
   preloadBoardSounds(): void;
   url(name: string): string;
-}
-
-interface LichessSpeech {
-  step(s: { san?: San }, cut: boolean): void;
 }
 
 interface Cookie {
@@ -205,25 +190,15 @@ interface Navigator {
   deviceMemory?: number; // https://developer.mozilla.org/en-US/docs/Web/API/Navigator/deviceMemory
 }
 
-type VariantKey =
-  | 'standard'
-  | 'chess960'
-  | 'antichess'
-  | 'fromPosition'
-  | 'kingOfTheHill'
-  | 'threeCheck'
-  | 'atomic'
-  | 'horde'
-  | 'racingKings'
-  | 'crazyhouse';
+// Go has no variants: every game is "standard", whatever the board size
+type VariantKey = 'standard';
 
 type Speed = 'ultraBullet' | 'bullet' | 'blitz' | 'rapid' | 'classical' | 'correspondence';
 
-type Perf = Exclude<VariantKey, 'standard'> | Speed;
+// a rating: one per speed
+type Perf = Speed;
 
 type UserId = string;
-type Uci = string;
-type San = string;
 type Ply = number;
 type Hours = number;
 type Minutes = number;

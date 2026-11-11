@@ -1,4 +1,4 @@
-# Hosting GoGame on AWS
+# Hosting TwoStones on AWS
 
 The simplest setup that works well for a Go server of any modest size: **one server**
 (a Lightsail instance or an EC2 instance) runs everything: nginx, lila, lila-ws, KataGo, MongoDB and Redis. Around it, AWS provides
@@ -52,7 +52,7 @@ Then:
 
 | Setting | Value |
 | --- | --- |
-| Name | `gogame` |
+| Name | `twostones` |
 | AMI | **Ubuntu Server 24.04 LTS, 64-bit (x86)**. Not Arm: KataGo's Linux release is x86 only. |
 | Instance type | **m7i.xlarge** (4 vCPU, 16 GB, ~$145/month) is comfortable. `t3.xlarge` (same size, burstable) is a little cheaper; `t3.large` (8 GB) works for testing, with slower builds and a slower computer opponent. |
 | Key pair | Create one and download the `.pem` file: you need it to log in. |
@@ -97,36 +97,36 @@ Domains registered at Cloudflare always use Cloudflare's DNS (Route 53 is not ne
 3. Create two **A records** pointing at the Elastic IP: `example.com` and
    `ws.example.com` (the websockets). Use your own names.
 
-## 4. Install GoGame
+## 4. Install TwoStones
 
 Log in (Ubuntu's user is `ubuntu`):
 
 ```bash
-ssh -i gogame.pem ubuntu@ELASTIC_IP
+ssh -i twostones.pem ubuntu@ELASTIC_IP
 ```
 
-Get the code into `/opt/gogame`. For a private repository, use a GitHub personal access
+Get the code into `/opt/twostones`. For a private repository, use a GitHub personal access
 token or a deploy key:
 
 ```bash
-sudo git clone https://github.com/prathpatel/twostones /opt/gogame
+sudo git clone https://github.com/prathpatel/twostones /opt/twostones
 ```
 
 Install. `--email` is for Let's Encrypt, which only works once the DNS records of step 3
 point at this server:
 
 ```bash
-sudo /opt/gogame/bin/install-server example.com --email you@example.com
+sudo /opt/twostones/bin/install-server example.com --email you@example.com
 ```
 
 The websockets go on `ws.example.com` (or name them with `--ws-domain`). It takes 20 to 40 minutes, mostly building. It ends with a short list of what is left:
 email (step 5), the administrator account (step 7) and backups (step 6). Check it:
 
 ```bash
-systemctl status gogame gogame-ws
+systemctl status twostones twostones-ws
 ```
 
-and open `https://example.com`. Logs: `journalctl -u gogame -f`.
+and open `https://example.com`. Logs: `journalctl -u twostones -f`.
 
 **Memory.** The installer limits MongoDB's cache to 4 GB
 (`storage.wiredTiger.engineConfig.cacheSizeGB: 4` in `/etc/mongod.conf`; by default MongoDB
@@ -145,7 +145,7 @@ verified the domain through DNS records; nobody has to receive mail there. Two r
   inbox (Gmail or any other), for free. Or set `net.email` to an address you already have.
 - **Until SES works**, leave `mock = true` and `security.email_confirm.enabled = false` (the
   installer's defaults): people can sign up and play, accounts need no confirmation, and
-  emails such as password resets are only written to the log (`journalctl -u gogame`).
+  emails such as password resets are only written to the log (`journalctl -u twostones`).
 
 1. **SES → Identities → Create identity → Domain**: your domain, with **Easy DKIM**. If the
    domain is in Route 53, SES publishes the three DKIM records itself. With Cloudflare, add
@@ -158,7 +158,7 @@ verified the domain through DNS records; nobody has to receive mail there. Two r
    about a day.
 3. **SES → SMTP settings → Create SMTP credentials**. Download the SMTP username and
    password. These are not your AWS access keys.
-4. On the server, edit `/opt/gogame/conf/secrets.conf`:
+4. On the server, edit `/opt/twostones/conf/secrets.conf`:
 
    ```hocon
    mailer.primary {
@@ -168,19 +168,19 @@ verified the domain through DNS records; nobody has to receive mail there. Two r
      tls = true
      user = "SMTP USERNAME"
      password = "SMTP PASSWORD"
-     sender = "GoGame <noreply@example.com>"
+     sender = "TwoStones <noreply@example.com>"
    }
    security.email_confirm.enabled = true
    ```
 
-   then `sudo systemctl restart gogame`, and test with a password reset.
+   then `sudo systemctl restart twostones`, and test with a password reset.
 
 EC2 blocks outgoing port 25; port 587, used here, is fine.
 
 ## 6. Backups and alerts
 
-Every night `gogame-backup.timer` (as the `gogame` user, never root) writes a snapshot of
-the database into `/var/backups/gogame`, 14 days kept:
+Every night `twostones-backup.timer` (as the `twostones` user, never root) writes a snapshot of
+the database into `/var/backups/twostones`, 14 days kept:
 
 - **Consistent:** MongoDB runs as a one-member replica set, so `mongodump --oplog` also
   records the writes made while the dump runs. A restore brings the database back exactly as
@@ -189,8 +189,8 @@ the database into `/var/backups/gogame`, 14 days kept:
   counted (`bin/restore-database --check`). A backup that can't be restored fails.
 - **Disk space:** the backup fails when the disk is more than 85% full.
 
-Settings go in `/etc/gogame/backup.env`. Run a backup by hand with
-`sudo systemctl start gogame-backup`, and see the result with `journalctl -u gogame-backup -n 20`.
+Settings go in `/etc/twostones/backup.env`. Run a backup by hand with
+`sudo systemctl start twostones-backup`, and see the result with `journalctl -u twostones-backup -n 20`.
 
 ### Alerts
 
@@ -198,7 +198,7 @@ Settings go in `/etc/gogame/backup.env`. Run a backup by hand with
    (period 1 day, grace 2 hours) and add its ping URL:
 
    ```bash
-   echo 'GOGAME_HEALTHCHECK_URL=https://hc-ping.com/YOUR-UUID' | sudo tee -a /etc/gogame/backup.env
+   echo 'TWOSTONES_HEALTHCHECK_URL=https://hc-ping.com/YOUR-UUID' | sudo tee -a /etc/twostones/backup.env
    ```
 
    It emails you when a backup fails, or doesn't report at all.
@@ -211,11 +211,11 @@ Settings go in `/etc/gogame/backup.env`. Run a backup by hand with
 
 1. **S3 → Create bucket** (keep "Block all public access" on). Optionally add a lifecycle rule
    that deletes old backups after, say, 90 days.
-2. Permission to upload, limited to `s3:PutObject` on `arn:aws:s3:::YOUR-BUCKET/gogame/*`:
+2. Permission to upload, limited to `s3:PutObject` on `arn:aws:s3:::YOUR-BUCKET/twostones/*`:
    - **EC2:** an IAM role with that policy (**IAM → Roles → Create role**, for EC2), then
      **EC2 → the instance → Actions → Security → Modify IAM role**.
    - **Lightsail** (no IAM roles): an IAM user with that policy and an access key, set up for
-     the `gogame` user with `sudo -u gogame -H aws configure`.
+     the `twostones` user with `sudo -u twostones -H aws configure`.
 3. On the server:
 
    ```bash
@@ -223,14 +223,14 @@ Settings go in `/etc/gogame/backup.env`. Run a backup by hand with
    ```
 
    ```bash
-   echo 'GOGAME_BACKUP_S3=s3://YOUR-BUCKET/gogame' | sudo tee -a /etc/gogame/backup.env
+   echo 'TWOSTONES_BACKUP_S3=s3://YOUR-BUCKET/twostones' | sudo tee -a /etc/twostones/backup.env
    ```
 
    ```bash
-   sudo systemctl start gogame-backup && journalctl -u gogame-backup -n 5
+   sudo systemctl start twostones-backup && journalctl -u twostones-backup -n 5
    ```
 
-Keep a copy of `/opt/gogame/conf/secrets.conf` in your password manager: without its
+Keep a copy of `/opt/twostones/conf/secrets.conf` in your password manager: without its
 `user.password.bpass.secret`, a restored database's passwords don't work.
 
 ### Restoring
@@ -238,21 +238,21 @@ Keep a copy of `/opt/gogame/conf/secrets.conf` in your password manager: without
 Check a backup without changing anything:
 
 ```bash
-sudo -u gogame /opt/gogame/bin/restore-database --check /var/backups/gogame/gogame-DATE.archive.gz
+sudo -u twostones /opt/twostones/bin/restore-database --check /var/backups/twostones/twostones-DATE.archive.gz
 ```
 
 Replace the database with it:
 
 ```bash
-sudo systemctl stop gogame gogame-ws
+sudo systemctl stop twostones twostones-ws
 ```
 
 ```bash
-sudo -u gogame /opt/gogame/bin/restore-database /var/backups/gogame/gogame-DATE.archive.gz
+sudo -u twostones /opt/twostones/bin/restore-database /var/backups/twostones/twostones-DATE.archive.gz
 ```
 
 ```bash
-sudo systemctl start gogame gogame-ws
+sudo systemctl start twostones twostones-ws
 ```
 
 Try a restore once on a spare server, so you know the steps before you need them.
@@ -263,7 +263,7 @@ Sign up on the site, then give the account the administrator role. Use your user
 lowercase (the command reads the database address and password from `conf/secrets.conf`):
 
 ```bash
-sudo mongosh "$(sudo grep -oE 'mongodb://[^"]+' /opt/gogame/conf/secrets.conf | head -1)" --eval 'db.user4.updateOne({_id: "yourname"}, {$set: {roles: ["ROLE_SUPER_ADMIN"]}})'
+sudo mongosh "$(sudo grep -oE 'mongodb://[^"]+' /opt/twostones/conf/secrets.conf | head -1)" --eval 'db.user4.updateOne({_id: "yourname"}, {$set: {roles: ["ROLE_SUPER_ADMIN"]}})'
 ```
 
 Then turn on **two-factor authentication** in that account's security settings. In
@@ -291,7 +291,7 @@ the production setup in the main README) is in the same Cloudflare account.
 
 ## Your secrets: what they are, and keeping them
 
-`bin/install-server` generates every secret on the server, in `/opt/gogame/conf/secrets.conf`;
+`bin/install-server` generates every secret on the server, in `/opt/twostones/conf/secrets.conf`;
 you only add the values from outside services (SMTP, Turnstile). What each one does:
 
 | Setting | Used for | If it is lost or changed |
@@ -301,21 +301,21 @@ you only add the values from outside services (SMTP, Turnstile). What each one d
 | `security.password_reset`, `email_confirm`, `email_change`, `login_token` secrets | signing the links in emails | links already sent stop working |
 | `security.turnstile_cookie.secret` | the captcha's cookie | nothing visible |
 | `kamon.prometheus.lilaKey` | the secret part of the metrics address | change it where you read metrics |
-| `memo.picfit.secretKey`, `storm.secret`, `oauth.signedClients.takex3.secrets` | lichess features GoGame doesn't use | nothing |
+| `memo.picfit.secretKey`, `oauth.signedClients.takex3.secrets` | lichess features TwoStones doesn't use | nothing |
 | the MongoDB and Redis passwords (`mongodb.uri`, `redis.uri`) | the app's access to its database and Redis, on this server | the app can't connect until the database has the same password |
 | `mailer.primary` user and password | sending email (from SES) | create new SMTP credentials in SES |
 | `turnstile` keys | the signup captcha (from Cloudflare) | get the keys again in Cloudflare |
 
 Other secrets live outside that file, and a new server simply makes new ones: the backup
-user's password (`/etc/gogame/mongodump.yaml`) and MongoDB's replica set key
-(`/etc/mongod.key`). `ws/production.conf` and `conf/nginx-gogame.conf` are rebuilt from
+user's password (`/etc/twostones/mongodump.yaml`) and MongoDB's replica set key
+(`/etc/mongod.key`). `ws/production.conf` and `conf/nginx-twostones.conf` are rebuilt from
 `secrets.conf`.
 
 **Keep a copy of `secrets.conf`**: in a password manager (as a secure note or an attached
 file), or anywhere private and encrypted. Print it with:
 
 ```bash
-sudo cat /opt/gogame/conf/secrets.conf
+sudo cat /opt/twostones/conf/secrets.conf
 ```
 
 Never commit it (git ignores it) and never paste it into a chat or an issue. With this one
@@ -327,30 +327,30 @@ From Lightsail to EC2, to a bigger plan, or to another provider: the same steps,
 the new server runs Ubuntu 24.04 on x86. The domain stays the same.
 
 1. **Prepare the new server** (steps 2 and 4 above, without running the installer yet): get
-   the code into `/opt/gogame`.
+   the code into `/opt/twostones`.
 2. **Copy `secrets.conf` to it before installing**, from your saved copy or from the old
-   server, to `/opt/gogame/conf/secrets.conf`:
+   server, to `/opt/twostones/conf/secrets.conf`:
 
    ```bash
-   sudo install -m 600 secrets.conf /opt/gogame/conf/secrets.conf
+   sudo install -m 600 secrets.conf /opt/twostones/conf/secrets.conf
    ```
 
 3. **Install** with the same domain: it keeps the secrets, gives MongoDB and Redis the same
    passwords, and rebuilds the other files. HTTPS comes in step 6.
 
    ```bash
-   sudo /opt/gogame/bin/install-server example.com
+   sudo /opt/twostones/bin/install-server example.com
    ```
 
 4. **Take a last backup on the old server**, with the site stopped so nothing changes after
    it:
 
    ```bash
-   sudo systemctl stop gogame gogame-ws && sudo systemctl start gogame-backup
+   sudo systemctl stop twostones twostones-ws && sudo systemctl start twostones-backup
    ```
 
    ```bash
-   sudo cp /var/backups/gogame/gogame-$(date -u +%F).archive.gz /home/ubuntu/ && sudo chown ubuntu /home/ubuntu/gogame-*.archive.gz
+   sudo cp /var/backups/twostones/twostones-$(date -u +%F).archive.gz /home/ubuntu/ && sudo chown ubuntu /home/ubuntu/twostones-*.archive.gz
    ```
 
    Copy that file to the new server (e.g. `scp` through your computer, or from S3 if your
@@ -358,19 +358,19 @@ the new server runs Ubuntu 24.04 on x86. The domain stays the same.
 5. **Restore it on the new server**:
 
    ```bash
-   sudo systemctl stop gogame gogame-ws
+   sudo systemctl stop twostones twostones-ws
    ```
 
    ```bash
-   sudo install -o gogame -m 600 /home/ubuntu/gogame-*.archive.gz /var/backups/gogame/
+   sudo install -o twostones -m 600 /home/ubuntu/twostones-*.archive.gz /var/backups/twostones/
    ```
 
    ```bash
-   sudo -u gogame /opt/gogame/bin/restore-database /var/backups/gogame/gogame-DATE.archive.gz
+   sudo -u twostones /opt/twostones/bin/restore-database /var/backups/twostones/twostones-DATE.archive.gz
    ```
 
    ```bash
-   sudo systemctl start gogame gogame-ws
+   sudo systemctl start twostones twostones-ws
    ```
 
 6. **Switch the DNS**: point both A records (`@` and `ws`) at the new server's static IP, wait
@@ -380,17 +380,17 @@ the new server runs Ubuntu 24.04 on x86. The domain stays the same.
    sudo certbot --nginx --redirect -d example.com -d ws.example.com
    ```
 
-7. Put back `/etc/gogame/backup.env` (and the AWS key for S3 on Lightsail), check the site,
+7. Put back `/etc/twostones/backup.env` (and the AWS key for S3 on Lightsail), check the site,
    then delete the old server.
 
 ## Updating
 
 ```bash
-cd /opt/gogame && sudo -u gogame git pull
+cd /opt/twostones && sudo -u twostones git pull
 ```
 
 ```bash
-sudo /opt/gogame/bin/install-server example.com
+sudo /opt/twostones/bin/install-server example.com
 ```
 
 It rebuilds and restarts; the secrets and database stay. The running services can't change

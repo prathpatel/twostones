@@ -225,7 +225,6 @@ object user:
     def perfOptionOf[U: UserIdOf](u: U, perfKey: PerfKey): Fu[Option[Perf]]
     def perfsOf[U: UserIdOf](u: U): Fu[UserPerfs]
     def perfsOf[U: UserIdOf](us: PairOf[U], primary: Boolean): Fu[PairOf[UserPerfs]]
-    def dubiousPuzzle(id: UserId, puzzle: Perf): Fu[Boolean]
     def setPerf(userId: UserId, pk: PerfKey, perf: Perf): Funit
     def userIdsWithRoles(roles: List[RoleDbKey]): Fu[Set[UserId]]
     def incColor(userId: UserId, color: Color): Unit
@@ -243,7 +242,6 @@ object user:
     def containsEngine(userIds: List[UserId]): Fu[Boolean]
     def usingPerfOf[A, U: UserIdOf](u: U, perfKey: PerfKey)(f: Perf ?=> Fu[A]): Fu[A]
     def incToints(id: UserId, nb: Int): Funit
-    def addPuzRun(field: String, userId: UserId, score: Int): Funit
     def setPlan(user: User, plan: Option[Plan]): Funit
     def filterByEnabledPatrons(userIds: List[UserId]): Fu[Set[UserId]]
     def isCreatedSince(id: UserId, since: Instant): Fu[Boolean]

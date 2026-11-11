@@ -9,9 +9,7 @@
   <string name="oauthCatUserAccount">Cuenta de usuario</string>
   <string name="oauthCatInteractions">Interacciones</string>
   <string name="oauthCatPlayGames">Jugar partidas</string>
-  <string name="oauthCatStudiesBroadcasts">Estudios y Transmisiones</string>
   <string name="oauthCatExternalPlay">Juego externo</string>
-  <string name="oauthCatExternalEngine">Motor externo</string>
   <string name="doNotShareIt">El token permitirá el acceso a tu cuenta. ¡No lo compartas con nadie!</string>
   <string name="copyTokenNow">Asegúrate de copiar tu nuevo token de acceso personal. ¡No se te mostrará nunca más!</string>
   <string name="preferenceRead">Consultar preferencias</string>
@@ -48,7 +46,6 @@
   <string name="apiDocumentationLinks" comment="The first parameter links to a personal token app example. The second parameter links to the API documentation">Aquí hay un %1$s y la %2$s.</string>
   <string name="personalTokenAppExample">ejemplo de aplicación de token personal</string>
   <string name="apiDocumentation">documentación de la API</string>
-  <string name="newToken">Nuevo token de acceso</string>
   <string name="apiAccessTokens">Tokens de acceso a la API</string>
   <string name="created">Creado %s</string>
   <string name="lastUsed">Último uso %s</string>

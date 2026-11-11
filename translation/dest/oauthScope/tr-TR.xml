@@ -9,9 +9,7 @@
   <string name="oauthCatUserAccount">Kullanıcı hesabı</string>
   <string name="oauthCatInteractions">Etkileşimler</string>
   <string name="oauthCatPlayGames">Oyun oyna</string>
-  <string name="oauthCatStudiesBroadcasts">Çalışmalar &amp; Yayınlar</string>
   <string name="oauthCatExternalPlay">Harici oyun</string>
-  <string name="oauthCatExternalEngine">Harici motor</string>
   <string name="doNotShareIt">Jeton, hesabınıza erişim sağlayacaktır. Kimseyle PAYLAŞMAYIN!</string>
   <string name="copyTokenNow">Yeni kişisel erişim jetonunuzu şimdi kopyaladığınızdan emin olun. Bir daha göremeyeceksin!</string>
   <string name="preferenceRead">Oyun tercihleri ​​oku</string>
@@ -48,7 +46,6 @@
   <string name="apiDocumentationLinks" comment="The first parameter links to a personal token app example. The second parameter links to the API documentation">İşte bir %1$s ve %2$s.</string>
   <string name="personalTokenAppExample">kişisel jeton uygulama örneği</string>
   <string name="apiDocumentation">API dökümantasyonu</string>
-  <string name="newToken">Yeni erişim jetonu</string>
   <string name="apiAccessTokens">API erişim jetonları</string>
   <string name="created">Oluşturuldu: %s</string>
   <string name="lastUsed">Son kullanım: %s</string>

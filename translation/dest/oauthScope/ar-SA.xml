@@ -9,9 +9,7 @@
   <string name="oauthCatUserAccount">حساب المستخدم</string>
   <string name="oauthCatInteractions">التفاعلات</string>
   <string name="oauthCatPlayGames">العب مباريات</string>
-  <string name="oauthCatStudiesBroadcasts">الدراسات &amp; البث المباشر</string>
   <string name="oauthCatExternalPlay">اللعب الخارجي</string>
-  <string name="oauthCatExternalEngine">المحرّك الخارجي</string>
   <string name="doNotShareIt">الرمز المميز سيمنح الوصول إلى حسابك. لا تشاركه مع أي شخص!</string>
   <string name="copyTokenNow">تحقق من نسخ رمز الوصول الشخصي الجديد الآن، فلن تتمكن من رؤيته مرة أخرى!</string>
   <string name="preferenceRead">قراءة التفضيلات</string>
@@ -48,7 +46,6 @@
   <string name="apiDocumentationLinks" comment="The first parameter links to a personal token app example. The second parameter links to the API documentation">انظر %1$s و%2$s.</string>
   <string name="personalTokenAppExample">مثال لتطبيق رمز شخصي</string>
   <string name="apiDocumentation">دليلُ واجهة برمجة التطبيقات</string>
-  <string name="newToken">رمز الوصول الجديد</string>
   <string name="apiAccessTokens">رموز الوصول إلى واجهة API</string>
   <string name="created">أنشئت %s</string>
   <string name="lastUsed">آخر استخدام %s</string>

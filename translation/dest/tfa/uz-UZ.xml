@@ -13,6 +13,4 @@
   <string name="twoFactorEnabled">Ikki bosqiçli autentifikatsiya yoqilgan</string>
   <string name="twoFactorToDisable">Ikki bosqiçli autentifikatsiyani öçiriş uçun parolingiz va autentifikatsiya kodini kiriting.</string>
   <string name="openTwoFactorApp">Autentifikatsiya kodini köriş va şaxsingizni tasdiqlaş uçun qurilmangizdagi ikki bosqiçli autentifikatsiya ilovasini oçing.</string>
-  <string name="setupReminder">Akkauntingiz xavfsizligini ta’minlaş uçun https://lichess.org/account/twofactor sahifasida ikki bosqiçli autentifikatsiyani yoqing.
-Siz bu xabarni akkauntingizda maxsus masʼuliyatlar (unvonli öyinçi, jamoa sardori, murabbiy, öqituvçi yoki strimer) bölgani uçun oldingiz.</string>
 </resources>

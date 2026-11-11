@@ -16,7 +16,6 @@ GET   /account/info                    controllers.Account.info
 POST  /bookmark/$gameId<\w{8}>         controllers.Game.bookmark(gameId: GameId)
 
 # TV
-GET   /tv/channels                     controllers.Main.movedPermanently(to = "/api/tv/channels")
 
 # Relation
 GET   /api/rel/following               controllers.Relation.apiFollowing
@@ -73,7 +72,6 @@ GET   /game/$gameId<\w{8}>/mini                     controllers.Round.mini(gameI
 GET   /game/$gameId<\w{8}>/$color<white|black>/mini controllers.Round.mini(gameId: GameId, color: Color)
 GET   /game/$fullId<\w{12}>/mini                    controllers.Round.miniFullId(fullId: GameFullId)
 POST  /game/$fullId<\w{12}>/resign                  controllers.Round.resign(fullId: GameFullId)
-POST  /game/$gameId<\w{8}>/delete                   controllers.Game.delete(gameId: GameId)
 
 GET   /$gameId<\w{8}>/$color<white|black>        controllers.Round.watcherRedirect(gameId: GameId, color: Color)
 
@@ -264,11 +262,6 @@ GET   /faq                             controllers.Main.faq
 GET   /about                           controllers.Main.about
 GET   /source                          controllers.Main.source
 GET   /qa/:id/:slug                    controllers.Main.legacyQaQuestion(id: Int, slug)
-
-# Help
-GET   /help/*path                      controllers.Main.helpPath(path)
-
-# DGT
 
 POST  /jslog/$id<\w{12}>               controllers.Main.jslog(id: GameFullId)
 

@@ -38,7 +38,6 @@
   <string name="apiDocumentationLinks" comment="The first parameter links to a personal token app example. The second parameter links to the API documentation">%1$s мен %2$s сізге пайдасы тиер.</string>
   <string name="personalTokenAppExample">жеке токен програм үлгісі</string>
   <string name="apiDocumentation">API анықтамасы</string>
-  <string name="newToken">Жаңа кіру токені</string>
   <string name="apiAccessTokens">API кіру токендері</string>
   <string name="created">Құрылды %s</string>
   <string name="lastUsed">Қолданды %s</string>

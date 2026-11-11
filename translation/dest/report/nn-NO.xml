@@ -11,7 +11,6 @@
   <string name="reportSelfHarm">Sjølvmord / Sjølvskading</string>
   <string name="reportHate">Hatefulle ytringar / Sexisme</string>
   <string name="reportSpam">Spamming</string>
-  <string name="readMoreAboutLichessReports">Les meir om Lichess-rapportar</string>
   <string name="reportMaximumCharacters">Maks 3000 teikn.</string>
   <string name="reportCheatBoostHelp">Legg ved lenke til partiet/partia og forklar kva som er gale med åtferda til denne brukaren. Å berre påstå at brukaren juksar er ikkje nok, men gje ei nærare forklaring på korleis du kom til denne konklusjonen.</string>
   <string name="reportUsernameHelp">Forklår kva som gjer brukarnamnet støytande. Det held ikkje med å påstå at \"namnet er støytande/upassande\", men fortel oss korleis du kom til denne konklusjonen, spesielt om tydinga er uklår, ikkje er på engelsk, er eit slanguttrykk, eller har ein historisk/kulturell referanse.</string>

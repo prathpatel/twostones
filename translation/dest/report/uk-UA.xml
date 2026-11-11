@@ -11,7 +11,6 @@
   <string name="reportSelfHarm">Самогубство / Самоушкодження</string>
   <string name="reportHate">Мова ворожнечі / Сексизм</string>
   <string name="reportSpam">Спам</string>
-  <string name="readMoreAboutLichessReports">Читати більше про скарги Lichess</string>
   <string name="reportMaximumCharacters">Максимум 3000 символів.</string>
   <string name="reportCheatBoostHelp">Вставте посилання на партію (партії) та поясніть, що не так із поведінкою цього користувача. Не пишіть просто «він шахраює», а розкажіть, як ви дійшли цього висновку.</string>
   <string name="reportUsernameHelp">Поясніть, чому це ім\'я користувача образливе. Не пишіть просто «воно образливе/неприйнятне», а розкажіть, як ви дійшли такого висновку, особливо якщо образа неочевидна, не англійською, у сленгу або є історичним чи культурним натяком.</string>

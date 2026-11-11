@@ -22,5 +22,4 @@
   <string name="declineVariant">ຂ້ອຍຍັງບໍ່ພ້ອມຫຼິ້ນແບບຮູບແບບອື່ນນີ້ໃນຕອນນີ້.</string>
   <string name="declineNoBot">ຂ້ອຍບໍ່ຮັບຄຳທ້າທາຍຈາກບັອດ.</string>
   <string name="declineOnlyBot">ຂ້ອຍຮັບຄຳທ້າທາຍຈາກບັອດເທົ່ານັ້ນ.</string>
-  <string name="inviteLichessUser">ຫຼື ເຊີນຜູ້ໃຊ້ Lichess:</string>
 </resources>

@@ -39,7 +39,6 @@
   <string name="apiDocumentationLinks" comment="The first parameter links to a personal token app example. The second parameter links to the API documentation">Hemen duzu %1$s eta %2$s.</string>
   <string name="personalTokenAppExample">token-pertsonala erabiltzen duen app adibidea</string>
   <string name="apiDocumentation">APIaren dokumentazioa</string>
-  <string name="newToken">Sarbide token berria</string>
   <string name="apiAccessTokens">API sarbide tokenak</string>
   <string name="created">%s sortuta</string>
   <string name="lastUsed">%s azken aldiz erabilita</string>

@@ -12,8 +12,8 @@ final private class MailerCli(mailer: Mailer):
             case Some(client) =>
               val msg = Mailer.Message(
                 to = email,
-                subject = "Lichess test email",
-                text = "This is a test email from Lichess: https://lichess.org/dev/cli"
+                subject = "TwoStones test email",
+                text = "This is a test email from TwoStones."
               )
               mailer
                 .sendTest(msg, client)

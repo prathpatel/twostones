@@ -34,7 +34,6 @@ case class AiConfig(
             rated = chess.Rated.No,
             source = Source.Ai,
             daysPerTurn = makeDaysPerTurn,
-            pgnImport = None
           )
     .dmap(_.start)
 

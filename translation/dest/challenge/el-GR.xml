@@ -22,5 +22,4 @@
   <string name="declineVariant">Δε θέλω να παίξω αυτήν την παραλλαγή.</string>
   <string name="declineNoBot">Δε δέχομαι προκλήσεις από bots.</string>
   <string name="declineOnlyBot">Δέχομαι προκλήσεις μόνο από bots.</string>
-  <string name="inviteLichessUser">Ή προσκαλέστε έναν χρήστη του Lichess:</string>
 </resources>

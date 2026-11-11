@@ -82,7 +82,7 @@ final private class Titivate(
     case Right(game) =>
       game match
 
-        case game if game.finished || game.isPgnImport || (game.aborted && game.bothPlayersHaveMoved) =>
+        case game if game.finished || (game.aborted && game.bothPlayersHaveMoved) =>
           gameRepo.unsetCheckAt(game.id)
 
         case game if game.outoftime(withGrace = true) =>

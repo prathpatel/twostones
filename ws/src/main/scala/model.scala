@@ -29,51 +29,13 @@ object Game:
 
   // must only contain invariant data (no status, turns, or termination)
   // because it's cached in Mongo.scala
-  case class Round(id: Game.Id, players: ByColor[Player], ext: Option[RoundExt]):
+  case class Round(id: Game.Id, players: ByColor[Player]):
     def player(id: PlayerId, userId: Option[User.Id]): Option[RoundPlayer] =
       players.zipColor.collect:
-        case (c, p) if p.id == id && p.userId == userId => RoundPlayer(id, c, ext)
+        case (c, p) if p.id == id && p.userId == userId => RoundPlayer(id, c)
 
-  case class RoundPlayer(id: PlayerId, color: Color, ext: Option[RoundExt]):
-    def tourId = ext.collect { case RoundExt.InTour(id) => id }
-    def swissId = ext.collect { case RoundExt.InSwiss(id) => id }
-    def simulId = ext.collect { case RoundExt.InSimul(id) => id }
-    def extRoomId =
-      tourId.map(_.into(RoomId)).orElse(simulId.map(_.into(RoomId))).orElse(swissId.map(_.into(RoomId)))
-
-  enum RoundExt:
-    case InTour(id: Tour.Id) extends RoundExt
-    case InSwiss(id: Swiss.Id) extends RoundExt
-    case InSimul(id: Simul.Id) extends RoundExt
+  case class RoundPlayer(id: PlayerId, color: Color)
 end Game
-
-object Simul:
-  opaque type Id = String
-  object Id extends OpaqueString[Id]
-
-object Tour:
-  opaque type Id = String
-  object Id extends OpaqueString[Id]
-
-object Study:
-  opaque type Id = String
-  object Id extends OpaqueString[Id]
-
-object Swiss:
-  opaque type Id = String
-  object Id extends OpaqueString[Id]
-
-object Team:
-  opaque type Id = String
-  object Id extends OpaqueString[Id]
-
-  opaque type HasChat = Boolean
-  object HasChat extends YesNo[HasChat]
-
-  enum Access(val id: Int):
-    case None extends Access(0)
-    case Leaders extends Access(10)
-    case Members extends Access(20)
 
 object Challenge:
   opaque type Id = String
@@ -82,13 +44,6 @@ object Challenge:
     case Anon(secret: String)
     case User(userId: lila.ws.User.Id)
     case Open
-
-object Racer:
-  opaque type Id = String
-  object Id extends OpaqueString[Id]
-  enum PlayerId(val key: String):
-    case User(user: lila.ws.User.Id) extends PlayerId(user.value)
-    case Anon(sid: String) extends PlayerId(s"@$sid")
 
 opaque type Sri = String
 object Sri extends OpaqueString[Sri]:
@@ -99,16 +54,13 @@ opaque type Flag = String
 object Flag extends OpaqueString[Flag]:
   def make(value: String) =
     value match
-      case "simul" | "tournament" | "api" | "embed" => Some(Flag(value))
+      case "api" | "embed" => Some(Flag(value))
       case _ => None
   val api = Flag("api")
   val embed = Flag("embed")
 
 opaque type IpAddress = String
 object IpAddress extends OpaqueString[IpAddress]
-
-opaque type ChapterId = String
-object ChapterId extends OpaqueString[ChapterId]
 
 opaque type JsonString = String
 object JsonString extends OpaqueString[JsonString]
@@ -139,9 +91,3 @@ object UserTv extends OpaqueString[UserTv]
 case class Clock(white: Int, black: Int)
 /** A Go board, one char per point ('.', 'b', 'w'), as sent to mini boards. */
 case class Position(lastMove: String, board: String, clock: Option[Clock], turnColor: Color)
-
-opaque type MultiPv = Int
-object MultiPv extends RelaxedOpaqueInt[MultiPv]
-
-opaque type Depth = Int
-object Depth extends RelaxedOpaqueInt[Depth]

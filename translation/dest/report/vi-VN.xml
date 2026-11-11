@@ -11,7 +11,6 @@
   <string name="reportSelfHarm">Tự tử / Tự gây thương tích</string>
   <string name="reportHate">Lời lẽ khiêu khích / Phân biệt giới tính</string>
   <string name="reportSpam">Gửi tin rác</string>
-  <string name="readMoreAboutLichessReports">Tìm hiểu thêm về báo cáo trên Lichess</string>
   <string name="reportMaximumCharacters">Tối đa 3000 ký tự.</string>
   <string name="reportCheatBoostHelp">Dán đường dẫn đến (các) ván cờ và giải thích hành vi sai trái của kỳ thủ này. Đừng chỉ nói \"họ gian lận\", mà hãy cho chúng tôi biết bạn đã đi đến kết luận này như thế nào.</string>
   <string name="reportUsernameHelp">Hãy giải thích tại sao tên người dùng này lại gây khó chịu. Đừng chỉ nói \"nó gây khó chịu/không phù hợp\", mà hãy cho chúng tôi biết bạn đi đến kết luận này như thế nào, đặc biệt nếu sự gây khó chịu đó khó hiểu, không phải bằng tiếng Anh, là tiếng lóng, hoặc liên quan đến lịch sử/văn hóa.</string>

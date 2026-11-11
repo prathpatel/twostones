@@ -3,7 +3,7 @@ package lila.pref
 enum PrefCateg(val slug: String):
 
   case Display extends PrefCateg("display")
-  case ChessClock extends PrefCateg("chess-clock")
+  case Clock extends PrefCateg("clock")
   case GameBehavior extends PrefCateg("game-behavior")
   case Privacy extends PrefCateg("privacy")
 

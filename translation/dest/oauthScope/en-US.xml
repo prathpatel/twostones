@@ -9,9 +9,7 @@
   <string name="oauthCatUserAccount">User account</string>
   <string name="oauthCatInteractions">Interactions</string>
   <string name="oauthCatPlayGames">Play games</string>
-  <string name="oauthCatStudiesBroadcasts">Studies &amp; Broadcasts</string>
   <string name="oauthCatExternalPlay">External play</string>
-  <string name="oauthCatExternalEngine">External engine</string>
   <string name="doNotShareIt">The token will grant access to your account. Do NOT share it with anyone!</string>
   <string name="copyTokenNow">Make sure to copy your new personal access token now. You won’t be able to see it again!</string>
   <string name="preferenceRead">Read preferences</string>
@@ -48,7 +46,6 @@
   <string name="apiDocumentationLinks" comment="The first parameter links to a personal token app example. The second parameter links to the API documentation">Here is a %1$s and the %2$s.</string>
   <string name="personalTokenAppExample">personal token app example</string>
   <string name="apiDocumentation">API documentation</string>
-  <string name="newToken">New access token</string>
   <string name="apiAccessTokens">API access tokens</string>
   <string name="created">Created %s</string>
   <string name="lastUsed">Last used %s</string>

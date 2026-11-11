@@ -9,9 +9,7 @@
   <string name="oauthCatUserAccount">Foydalanuvçi akkaunti</string>
   <string name="oauthCatInteractions">Muloqotlar</string>
   <string name="oauthCatPlayGames">Öyin öynaş</string>
-  <string name="oauthCatStudiesBroadcasts">Saboqlar va translyatsiyalar</string>
   <string name="oauthCatExternalPlay">Taşqi öyin</string>
-  <string name="oauthCatExternalEngine">Taşqi dvigatel</string>
   <string name="doNotShareIt">Uşbu token hisobingizga kiriş huquqini beradi. Uni HEÇ KIMGA bermang!</string>
   <string name="copyTokenNow">Yangi şaxsiy tokeningizni hoziroq nusxalab oling. Uni keyin qayta köra olmaysiz!</string>
   <string name="preferenceRead">Sozlamalarni öqiş</string>
@@ -48,7 +46,6 @@
   <string name="apiDocumentationLinks" comment="The first parameter links to a personal token app example. The second parameter links to the API documentation">%1$s va %2$s bilan tanişing.</string>
   <string name="personalTokenAppExample">Şaxsiy token ilovasi namunasi</string>
   <string name="apiDocumentation">API dokumentatsiyasi</string>
-  <string name="newToken">Yangi kiriş tokeni</string>
   <string name="apiAccessTokens">API kiriş tokenlari</string>
   <string name="created">%s yaratildi</string>
   <string name="lastUsed">Oxirgi marta %s işlatildi</string>

@@ -64,13 +64,12 @@ object UserInfo:
   case class NbGames(
       crosstable: Option[Crosstable.WithMatchup],
       playing: Int,
-      imported: Int,
       bookmark: Int
   ):
     def withMe: Option[Int] = crosstable.map(_.crosstable.nbGames)
 
   object NbGames:
-    given Zero[NbGames] = Zero(NbGames(none, 0, 0, 0))
+    given Zero[NbGames] = Zero(NbGames(none, 0, 0))
 
   final class NbGamesApi(
       bookmarkApi: BookmarkApi,
@@ -86,7 +85,6 @@ object UserInfo:
         withPlaying.so:
           playingUsers.nbPlayingAll(u.id).mon(lila.mon.user.segment("nbPlaying"))
         ,
-        gameCached.nbImportedBy(u.id).mon(lila.mon.user.segment("nbImported")),
         bookmarkApi.countByUser(u).mon(lila.mon.user.segment("nbBookmarks"))
       ).mapN(NbGames.apply)
 

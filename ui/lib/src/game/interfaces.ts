@@ -1,16 +1,11 @@
 // no side effects allowed due to re-export by index.ts
 
-type NodeCrazy = any;
-
 import type { Status } from './status';
 
 export interface GameData {
   game: Game;
   player: Player;
   opponent: Player;
-  tournament?: Tournament;
-  simul?: Simul;
-  swiss?: Swiss;
   takebackable: boolean;
   moretimeable: boolean;
   clock?: Clock;
@@ -32,7 +27,6 @@ export interface Game {
   drawOffers?: number[];
   moveCentis?: number[];
   initialFen?: string;
-  importedBy?: string;
   threefold?: boolean;
   fiftyMoves?: boolean;
   boosted?: boolean;
@@ -70,43 +64,6 @@ export interface Player {
   version: number;
   image?: string;
   blindfold?: boolean;
-}
-
-export type TournamentRanks = ByColor<number>;
-
-export interface Tournament {
-  id: string;
-  berserkable: boolean;
-  ranks?: TournamentRanks;
-  running?: boolean;
-  nbSecondsForFirstMove?: number;
-  top?: TourPlayer[];
-  team?: Team;
-}
-
-export interface TourPlayer {
-  n: string; // name
-  s: number; // score
-  t?: string; // title
-  f: boolean; // fire
-  w: boolean; // withdraw
-}
-
-export interface Team {
-  name: string;
-}
-
-export interface Simul {
-  id: string;
-  name: string;
-  hostId: string;
-  nbPlaying: number;
-}
-
-export interface Swiss {
-  id: string;
-  running?: boolean;
-  ranks?: TournamentRanks;
 }
 
 export interface Clock {
@@ -152,26 +109,4 @@ export interface Hold {
   ply: number;
   mean: number;
   sd: number;
-}
-
-export type ContinueMode = 'friend' | 'ai';
-
-export interface CheckState {
-  ply: Ply;
-  check?: boolean | (() => boolean);
-}
-
-export type CheckCount = ByColor<number>;
-
-export type MaterialDiffSide = Record<Role, number>;
-
-export type MaterialDiff = ByColor<MaterialDiffSide>;
-
-export interface RoundStep {
-  ply: Ply;
-  fen: FEN;
-  san: San;
-  uci: Uci;
-  check?: boolean;
-  crazy?: NodeCrazy;
 }

@@ -5,7 +5,7 @@
 // It's ok to run it several times in a row.
 // The script is expected to complete within a couple seconds.
 // Run it with:
-// mongosh <IP>:27017/lichess mongodb-report-score-decay.js
+// mongosh <mongodb uri of the twostones database> mongodb-report-score-decay.js
 
 const newScore = atom => Math.max(0, atom.initScore - scoreDecay(atom.at));
 const scoreDecay = date => Math.max(0, daysSince(date) - 3);

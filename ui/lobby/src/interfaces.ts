@@ -16,7 +16,7 @@ export interface Hook {
   s: number; // speed
   i: number; // increment
   size?: number; // board size, 19 when absent
-  perf: Exclude<Perf, 'fromPosition'>;
+  perf: Perf;
   prov?: true; // is rating provisional
   u?: string; // username
   rating?: number;
@@ -32,7 +32,7 @@ export interface Seek {
   mode: number;
   days?: number;
   perf: {
-    key: Exclude<Perf, 'fromPosition'>;
+    key: Perf;
   };
   provisional?: boolean;
   size?: number;

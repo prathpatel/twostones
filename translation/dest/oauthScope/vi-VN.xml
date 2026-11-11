@@ -9,9 +9,7 @@
   <string name="oauthCatUserAccount">Tài khoản người dùng</string>
   <string name="oauthCatInteractions">Tương tác</string>
   <string name="oauthCatPlayGames">Chơi cờ</string>
-  <string name="oauthCatStudiesBroadcasts">Nghiên cứu &amp; Phát sóng</string>
   <string name="oauthCatExternalPlay">Chơi bên ngoài</string>
-  <string name="oauthCatExternalEngine">Công cụ bên ngoài</string>
   <string name="doNotShareIt">Token sẽ cấp quyền truy cập vào tài khoản của bạn. KHÔNG chia sẻ nó với bất kỳ ai!</string>
   <string name="copyTokenNow">Đảm bảo rằng bạn đã sao chép mã truy cập cá nhân mới ngay bây giờ. Bạn sẽ không thể nhìn thấy nó lần nữa!</string>
   <string name="preferenceRead">Tùy chọn đọc</string>
@@ -48,7 +46,6 @@
   <string name="apiDocumentationLinks" comment="The first parameter links to a personal token app example. The second parameter links to the API documentation">Đây là %1$s và %2$s.</string>
   <string name="personalTokenAppExample">ví dụ về ứng dụng khóa cá nhân</string>
   <string name="apiDocumentation">Tài liệu API</string>
-  <string name="newToken">Khoá truy cập mới</string>
   <string name="apiAccessTokens">Khoá truy cập API</string>
   <string name="created">Đã tạo %s</string>
   <string name="lastUsed">Lần cuối sử dụng %s</string>

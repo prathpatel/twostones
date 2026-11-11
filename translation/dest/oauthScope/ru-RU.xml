@@ -9,9 +9,7 @@
   <string name="oauthCatUserAccount">Аккаунт пользователя</string>
   <string name="oauthCatInteractions">Взаимодействия</string>
   <string name="oauthCatPlayGames">Играть в партии</string>
-  <string name="oauthCatStudiesBroadcasts">Студии &amp; Трансляции</string>
   <string name="oauthCatExternalPlay">Внешняя игра</string>
-  <string name="oauthCatExternalEngine">Внешний движок</string>
   <string name="doNotShareIt">Токен даст доступ к вашему аккаунту. НЕ передавайте его никому!</string>
   <string name="copyTokenNow">Убедитесь, что вы скопировали ваш новый токен персонального доступа. Вы не сможете увидеть его снова!</string>
   <string name="preferenceRead">Чтение настроек</string>
@@ -48,7 +46,6 @@
   <string name="apiDocumentationLinks" comment="The first parameter links to a personal token app example. The second parameter links to the API documentation">Вот %1$s и %2$s.</string>
   <string name="personalTokenAppExample">пример персонального токена</string>
   <string name="apiDocumentation">Документация по API</string>
-  <string name="newToken">Новый токен доступа</string>
   <string name="apiAccessTokens">Токены доступа к API</string>
   <string name="created">Создан %s</string>
   <string name="lastUsed">Последнее использование %s</string>

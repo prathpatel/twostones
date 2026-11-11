@@ -38,7 +38,6 @@
   <string name="apiDocumentationLinks" comment="The first parameter links to a personal token app example. The second parameter links to the API documentation">Hér er %1$s og %2$s.</string>
   <string name="personalTokenAppExample">dæmi um að nota persónulegan tóka í forriti</string>
   <string name="apiDocumentation">Hjálparskjöl forritaskila</string>
-  <string name="newToken">Nýr aðgangstóki</string>
   <string name="apiAccessTokens">Aðgangstókar fyrir forritaskil</string>
   <string name="created">Búið til %s</string>
   <string name="lastUsed">Síðast notað %s</string>

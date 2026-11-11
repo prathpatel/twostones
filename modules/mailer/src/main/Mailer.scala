@@ -11,6 +11,7 @@ import scala.concurrent.blocking
 
 import lila.common.String.html.nl2br
 import lila.common.autoconfig.*
+import lila.core.config.RouteUrl
 import lila.core.i18n.I18nKey.emails as trans
 import lila.core.i18n.Translate
 import lila.mon.extensions.*
@@ -127,14 +128,17 @@ object Mailer:
       htmlBody: Option[Frag] = none
   )
 
+  /** This site's own pages, for the note at the end of every email. */
+  private def siteUrl(call: play.api.mvc.Call)(using routeUrl: RouteUrl): String = routeUrl(call).value
+
   object txt:
 
-    private def serviceNote(using Translate): String = s"""
-${trans.common_note("https://lichess.org").render}
+    private def serviceNote(using Translate, RouteUrl): String = s"""
+${trans.common_note(siteUrl(routes.Lobby.home)).render}
 
-${trans.common_contact("https://lichess.org/contact").render}"""
+${trans.common_contact(siteUrl(routes.Main.contact)).render}"""
 
-    def addServiceNote(body: String)(using Translate) = s"""$body
+    def addServiceNote(body: String)(using Translate, RouteUrl) = s"""$body
 
 $serviceNote"""
 
@@ -151,16 +155,17 @@ $serviceNote"""
       div(itemprop := "potentialAction", itemscope, itemtype := "http://schema.org/ViewAction")
     def metaName(cont: String) = meta(itemprop := "name", content := cont)
     val publisher = div(itemprop := "publisher", itemscope, itemtype := "http://schema.org/Organization")
-    val noteContact = a(itemprop := "url", href := "https://lichess.org/contact")(
-      span(itemprop := "name")("lichess.org/contact")
-    )
+    private def withoutScheme(url: String) = url.replaceFirst("^https?://", "")
 
-    private val noteLink = a(
-      itemprop := "url",
-      href := "https://lichess.org/"
-    )(span(itemprop := "name")("lichess.org"))
+    def noteContact(using RouteUrl) =
+      val url = siteUrl(routes.Main.contact)
+      a(itemprop := "url", href := url)(span(itemprop := "name")(withoutScheme(url)))
 
-    def serviceNote(using Translate) =
+    private def noteLink(using RouteUrl) =
+      val url = siteUrl(routes.Lobby.home)
+      a(itemprop := "url", href := url)(span(itemprop := "name")(withoutScheme(url).stripSuffix("/")))
+
+    def serviceNote(using Translate, RouteUrl) =
       publisher(
         small(
           trans.common_note(Mailer.html.noteLink),
@@ -168,14 +173,14 @@ $serviceNote"""
           trans.common_contact(noteContact),
           " ",
           lila.core.i18n.I18nKey.site.readAboutOur(
-            a(href := "https://lichess.org/privacy")(
+            a(href := siteUrl(routes.Main.privacy))(
               lila.core.i18n.I18nKey.site.privacyPolicy()
             )
           )
         )
       )
 
-    def standardEmail(body: String)(using Translate): Frag =
+    def standardEmail(body: String)(using Translate, RouteUrl): Frag =
       emailMessage(
         pDesc(nl2br(body)),
         serviceNote

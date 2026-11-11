@@ -8,9 +8,7 @@
   <string name="whatTheTokenCanDo">このトークンであなたの代わりに行える操作：</string>
   <string name="oauthCatUserAccount">ユーザーアカウント</string>
   <string name="oauthCatPlayGames">対局する</string>
-  <string name="oauthCatStudiesBroadcasts">研究と配信</string>
   <string name="oauthCatExternalPlay">外部プレイ</string>
-  <string name="oauthCatExternalEngine">外部エンジン</string>
   <string name="doNotShareIt">トークンは他の人にあなたのアカウントへのアクセスを許可します。誰にもシェアしないように！</string>
   <string name="copyTokenNow">すぐに新しい個人アクセストークンをコピーしておいてください。二度と表示されませんので！</string>
   <string name="preferenceRead">設定を見る</string>
@@ -46,7 +44,6 @@
   <string name="apiDocumentationLinks" comment="The first parameter links to a personal token app example. The second parameter links to the API documentation">%1$s と %2$s をご覧ください。</string>
   <string name="personalTokenAppExample">個人トークンアプリの例</string>
   <string name="apiDocumentation">API ドキュメンテーション</string>
-  <string name="newToken">新しいアクセストークン</string>
   <string name="apiAccessTokens">API アクセストークン</string>
   <string name="created">作成：%s</string>
   <string name="lastUsed">最終使用：%s</string>

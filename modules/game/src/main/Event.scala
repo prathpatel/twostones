@@ -33,8 +33,9 @@ object Event:
     def typ = "move"
     def data = Json
       .obj(
-        "uci" -> key,
-        "san" -> human,
+        // the move as SGF coordinates ("pd") or "pass", and as printed on the board ("Q16")
+        "move" -> key,
+        "coord" -> human,
         "board" -> board,
         "ply" -> state.turns,
         "prisoners" -> Json.obj("black" -> prisoners.black, "white" -> prisoners.white)

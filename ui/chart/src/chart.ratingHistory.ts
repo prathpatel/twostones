@@ -24,11 +24,11 @@ import { perfName } from 'lib/game/perf';
 import { pubsub } from 'lib/pubsub';
 
 import { fontColor, fontFamily, gridColor, hoverBorderColor, tooltipBgColor } from './index';
-import type { PerfRatingHistory, PerfOrPuzzle } from './interface';
+import type { PerfRatingHistory } from './interface';
 
 interface Opts {
   data: PerfRatingHistory[];
-  singlePerfName?: PerfOrPuzzle;
+  singlePerfName?: Perf;
 }
 
 type TsAndRating = { ts: number; rating: number };
@@ -313,7 +313,7 @@ function makeDatasets(step: number, { data, singlePerfName }: Opts, singlePerfIn
     return {
       indexAxis: 'x',
       type: 'line',
-      label: serie.name === 'puzzle' ? i18n.site.puzzles : perfName(serie.name),
+      label: perfName(serie.name),
       borderColor: perfStyle.color,
       hoverBorderColor,
       backgroundColor: perfStyle.color,

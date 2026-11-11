@@ -19,14 +19,6 @@ object RoundClientActor:
     def busChans: List[Bus.Chan] =
       Bus.channel.room(room.room) ::
         player.fold(List.empty)(_ => List(Bus.channel.roundPlayer)) :::
-        player.flatMap(_.tourId).fold(List.empty) { tourId =>
-          List(Bus.channel.tourStanding(tourId))
-        } :::
-        player
-          .flatMap(_.extRoomId)
-          .fold(List.empty) { roomId =>
-            List(Bus.channel.externalChat(roomId))
-          } :::
         userTv.map(Bus.channel.userTv).toList
 
   def start(
@@ -56,7 +48,6 @@ object RoundClientActor:
       (msg.flags.watcher && state.player.isDefined) ||
       msg.flags.player.exists(c => state.player.fold(true)(_.color != c))
     then msg.skip
-    else if msg.flags.moveBy.exists(c => state.player.fold(true)(_.color == c)) then msg.noDests
     else msg.full
 
   private def apply(state: State, deps: Deps): Behavior[ClientMsg] =
@@ -142,30 +133,12 @@ object RoundClientActor:
                 req.user.foreach:
                   lilaIn round LilaIn.WatcherChatSay(state.room.room, _, msg)
               case Some(p) =>
-                import Game.RoundExt.*
-                def extMsg[A](id: A)(using bts: SameRuntime[A, String]) = req.user.map:
-                  LilaIn.ChatSay(RoomId(bts(id)), _, msg)
-                p.ext match
-                  case None =>
-                    lilaIn.round(LilaIn.PlayerChatSay(state.room.room, req.user.toLeft(p.color), msg))
-                  case Some(InTour(id)) => extMsg(id).foreach(lilaIn.tour)
-                  case Some(InSwiss(id)) => extMsg(id).foreach(lilaIn.swiss)
-                  case Some(InSimul(id)) => extMsg(id).foreach(lilaIn.simul)
+                lilaIn.round(LilaIn.PlayerChatSay(state.room.room, req.user.toLeft(p.color), msg))
             Behaviors.same
 
           case ClientOut.ChatTimeout(suspect, reason, text) =>
-            deps.req.user.foreach { u =>
-              def msg(id: RoomId) = LilaIn.ChatTimeout(id, u, suspect, reason, text)
-              state.player
-                .flatMap { p =>
-                  p.tourId
-                    .map(_.into(RoomId))
-                    .map(msg)
-                    .map(lilaIn.tour)
-                    .orElse(p.simulId.map(_.into(RoomId)).map(msg).map(lilaIn.simul))
-                }
-                .getOrElse(lilaIn.round(msg(state.room.room)))
-            }
+            deps.req.user.foreach: u =>
+              lilaIn.round(LilaIn.ChatTimeout(state.room.room, u, suspect, reason, text))
             Behaviors.same
 
           case ClientOut.RoundBerserk(ackId) =>

@@ -9,7 +9,6 @@
   <string name="apiDocumentationLinks" comment="The first parameter links to a personal token app example. The second parameter links to the API documentation">นี้คือ %1$s และก็ %2$s</string>
   <string name="personalTokenAppExample">ตัวอย่างแอปโทเค็นส่วนบุคคล</string>
   <string name="apiDocumentation">เอกสารประกอบของ API</string>
-  <string name="newToken">โทเค็นการเข้าถึงใหม่</string>
   <string name="apiAccessTokens">โทเค็นการเข้าถึง API</string>
   <string name="created">ถูกสร้างเมื่อ %s</string>
   <string name="lastUsed">ใช้งานล่าสุด: %s</string>

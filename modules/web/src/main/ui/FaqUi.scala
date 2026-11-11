@@ -8,8 +8,7 @@ val sourceUrl = "https://github.com/prathpatel/GoGame"
 
 /** The FAQ and About pages, written for Go. */
 final class FaqUi(helpers: Helpers, sitePages: SitePages, siteName: String)(
-    standardRankableDeviation: Int,
-    variantRankableDeviation: Int
+    standardRankableDeviation: Int
 ):
   import helpers.{ given, * }
 

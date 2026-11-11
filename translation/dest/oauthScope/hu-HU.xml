@@ -38,7 +38,6 @@
   <string name="apiDocumentationLinks" comment="The first parameter links to a personal token app example. The second parameter links to the API documentation">Itt van egy %1$s és a(z) %2$s.</string>
   <string name="personalTokenAppExample">példa a kulcs használatára</string>
   <string name="apiDocumentation">API dokumentáció</string>
-  <string name="newToken">Új kulcs</string>
   <string name="apiAccessTokens">API kulcsok</string>
   <string name="created">Létrehozva: %s</string>
   <string name="lastUsed">Legutóbb használva: %s</string>

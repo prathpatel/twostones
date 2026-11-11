@@ -11,7 +11,6 @@
   <string name="closeAccountForeverLabel">Steng for alltid: gjør det umulig å gjenåpne kontoen</string>
   <string name="closeAccountForeverWarning">Forhindre at kontoen kan gjenåpnes senere. Hvis du merker av denne boksen, vil ikke engang administratorer kunne gjenåpne kontoen på forespørsel fra deg.</string>
   <string name="deleteYourAccount">Slett kontoen din</string>
-  <string name="deleteAccountWarning">Når du sletter kontoen din, fjernes den fra Lichess, og administratorene våre vil ikke kunne gjenopprette den for deg.</string>
   <string name="wouldYouLikeToXInstead" comment="%s is close your account">Vil du heller %s?</string>
   <string name="closeYourAccount">stenge kontoen din</string>
   <string name="deleteAccountConfirmText">Jeg forstår at slettede kontoer ikke kan gjenopprettes</string>

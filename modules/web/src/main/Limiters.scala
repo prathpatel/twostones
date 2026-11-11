@@ -160,7 +160,6 @@ final class Limiters(using Executor, lila.core.config.RateLimit):
     RateLimit[IpAddress](1, 1.minute, "streamer.checkOnline.ip")
   )
 
-  val studyPgnImport = RateLimit[UserId](1000, 24.hour, "study.import-pgn.user")
 
   val studyClone: RateLimiter[(UserId, IpAddress)] = combine(
     RateLimit[UserId](10 * 3, 24.hour, "study.clone.user"),

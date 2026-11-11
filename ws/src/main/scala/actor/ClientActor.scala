@@ -12,8 +12,7 @@ object ClientActor:
 
   case class State(
       watchedGames: SmallBoundedQueueSet[Game.Id] = SmallBoundedQueueSet.empty,
-      lastPing: Int = nowSeconds,
-      tourReminded: Boolean = false
+      lastPing: Int = nowSeconds
   )
 
   def onStart(deps: Deps, ctx: ActorContext[ClientMsg]): Unit =
@@ -24,8 +23,8 @@ object ClientActor:
   def onStop(state: State, deps: Deps, ctx: ActorContext[ClientMsg]): Unit =
     import deps.*
     LilaWsServer.updateConnections(deps.req, -1)
-    Fens.unwatch(state.watchedGames.value, ctx.self)
-    (Bus.channel.mlat :: Bus.channel.tvChannels :: busChansOf(req)).foreach { Bus.unsubscribe(_, ctx.self) }
+    MiniGames.unwatch(state.watchedGames.value, ctx.self)
+    (Bus.channel.mlat :: busChansOf(req)).foreach { Bus.unsubscribe(_, ctx.self) }
     req.user.foreach: user =>
       users.disconnect(user, ctx.self)
       deps.services.friends.onClientStop(user)
@@ -68,13 +67,9 @@ object ClientActor:
 
       case ClientOut.Watch(gameIds) =>
         val (newWatched, evicted) = state.watchedGames.addAndReturnEvicted(gameIds, 16)
-        Fens.watch(gameIds, ctx.self)
-        Fens.unwatch(evicted, ctx.self)
+        MiniGames.watch(gameIds, ctx.self)
+        MiniGames.unwatch(evicted, ctx.self)
         state.copy(watchedGames = newWatched)
-
-      case ClientOut.StartWatchingTvChannels =>
-        Bus.subscribe(Bus.channel.tvChannels, ctx.self)
-        state
 
       case msg: ClientOut if deps.req.flag.contains(Flag.api) =>
         logger.info(s"API socket doesn't support $msg $req")
@@ -93,19 +88,6 @@ object ClientActor:
           services.friends.start(_, clientIn, subscribe = subscribe)
         state
 
-      case evalGet: ClientOut.EvalGet =>
-        services.evalCache.get(req.sri, evalGet, clientIn)
-        state
-
-      case evalGet: ClientOut.EvalGetMulti =>
-        services.evalCache.getMulti(req.sri, evalGet, clientIn)
-        state
-
-      case evalPut: ClientOut.EvalPut =>
-        req.user.foreach: user =>
-          services.evalCache.put(req.sri, user, evalPut)
-        state
-
       case ClientOut.MsgType(dest) =>
         req.user.foreach: orig =>
           deps.users.tellOne(dest, ClientIn.MsgType(orig))
@@ -120,22 +102,12 @@ object ClientActor:
           lilaIn.site(LilaIn.TellUser(user, payload))
         state
 
-      case ClientOut.StormKey(key, pad) =>
-        clientIn(ClientIn.StormKey(deps.services.stormSign(key, pad)))
-        state
-
       case ClientOut.Ignore =>
         state
 
       case unexpected => sys.error(s"$this can't handle $unexpected")
 
   def clientInReceive(state: State, deps: Deps, msg: ClientIn): Option[State] = msg match
-
-    case msg: ClientIn.TourReminder =>
-      if state.tourReminded then None
-      else
-        deps.clientIn(msg)
-        Some(state.copy(tourReminded = true))
 
     case in: ClientIn =>
       deps.clientIn(in)

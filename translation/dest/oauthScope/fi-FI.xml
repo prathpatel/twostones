@@ -9,9 +9,7 @@
   <string name="oauthCatUserAccount">Käyttäjätunnus</string>
   <string name="oauthCatInteractions">Vuorovaikutukset</string>
   <string name="oauthCatPlayGames">Pelaa pelejä</string>
-  <string name="oauthCatStudiesBroadcasts">Tutkielmat &amp; lähetykset</string>
   <string name="oauthCatExternalPlay">Ulkoistettu peluu</string>
-  <string name="oauthCatExternalEngine">Ulkoinen tietokone</string>
   <string name="doNotShareIt">Tietue antaa käyttöoikeuden tunnukseesi. Älä anna sitä kenellekään muulle!</string>
   <string name="copyTokenNow">Huolehdi nyt siitä, että kopioit uuden henkilökohtaisen käyttöoikeustietueesi talteen. Et näe sitä enää toiste!</string>
   <string name="preferenceRead">Lue asetukset</string>
@@ -48,7 +46,6 @@
   <string name="apiDocumentationLinks" comment="The first parameter links to a personal token app example. The second parameter links to the API documentation">Tässä on %1$s ja %2$s.</string>
   <string name="personalTokenAppExample">esimerkki henkilökohtaista tietuetta käyttävästä sovelluksesta</string>
   <string name="apiDocumentation">API-dokumentaatio</string>
-  <string name="newToken">Uusi käyttöoikeustietue</string>
   <string name="apiAccessTokens">API-käyttöoikeustietueet</string>
   <string name="created">Luotu %s</string>
   <string name="lastUsed">Viimeksi käytetty %s</string>

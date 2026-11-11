@@ -16,4 +16,3 @@ val ratingApi: lila.ui.RatingApi = new:
   val toDescKey = PerfType(_).descKey
   val toIcon = PerfType(_).icon
   val bestRated = UserPerfsExt.bestRatedPerf
-  val dubiousPuzzle = UserPerfs.dubiousPuzzle

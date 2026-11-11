@@ -38,7 +38,6 @@
   <string name="apiDocumentationLinks" comment="The first parameter links to a personal token app example. The second parameter links to the API documentation">Ja një %1$s dhe %2$s.</string>
   <string name="personalTokenAppExample">shembull aplikacioni token-i personal</string>
   <string name="apiDocumentation">Dokumentim API</string>
-  <string name="newToken">Token i ri përdorimi</string>
   <string name="apiAccessTokens">Token-ë përdorimi API</string>
   <string name="created">Krijuar më %s</string>
   <string name="lastUsed">Përdorur së fundi më %s</string>

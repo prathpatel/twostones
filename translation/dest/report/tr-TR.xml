@@ -11,7 +11,6 @@
   <string name="reportSelfHarm">İntihar / Kendine Zarar Verme</string>
   <string name="reportHate">Nefret Söylemi / Cinsiyetçilik</string>
   <string name="reportSpam">Spam</string>
-  <string name="readMoreAboutLichessReports">Lichess raporları hakkında daha fazla bilgi edinin</string>
   <string name="reportMaximumCharacters">En fazla 3000 karakter.</string>
   <string name="reportCheatBoostHelp">İlgili oyunun (veya oyunların) bağlantısını yapıştırın ve bu kullanıcının davranışındaki sorunun ne olduğunu açıklayın. Sadece \"hile yapıyor\" demekle yetinmeyin, bu sonuca nasıl vardığınızı da belirtin.</string>
   <string name="reportUsernameHelp">Bu kullanıcı adının neden saldırgan olduğunu açıklayın. Sadece \"saldırgan/uygunsuz\" demekle yetinmeyin; özellikle saldırganlık bariz değilse, İngilizce değilse, argo içeriyorsa ya da tarihi/kültürel bir göndermeyse, bu sonuca nasıl vardığınızı bize anlatın.</string>

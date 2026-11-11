@@ -50,14 +50,5 @@ object RatingChartApi:
     Blitz,
     Rapid,
     Classical,
-    Correspondence,
-    Crazyhouse,
-    Chess960,
-    KingOfTheHill,
-    ThreeCheck,
-    Antichess,
-    Atomic,
-    Horde,
-    RacingKings,
-    Puzzle
+    Correspondence
   )

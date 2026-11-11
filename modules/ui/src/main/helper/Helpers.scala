@@ -11,6 +11,5 @@ trait Helpers
     with StringHelper
     with GameHelper
     with FlashHelper
-    with ChessHelper
     with PaginatorHelper
     with TeamHelper
