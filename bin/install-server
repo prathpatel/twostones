@@ -97,12 +97,18 @@ sudo -u "$user" git config --global --add safe.directory "$dir" 2>/dev/null || t
 
 say "Building the front end"
 as_user ./ui/build
-# --server: sbt runs in the foreground and exits when done. By default sbt 2 starts a build
-# server in the background that keeps running (lila's takes up to 8 GB), next to the site.
+# sbt 2 builds in a server it starts in the background, which keeps running afterwards
+# (lila's takes up to 8 GB): shut it down after the build, and also when the build fails
+build() { # folder, sbt runner
+  if ! as_user "cd $1 && $2 'stage; shutdown' </dev/null"; then
+    as_user "cd $1 && sbt shutdown </dev/null" >/dev/null 2>&1 || true
+    die "the build in $1 failed"
+  fi
+}
 say "Building lila"
-as_user ./lila.sh --server stage </dev/null
+build . ./lila.sh
 say "Building lila-ws"
-as_user "cd ws && sbt --server stage </dev/null"
+build ws sbt
 say "KataGo"
 as_user bin/setup-katago
 
