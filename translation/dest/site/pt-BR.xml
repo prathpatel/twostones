@@ -16,7 +16,6 @@
   <string name="strength">Nível</string>
   <string name="chat">Chat</string>
   <string name="resign">Desistir</string>
-  <string name="checkmate">Xeque-mate</string>
   <string name="stalemate">Rei afogado</string>
   <string name="white">Brancas</string>
   <string name="black">Pretas</string>
@@ -387,7 +386,6 @@ Amigos jogando: %2$s</string>
   <string name="onlyExistingConversations">Apenas conversas iniciadas</string>
   <string name="onlyFriends">Apenas amigos</string>
   <string name="menu">Menu</string>
-  <string name="castling">Roque</string>
   <string name="tpTimeSpentPlaying">Tempo jogando: %s</string>
   <string name="watchGames">Assistir partidas</string>
   <string name="watch">Assistir</string>

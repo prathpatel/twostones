@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Küşt öwreniň</string>
-  <string name="byPlaying">oýnamak arkaly!</string>
   <string name="menu">Menýu</string>
   <string name="play">oýnaň!</string>
   <string name="capture">Iýmek</string>
@@ -9,7 +7,6 @@
   <string name="escape">Hüjüm astyndasyňyz!
 Apatdan gutulyň!</string>
   <string name="intermediate">Ortaça</string>
-  <string name="castling">Rakirowka</string>
   <string name="stalemate">Pat</string>
   <string name="register">Registrasiýa</string>
   <string name="practice">Türgenleşik</string>

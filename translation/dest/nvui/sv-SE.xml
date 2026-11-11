@@ -4,7 +4,6 @@
   <string name="lastMove">Senaste draget</string>
   <string name="actions">Åtgärder</string>
   <string name="king">kung</string>
-  <string name="rook">torn</string>
   <string name="bishop">biskop</string>
   <string name="knight">springare</string>
   <string name="copyToClipboard">Kopiera %s till urklippet</string>

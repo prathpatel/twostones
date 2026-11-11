@@ -5,7 +5,6 @@
   <string name="actions">Handlingar</string>
   <string name="promotion">Dersom du skal forvandle til noko anna enn dronning skal du bruke likskapsteiknet. Til dømes forvandlar a-8-er-lik-n til springar.</string>
   <string name="king">konge</string>
-  <string name="rook">tårn</string>
   <string name="bishop">løpar</string>
   <string name="knight">springar</string>
   <string name="copyToClipboard">Kopier %s til utklippstavla</string>

@@ -5,7 +5,6 @@
   <string name="actions">Akce</string>
   <string name="promotion">Pěšce lze proměnit na jinou figuru než královnu pomocí \"equals\". Například a-8-equals-n promění na jezdce.</string>
   <string name="king">král</string>
-  <string name="rook">věž</string>
   <string name="bishop">střelec</string>
   <string name="knight">kůň</string>
   <string name="copyToClipboard">Kopírovat %s do schránky</string>

@@ -16,7 +16,6 @@
   <string name="strength">Qiyinligi</string>
   <string name="chat">Çat</string>
   <string name="resign">Taslim böliş</string>
-  <string name="checkmate">Mot</string>
   <string name="stalemate">Pat</string>
   <string name="white">Oqlar</string>
   <string name="black">Qoralar</string>
@@ -388,7 +387,6 @@ Reytingli öyinlar öynasangiz reyting barqarorligi oşadi.</string>
   <string name="onlyExistingConversations">Faqat mavjud suhbatlar</string>
   <string name="onlyFriends">Faqat döstlar</string>
   <string name="menu">Menyu</string>
-  <string name="castling">Rokirovka</string>
   <string name="tpTimeSpentPlaying">Jami %s öynagan</string>
   <string name="watchGames">Öyinlarni kuzatiş</string>
   <string name="watch">Kuzatiş</string>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="castling">Sáncolás</string>
   <string name="equality">Egyenlőség</string>
   <string name="endgame">Végjáték</string>
   <string name="fork">Villa</string>

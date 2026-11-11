@@ -5,7 +5,6 @@
   <string name="actions">Ações</string>
   <string name="promotion">Para promover para outra peça que não a dama, usa o sinal de igual. Por exemplo, a-8=n promove para um cavalo.</string>
   <string name="king">rei</string>
-  <string name="rook">torre</string>
   <string name="bishop">bispo</string>
   <string name="knight">cavalo</string>
   <string name="copyToClipboard">Copiar %s para área de transferência</string>

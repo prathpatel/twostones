@@ -5,7 +5,6 @@
   <string name="actions">دستورها</string>
   <string name="promotion">برای ترفیع به مهره‌ای به جز وزیر، از علامت مساوی (=) استفاده کنید. برای مثال: `a8=N` پیاده را به اسب تبدیل می‌کند.</string>
   <string name="king">شاه</string>
-  <string name="rook">رخ</string>
   <string name="bishop">فیل</string>
   <string name="knight">اسب</string>
   <string name="copyToClipboard">رونوشتِ %s در بُریده‌دان</string>

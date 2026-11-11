@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="castling">Rokada</string>
   <string name="equality">Izenačenje</string>
   <string name="endgame">Končnica</string>
   <string name="fork">Dvojni napad (vilice)</string>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="castling">கோட்டை கட்டுதல்</string>
   <string name="equality">சமத்துவம்</string>
   <string name="endgame">கடையாட்டம்</string>
   <string name="fork">கவர்</string>

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Aprenda xadrez</string>
-  <string name="byPlaying">jogando!</string>
   <string name="menu">Menu</string>
   <string name="play">jogar!</string>
   <string name="capture">Capturar</string>
@@ -9,7 +7,6 @@
   <string name="escape">Você está sob ataque!
 Fuja da ameaça!</string>
   <string name="intermediate">Intermediário</string>
-  <string name="castling">Roque</string>
   <string name="stalemate">Rei afogado</string>
   <string name="register">Registrar</string>
   <string name="practice">Praticar</string>

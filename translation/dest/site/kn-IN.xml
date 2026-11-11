@@ -16,7 +16,6 @@
   <string name="strength">ಶಕ್ತಿ</string>
   <string name="chat">ಚಾಟ್</string>
   <string name="resign">ತ್ಯಜಿಸು</string>
-  <string name="checkmate">ಚೆಕ್ ಮೇಟ್</string>
   <string name="stalemate">ಸ್ಟೇಲ್ಮೇಟ್</string>
   <string name="white">ಬಿಳಿ ದಳ</string>
   <string name="black">ಕಪ್ಪು ದಳ</string>
@@ -344,7 +343,6 @@
   <string name="onlyExistingConversations">ಕೇವಲ ಸಧ್ಯದ ಸಂಭಾಷಣೆಗಳು ಮಾತ್ರ</string>
   <string name="onlyFriends">ಗೆಳೆಯ/ತಿಯರು ಮಾತ್ರ</string>
   <string name="menu">ಮೆನು</string>
-  <string name="castling">ಕ್ಯಾಸಲಿಂಗ್</string>
   <string name="tpTimeSpentPlaying">ಆಟ ಆಡುತ್ತಾ ವ್ಯಯಿಸಿದ ಸಮಯ: %s</string>
   <string name="watchGames">ಆಟಗಳನ್ನು ವೀಕ್ಷಿಸಿ</string>
   <string name="watch">ವೀಕ್ಷಿಸಿ</string>

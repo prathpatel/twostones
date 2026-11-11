@@ -10,7 +10,6 @@
   <string name="strength">Krag</string>
   <string name="chat">Klets</string>
   <string name="resign">Gee oor</string>
-  <string name="checkmate">Skaakmat</string>
   <string name="stalemate">Dooiepunt</string>
   <string name="white">Wit</string>
   <string name="black">Swart</string>
@@ -341,7 +340,6 @@
   <string name="onlyExistingConversations">Slegs bestaande gesprekke</string>
   <string name="onlyFriends">Slegs vriende</string>
   <string name="menu">Kieslys</string>
-  <string name="castling">Kastelering</string>
   <string name="tpTimeSpentPlaying">Tyd gespeel: %s</string>
   <string name="watchGames">Hou spelle dop</string>
   <string name="watch">Bekyk</string>

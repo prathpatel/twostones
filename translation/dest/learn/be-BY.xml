@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Вучыцеся</string>
-  <string name="byPlaying">гуляючы!</string>
   <string name="menu">Меню</string>
   <string name="play">гуляць!</string>
   <string name="capture">Узяцце</string>
   <string name="protection">Абарона</string>
   <string name="escape">Вас атакуюць! Ухіліцеся ад пагрозы!</string>
   <string name="intermediate">Прамежкавы этап</string>
-  <string name="castling">Ракіроўка</string>
   <string name="stalemate">Пат</string>
   <string name="register">Рэгістрацыя</string>
   <string name="practice">Практыка</string>

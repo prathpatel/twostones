@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="castling">Бекіну</string>
   <string name="equality">Теңдік</string>
   <string name="endgame">Ойынсоңы</string>
   <string name="fork">Шанышқы</string>

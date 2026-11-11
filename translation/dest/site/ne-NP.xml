@@ -14,7 +14,6 @@
   <string name="strength">तागत</string>
   <string name="chat">कुराकानी</string>
   <string name="resign">छाेड्नुहाेस्</string>
-  <string name="checkmate">माथ</string>
   <string name="stalemate">चालमाथ</string>
   <string name="white">सेतो</string>
   <string name="black">कालो</string>
@@ -309,7 +308,6 @@
   <string name="ifRatingIsPlusMinusX">यदि रेटिंग ± %s छ भने</string>
   <string name="onlyFriends">मित्रहरु मात्र</string>
   <string name="menu">सुची</string>
-  <string name="castling">क्यस्लिंग</string>
   <string name="tpTimeSpentPlaying">खेलेको समय: %s</string>
   <string name="watchGames">खेल हेरौं</string>
   <string name="watch">हेरौं</string>

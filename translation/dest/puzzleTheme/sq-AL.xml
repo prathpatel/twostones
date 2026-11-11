@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="castling">Rokadë</string>
   <string name="equality">Barazim</string>
   <string name="endgame">Fund loje</string>
   <string name="fork">Sfurk</string>

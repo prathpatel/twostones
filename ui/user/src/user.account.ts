@@ -18,9 +18,6 @@ site.load.then(() => {
   addPasswordVisibilityToggleListener();
 
   const localPrefs: [string, string, string, boolean][] = [
-    ['clock', 'swapClock', 'swapClock', false],
-    ['behavior', 'arrowSnap', 'arrow.snap', true],
-    ['behavior', 'scrollMoves', 'scrollMoves', true],
     ['notification', 'playBellSound', 'playBellSound', true],
   ];
 

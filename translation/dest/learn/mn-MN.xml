@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Шатар суралцах
-Шатрын ерөнхий ойлголтын эхний хэсэг</string>
-  <string name="byPlaying">тоглож байна!</string>
   <string name="menu">Цэс</string>
   <string name="play">Тоглоё!</string>
   <string name="capture">Идэх</string>
   <string name="protection">Хамгаалалт</string>
   <string name="escape">Чам руу довтолж байна! Аюулаас мултарч гар!</string>
   <string name="intermediate">Дунд шат</string>
-  <string name="castling">Сэлгээ</string>
   <string name="stalemate">Мухардалт буюу хайнаа</string>
   <string name="register">Гишүүн бол</string>
   <string name="practice">Сургуулилалт</string>

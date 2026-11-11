@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Lern Schach</string>
-  <string name="byPlaying">idem du schpillsch!</string>
   <string name="menu">Menü</string>
   <string name="play">schpill!</string>
   <string name="capture">Figure schlah</string>
   <string name="protection">Deckig</string>
   <string name="escape">Du wirsch agriffe, entchum dere Bedrohig!</string>
   <string name="intermediate">Mittlers Niveau</string>
-  <string name="castling">Rochade</string>
   <string name="stalemate">Patt Schtellig</string>
   <string name="register">Regischtriere</string>
   <string name="practice">Training</string>

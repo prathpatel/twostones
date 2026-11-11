@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">बुद्धिबळ शिका</string>
-  <string name="byPlaying">खेळून!</string>
   <string name="menu">सूची</string>
   <string name="play">खेळा!</string>
   <string name="capture">मारा (पकडा)</string>
@@ -9,7 +7,6 @@
   <string name="escape">तुमच्या वर हल्ला झाला आहे!
 यातून बाहेर पडा!</string>
   <string name="intermediate">मध्यवर्ती</string>
-  <string name="castling">किल्लेकोट</string>
   <string name="stalemate">अर्धवट मात</string>
   <string name="register">सदस्य खाते तयार करा</string>
   <string name="practice">सराव</string>

@@ -5,7 +5,6 @@
   <string name="actions">Amallar</string>
   <string name="promotion">Donani farzindan boşqa donaga almaştiriş uçun tenglik belgisidan foydalaning. Masalan: \"a8=n\" buyruği piyodani otga almaştiradi.</string>
   <string name="king">şoh</string>
-  <string name="rook">rux</string>
   <string name="bishop">fil</string>
   <string name="knight">ot</string>
   <string name="copyToClipboard">%s nusxasini oliş</string>

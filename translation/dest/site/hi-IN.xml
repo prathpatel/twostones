@@ -11,7 +11,6 @@
   <string name="strength">ताक़त</string>
   <string name="chat">बातचीत</string>
   <string name="resign">हार मान लें</string>
-  <string name="checkmate">शह और मात</string>
   <string name="stalemate">गतिरोध (स्टेलमेट)</string>
   <string name="white">सफेद</string>
   <string name="black">काला</string>
@@ -333,7 +332,6 @@
   <string name="onlyExistingConversations">केवल मौजूदा वार्तालाप</string>
   <string name="onlyFriends">केवल दोस्त</string>
   <string name="menu">मेनू</string>
-  <string name="castling">केस्लिंग</string>
   <string name="tpTimeSpentPlaying">समय व्यतीत : %s</string>
   <string name="watchGames">खेल देखें</string>
   <string name="watch">देखें</string>

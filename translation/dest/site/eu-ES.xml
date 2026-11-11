@@ -16,7 +16,6 @@
   <string name="strength">Indarra</string>
   <string name="chat">Txata</string>
   <string name="resign">Amore eman</string>
-  <string name="checkmate">Xake mate</string>
   <string name="stalemate">Itoa</string>
   <string name="white">Zuria</string>
   <string name="black">Beltza</string>
@@ -388,7 +387,6 @@ Jokatzen ari diren lagunak: %2$s</string>
   <string name="onlyExistingConversations">Existitzen diren elkarrizketak bakarrik</string>
   <string name="onlyFriends">Lagunak soilik</string>
   <string name="menu">Menua</string>
-  <string name="castling">Endrokea</string>
   <string name="tpTimeSpentPlaying">Jokatzen egondako denbora: %s</string>
   <string name="watchGames">Partidak ikusi</string>
   <string name="watch">Ikusi</string>

@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Scacos disce</string>
-  <string name="byPlaying">ludendo!</string>
   <string name="menu">Index</string>
   <string name="play">lūde!</string>
   <string name="capture">Captura</string>
   <string name="protection">Custodia</string>
-  <string name="castling">Adroccare</string>
   <string name="stalemate">Rex impeditus</string>
   <string name="register">Inscribere</string>
   <string name="puzzles">Problemata</string>

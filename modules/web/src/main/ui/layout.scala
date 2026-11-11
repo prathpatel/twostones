@@ -41,8 +41,7 @@ final class layout(helpers: Helpers, assetHelper: lila.web.ui.AssetFullHelper)(
   def fontsPreload(using ctx: Context) = frag(
     fontPreload("lichess.woff2"),
     fontPreload("noto-sans-latin.woff2"),
-    fontPreload("roboto-latin.woff2"),
-    ctx.pref.pieceNotationIsLetter.not.option(fontPreload("lichess-chess.woff2"))
+    fontPreload("roboto-latin.woff2")
   )
 
   def allNotifications(challenges: Int, notifs: Int)(using Translate) =
@@ -199,7 +198,6 @@ final class layout(helpers: Helpers, assetHelper: lila.web.ui.AssetFullHelper)(
       .filter(100 >=)
   } | 80
 
-  val dailyNewsAtom = (lila.ui.deadLink, "Lichess Updates Feed")
   def atomLinkTag(call: Call, title: String) =
     link(href := call, st.title := title, tpe := "application/atom+xml", rel := "alternate")
 
@@ -212,8 +210,6 @@ final class layout(helpers: Helpers, assetHelper: lila.web.ui.AssetFullHelper)(
   val dataDirection = attr("data-direction")
   val dataBoard = attr("data-board")
   val dataPieceSet = attr("data-piece-set")
-  val dataBoard3d = attr("data-board3d")
-  val dataPieceSet3d = attr("data-piece-set3d")
   val dataAssetUrl = attr("data-asset-url") := netConfig.baseUrl
   val dataAssetVersion = attr("data-asset-version")
 

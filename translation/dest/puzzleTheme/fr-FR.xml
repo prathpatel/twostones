@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="castling">Roque</string>
   <string name="equality">Égalité</string>
   <string name="endgame">Finale</string>
   <string name="fork">Fourchette</string>

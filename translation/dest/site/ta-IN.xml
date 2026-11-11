@@ -10,7 +10,6 @@
   <string name="strength">பலங்கள்</string>
   <string name="chat">உரையாடு</string>
   <string name="resign">விலகு</string>
-  <string name="checkmate">முற்றுகை</string>
   <string name="stalemate">இக்கட்டு</string>
   <string name="white">வெள்ளை</string>
   <string name="black">கருப்பு</string>
@@ -344,7 +343,6 @@
   <string name="onlyExistingConversations">ஏற்கனவே உள்ள உரையாடல்கள் மட்டுமே</string>
   <string name="onlyFriends">தோழர்கள் மட்டுமே</string>
   <string name="menu">பட்டியல்</string>
-  <string name="castling">கோட்டை கட்டுதல்</string>
   <string name="tpTimeSpentPlaying">விளையாடிய நேரம்: %s</string>
   <string name="watchGames">விளையாட்டுகளைப் பார்க்க</string>
   <string name="watch">பார்க்க</string>

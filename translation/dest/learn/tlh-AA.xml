@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">cheS Quj DaghojmeH</string>
-  <string name="byPlaying">yIQuj</string>
   <string name="menu">HIDjolev</string>
   <string name="play">Quj!</string>
   <string name="capture">jon</string>

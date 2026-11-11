@@ -14,28 +14,14 @@ object PrefSingleChange:
       _.copy(theme = v),
     changing(_.pieceSet): v =>
       _.copy(pieceSet = v),
-    changing(_.theme3d): v =>
-      _.copy(theme3d = v),
-    changing(_.pieceSet3d): v =>
-      _.copy(pieceSet3d = v),
-    changing(_.is3d): v =>
-      _.copy(is3d = v),
     changing(_.soundSet): v =>
       _.copy(soundSet = v),
     changing(_.zen): v =>
       _.copy(zen = v),
     changing(_.voice): v =>
       _.copy(voice = v.some),
-    changing(_.keyboardMove): v =>
-      _.copy(keyboardMove = v | Pref.KeyboardMove.NO),
-    changing(_.autoQueen): v =>
-      _.copy(autoQueen = v),
-    changing(_.premove): v =>
-      _.copy(premove = v == 1),
     changing(_.takeback): v =>
       _.copy(takeback = v),
-    changing(_.autoThreefold): v =>
-      _.copy(autoThreefold = v),
     changing(_.submitMove): v =>
       _.copy(submitMove = v),
     changing(_.confirmResign): v =>
@@ -46,8 +32,6 @@ object PrefSingleChange:
       _.copy(clockTenths = v),
     changing(_.clockSound): v =>
       _.copy(clockSound = v == 1),
-    changing(_.pieceNotation): v =>
-      _.copy(pieceNotation = v),
     changing(_.ratings): v =>
       _.copy(ratings = v),
     changing(_.follow): v =>

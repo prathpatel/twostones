@@ -16,7 +16,6 @@
   <string name="strength">Niveau</string>
   <string name="chat">Discussion</string>
   <string name="resign">Abandonner</string>
-  <string name="checkmate">Échec et mat</string>
   <string name="stalemate">Pat</string>
   <string name="white">Blancs</string>
   <string name="black">Noirs</string>
@@ -388,7 +387,6 @@ Amis jouant : %2$s</string>
   <string name="onlyExistingConversations">Conversations en cours seulement</string>
   <string name="onlyFriends">Seulement les amis</string>
   <string name="menu">Menu</string>
-  <string name="castling">Roque</string>
   <string name="tpTimeSpentPlaying">Temps total à jouer : %s</string>
   <string name="watchGames">Regarder les parties</string>
   <string name="watch">Regarder</string>

@@ -16,7 +16,6 @@
   <string name="strength">Forza</string>
   <string name="chat">Chat</string>
   <string name="resign">Abandonar</string>
-  <string name="checkmate">Xaque mate</string>
   <string name="stalemate">Rei afogado</string>
   <string name="white">Brancas</string>
   <string name="black">Negras</string>
@@ -389,7 +388,6 @@ Amizades xogando: %2$s</string>
   <string name="onlyExistingConversations">Só conversas existentes</string>
   <string name="onlyFriends">Só amigos</string>
   <string name="menu">Menú</string>
-  <string name="castling">Enroque</string>
   <string name="tpTimeSpentPlaying">Tempo xogando: %s</string>
   <string name="watchGames">Ver partidas</string>
   <string name="watch">Ver</string>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="castling">Pοκέ</string>
   <string name="equality">Ισότητα</string>
   <string name="endgame">Φινάλε</string>
   <string name="fork">Πιρούνι – Διπλό χτύπημα</string>

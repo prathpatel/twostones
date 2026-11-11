@@ -86,12 +86,12 @@ final class AccountPages(helpers: Helpers, ui: AccountUi, flagApi: lila.core.use
                   "One of the rights GDPR grants to European citizens is the right to erasure of their personal information, also known as the \"right to be forgotten\"."
                 ),
                 p(
-                  "Lichess generally complies with these requests from citizens of any country, because individuals should have control of their data against organisations. However, in certain cases where accounts broke our ",
-                  a(href := lila.ui.deadLink)("Terms of Service"),
+                  "TwoStones generally complies with these requests from citizens of any country, because individuals should have control of their data against organisations. However, in certain cases where accounts broke our ",
+                  a(href := routes.Main.terms)("Terms of Service"),
                   ", we cannot comply with those requests."
                 ),
                 p(
-                  "That is because the GDPR allows for exceptions in certain cases, and one of those is where an organisation's overriding legitimate interests would be compromised by erasing the data. In short, by deleting your data, it would make it harder for us to keep Lichess safe and secure from people who have broken our rules."
+                  "That is because the GDPR allows for exceptions in certain cases, and one of those is where an organisation's overriding legitimate interests would be compromised by erasing the data. In short, by deleting your data, it would make it harder for us to keep TwoStones safe and secure from people who have broken our rules."
                 ),
                 p(
                   "When you delete your account, your personal data will be hidden from the public, and only accessible by admins."

@@ -9,7 +9,6 @@
   <string name="strength">Чажкость</string>
   <string name="chat">Чет</string>
   <string name="resign">Здати ся</string>
-  <string name="checkmate">Мат</string>
   <string name="stalemate">Пат</string>
   <string name="white">Білі</string>
   <string name="black">Чорні</string>
@@ -301,7 +300,6 @@
   <string name="increment">Наддаток</string>
   <string name="error.email_acceptable">Сись адрес почты не приятый. Перевірте щи раз, ай повторіт провбу.</string>
   <string name="menu">Меню</string>
-  <string name="castling">Рокіровка</string>
   <string name="watchGames">Позирати бавкы</string>
   <string name="watch">Позирати</string>
   <string name="about">За сайт</string>

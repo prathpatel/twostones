@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="castling">Rokada</string>
   <string name="equality">Izjednačenost</string>
   <string name="endgame">Završnica</string>
   <string name="fork">Viljuška</string>

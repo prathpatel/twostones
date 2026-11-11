@@ -14,7 +14,6 @@
   <string name="strength">શક્તિ</string>
   <string name="chat">વાત ચીત</string>
   <string name="resign">રાજીનામું</string>
-  <string name="checkmate">ચેકમેટ</string>
   <string name="stalemate">સ્ટેલમેટ</string>
   <string name="white">સફેદ</string>
   <string name="black">કાળુ</string>
@@ -362,7 +361,6 @@
   <string name="onlyExistingConversations">માત્ર હાલની વાતચીતો</string>
   <string name="onlyFriends">ફક્ત મિત્રો</string>
   <string name="menu">મેનુ</string>
-  <string name="castling">કેસલિંગ</string>
   <string name="tpTimeSpentPlaying">રમવામાં વિતાવેલો સમય: %s</string>
   <string name="watchGames">રમતો જુઓ</string>
   <string name="watch">વોચ</string>

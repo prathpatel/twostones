@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="castling">캐슬링</string>
   <string name="equality">동등함</string>
   <string name="endgame">엔드게임</string>
   <string name="fork">포크</string>

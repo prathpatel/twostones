@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">체스 배우기</string>
-  <string name="byPlaying">플레이하며 체스를 배우세요!</string>
   <string name="menu">메뉴</string>
   <string name="play">시작!</string>
   <string name="capture">공격</string>
@@ -9,7 +7,6 @@
   <string name="escape">공격받고 있습니다!
 위협에서 벗어나세요!</string>
   <string name="intermediate">중급</string>
-  <string name="castling">캐슬링</string>
   <string name="stalemate">스테일메이트</string>
   <string name="register">회원가입</string>
   <string name="practice">연습</string>

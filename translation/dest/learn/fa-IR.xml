@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">یادگیری شطرنج</string>
-  <string name="byPlaying">با بازی کردن!</string>
   <string name="menu">نام‌چین</string>
   <string name="play">بازی کن!</string>
   <string name="capture">زدن</string>
@@ -9,7 +7,6 @@
   <string name="escape">شما زیر حمله‌اید!
 از تهدید فرار کنید!</string>
   <string name="intermediate">متوسط</string>
-  <string name="castling">قلعه‌روی</string>
   <string name="stalemate">پات</string>
   <string name="register">نام نویسی</string>
   <string name="practice">تمرین</string>

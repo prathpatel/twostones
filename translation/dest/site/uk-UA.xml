@@ -16,7 +16,6 @@
   <string name="strength">Сила</string>
   <string name="chat">Чат</string>
   <string name="resign">Здатися</string>
-  <string name="checkmate">Мат</string>
   <string name="stalemate">Пат</string>
   <string name="white">Білі</string>
   <string name="black">Чорні</string>
@@ -422,7 +421,6 @@
   <string name="onlyExistingConversations">Тільки існуючі бесіди</string>
   <string name="onlyFriends">Лише друзям</string>
   <string name="menu">Меню</string>
-  <string name="castling">Рокіровка</string>
   <string name="tpTimeSpentPlaying">Проведено часу в грі: %s</string>
   <string name="watchGames">Дивитись ігри</string>
   <string name="watch">Перегляд</string>

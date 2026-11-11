@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Ucz się szachów</string>
-  <string name="byPlaying">przez zabawę!</string>
   <string name="menu">Menu</string>
   <string name="play">graj!</string>
   <string name="capture">Bicie</string>
   <string name="protection">Obrona</string>
   <string name="escape">Jesteś atakowany! Uciekaj przed zagrożeniem!</string>
   <string name="intermediate">Średnio zaawansowane</string>
-  <string name="castling">Roszada</string>
   <string name="stalemate">Pat</string>
   <string name="register">Rejestracja</string>
   <string name="practice">Ćwiczenia</string>

@@ -16,7 +16,6 @@
   <string name="strength">Vahvuus</string>
   <string name="chat">Keskustelu</string>
   <string name="resign">Luovuta</string>
-  <string name="checkmate">Shakkimatti</string>
   <string name="stalemate">Patti</string>
   <string name="white">Valkea</string>
   <string name="black">Musta</string>
@@ -387,7 +386,6 @@ Kavereita pelaamassa: %2$s</string>
   <string name="onlyExistingConversations">Vain jo aloitettuihin keskusteluihin</string>
   <string name="onlyFriends">Vain kaverit</string>
   <string name="menu">Valikko</string>
-  <string name="castling">Linnoitus</string>
   <string name="tpTimeSpentPlaying">Pelaamiseen käytetty aika: %s</string>
   <string name="watchGames">Katso pelejä</string>
   <string name="watch">Katso</string>

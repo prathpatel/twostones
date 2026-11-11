@@ -94,7 +94,6 @@ final class JsonView(
               "clockTenths" -> pref.clockTenths,
               "moveEvent" -> pref.moveEvent
             )
-            .add("is3d" -> pref.is3d)
             .add("clockBar" -> pref.clockBar)
             .add("clockSound" -> pref.clockSound)
             .add("confirmResign" -> (!flags.nvui && pref.confirmResign == Pref.ConfirmResign.YES))
@@ -174,7 +173,6 @@ final class JsonView(
                 "replay" -> pref.replay,
                 "clockTenths" -> pref.clockTenths
               )
-              .add("is3d" -> pref.is3d)
               .add("clockBar" -> pref.clockBar)
               .add("highlight" -> pref.highlight)
 

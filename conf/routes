@@ -261,7 +261,6 @@ GET   /contact                         controllers.Main.contact
 GET   /faq                             controllers.Main.faq
 GET   /about                           controllers.Main.about
 GET   /source                          controllers.Main.source
-GET   /qa/:id/:slug                    controllers.Main.legacyQaQuestion(id: Int, slug)
 
 POST  /jslog/$id<\w{12}>               controllers.Main.jslog(id: GameFullId)
 

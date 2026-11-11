@@ -11,7 +11,6 @@
   <string name="strength">Güc</string>
   <string name="chat">Mesaj göndər</string>
   <string name="resign">Tərk et</string>
-  <string name="checkmate">Mat</string>
   <string name="stalemate">Pat</string>
   <string name="white">Ağ</string>
   <string name="black">Qara</string>
@@ -335,7 +334,6 @@
   <string name="onlyExistingConversations">Yalnız mövcud söhbətlər</string>
   <string name="onlyFriends">Yalnız dostlar</string>
   <string name="menu">Menyu</string>
-  <string name="castling">Qalaqurma</string>
   <string name="tpTimeSpentPlaying">Oynamağa sərf olunmuş zaman: %s</string>
   <string name="watchGames">Oyunları izlə</string>
   <string name="watch">İzlə</string>

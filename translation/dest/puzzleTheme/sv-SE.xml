@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="castling">Rockad</string>
   <string name="equality">Utjämning</string>
   <string name="endgame">Slutspel</string>
   <string name="fork">Gaffel</string>

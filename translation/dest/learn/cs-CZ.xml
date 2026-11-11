@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Naučte se šachy</string>
-  <string name="byPlaying">hrou!</string>
   <string name="menu">Menu</string>
   <string name="play">hrát!</string>
   <string name="capture">Braní</string>
   <string name="protection">Ochrana</string>
   <string name="escape">Jste napadeni! Utečte!</string>
   <string name="intermediate">Středně pokročilé</string>
-  <string name="castling">Rošáda</string>
   <string name="stalemate">Pat</string>
   <string name="register">Zaregistrujte se</string>
   <string name="practice">Procvičování</string>

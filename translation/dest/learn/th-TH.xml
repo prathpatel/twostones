@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">เรียนรู้หมากรุก</string>
-  <string name="byPlaying">ด้วยการเล่น!</string>
   <string name="menu">เมนู</string>
   <string name="play">เล่น!</string>
   <string name="capture">การจับกิน</string>
@@ -9,7 +7,6 @@
   <string name="escape">คุณกำลังถูกโจมตี!
 จงหลีกหนีจากภัยคุกคาม!</string>
   <string name="intermediate">ระดับปานกลาง</string>
-  <string name="castling">การเข้าป้อม</string>
   <string name="stalemate">อับ</string>
   <string name="register">ลงทะเบียน</string>
   <string name="practice">ฝึกหัด</string>

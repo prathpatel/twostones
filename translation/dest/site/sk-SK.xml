@@ -16,7 +16,6 @@
   <string name="strength">Sila</string>
   <string name="chat">Rozhovor</string>
   <string name="resign">Vzdať sa</string>
-  <string name="checkmate">Mat</string>
   <string name="stalemate">Pat</string>
   <string name="white">Biely</string>
   <string name="black">Čierny</string>
@@ -405,7 +404,6 @@
   <string name="onlyExistingConversations">Iba existujúce konverzácie</string>
   <string name="onlyFriends">Iba priatelia</string>
   <string name="menu">Menu</string>
-  <string name="castling">Rošáda</string>
   <string name="tpTimeSpentPlaying">Čas strávený hraním: %s</string>
   <string name="watchGames">Sledovať hry</string>
   <string name="watch">Sledovať</string>

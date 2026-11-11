@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="castling">Roszada</string>
   <string name="equality">Równowaga</string>
   <string name="endgame">Końcówka</string>
   <string name="fork">Widełki</string>

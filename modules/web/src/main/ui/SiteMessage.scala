@@ -41,37 +41,11 @@ final class SiteMessage(helpers: Helpers):
 
   def blacklistedSnippet(using Context) = lila.ui.Snippet(frag(blacklistedMessage))
 
-  def streamingMod = apply("Disabled while streaming"):
-    p(
-      "This moderation feature is disabled while streaming, ",
-      "to avoid leaking sensible information."
-    )
-
   def challengeDenied(msg: String)(using Context) =
     apply(
       title = trans.challenge.challengeToPlay.txt(),
       back = routes.Lobby.home.url.some
     )(p(msg))
-
-  def insightNoGames(u: User)(using Context) =
-    apply(
-      title = s"${u.username} has not played a rated game yet!",
-      back = routes.User.show(u.id).url.some
-    ):
-      p(
-        "Before using chess insights,",
-        userLink(u),
-        " has to play at least one rated game."
-      )
-
-  def teamCreateLimit = apply("Cannot create a team"):
-    p("You have already created a team this week.")
-
-  def teamJoinLimit = apply("Cannot join the team"):
-    p("You have already joined too many teams.")
-
-  def relayPrivate = apply("This tournament is private", lila.ui.deadLink.url.some):
-    p("Sorry, this tournament is private, or maybe it doesn't exist.")
 
   def authFailed = apply("403 - Access denied!"):
     p("You tried to visit a page you're not authorized to access.")

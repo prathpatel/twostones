@@ -8,7 +8,6 @@
   <string name="level">lo nilcre</string>
   <string name="chat">tavla</string>
   <string name="resign">randa</string>
-  <string name="checkmate">caxmata</string>
   <string name="stalemate">caxpata</string>
   <string name="white">la blabi</string>
   <string name="black">la xekri</string>
@@ -263,7 +262,6 @@
   <string name="ifRatingIsPlusMinusX">lo se nilcre be lo ke zmadu je mleca ke\'e be fo li su\'e %s</string>
   <string name="onlyFriends">lo pendo ku po\'o</string>
   <string name="menu">cuxna uidje</string>
-  <string name="castling">nolraitru joi sonci kelka\'u</string>
   <string name="tpTimeSpentPlaying">jvikei ze\'a la\'o temci. %s .temci</string>
   <string name="watchGames">zgana lo selkei</string>
   <string name="watch">zgana</string>

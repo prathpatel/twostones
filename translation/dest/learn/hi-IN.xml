@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">शतरंज सीखें</string>
-  <string name="byPlaying">खेल कर!</string>
   <string name="menu">मेनू</string>
   <string name="play">खेलें!</string>
   <string name="capture">कब्जा</string>
@@ -9,7 +7,6 @@
   <string name="escape">आप पर हमला कर रहे हैं!
 खतरे से बच!</string>
   <string name="intermediate">मध्यम</string>
-  <string name="castling">केस्लिंग</string>
   <string name="stalemate">गतिरोध</string>
   <string name="register">पंजीकृत करें</string>
   <string name="practice">अभ्यास</string>

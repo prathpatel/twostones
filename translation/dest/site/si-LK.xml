@@ -14,7 +14,6 @@
   <string name="strength">ශක්තිය</string>
   <string name="chat">පිළිසඳර</string>
   <string name="resign">ඉවත්වන්න</string>
-  <string name="checkmate">රජ වටකර ඇත</string>
   <string name="stalemate">ජය පැරදුමෙන් තොර</string>
   <string name="white">සුදු</string>
   <string name="black">කළු</string>
@@ -334,7 +333,6 @@
   <string name="onlyExistingConversations">පවතින සංවාද පමණි</string>
   <string name="onlyFriends">මිතුරන් පමණි</string>
   <string name="menu">මෙනු</string>
-  <string name="castling">කාසල් කිරීම​</string>
   <string name="watch">නරඹන්න</string>
   <string name="about">පිළිබඳව</string>
   <string name="aboutX">%s පිළිබඳව</string>

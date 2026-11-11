@@ -5,7 +5,6 @@
   <string name="actions">Azioni</string>
   <string name="promotion">Per promuovere a qualcosa che non sia una donna usa il simbolo di uguale. Ad esempio: a8=n promuove a cavallo.</string>
   <string name="king">re</string>
-  <string name="rook">torre</string>
   <string name="bishop">alfiere</string>
   <string name="knight">cavallo</string>
   <string name="copyToClipboard">Copia %s negli appunti</string>

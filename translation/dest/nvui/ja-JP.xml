@@ -5,7 +5,6 @@
   <string name="actions">操作</string>
   <string name="promotion">クイーン以外の駒に昇格するにはイコールを使います。例えば、a-8-イコール-n でナイトに昇格します。</string>
   <string name="king">キング</string>
-  <string name="rook">ルーク</string>
   <string name="bishop">ビショップ</string>
   <string name="knight">ナイト</string>
   <string name="copyToClipboard">%s をクリップボードにコピー</string>

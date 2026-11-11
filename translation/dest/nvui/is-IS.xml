@@ -5,7 +5,6 @@
   <string name="actions">Aðgerðir</string>
   <string name="promotion">Til þess að vekja upp annan taflmann en drottningu, notaðu „equals“ (samasem). Til dæmis „a-8-equals-n“ vekur upp riddara (knight).</string>
   <string name="king">kóngur</string>
-  <string name="rook">hrókur</string>
   <string name="bishop">biskup</string>
   <string name="knight">riddari</string>
   <string name="copyToClipboard">Afrita %s á klippiborð</string>

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">দাবা খেলা শিখুন</string>
-  <string name="byPlaying">খেলার দ্বারা!</string>
   <string name="menu">মেনু</string>
   <string name="play">খেলুন!</string>
   <string name="capture">অধিগ্রহন করুন</string>
@@ -9,7 +7,6 @@
   <string name="escape">আপনি আক্রমনের অধীনে.
 হ্নমকু ত্যাগ করুন!</string>
   <string name="intermediate">মাধ্যমিক</string>
-  <string name="castling">কাস্টেলিং</string>
   <string name="stalemate">চলমাত-সমান</string>
   <string name="register">নিবন্ধন করুন</string>
   <string name="practice">চর্চা</string>

@@ -4,7 +4,6 @@
   <string name="lastMove">Lasta movo</string>
   <string name="actions">Agoj</string>
   <string name="king">reĝo</string>
-  <string name="rook">turo</string>
   <string name="bishop">kuriero</string>
   <string name="knight">ĉevalo</string>
 </resources>

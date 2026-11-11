@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">cilre fi lo caxmati</string>
-  <string name="byPlaying">ta\'i lo nu kelci</string>
   <string name="menu">lo zilcuxste</string>
   <string name="play">kelci</string>
   <string name="capture">kavbu</string>
   <string name="protection">nunbandu</string>
-  <string name="castling">lo badydi\'ulujnunmu\'u</string>
   <string name="stalemate">caxpata</string>
   <string name="register">co\'a se jaspu</string>
   <string name="practice">crezenrapzu\'e</string>

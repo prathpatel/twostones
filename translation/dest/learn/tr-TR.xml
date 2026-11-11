@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Satranç öğrenin</string>
-  <string name="byPlaying">oynayarak!</string>
   <string name="menu">Menü</string>
   <string name="play">oyna!</string>
   <string name="capture">Taş yeme</string>
   <string name="protection">Savunma</string>
   <string name="escape">Saldırı altındasın! Tehditten kaç!</string>
   <string name="intermediate">Orta düzey</string>
-  <string name="castling">Rok atma</string>
   <string name="stalemate">Pat</string>
   <string name="register">Kayıt Ol</string>
   <string name="practice">Alıştırmalar</string>

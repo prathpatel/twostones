@@ -1,6 +1,7 @@
 import type { GameData } from './interfaces';
 
-// https://github.com/lichess-org/scalachess/blob/master/core/src/main/scala/Status.scala
+// The ids of scalachess's Status, which the server still uses. Go games never end by mate:
+// "mate" stays as the first finished status. https://github.com/lichess-org/scalachess
 
 export const status: Record<StatusName, number> = {
   created: 10,
@@ -8,14 +9,12 @@ export const status: Record<StatusName, number> = {
   aborted: 25,
   mate: 30,
   resign: 31,
-  stalemate: 32,
   timeout: 33,
   draw: 34,
   outoftime: 35,
   cheat: 36,
   noStart: 37,
   unknownFinish: 38,
-  insufficientMaterialClaim: 39,
   variantEnd: 60,
 };
 
@@ -25,10 +24,8 @@ export type StatusName =
   | 'aborted'
   | 'mate'
   | 'resign'
-  | 'stalemate'
   | 'timeout'
   | 'draw'
-  | 'insufficientMaterialClaim'
   | 'outoftime'
   | 'noStart'
   | 'cheat'

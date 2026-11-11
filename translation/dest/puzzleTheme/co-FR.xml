@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="castling">Arruccamentu</string>
   <string name="equality">Ugualità</string>
   <string name="endgame">Finale</string>
   <string name="fork">Furcina</string>

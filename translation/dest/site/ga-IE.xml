@@ -9,7 +9,6 @@
   <string name="strength">Caighdeán imeartha</string>
   <string name="chat">Tosaigh comhrá</string>
   <string name="resign">Éirigh as</string>
-  <string name="checkmate">Marbhsháinn</string>
   <string name="stalemate">Leamhsháinn</string>
   <string name="white">Bán</string>
   <string name="black">Dubh</string>
@@ -375,7 +374,6 @@
   <string name="onlyExistingConversations">Comhráite láithreach amháin</string>
   <string name="onlyFriends">Cairde amháin</string>
   <string name="menu">Roghchlár</string>
-  <string name="castling">Caisleáil</string>
   <string name="tpTimeSpentPlaying">Am caite ag imirt: %s</string>
   <string name="watchGames">Féach ar chluichí</string>
   <string name="watch">Féach</string>

@@ -9,7 +9,6 @@
   <string name="strength">Styrki</string>
   <string name="chat">Kjatta</string>
   <string name="resign">Legg kong</string>
-  <string name="checkmate">Skák og mát</string>
   <string name="stalemate">Pattstøða</string>
   <string name="white">Hvítur</string>
   <string name="black">Svartur</string>
@@ -297,7 +296,6 @@
   <string name="onlyExistingConversations">Einastu samrøður, ið eru til</string>
   <string name="onlyFriends">Bert vinir</string>
   <string name="menu">Valmynd</string>
-  <string name="castling">Loypur í borg</string>
   <string name="tpTimeSpentPlaying">Tíð nýtt at telva: %s</string>
   <string name="watchGames">Hygg at talvum</string>
   <string name="watch">Hygg</string>

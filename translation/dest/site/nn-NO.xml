@@ -16,7 +16,6 @@
   <string name="strength">Styrke</string>
   <string name="chat">Praterom</string>
   <string name="resign">Gje opp</string>
-  <string name="checkmate">Sjakk matt</string>
   <string name="stalemate">Patt</string>
   <string name="white">Kvit</string>
   <string name="black">Svart</string>
@@ -388,7 +387,6 @@ Vener som spelar: %2$s</string>
   <string name="onlyExistingConversations">Berre eksisterande samtalar</string>
   <string name="onlyFriends">Berre vener</string>
   <string name="menu">Meny</string>
-  <string name="castling">Rokade</string>
   <string name="tpTimeSpentPlaying">Tid brukt på å spela: %s</string>
   <string name="watchGames">Sjå parti</string>
   <string name="watch">Sjå</string>

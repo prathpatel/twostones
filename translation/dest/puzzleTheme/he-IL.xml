@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="castling">הצרחה</string>
   <string name="equality">שוויון</string>
   <string name="endgame">סיום</string>
   <string name="fork">מזלג</string>

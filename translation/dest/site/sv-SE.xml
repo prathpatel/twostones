@@ -14,7 +14,6 @@
   <string name="strength">Styrka</string>
   <string name="chat">Chatta</string>
   <string name="resign">Ge upp</string>
-  <string name="checkmate">Schackmatt</string>
   <string name="stalemate">Patt</string>
   <string name="white">Vit</string>
   <string name="black">Svart</string>
@@ -368,7 +367,6 @@
   <string name="onlyExistingConversations">Endast befintliga konversationer</string>
   <string name="onlyFriends">Bara vänner</string>
   <string name="menu">Meny</string>
-  <string name="castling">Rockad</string>
   <string name="tpTimeSpentPlaying">Total speltid: %s</string>
   <string name="watchGames">Titta på spel</string>
   <string name="watch">Titta</string>

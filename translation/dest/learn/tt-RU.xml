@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Шахмат уйнап</string>
-  <string name="byPlaying">уйныйлар!</string>
   <string name="menu">Меню</string>
   <string name="play">уйна!</string>
   <string name="capture">Алу</string>
@@ -9,7 +7,6 @@
   <string name="escape">Сезгә хөҗүм колынмауда!
 Таһдиддән котыл!</string>
   <string name="intermediate">Урта</string>
-  <string name="castling">Рокировка</string>
   <string name="stalemate">Пат</string>
   <string name="register">Теркәлү</string>
   <string name="practice">Күнегүләрегез</string>

@@ -5,7 +5,6 @@
   <string name="actions">Ações</string>
   <string name="promotion">Para não promover para uma dama, use \"equals\". Por exemplo, a-8-equals-n promove para um cavalo.</string>
   <string name="king">rei</string>
-  <string name="rook">torre</string>
   <string name="bishop">bispo</string>
   <string name="knight">cavalo</string>
   <string name="copyToClipboard">Copiar %s para área de transferência</string>

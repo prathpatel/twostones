@@ -9,7 +9,6 @@
   <string name="strength">თამაშის დონე</string>
   <string name="chat">სასაუბრო</string>
   <string name="resign">დათმობა</string>
-  <string name="checkmate">შამათი</string>
   <string name="stalemate">პატი</string>
   <string name="white">თეთრები</string>
   <string name="black">შავები</string>
@@ -332,7 +331,6 @@
   <string name="onlyExistingConversations">მხოლოდ არსებული სასაუბროები</string>
   <string name="onlyFriends">მხოლოდ მეგობრები</string>
   <string name="menu">მენიუ</string>
-  <string name="castling">როქი</string>
   <string name="tpTimeSpentPlaying">თამაშში დახარჯული დრო: %s</string>
   <string name="watchGames">თამაშების თვალის მიდევნება</string>
   <string name="watch">თვალის მიდევნება</string>

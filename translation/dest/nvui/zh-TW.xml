@@ -3,7 +3,6 @@
   <string name="pieces">棋子</string>
   <string name="lastMove">最後一步</string>
   <string name="king">國王</string>
-  <string name="rook">城堡</string>
   <string name="bishop">主教</string>
   <string name="knight">騎士</string>
 </resources>

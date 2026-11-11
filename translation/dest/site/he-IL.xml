@@ -14,7 +14,6 @@
   <string name="strength">רמת קושי</string>
   <string name="chat">שליחת הודעה</string>
   <string name="resign">כניעה</string>
-  <string name="checkmate">מט</string>
   <string name="stalemate">פט</string>
   <string name="white">לבן</string>
   <string name="black">שחור</string>
@@ -375,7 +374,6 @@
   <string name="onlyExistingConversations">שיחה קיימת בלבד</string>
   <string name="onlyFriends">חברים בלבד</string>
   <string name="menu">תפריט</string>
-  <string name="castling">הצרחה</string>
   <string name="tpTimeSpentPlaying">זמן במשחק: %s</string>
   <string name="watchGames">צפייה במשחקים</string>
   <string name="watch">צפו</string>

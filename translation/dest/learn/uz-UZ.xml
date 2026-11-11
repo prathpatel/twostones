@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Şaxmat öynab</string>
-  <string name="byPlaying">örganing!</string>
   <string name="menu">Menyu</string>
   <string name="play">öynang!</string>
   <string name="capture">Urib oliş</string>
   <string name="protection">Himoya</string>
   <string name="escape">Qoçişga joy yöq, lekin himoyalansa böladi!</string>
   <string name="intermediate">Örta daraja</string>
-  <string name="castling">Rokirovka</string>
   <string name="stalemate">Pat</string>
   <string name="register">Röyxatdan ötiş</string>
   <string name="practice">Maşq qiliş</string>

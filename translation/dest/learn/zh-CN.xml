@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">学习国象</string>
-  <string name="byPlaying">边学边玩！</string>
   <string name="menu">菜单</string>
   <string name="play">开始玩！</string>
   <string name="capture">吃子</string>
@@ -9,7 +7,6 @@
   <string name="escape">您正被攻击！
 避开威胁！</string>
   <string name="intermediate">进阶</string>
-  <string name="castling">王车易位</string>
   <string name="stalemate">逼和</string>
   <string name="register">注册</string>
   <string name="practice">练习</string>

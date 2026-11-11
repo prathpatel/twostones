@@ -5,7 +5,6 @@
   <string name="actions">Toiminnot</string>
   <string name="promotion">Jos haluat korottaa nappulan muuksi kuin daamiksi, käytä sanaa \"equals\" ja englanninkielisiä kirjaimia nappuloille. Esimerkiksi a-8-equals-n korottaa nappulan ratsuksi.</string>
   <string name="king">kuningas</string>
-  <string name="rook">torni</string>
   <string name="bishop">lähetti</string>
   <string name="knight">ratsu</string>
   <string name="copyToClipboard">Kopioi %s leikepöydälle</string>

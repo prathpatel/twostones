@@ -4,7 +4,6 @@
   <string name="lastMove">Апошні ход</string>
   <string name="actions">Дзеянні</string>
   <string name="king">кароль</string>
-  <string name="rook">ладдзя</string>
   <string name="bishop">слон</string>
   <string name="knight">конь</string>
   <string name="copyToClipboard">Скапіявана %s ў буфер абмену</string>

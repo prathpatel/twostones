@@ -16,7 +16,6 @@
   <string name="strength">قدرت</string>
   <string name="chat">گپ</string>
   <string name="resign">تسلیم</string>
-  <string name="checkmate">کیش و مات</string>
   <string name="stalemate">پات</string>
   <string name="white">سفید</string>
   <string name="black">سیاه</string>
@@ -389,7 +388,6 @@
   <string name="onlyExistingConversations">تنها مکالمات موجود</string>
   <string name="onlyFriends">فقط دوستان</string>
   <string name="menu">نام‌چین</string>
-  <string name="castling">قلعه‌روی</string>
   <string name="tpTimeSpentPlaying">زمان بازی کردن: %s</string>
   <string name="watchGames">تماشای بازی‌ها</string>
   <string name="watch">تماشا</string>

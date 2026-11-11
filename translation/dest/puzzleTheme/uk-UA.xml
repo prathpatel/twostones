@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="castling">Рокіровка</string>
   <string name="equality">Рівність</string>
   <string name="endgame">Ендшпіль</string>
   <string name="fork">Вилка</string>

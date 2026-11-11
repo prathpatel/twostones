@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Opi shakkia</string>
-  <string name="byPlaying">pelaamalla!</string>
   <string name="menu">Valikko</string>
   <string name="play">pelaa!</string>
   <string name="capture">Lyöminen</string>
@@ -9,7 +7,6 @@
   <string name="escape">Vastustaja hyökkää!
 Pakene uhkaa!</string>
   <string name="intermediate">Keskitaso</string>
-  <string name="castling">Linnoitus</string>
   <string name="stalemate">Patti</string>
   <string name="register">Rekisteröidy</string>
   <string name="practice">Harjoittele</string>

@@ -9,7 +9,6 @@
   <string name="strength">Хӑват</string>
   <string name="chat">Ҫырса яр</string>
   <string name="resign">Парӑн</string>
-  <string name="checkmate">Мат</string>
   <string name="stalemate">Пат</string>
   <string name="white">Шуррисем</string>
   <string name="black">Хуррисем</string>
@@ -245,7 +244,6 @@
   <string name="ifRatingIsPlusMinusX">Рейтингӗ ± %s пулсан</string>
   <string name="onlyFriends">Тус кӑна</string>
   <string name="menu">Менӳ</string>
-  <string name="castling">Роикровка</string>
   <string name="tpTimeSpentPlaying">Выльаса ларнӑ вӑхӑт: %s</string>
   <string name="watchGames">Вӑййисене тишкер</string>
   <string name="watch">Тишкересси</string>

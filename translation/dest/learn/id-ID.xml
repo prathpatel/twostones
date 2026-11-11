@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Materi pelajaran catur</string>
-  <string name="byPlaying">dengan bermain!</string>
   <string name="menu">Menu</string>
   <string name="play">main!</string>
   <string name="capture">Makan</string>
   <string name="protection">Proteksi</string>
   <string name="escape">Anda diserang! Melarikan diri ancaman!</string>
   <string name="intermediate">Menengah</string>
-  <string name="castling">Castling</string>
   <string name="stalemate">Jalan buntu</string>
   <string name="register">Daftar</string>
   <string name="practice">Latihan</string>

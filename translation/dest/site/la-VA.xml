@@ -12,7 +12,6 @@
   <string name="strength">Virtus</string>
   <string name="chat">Sermo</string>
   <string name="resign">Decedere</string>
-  <string name="checkmate">Mattus</string>
   <string name="stalemate">Rex impeditus</string>
   <string name="white">Albus</string>
   <string name="black">Ater</string>
@@ -308,7 +307,6 @@
   <string name="ifRatingIsPlusMinusX">Si ± %s status est</string>
   <string name="onlyFriends">Soli amici</string>
   <string name="menu">Index</string>
-  <string name="castling">Adroccare</string>
   <string name="tpTimeSpentPlaying">Tempus actum: %s</string>
   <string name="watchGames">Spectare ludos</string>
   <string name="watch">Specta</string>

@@ -10,7 +10,6 @@
   <string name="strength">Cryfder</string>
   <string name="chat">Sgwrsio</string>
   <string name="resign">Ildio</string>
-  <string name="checkmate">Siachmat</string>
   <string name="stalemate">Methmat</string>
   <string name="white">Gwyn</string>
   <string name="black">Du</string>
@@ -292,7 +291,6 @@
   <string name="onlyExistingConversations">Dim ond sgyrsiau eisoes</string>
   <string name="onlyFriends">Dim ond ffrindiau</string>
   <string name="menu">Dewislen</string>
-  <string name="castling">Castellu</string>
   <string name="tpTimeSpentPlaying">Chwaraeodd am: %s</string>
   <string name="watchGames">Gwylio gêmau</string>
   <string name="watch">Gwylio</string>

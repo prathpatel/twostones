@@ -11,7 +11,6 @@
   <string name="strength">Schpiilstärchi</string>
   <string name="chat">Chat</string>
   <string name="resign">Ufgeh</string>
-  <string name="checkmate">Schachmatt</string>
   <string name="stalemate">Patt</string>
   <string name="white">Wiis</string>
   <string name="black">Schwarz</string>
@@ -341,7 +340,6 @@
   <string name="onlyExistingConversations">Nur bestehendi Underhaltige</string>
   <string name="onlyFriends">Nur Fründe</string>
   <string name="menu">Menü</string>
-  <string name="castling">Rochade</string>
   <string name="tpTimeSpentPlaying">Gsamti-Spiilziit: %s</string>
   <string name="watchGames">Partie zueluege</string>
   <string name="watch">Zueluege</string>

@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Սովորեք շախմատ</string>
-  <string name="byPlaying">խաղալով</string>
   <string name="menu">Ցանկ</string>
   <string name="play">Խաղա՛լ</string>
   <string name="capture">Խաղաքարի հարվածում</string>
   <string name="protection">Պաշտպանություն</string>
   <string name="escape">Ձեզ գրոհո՜ւմ են։ Խուսափե՜ք սպառնալիքից։</string>
   <string name="intermediate">Միջին մակարդակ</string>
-  <string name="castling">Փոխատեղում</string>
   <string name="stalemate">Պատ</string>
   <string name="register">Գրանցում</string>
   <string name="practice">Զբաղվել, Պարապել</string>

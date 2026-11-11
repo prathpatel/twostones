@@ -16,7 +16,6 @@
   <string name="strength">強さ</string>
   <string name="chat">チャット</string>
   <string name="resign">投了</string>
-  <string name="checkmate">チェックメイト</string>
   <string name="stalemate">ステイルメイト</string>
   <string name="white">白</string>
   <string name="black">黒</string>
@@ -370,7 +369,6 @@
   <string name="onlyExistingConversations">すでにある会話のみ</string>
   <string name="onlyFriends">友達のみ</string>
   <string name="menu">メニュー</string>
-  <string name="castling">キャスリング</string>
   <string name="tpTimeSpentPlaying">プレイ時間:%s</string>
   <string name="watchGames">ゲームを見る</string>
   <string name="watch">見る</string>

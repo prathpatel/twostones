@@ -16,7 +16,6 @@
   <string name="strength">Kuvvet</string>
   <string name="chat">Sohbet</string>
   <string name="resign">Oyundan Çekil</string>
-  <string name="checkmate">Şah Mat</string>
   <string name="stalemate">Pat</string>
   <string name="white">Beyaz</string>
   <string name="black">Siyah</string>
@@ -388,7 +387,6 @@ Oynayan arkadaşlar: %2$s</string>
   <string name="onlyExistingConversations">Sadece mevcut yazışmalar</string>
   <string name="onlyFriends">Sadece arkadaşlar</string>
   <string name="menu">Menü</string>
-  <string name="castling">Rok Atma</string>
   <string name="tpTimeSpentPlaying">Toplam oynama süresi: %s</string>
   <string name="watchGames">Oyunları izle</string>
   <string name="watch">İzle</string>

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Kişikê hîn bibe</string>
-  <string name="byPlaying">bi lîstinê!</string>
   <string name="menu">Menu</string>
   <string name="play">bilîze!</string>
   <string name="capture">Xwarin</string>
@@ -9,7 +7,6 @@
   <string name="escape">Tu di bin êrîşê de yî!
 Bifilite ji tehdîdan!</string>
   <string name="intermediate">Asta navincî</string>
-  <string name="castling">Rokkirin</string>
   <string name="stalemate">Pat</string>
   <string name="register">Qeyd bibe</string>
   <string name="practice">Praktîk bike</string>

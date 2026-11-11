@@ -16,7 +16,6 @@
   <string name="strength">Força</string>
   <string name="chat">Xat</string>
   <string name="resign">Rendir-se</string>
-  <string name="checkmate">Escac i mat</string>
   <string name="stalemate">Ofegat</string>
   <string name="white">Blanques</string>
   <string name="black">Negres</string>
@@ -389,7 +388,6 @@ Amics jugant: %2$s</string>
   <string name="onlyExistingConversations">Només converses existents</string>
   <string name="onlyFriends">Només amics</string>
   <string name="menu">Menú</string>
-  <string name="castling">Enroc</string>
   <string name="tpTimeSpentPlaying">Temps passat jugant: %s</string>
   <string name="watchGames">Visualitza\'n les partides</string>
   <string name="watch">Visualitza</string>

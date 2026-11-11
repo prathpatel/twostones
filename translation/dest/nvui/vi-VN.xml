@@ -5,7 +5,6 @@
   <string name="actions">Hành động</string>
   <string name="promotion">Để phong cấp thành bất cứ quân nào khác ngoài phong hậu, hãy sử dụng ký hiệu quân cờ. Ví dụ a-8-equals-n để phong cấp lên mã.</string>
   <string name="king">vua</string>
-  <string name="rook">xe</string>
   <string name="bishop">tượng</string>
   <string name="knight">mã</string>
   <string name="copyToClipboard">Sao chép %s vào bộ nhớ tạm</string>

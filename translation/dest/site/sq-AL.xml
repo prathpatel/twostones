@@ -16,7 +16,6 @@
   <string name="strength">Vështirësia</string>
   <string name="chat">Bisedo</string>
   <string name="resign">Dorëzohu</string>
-  <string name="checkmate">Shah mat</string>
   <string name="stalemate">Pat</string>
   <string name="white">I bardhi</string>
   <string name="black">I ziu</string>
@@ -375,7 +374,6 @@ Shokë që po luajnë: %2$s</string>
   <string name="onlyExistingConversations">Vetëm bisedat ekzistuese</string>
   <string name="onlyFriends">Vetëm shokë</string>
   <string name="menu">Menu</string>
-  <string name="castling">Rokadë</string>
   <string name="tpTimeSpentPlaying">Kohë e shpenzuar në lojë: %s</string>
   <string name="watchGames">Shihni lojëra</string>
   <string name="watch">Shiheni</string>

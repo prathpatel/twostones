@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Tanulj sakkozni</string>
-  <string name="byPlaying">játszva!</string>
   <string name="menu">Menü</string>
   <string name="play">játssz!</string>
   <string name="capture">Ütés</string>
@@ -9,7 +7,6 @@
   <string name="escape">Megtámadtak!
 Menekülj a fenyegetéstől!</string>
   <string name="intermediate">Középfok</string>
-  <string name="castling">Sáncolás</string>
   <string name="stalemate">Patt</string>
   <string name="register">Regisztráció</string>
   <string name="practice">Gyakorolj</string>

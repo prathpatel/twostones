@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="castling">王车易位</string>
   <string name="equality">均势</string>
   <string name="endgame">残局</string>
   <string name="fork">捉双</string>

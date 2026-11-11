@@ -5,7 +5,6 @@
   <string name="actions">Accións</string>
   <string name="promotion">Para non coroar automaticamente coma dama débese usar \"equals\" (\"é igual a\", en inglés). Así, \"a-8-equals-n\" coroa coma cabalo (n==Knight, en inglés).</string>
   <string name="king">rei</string>
-  <string name="rook">torre</string>
   <string name="bishop">bispo</string>
   <string name="knight">cabalo</string>
   <string name="copyToClipboard">Copiar o %s ao portapapeis</string>

@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">ללמוד שחמט</string>
-  <string name="byPlaying">על־ידי משחק!</string>
   <string name="menu">תפריט</string>
   <string name="play">שחק/י!</string>
   <string name="capture">הכאה</string>
   <string name="protection">הגנה</string>
   <string name="escape">את/ה תחת מתקפה! התחמק/י מן האיום!</string>
   <string name="intermediate">רמה בינונית</string>
-  <string name="castling">הצרחה</string>
   <string name="stalemate">פט</string>
   <string name="register">הרשמה</string>
   <string name="practice">אימון</string>

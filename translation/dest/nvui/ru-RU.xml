@@ -5,7 +5,6 @@
   <string name="actions">Действия</string>
   <string name="promotion">Чтобы превратиться в фигуру, отличную от ферзя, используйте знак «равно». Например, a-8-=-n превращает в коня.</string>
   <string name="king">король</string>
-  <string name="rook">ладья</string>
   <string name="bishop">слон</string>
   <string name="knight">конь</string>
   <string name="copyToClipboard">Копировать %s в буфер обмена</string>

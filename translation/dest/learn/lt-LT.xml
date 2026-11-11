@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="learnChess">Išmokite šachmatus</string>
-  <string name="byPlaying">žaisdami!</string>
   <string name="menu">Meniu</string>
   <string name="play">Žaisk!</string>
   <string name="capture">Kirtimas</string>
   <string name="protection">Apsauga</string>
   <string name="escape">Jus puola. Išvenkite grėsmės!</string>
   <string name="intermediate">Vidutinis</string>
-  <string name="castling">Rokiruotė</string>
   <string name="stalemate">Patas</string>
   <string name="register">Užsiregistruok</string>
   <string name="practice">Treniruokis</string>

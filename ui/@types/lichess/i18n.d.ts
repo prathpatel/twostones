@@ -269,18 +269,12 @@ interface I18n {
   learn: {
     /** Awesome! */
     awesome: string;
-    /** by playing! */
-    byPlaying: string;
     /** Capture */
     capture: string;
-    /** Castling */
-    castling: string;
     /** You're under attack! */
     escape: string;
     /** Intermediate */
     intermediate: string;
-    /** Learn chess */
-    learnChess: string;
     /** Menu */
     menu: string;
     /** Next */
@@ -341,8 +335,6 @@ interface I18n {
     pieces: string;
     /** To promote to anything else than a queen, use equals. For example a-8-equals-n promotes to a knight. */
     promotion: string;
-    /** rook */
-    rook: string;
   };
   oauthScope: {
     /** You already have played games! */
@@ -603,8 +595,6 @@ interface I18n {
     solved: string;
   };
   puzzleTheme: {
-    /** Castling */
-    castling: string;
     /** Endgame */
     endgame: string;
     /** Equality */
@@ -885,8 +875,6 @@ interface I18n {
     'captcha.fail': string;
     /** Capture */
     capture: string;
-    /** Castling rights */
-    castling: string;
     /** Casual */
     casual: string;
     /** Challenge a friend */
@@ -913,8 +901,6 @@ interface I18n {
     cheatDetected: string;
     /** Check all junk, spam, and other folders */
     checkAllEmailFolders: string;
-    /** Checkmate */
-    checkmate: string;
     /** If you do not receive a confirmation email, check your Spam or Junk folder. Be sure to indicate messages from TwoStones as safe and "not spam", so you can stay informed of important communications. */
     checkSpamOrJunkFolder: string;
     /** Check your Email */

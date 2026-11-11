@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="castling">ການເຂົ້າປ້ອມ (Castling)</string>
   <string name="equality">ຄວາມສະເໝີພາບ</string>
   <string name="endgame">ເກມປາຍກະດານ (Endgame)</string>
   <string name="fork">ການແທງສອງທາງ (Fork)</string>

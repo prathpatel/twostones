@@ -16,7 +16,6 @@
   <string name="strength">Tugevus</string>
   <string name="chat">Saada sõnum</string>
   <string name="resign">Alistu</string>
-  <string name="checkmate">Matt</string>
   <string name="stalemate">Patt</string>
   <string name="white">Valge</string>
   <string name="black">Must</string>
@@ -388,7 +387,6 @@ Sõbrad mängimas: %2$s</string>
   <string name="onlyExistingConversations">Ainult olemasolevad vestlused</string>
   <string name="onlyFriends">Ainult sõbrad</string>
   <string name="menu">Menüü</string>
-  <string name="castling">Vangerdus</string>
   <string name="tpTimeSpentPlaying">Mängimiseks kulutatud aeg: %s</string>
   <string name="watchGames">Vaata mänge</string>
   <string name="watch">Vaata</string>

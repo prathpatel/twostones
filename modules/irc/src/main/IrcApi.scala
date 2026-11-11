@@ -244,7 +244,7 @@ final class IrcApi(
       s":note: $playerPath by ${markdown.modLink(me.username)}\n> $credits"
 
 
-  def stop(): Funit = zulip(_.general, "lila")("Lichess is restarting.")
+  def stop(): Funit = zulip(_.general, "lila")("TwoStones is restarting.")
 
   private[irc] def publishInfo(msg: String): Funit =
     zulip(_.general, "lila")(s":info: ${markdown.linkifyUsers(msg)}")

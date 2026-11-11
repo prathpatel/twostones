@@ -10,7 +10,6 @@
   <string name="strength">Ուժ</string>
   <string name="chat">Զրուցարան</string>
   <string name="resign">Հանձնվել</string>
-  <string name="checkmate">Շախ և մատ</string>
   <string name="stalemate">Պատ</string>
   <string name="white">Սպիտակներ</string>
   <string name="black">Սևեր</string>
@@ -341,7 +340,6 @@
   <string name="onlyExistingConversations">Միայն գոյություն ունեցող քննարկումները</string>
   <string name="onlyFriends">Միայն ընկերները</string>
   <string name="menu">Մենյու</string>
-  <string name="castling">Փոխատեղում</string>
   <string name="tpTimeSpentPlaying">Ընդհանուր խաղաժամանակ` %s</string>
   <string name="watchGames">Դիտել խաղեր</string>
   <string name="watch">Դիտում</string>
