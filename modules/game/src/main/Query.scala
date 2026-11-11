@@ -24,8 +24,6 @@ object Query:
 
   val playable: Bdoc = F.status.lt(Status.Aborted.id)
 
-  val mate: Bdoc = status(Status.Mate)
-
   def draw(u: UserId): Bdoc =
     user(u) ++ finished ++ F.winnerId.exists(false) ++ or(notAi, status(Status.Draw))
 
@@ -39,8 +37,6 @@ object Query:
 
   val frozen: Bdoc = F.status.gte(Status.Mate.id)
 
-  def imported(u: UserId): Bdoc = bdoc(s"${F.pgnImport}.user" -> u)
-  def importedSort: Bdoc = sort.desc(s"${F.pgnImport}.ca")
 
   val friend: Bdoc = bdoc(F.source -> Source.Friend.id)
   val notAi: Bdoc = F.source.neq(Source.Ai.id)

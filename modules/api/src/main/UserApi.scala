@@ -64,7 +64,6 @@ final class UserApi(
             opts.withRelation.so(as).map(_.userId).so(relationApi.fetchRelation(_, u.id)),
             bookmarkApi.countByUser(u.user),
             if as.isDefined then playingUsers.nbPlayingAll(u.id) else playingUsers.nbPlayingRealtime(u.id),
-            gameCache.nbImportedBy(u.id),
             (withTrophies && !u.lame).optionFu(getTrophiesAndAwards(u.user)),
             withCanChallenge.so(challengeGranter.mayChallenge(u.user).dmap(some)),
             forWiki.optionFu(userRepo.email(u.id)),
@@ -77,7 +76,6 @@ final class UserApi(
                 relation,
                 nbBookmarks,
                 nbPlaying,
-                nbImported,
                 trophiesAndAwards,
                 canChallenge,
                 email,
@@ -97,7 +95,6 @@ final class UserApi(
                       "win" -> u.count.win,
                       "bookmark" -> nbBookmarks,
                       "playing" -> nbPlaying,
-                      "import" -> nbImported,
                       "me" -> nbGamesWithMe
                     )
                   )

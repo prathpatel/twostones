@@ -38,7 +38,6 @@
   <string name="apiDocumentationLinks" comment="The first parameter links to a personal token app example. The second parameter links to the API documentation">這裡有%1$s以及%2$s</string>
   <string name="personalTokenAppExample">個人權杖應用程式範例</string>
   <string name="apiDocumentation">API 手冊</string>
-  <string name="newToken">新增存取權杖</string>
   <string name="apiAccessTokens">API 存取權杖</string>
   <string name="created">已建立 %s</string>
   <string name="lastUsed">最後使用：%s</string>

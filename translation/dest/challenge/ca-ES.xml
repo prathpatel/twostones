@@ -22,5 +22,4 @@
   <string name="declineVariant">No vull jugar aquesta variant en aquest moment.</string>
   <string name="declineNoBot">No accepto desafiaments de bots.</string>
   <string name="declineOnlyBot">Només accepto desafiaments de bots.</string>
-  <string name="inviteLichessUser">O invita un usuari de Lichess:</string>
 </resources>

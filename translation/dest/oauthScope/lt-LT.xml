@@ -33,5 +33,4 @@
   <string name="canMakeOauthRequests">Galite daryti OAuth užklausaus nepereidami %s.</string>
   <string name="authorizationCodeFlow">autorizacijos kodo sekos</string>
   <string name="apiDocumentation">API dokumentacija</string>
-  <string name="newToken">Naujas prieigos raktas</string>
 </resources>

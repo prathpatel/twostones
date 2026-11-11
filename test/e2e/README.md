@@ -1,7 +1,7 @@
 # Browser tests
 
 Two scripts drive real browsers with [Playwright](https://playwright.dev) against a running
-GoGame (lila on port 9663, lila-ws on 9664):
+TwoStones (lila on port 9663, lila-ws on 9664):
 
 | Script | What it checks |
 | --- | --- |
@@ -38,8 +38,8 @@ with status 1 when a check fails.
    npm run mobile
    ```
 
-`GOGAME_URL` points the tests at another address, e.g.
-`GOGAME_URL=http://192.168.1.20:9663 npm test`.
+`TWOSTONES_URL` points the tests at another address, e.g.
+`TWOSTONES_URL=http://192.168.1.20:9663 npm test`.
 
 The tests create accounts named `test…` and games in your local database.
 

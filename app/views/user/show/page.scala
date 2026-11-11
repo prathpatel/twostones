@@ -56,7 +56,7 @@ object page:
       main(cls := "page-small box box-pad page")(
         h1(cls := "box__top")("No such player"),
         div(
-          p("This username doesn't match any Lichess player."),
+          p("This username doesn't match any TwoStones player."),
           canCreate.not.option(p("It cannot be used to create a new account."))
         )
       )
@@ -79,5 +79,4 @@ object page:
       case GameFilter.draw => transLocalize(trans.site.nbDraws, u.count.draw)
       case GameFilter.playing => transLocalize(trans.site.nbPlaying, nbs.playing)
       case GameFilter.bookmark => transLocalize(trans.site.nbBookmarks, nbs.bookmark)
-      case GameFilter.imported => transLocalize(trans.site.nbImportedGames, nbs.imported)
       case GameFilter.search => trans.search.advancedSearch.txt()

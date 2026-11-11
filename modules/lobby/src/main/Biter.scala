@@ -68,7 +68,6 @@ final private class Biter(
       players = users.mapWithColor(newPlayer.apply),
       rated = hook.rated,
       source = lila.core.game.Source.Lobby,
-      pgnImport = None
     )
     .start
 
@@ -79,7 +78,6 @@ final private class Biter(
       rated = seek.rated,
       source = lila.core.game.Source.Lobby,
       daysPerTurn = seek.daysPerTurn,
-      pgnImport = None
     )
     .start
 

@@ -16,11 +16,7 @@ object GlickoExt:
     def intervalMax = (g.rating + g.deviation * 2).toInt
     def interval = g.intervalMin -> g.intervalMax
 
-    def rankable(variant: chess.variant.Variant) =
-      g.deviation <= {
-        if variant.standard then Glicko.standardRankableDeviation
-        else Glicko.variantRankableDeviation
-      }
+    def rankable = g.deviation <= Glicko.standardRankableDeviation
 
     def sanityCheck: Boolean =
       g.rating > 0 &&
@@ -44,7 +40,6 @@ object Glicko:
   val maxRating: IntRating = IntRating(4000)
 
   val minDeviation = 45
-  val variantRankableDeviation = 65
   val standardRankableDeviation = 75
   val maxDeviation = 500d
 
@@ -60,7 +55,6 @@ object Glicko:
 
   // managed is for students invited to a class
   val defaultManaged = new Glicko(800d, 400d, defaultVolatility)
-  val defaultManagedPuzzle = new Glicko(800d, 400d, defaultVolatility)
 
   // bot accounts (usually a stockfish instance)
   val defaultBot = new Glicko(3000d, maxDeviation, defaultVolatility)
@@ -75,10 +69,6 @@ object Glicko:
     ratingPeriodsPerDay = periodsPerDay
   )
 
-  val calculatorWithCrazyhouseAdvantage = GlickoCalculator(
-    ratingPeriodsPerDay = periodsPerDay,
-    colorAdvantage = ColorAdvantage.crazyhouse
-  )
 
   val calculatorWithStandardAdvantage = GlickoCalculator(
     ratingPeriodsPerDay = periodsPerDay,

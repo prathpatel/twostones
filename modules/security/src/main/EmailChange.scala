@@ -16,6 +16,8 @@ final class EmailChange(
 )(using Executor, lila.core.i18n.Translator):
 
   import Mailer.html.*
+  // the footer of every email links to this site's pages
+  private given RouteUrl = routeUrl
 
   def send(user: User, email: EmailAddress): Funit =
     email.looksLikeFakeEmail.not.so:

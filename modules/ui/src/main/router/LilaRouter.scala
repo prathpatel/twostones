@@ -1,12 +1,10 @@
 package lila.ui
 
-import chess.format.Uci
 import play.api.mvc.{ PathBindable, QueryStringBindable }
 import scalalib.newtypes.SameRuntime
 
 import lila.core.id.*
 import lila.core.misc.AppealTopic
-import lila.core.study.StudyOrder as StudyOrder
 import lila.core.ublog.{ BlogsBy, QualityFilter as BlogQualityFilter }
 import lila.ui.MarkdownRealm
 
@@ -35,22 +33,10 @@ object LilaRouter:
     def unbind(_key: String, value: A) = write(value)
 
   given PathBindable[UserStr] = strPath[UserStr](UserStr.read, "Invalid Lichess username")
-  given PathBindable[PerfKey] = strPath[PerfKey](PerfKey.apply, "Invalid Lichess performance key")
+  given PathBindable[PerfKey] = strPath[PerfKey](PerfKey.apply, "Invalid rating key")
   given PathBindable[GameId] = summon[PathBindable[GameAnyId]].transform(_.gameId, _.into(GameAnyId))
   given PathBindable[Color] =
-    strPath[Color](Color.fromName, "Invalid chess color, should be white or black", _.name)
-  given PathBindable[Uci] = strPath[Uci](Uci.apply, "Invalid UCI move", _.uci)
-
-  given PathBindable[StudyOrder] = strPath(
-    StudyOrder.byKey.get,
-    s"Invalid study order ${StudyOrder.all.mkString(", ")}"
-  )
-
-  given QueryStringBindable[StudyOrder] = strQueryString(
-    StudyOrder.byKey.get,
-    s"Invalid study order ${StudyOrder.all.mkString(", ")}",
-    _.key
-  )
+    strPath[Color](Color.fromName, "Invalid color, should be white or black", _.name)
 
   given PathBindable[AppealTopic] = strPath(AppealTopic.byKey.get, "Invalid appeal topic", _.toString)
   given PathBindable[MarkdownRealm] = strPath(MarkdownRealm.byKey.get, "Invalid markdown realm")
@@ -71,8 +57,7 @@ object LilaRouter:
     def unbind(key: String, value: A) = s"${urlEncode(key)}=${urlEncode(write(value))}"
 
   given QueryStringBindable[Color] =
-    strQueryString[Color](Color.fromName, "Invalid chess color, should be white or black", _.name)
-  given QueryStringBindable[Uci] = strQueryString[Uci](Uci.apply, "Invalid UCI move", _.uci)
+    strQueryString[Color](Color.fromName, "Invalid color, should be white or black", _.name)
   given QueryStringBindable[BlogsBy] =
     strQueryString[BlogsBy](BlogsBy.byName.get, "Invalid order", _.toString)
   given QueryStringBindable[BlogQualityFilter] =

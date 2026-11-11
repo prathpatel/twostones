@@ -16,6 +16,8 @@ final class Reopen(
 )(using Executor, lila.core.i18n.Translator):
 
   import Mailer.html.*
+  // the footer of every email links to this site's pages
+  private given RouteUrl = routeUrl
 
   def prepare(
       u: UserStr,
@@ -49,7 +51,7 @@ final class Reopen(
       mailer.sendOrFail:
         Mailer.Message(
           to = email,
-          subject = s"Reopen your lichess.org account: ${user.username}",
+          subject = s"Reopen your TwoStones account: ${user.username}",
           text = Mailer.txt.addServiceNote(s"""
 ${trans.passwordReset_clickOrIgnore.txt()}
 

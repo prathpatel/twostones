@@ -11,7 +11,6 @@
   <string name="closeAccountForeverLabel">Închide pentru totdeauna: face imposibilă redeschiderea</string>
   <string name="closeAccountForeverWarning">Previne redeschiderea contului mai târziu. Dacă bifați această căsuță, chiar și administratorii nu vor putea să vă redeschidă contul la cerere.</string>
   <string name="deleteYourAccount">Ștergeți contul</string>
-  <string name="deleteAccountWarning">Odată ce îți ștergi contul, este eliminat din Lichess și administratorii noștri nu îl vor putea aduce înapoi pentru tine.</string>
   <string name="wouldYouLikeToXInstead" comment="%s is close your account">Doriți să %s în schimb?</string>
   <string name="closeYourAccount">închide-ți contul</string>
   <string name="deleteAccountConfirmText">Înțeleg că odată șterse conturile nu sunt recuperabile</string>

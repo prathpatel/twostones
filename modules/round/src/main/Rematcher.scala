@@ -110,7 +110,6 @@ final private class Rematcher(
         rated = if users.exists(_.exists(_.user.lame)) then Rated.No else pov.game.rated,
         source = pov.game.source | lila.core.game.Source.Lobby,
         daysPerTurn = pov.game.daysPerTurn,
-        pgnImport = None
       )
       game <- withId.fold(idGenerator.withUniqueId(sloppy)): id =>
         fuccess(sloppy.withId(id))

@@ -5,7 +5,6 @@ import play.api.libs.ws.StandaloneWSClient
 import play.api.{ Configuration, Mode }
 
 import lila.common.{ Bus, Lilakka }
-import lila.core.misc.puzzle.DailyChange
 import lila.core.plan.ChargeEvent
 
 @Module
@@ -26,12 +25,11 @@ final class Env(
   lazy val api: IrcApi = wire[IrcApi]
 
   if mode.isProd then
-    api.publishInfo("GoGame has started!")
+    api.publishInfo("TwoStones has started!")
     Lilakka.shutdown(shutdown, _.PhaseBeforeServiceUnbind, "Tell IRC"): () =>
       api.stop()
       funit // don't wait for zulip aknowledgment to restart lila.
 
   // type can be inferred but clearer to leave it
   Bus.sub[ChargeEvent](api.charge(_))
-  Bus.sub[DailyChange](e => api.dailyPuzzle(e.id))
   Bus.sub[lila.core.msg.PayoutMessages](api.payoutNotify(_))

@@ -4,7 +4,7 @@ import play.api.libs.json.*
 
 import lila.common.Json.given
 import lila.core.LightUser
-import lila.core.perf.{ KeyedPerf, Perf, PuzPerf, UserPerfs }
+import lila.core.perf.{ KeyedPerf, Perf, UserPerfs }
 import lila.core.rating.UserRankMap
 import lila.core.user.{ LightPerf, PlayTime, Profile }
 import lila.rating.UserPerfsExt.perfsList
@@ -110,15 +110,6 @@ object JsonView:
           key.value -> perfWrites
             .writes(perf)
             .add("rank" -> rankMap.flatMap(_.get(key)))
-    .add("storm", p.storm.option)
-      .add("racer", p.racer.option)
-      .add("streak", p.streak.option)
-
-  private given OWrites[PuzPerf] = OWrites: p =>
-    Json.obj(
-      "runs" -> p.runs,
-      "score" -> p.score
-    )
 
   def perfsJson(perfs: UserPerfs, onlyPerfs: List[PerfKey]) =
     JsObject:
@@ -147,15 +138,7 @@ object JsonView:
         "blitz" -> leaderboards.blitz,
         "rapid" -> leaderboards.rapid,
         "classical" -> leaderboards.classical,
-        "ultraBullet" -> leaderboards.ultraBullet,
-        "crazyhouse" -> leaderboards.crazyhouse,
-        "chess960" -> leaderboards.chess960,
-        "kingOfTheHill" -> leaderboards.kingOfTheHill,
-        "threeCheck" -> leaderboards.threeCheck,
-        "antichess" -> leaderboards.antichess,
-        "atomic" -> leaderboards.atomic,
-        "horde" -> leaderboards.horde,
-        "racingKings" -> leaderboards.racingKings
+        "ultraBullet" -> leaderboards.ultraBullet
       )
 
   given leaderboardStandardTopOneWrites(using

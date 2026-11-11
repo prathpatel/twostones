@@ -9,9 +9,7 @@
   <string name="oauthCatUserAccount">Λογαριασμός χρήστη</string>
   <string name="oauthCatInteractions">Αλληλεπιδράσεις</string>
   <string name="oauthCatPlayGames">Παίξτε παρτίδες</string>
-  <string name="oauthCatStudiesBroadcasts">Μελέτες &amp; Μεταδόσεις</string>
   <string name="oauthCatExternalPlay">Εξωτερική αναπαραγωγή</string>
-  <string name="oauthCatExternalEngine">Εξωτερική σκακιστική μηχανή</string>
   <string name="doNotShareIt">Το διακριτικό θα δώσει πρόσβαση στον λογαριασμό σας. ΜΗΝ το μοιραστείτε με κανέναν!</string>
   <string name="copyTokenNow">Βεβαιωθείτε ότι έχετε αντιγράψει το νέο σας διακριτικό. Δε θα μπορέσετε να το δείτε ξανά!</string>
   <string name="preferenceRead">Ανάγνωση των ρυθμίσεών σας</string>
@@ -48,7 +46,6 @@
   <string name="apiDocumentationLinks" comment="The first parameter links to a personal token app example. The second parameter links to the API documentation">Δείτε εδώ ένα %1$s και η %2$s.</string>
   <string name="personalTokenAppExample">παράδειγμα εφαρμογής προσωπικού διακριτικού</string>
   <string name="apiDocumentation">τεκμηρίωση του API</string>
-  <string name="newToken">Νέο διακριτικό πρόσβασης</string>
   <string name="apiAccessTokens">Διακριτικά πρόσβασης API</string>
   <string name="created">Δημιουργήθηκε %s</string>
   <string name="lastUsed">Χρησιμοποιήθηκε τελευταία φορά %s</string>

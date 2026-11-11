@@ -11,7 +11,6 @@
   <string name="reportSelfHarm">Samobójstwo / Samookaleczenie</string>
   <string name="reportHate">Mowa nienawiści / Seksizm</string>
   <string name="reportSpam">Spam</string>
-  <string name="readMoreAboutLichessReports">Dowiedz się więcej o zgłoszeniach na Lichess</string>
   <string name="reportMaximumCharacters">Maksymalnie 3000 znaków.</string>
   <string name="reportCheatBoostHelp">Wklej link(i) do partii i wyjaśnij, co jest złe w zachowaniu tego użytkownika. Napisz coś więcej niż \"oszukuje\", powiedz nam, jak doszedłeś do tego wniosku.</string>
   <string name="reportUsernameHelp">Wytłumacz, co w nazwie użytkownika jest obraźliwe. Nie pisz tylko \"nazwa jest obraźliwa\", lecz napisz jak doszedłeś/aś do tego wniosku, zwłaszcza jeśli nie jest to oczywiste, dotyczy języka innego niż angielski, dotyczy języka potocznego lub jest odniesieniem do kultury/historii.</string>

@@ -1,8 +1,8 @@
 // no side effects allowed due to re-export by index.ts
 //
 // Mini Go boards: static thumbnails (`.mini-board`) and live mini games (`.mini-game`).
-// The server renders the initial SVG; live games are updated from websocket "fen" messages,
-// which in this Go fork carry the serialized board.
+// The server renders the initial SVG; live games are updated from websocket "position" messages,
+// which carry the serialized board.
 
 import { h, type VNode } from 'snabbdom';
 

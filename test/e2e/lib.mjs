@@ -13,8 +13,8 @@ try {
 }
 export const { chromium, devices } = playwright;
 
-export const base = (process.env.GOGAME_URL || 'http://localhost:9663').replace(/\/$/, '');
-export const out = path.resolve(process.env.GOGAME_E2E_OUT || new URL('./output', import.meta.url).pathname);
+export const base = (process.env.TWOSTONES_URL || 'http://localhost:9663').replace(/\/$/, '');
+export const out = path.resolve(process.env.TWOSTONES_E2E_OUT || new URL('./output', import.meta.url).pathname);
 fs.mkdirSync(out, { recursive: true });
 
 let failures = 0;

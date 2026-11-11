@@ -9,9 +9,7 @@
   <string name="oauthCatUserAccount">Benutzerkonto</string>
   <string name="oauthCatInteractions">Wächselwürkige</string>
   <string name="oauthCatPlayGames">Schpill Partie</string>
-  <string name="oauthCatStudiesBroadcasts">Schtudie &amp; Überträgige</string>
   <string name="oauthCatExternalPlay">Externs Schpille</string>
-  <string name="oauthCatExternalEngine">Externi Engine</string>
   <string name="doNotShareIt">Das Token erlaubt de Zuegriff uf dis Konto. Gib\'s also NIE Andere!</string>
   <string name="copyTokenNow">Kopier dis neui Zuegangs Token jetzt oder schribs uf! Du g\'sehschs nachher nümme!</string>
   <string name="preferenceRead">Preferänze läse</string>
@@ -48,7 +46,6 @@
   <string name="apiDocumentationLinks" comment="The first parameter links to a personal token app example. The second parameter links to the API documentation">Da isch es %1$s und de %2$s.</string>
   <string name="personalTokenAppExample">persönlichs Token App Bischpil</string>
   <string name="apiDocumentation">API Dokumentation</string>
-  <string name="newToken">Neus Zugangs Token</string>
   <string name="apiAccessTokens">API Zuegangs Tokens</string>
   <string name="created">Gmacht %s</string>
   <string name="lastUsed">Zletscht benutzt %s</string>

@@ -11,7 +11,6 @@
   <string name="reportSelfHarm">Suïcidi / Autolesió</string>
   <string name="reportHate">Llenguatge d\'odi / Sexisme</string>
   <string name="reportSpam">Correu o contingut brossa</string>
-  <string name="readMoreAboutLichessReports">Llegiu més sobre les denúncies de Lichess</string>
   <string name="reportMaximumCharacters">Màxim 3000 caràcters.</string>
   <string name="reportCheatBoostHelp">Enganxa l\'enllaç de la partida (o partides) i explica quin és el problema amb el comportament d\'aquest usuari. No et limitis a dir que \"fa trampes\", explica\'ns com has arribat a aquesta conclusió.</string>
   <string name="reportUsernameHelp">Explica per què el comportament de l\'usuari és ofensiu. No et limitis a dir simplement \"és ofensiu/inapropiat\", explica\'ns com has arribat a aquesta conclusió, especialment si l\'insult està ofuscat, en un idioma diferent de l\'anglès, és un barbarisme o és una referència històrica o cultural.</string>

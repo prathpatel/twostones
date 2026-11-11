@@ -14,7 +14,6 @@ trait RatingApi:
   val toDescKey: PerfKey => I18nKey
   val toIcon: PerfKey => Icon
   val bestRated: UserPerfs => Option[KeyedPerf]
-  val dubiousPuzzle: UserPerfs => Boolean
 
 case class PageModule(name: String, data: JsValue | SafeJsonStr)
 case class Esm(key: String, init: WithNonce[Frag] = _ => ScalatagsExtensions.emptyFrag)

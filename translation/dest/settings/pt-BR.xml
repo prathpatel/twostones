@@ -11,7 +11,6 @@
   <string name="closeAccountForeverLabel">Encerrar permanentemente: impossibilitar a reabertura</string>
   <string name="closeAccountForeverWarning">Impeça a reabertura da conta no futuro. Se você marcar esta opção, nem mesmo os administradores conseguirão reabri-la a seu pedido.</string>
   <string name="deleteYourAccount">Excluir sua conta</string>
-  <string name="deleteAccountWarning">Uma vez excluída, sua conta será removida do Lichess e nossos administradores não conseguirão recuperá-la para você.</string>
   <string name="wouldYouLikeToXInstead" comment="%s is close your account">Você prefere %s?</string>
   <string name="closeYourAccount">encerrar sua conta</string>
   <string name="deleteAccountConfirmText">Entendo que contas excluídas não podem ser recuperadas</string>

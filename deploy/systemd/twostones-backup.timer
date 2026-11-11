@@ -1,0 +1,11 @@
+# Runs twostones-backup.service every night. Installed by bin/install-server.
+[Unit]
+Description=Nightly TwoStones database backup
+
+[Timer]
+OnCalendar=*-*-* 03:30:00
+RandomizedDelaySec=20m
+Persistent=true
+
+[Install]
+WantedBy=timers.target

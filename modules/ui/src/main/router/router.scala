@@ -4,15 +4,12 @@ package routes:
 
   export scalalib.model.Days
   export chess.Color
-  export chess.format.Uci
-  export chess.opening.OpeningKey
   export lila.core.i18n.Language
   export lila.core.id.*
   export lila.core.userId.UserStr
   export lila.core.user.FlagCode
   export lila.core.perf.PerfKey
   export lila.core.socket.Sri
-  export lila.core.study.StudyOrder
   export lila.core.ublog.{ BlogsBy, QualityFilter as BlogQualityFilter }
   export lila.core.misc.AppealTopic
   export lila.ui.MarkdownRealm
@@ -22,15 +19,12 @@ package router.router:
 
   export scalalib.model.Days
   export chess.Color
-  export chess.format.Uci
-  export chess.opening.OpeningKey
   export lila.core.i18n.Language
   export lila.core.id.*
   export lila.core.userId.UserStr
   export lila.core.user.FlagCode
   export lila.core.perf.PerfKey
   export lila.core.socket.Sri
-  export lila.core.study.StudyOrder
   export lila.core.ublog.{ BlogsBy, QualityFilter as BlogQualityFilter }
   export lila.ui.MarkdownRealm
   export lila.ui.LilaRouter.given

@@ -184,9 +184,6 @@ final class IrcApi(
     zulip(_.content, "/opening edits"):
       s"${markdown.userLink(user)} edited ${markdown.lichessLink(s"/opening/$opening/$moves", opening)}"
 
-  def reportPuzzle(user: LightUser, puzzleId: PuzzleId, reportText: String): Funit =
-    zulip(_.content, "puzzle reports"):
-      s"${markdown.userLink(user)} reported ${markdown.lichessLink(s"/training/$puzzleId", puzzleId)} because $reportText"
 
   def broadcastStart(id: RelayRoundId, fullName: String): Funit =
     zulip(_.broadcast, "non-tiered broadcasts"):
@@ -246,10 +243,6 @@ final class IrcApi(
     zulip(_.content, "/fide player photos"):
       s":note: $playerPath by ${markdown.modLink(me.username)}\n> $credits"
 
-  def dailyPuzzle(id: PuzzleId): Funit =
-    zulip(_.general, "daily puzzle"):
-      markdown.lichessLink(s"/training/$id", "Solve the daily puzzle") +
-        markdown.link(Url(s"${net.baseUrl}/training/export/gif/thumbnail/$id.gif"), ":")
 
   def stop(): Funit = zulip(_.general, "lila")("Lichess is restarting.")
 

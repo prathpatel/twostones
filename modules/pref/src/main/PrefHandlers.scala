@@ -77,7 +77,6 @@ private object PrefHandlers:
         blogFilter = r.strO("blogFilter").flatMap(BlogQualityFilter.byName.get) | d.blogFilter,
         usingAltSocket = r.getO("usingAltSocket"),
         sayGG = r.getD("sayGG", d.sayGG),
-        hasDgt = r.getD("hasDgt", d.hasDgt),
         favFed = r.getO[lila.core.fide.Federation.Id]("favFed")
       )
 
@@ -128,6 +127,5 @@ private object PrefHandlers:
         "board" -> o.board,
         "blogFilter" -> o.blogFilter.ordinal,
         "sayGG" -> o.sayGG,
-        "hasDgt" -> o.hasDgt,
         "favFed" -> o.favFed
       )

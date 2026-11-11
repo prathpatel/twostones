@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="toInviteSomeoneToPlayGiveThisUrl">Per invitar quarqu\'un a joyèr, balyi cetì lèm</string>
-  <string name="gameOver">Finit</string>
   <string name="waitingForOpponent">Atendant l’ adverséro</string>
   <string name="waiting">Atendant</string>
   <string name="yourTurn">A ton tórn</string>
   <string name="aiNameLevelAiLevel">%1$s nivèł %2$s</string>
   <string name="level">Nivèł</string>
-  <string name="toggleTheChat">Sacòrre la visibilità d’o barjacàjo</string>
   <string name="chat">Barjacàjo</string>
   <string name="resign">Depitar</string>
   <string name="checkmate">Echec é Mat</string>
@@ -18,12 +16,9 @@
   <string name="whiteIsVictorious">Lo bllanc ganye</string>
   <string name="blackIsVictorious">Lo néyr ganye</string>
   <string name="newOpponent">nuwe opponent</string>
-  <string name="yourOpponentWantsToPlayANewGameWithYou">Ton adverséro vòt ‘ncor rejoyi na novela passa avoy-t’</string>
   <string name="joinTheGame">Bretar la passa</string>
   <string name="whitePlays">Bllanc joya</string>
   <string name="blackPlays">Nèyr joya</string>
-  <string name="opponentLeftChoices">L\'autro joyor a modà la passa. Te pòs lo fàre depitar u l\'atèndre.</string>
-  <string name="forceResignation">Fàre depitar</string>
   <string name="talkInChat">Devesar dèns lo barjacàjo</string>
   <string name="theFirstPersonToComeOnThisUrlWillPlayWithYou">La permèri persona que brete cetà passa joye avoy-t’.</string>
   <string name="whiteResigned">Bllanc a depità</string>
@@ -31,10 +26,6 @@
   <string name="whiteLeftTheGame">Bllanc a modà la passa</string>
   <string name="blackLeftTheGame">Nèyr a modà la passa</string>
   <string name="flipBoard">Virèr la tràbla</string>
-  <string name="threefoldRepetition">Tripla repeticion</string>
-  <string name="claimADraw">Cllamar l\'egalità</string>
-  <string name="offerDraw">bied trek</string>
-  <string name="draw">Egalità</string>
   <plurals name="nbPlayers">
     <item quantity="one">%s joyor conectàs</item>
     <item quantity="other">%s joyor conectàs</item>

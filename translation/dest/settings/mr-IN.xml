@@ -11,7 +11,6 @@
   <string name="closeAccountForeverLabel">कायमचे बंद करा: पुन्हा उघडणे अशक्य करा</string>
   <string name="closeAccountForeverWarning">नंतर खाते पुन्हा उघडण्यापासून प्रतिबंध करा. जर तुम्ही या चौकटीवर खूण केली, तर तुमच्या विनंतीवरूनही प्रशासकही तुमचे खाते पुन्हा उघडू करू शकणार नाहीत.</string>
   <string name="deleteYourAccount">तुमचे खाते हटवा</string>
-  <string name="deleteAccountWarning">एकदा का तुम्ही तुमचे खाते बंद कराल, ते Lichess वरून काढून टाकले जाईल आणि आमचे प्रशासक ते तुमच्यासाठी पुन्हा परत उघडू शकणार नाहीत.</string>
   <string name="wouldYouLikeToXInstead" comment="%s is close your account">त्याऐवजी तुम्हाला %s करायला आवडेल का?</string>
   <string name="closeYourAccount">तुमचे खाते बंद करा</string>
   <string name="deleteAccountConfirmText">मी मान्य करतो की बंद केलेले खाते परत उघडता येणार नाही </string>

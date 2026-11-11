@@ -11,7 +11,6 @@
   <string name="reportSelfHarm">Suicídio / Auto-lesão</string>
   <string name="reportHate">Discurso de ódio / Sexismo</string>
   <string name="reportSpam">Spammando</string>
-  <string name="readMoreAboutLichessReports">Leia mais sobre relatórios do Lichess</string>
   <string name="reportMaximumCharacters">Máximo 3000 caracteres.</string>
   <string name="reportCheatBoostHelp">Cole o link do(s) jogo(s) e explique o que há de errado com o comportamento desse usuário. Não diga apenas \"ele trapaceia\", informe-nos como chegou a esta conclusão.</string>
   <string name="reportUsernameHelp">Explique porque este nome de usuário é ofensivo. Não diga apenas \"é ofensivo/inapropriado\", mas nos diga como chegou a essa conclusão especialmente se o insulto não for óbvio, não estiver em inglês, for uma gíria, ou for uma referência histórica/cultural.</string>

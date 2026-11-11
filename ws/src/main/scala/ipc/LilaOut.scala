@@ -2,20 +2,15 @@ package lila.ws
 package ipc
 
 import chess.Color
-import play.api.libs.json.*
 
 sealed trait LilaOut
 
 sealed trait SiteOut extends LilaOut
 sealed trait LobbyOut extends LilaOut
 sealed trait RoomOut extends LilaOut
-sealed trait SimulOut extends RoomOut
-sealed trait TourOut extends RoomOut
-sealed trait StudyOut extends RoomOut
 sealed trait RoundOut extends RoomOut
-sealed trait RacerOut extends RoomOut
 
-sealed trait AnyRoomOut extends RoundOut with StudyOut with TourOut with SimulOut with RacerOut
+sealed trait AnyRoomOut extends RoundOut
 
 object LilaOut:
 
@@ -26,14 +21,13 @@ object LilaOut:
   case class TellUsers(users: Iterable[User.Id], json: JsonString) extends SiteOut
   case class TellAll(json: JsonString) extends SiteOut
   case class DisconnectUser(user: User.Id) extends SiteOut
-  case class TellSri(sri: Sri, json: JsonString) extends SiteOut with LobbyOut with StudyOut
+  case class TellSri(sri: Sri, json: JsonString) extends SiteOut with LobbyOut
   case class SetTroll(user: User.Id, v: IsTroll) extends SiteOut
   case class Impersonate(mod: User.ModId, user: User.Id, v: Boolean) extends SiteOut
   case class Follow(left: User.Id, right: User.Id) extends SiteOut
   case class UnFollow(left: User.Id, right: User.Id) extends SiteOut
   case class Pong(pingAt: UptimeMillis) extends SiteOut with RoundOut
   case class LilaResponse(reqId: Int, body: String) extends SiteOut with RoundOut
-  case class StreamersOnline(streamers: Map[User.Id, JsValue]) extends SiteOut
 
   // lobby
 
@@ -67,18 +61,6 @@ object LilaOut:
 
   case class RoomStop(roomId: RoomId) extends AnyRoomOut
 
-  // study
-
-  case class RoomIsPresent(reqId: Int, roomId: RoomId, userId: User.Id) extends StudyOut
-
-  // simul
-
-  case class RoomFilterPresent(reqId: Int, roomId: RoomId, userIds: Set[User.Id]) extends SimulOut
-
-  // tour
-
-  case class GetWaitingUsers(roomId: RoomId, name: String) extends TourOut
-
   // round
 
   case class RoundVersion(
@@ -88,18 +70,12 @@ object LilaOut:
       tpe: String,
       data: JsonString
   ) extends RoundOut
-  case class RoundTourStanding(tourId: Tour.Id, data: JsonString) extends RoundOut
   case class RoundResyncPlayer(fullId: Game.FullId) extends RoundOut
   case class RoundGone(fullId: Game.FullId, v: Boolean) extends RoundOut
   case class RoundGoneIn(fullId: Game.FullId, seconds: Int) extends RoundOut
   case class RoundBotOnline(gameId: Game.Id, color: Color, v: Boolean) extends RoundOut
   case class GameStart(users: List[User.Id]) extends RoundOut
   case class GameFinish(gameId: Game.Id, winner: Option[Color], users: List[User.Id]) extends RoundOut
-  case class TvSelect(gameId: Game.Id, speed: chess.Speed, json: JsonString) extends RoundOut
-
-  // racer
-
-  case class RacerState(raceId: Racer.Id, state: JsonString) extends TourOut
 
   case class ApiUserOnline(userId: User.Id, online: Boolean) extends AnyRoomOut
   case object LilaBoot extends AnyRoomOut
@@ -238,20 +214,6 @@ object LilaOut:
 
       case "room/stop" => Some(RoomStop(RoomId(args)))
 
-      case "room/present" =>
-        get(args, 3) { case Array(reqIdS, roomId, userId) =>
-          reqIdS.toIntOption.map { reqId =>
-            RoomIsPresent(reqId, RoomId(roomId), User.Id(userId))
-          }
-        }
-
-      case "room/filter-present" =>
-        get(args, 3) { case Array(reqIdS, roomId, userIds) =>
-          reqIdS.toIntOption.map { reqId =>
-            RoomFilterPresent(reqId, RoomId(roomId), User.Id.from(commas(userIds).toSet))
-          }
-        }
-
       case "tell/room/chat" =>
         get(args, 4) { case Array(roomId, version, troll, payload) =>
           version.toIntOption.map { sv =>
@@ -268,16 +230,6 @@ object LilaOut:
         get(args, 2) { case Array(reqId, body) =>
           reqId.toIntOption.map:
             LilaResponse(_, body)
-        }
-
-      case "tour/get/waiting" =>
-        get(args, 2) { case Array(roomId, name) =>
-          Some(GetWaitingUsers(RoomId(roomId), name))
-        }
-
-      case "r/tour/standing" =>
-        get(args, 2) { case Array(tourId, data) =>
-          Some(RoundTourStanding(Tour.Id(tourId), JsonString(data)))
         }
 
       case "r/resync/player" => Some(RoundResyncPlayer(Game.FullId(args)))
@@ -306,30 +258,12 @@ object LilaOut:
           )
         }
 
-      // tv
-
-      case "tv/select" =>
-        get(args, 3) { case Array(gameId, speedS, data) =>
-          chess.SpeedId.from(speedS.toIntOption).flatMap(chess.Speed.apply).map { speed =>
-            TvSelect(Game.Id(gameId), speed, JsonString(data))
-          }
-        }
-
-      // racer
-
-      case "racer/state" =>
-        get(args, 2) { case Array(raceId, data) =>
-          Some(RacerState(Racer.Id(raceId), JsonString(data)))
-        }
-
       // misc
 
       case "api/online" =>
         get(args, 2) { case Array(userId, online) =>
           Some(ApiUserOnline(User.Id(userId), boolean(online)))
         }
-
-      case "streamers/online" => Json.parse(args).asOpt[Map[User.Id, JsValue]].map(StreamersOnline.apply)
 
       case "pong" => args.toLongOption.map(UptimeMillis.apply).map(Pong.apply)
 

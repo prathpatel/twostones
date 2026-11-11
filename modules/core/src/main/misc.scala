@@ -4,7 +4,7 @@ package misc
 import play.api.i18n.Lang
 import scalalib.data.LazyFu
 
-import lila.core.id.{ ClasId, GameId, PuzzleId }
+import lila.core.id.{ ClasId, GameId }
 import lila.core.user.Me
 import lila.core.userId.*
 
@@ -23,15 +23,6 @@ package clas:
 
   case class ClasTeamConfig(name: String, teacherIds: NonEmptyList[UserId], studentIds: LazyFu[List[UserId]])
   case class ClasTeamUpdate(clasId: ClasId, wantsTeam: Option[ClasTeamConfig])(using val teacher: Option[Me])
-
-package puzzle:
-  case class StormRun(userId: UserId, score: Int)
-
-  case class RacerRun(userId: UserId, score: Int)
-
-  case class StreakRun(userId: UserId, score: Int)
-
-  case class DailyChange(id: PuzzleId)
 
 package lpv:
   import _root_.chess.format.pgn.PgnStr

@@ -13,17 +13,6 @@ final class Game(env: Env) extends LilaController(env):
       .inject(NoContent)
   }
 
-  def delete(gameId: GameId) = Auth { _ ?=> me ?=>
-    Found(env.game.gameRepo.game(gameId)): game =>
-      if game.pgnImport.flatMap(_.user).exists(me.is(_)) then
-        for
-          _ <- env.bookmark.api.removeByGameId(game.id)
-          _ <- env.game.gameRepo.remove(game.id)
-          _ <- env.game.cached.clearNbImportedByCache(me)
-        yield Redirect(routes.User.show(me.username))
-      else Redirect(routes.Round.watcher(game.id, game.naturalOrientation))
-  }
-
   /** Download a game as SGF. */
   def exportOne(id: GameAnyId) = OpenOrScoped(): ctx ?=>
     Found(env.round.proxyRepo.gameIfPresentOrFetch(id.gameId)): game =>

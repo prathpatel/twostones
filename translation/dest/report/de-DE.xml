@@ -11,7 +11,6 @@
   <string name="reportSelfHarm">Selbstmord / Selbstverletzung</string>
   <string name="reportHate">Hassrede / Sexismus</string>
   <string name="reportSpam">Spammen</string>
-  <string name="readMoreAboutLichessReports">Weitere Informationen über Lichess-Berichte</string>
   <string name="reportMaximumCharacters">Höchstens 3000 Zeichen.</string>
   <string name="reportCheatBoostHelp">Füge den Link zu einer oder mehreren Partien ein und erkläre die Auffälligkeiten bezüglich des Spielerverhaltens. Bitte schreibe nicht einfach nur „dieser Spieler betrügt“, sondern begründe auch, wie Du zu diesem Schluss kommst.</string>
   <string name="reportUsernameHelp">Erkläre, warum dieser Benutzername beleidigend oder unangemessen ist. Sage nicht einfach \"Der Name ist beleidigend/unangemessen\", sondern erkläre, wie du zu dieser Schlussfolgerung gekommen bist. Insbesondere wenn die Beleidigung verschleiert wird, nicht auf Englisch oder umgangssprachlich ist, oder einen historischen/kulturellen Bezugspunkt beinhaltet.</string>

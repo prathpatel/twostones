@@ -1,7 +1,7 @@
 {
-  "name": "gogame-e2e",
+  "name": "twostones-e2e",
   "private": true,
-  "description": "Browser tests for GoGame: independent players and phone layouts (see README.md)",
+  "description": "Browser tests for TwoStones: independent players and phone layouts (see README.md)",
   "type": "module",
   "scripts": {
     "multiplayer": "node multiplayer.mjs",

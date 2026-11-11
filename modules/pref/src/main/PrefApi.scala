@@ -23,7 +23,6 @@ final class PrefApi(
   private val cache = cacheApi[UserId, Option[Pref]](200_000, "pref.fetchPref"):
     _.expireAfterAccess(10.minutes).buildAsyncFuture(fetchPref)
 
-  def setDgt(user: User) = setPref(user, _.copy(hasDgt = true))
 
   def get(user: User): Fu[Pref] = cache.get(user.id).dmap(_ | Pref.create(user))
 

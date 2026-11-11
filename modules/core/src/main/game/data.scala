@@ -1,7 +1,6 @@
 package lila.core
 package game
 
-import _root_.chess.format.pgn.PgnStr
 import _root_.chess.{ ByColor, Centis, Color, Ply }
 
 import lila.core.id.{ SimulId, SwissId, TourId }
@@ -9,7 +8,6 @@ import lila.core.userId.UserId
 
 case class GameMetadata(
     source: Option[Source],
-    pgnImport: Option[PgnImport],
     tournamentId: Option[TourId],
     swissId: Option[SwissId],
     simulId: Option[SimulId],
@@ -17,14 +15,12 @@ case class GameMetadata(
     drawOffers: GameDrawOffers,
     rules: Set[GameRule]
 ):
-  def pgnDate = pgnImport.flatMap(_.date)
-  def pgnUser = pgnImport.flatMap(_.user)
   def hasRule(rule: GameRule.type => GameRule) = rules(rule(GameRule))
   def nonEmptyRules = rules.nonEmpty.option(rules)
 
 val emptyDrawOffers = GameDrawOffers(Set.empty, Set.empty)
 val emptyMetadata =
-  GameMetadata(None, None, None, None, None, analysed = false, emptyDrawOffers, rules = Set.empty)
+  GameMetadata(None, None, None, None, analysed = false, emptyDrawOffers, rules = Set.empty)
 
 def newMetadata(source: Source) = emptyMetadata.copy(source = source.some)
 
@@ -48,14 +44,6 @@ case class GameDrawOffers(white: Set[Ply], black: Set[Ply]):
       if ply.turn == color then ply + 1 else ply
 
   def normalizedPlies: Set[Ply] = normalize(Color.white) ++ normalize(Color.black)
-
-case class PgnImport(
-    user: Option[UserId],
-    date: Option[String],
-    pgn: PgnStr,
-    // hashed PGN for DB unicity
-    h: Option[Array[Byte]]
-)
 
 type ClockHistory = ByColor[Vector[Centis]]
 

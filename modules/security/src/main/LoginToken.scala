@@ -24,6 +24,9 @@ final class LoginToken(
     accessTokenApi: AccessTokenApi
 )(using Executor, lila.core.i18n.Translator, lila.core.config.RateLimit):
 
+  // the footer of every email links to this site's pages
+  private given RouteUrl = routeUrl
+
   object storedCode:
 
     private type Code = String
@@ -62,14 +65,14 @@ final class LoginToken(
           import Mailer.html.*
           sendEmail(user, email)(
             List(
-              "Enter this code to log in with your Lichess account:",
+              "Enter this code to log in with your TwoStones account:",
               "",
               code,
               "",
               "This code expires in 5 minutes. If you didn’t request it, you can safely ignore this email."
             ),
             emailMessage(
-              p("Enter this code to log in with your Lichess account:"),
+              p("Enter this code to log in with your TwoStones account:"),
               loginCode(metaName("Log in code"), code),
               p(
                 "This code expires in 5 minutes. If you didn’t request it, you can safely ignore this email."

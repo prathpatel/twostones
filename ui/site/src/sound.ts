@@ -1,5 +1,4 @@
 import { requestIdleCallbackSafe, memoize } from 'lib';
-import { throttle } from 'lib/async';
 import { isIos } from 'lib/device';
 import { log } from 'lib/permalog';
 import { storage } from 'lib/storage';
@@ -16,7 +15,6 @@ export default new (class implements SoundI {
   theme = document.body.dataset.soundSet!;
   voiceStorage = storage.make('speech.voice');
   volumeStorage = storage.make('sound-volume');
-  music?: SoundMove;
   primerEvents = ['touchend', 'pointerup', 'pointerdown', 'mousedown', 'keydown'];
   voiceRateRange = { min: 0.3, max: 1.7 };
   nvuiReady = memoize(() => site.asset.loadI18n('nvui'));
@@ -64,7 +62,7 @@ export default new (class implements SoundI {
   resolvePath(name: Name): string | undefined {
     if (!this.enabled()) return undefined;
     let dir = this.theme;
-    if (this.theme === 'music' || this.isSpeech()) {
+    if (this.isSpeech()) {
       if (['move', 'capture', 'check', 'checkmate'].includes(name)) return undefined;
       dir = 'standard';
     }
@@ -79,27 +77,6 @@ export default new (class implements SoundI {
     if (!this.enabled()) return;
     const sound = await this.load(name);
     if (sound && (await this.resumeWithTest())) await sound.play(this.getVolume() * volume);
-  }
-
-  throttled = throttle(100, (name: Name, volume: number) => this.play(name, volume));
-
-  async move(o?: SoundMoveOpts) {
-    const volume = o?.volume ?? 1;
-    if (o?.filter !== 'music' && this.theme !== 'music') {
-      if (o?.name) this.throttled(o.name, volume);
-      else {
-        if (o?.san?.includes('x')) this.throttled('capture', volume);
-        else this.throttled('move', volume);
-        if (o?.san?.includes('#')) {
-          this.throttled('checkmate', volume);
-        } else if (o?.san?.includes('+')) {
-          this.throttled('check', volume);
-        }
-      }
-    }
-    if (o?.filter === 'game' || this.theme !== 'music') return;
-    this.music ??= await site.asset.loadEsm<SoundMove>('bits.soundMove');
-    this.music(o);
   }
 
   async playAndDelayMateResultIfNecessary(name: Name): Promise<void> {
@@ -204,8 +181,6 @@ export default new (class implements SoundI {
       .catch(log);
     return true;
   };
-
-  saySan = (san?: San, cut?: boolean, force?: boolean) => this.sayLazy(() => san ?? '', cut, force);
 
   sayOrPlay = (name: string, text: string, cut = false) => this.sayLazy(() => text, cut) || this.play(name);
 

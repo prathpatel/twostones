@@ -38,7 +38,6 @@
   <string name="apiDocumentationLinks" comment="The first parameter links to a personal token app example. The second parameter links to the API documentation">Ovdje su %1$s te %2$s.</string>
   <string name="personalTokenAppExample">primjer osobne bon aplikacije</string>
   <string name="apiDocumentation">API dokumentacija</string>
-  <string name="newToken">Novi pristupni bon</string>
   <string name="apiAccessTokens">Token za API pristup</string>
   <string name="created">Stvoren %s</string>
   <string name="lastUsed">Zadnji put korišten %s</string>

@@ -146,7 +146,6 @@ object BSONFields:
   val movedAt = "ua" // ua = updatedAt (bc)
   val turns = "t"
   val analysed = "an"
-  val pgnImport = "pgni"
   val playingUids = "pl"
 
 def allowRated(variant: Variant, clock: Option[Clock.Config]) =

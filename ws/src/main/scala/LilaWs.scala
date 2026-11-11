@@ -32,11 +32,8 @@ object LilaWs extends App:
   lazy val lobby = wire[Lobby]
   lazy val socialGraph = wire[SocialGraph]
   lazy val friendList = wire[FriendList]
-  lazy val stormSign = wire[StormSign]
   lazy val lag = wire[Lag]
-  lazy val evalCache = wire[lila.ws.evalCache.EvalCacheApi]
   lazy val tor = wire[Tor]
-  lazy val tv = wire[Tv]
   lazy val gameCount = wire[GameCount]
   lazy val services = wire[Services]
   lazy val controller = wire[Controller]
@@ -47,7 +44,6 @@ object LilaWs extends App:
   lazy val monitor = wire[Monitor]
 
   wire[LilaHandler] // must eagerly instanciate!
-  wire[RelayCrowd] // must eagerly instanciate!
   wire[LilaWsServer].start()
 
 final class LilaWsServer(

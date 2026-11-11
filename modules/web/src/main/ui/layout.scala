@@ -19,7 +19,7 @@ final class layout(helpers: Helpers, assetHelper: lila.web.ui.AssetFullHelper)(
 
   val doctype = raw("<!DOCTYPE html>")
   def htmlTag(using lang: Lang) = html(st.lang := lang.code, dir := isRTL(lang).option("rtl"))
-  val topComment = raw("""<!-- GoGame is open source, see /source. Built on Lichess (https://lichess.org/source). -->""")
+  val topComment = raw("""<!-- TwoStones is open source, see /source. Built on Lichess (https://lichess.org/source). -->""")
   val charset = raw("""<meta charset="utf-8">""")
   val viewport = raw:
     """<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover">"""
@@ -101,7 +101,7 @@ final class layout(helpers: Helpers, assetHelper: lila.web.ui.AssetFullHelper)(
 
   def botImage = img(
     src := staticAssetPath("images/icons/bot.webp"),
-    title := "Robot chess",
+    title := "Bot account",
     style := "display:inline;width:34px;height:34px;vertical-align:top;margin-right:5px;vertical-align:text-top"
   )
 
@@ -109,8 +109,8 @@ final class layout(helpers: Helpers, assetHelper: lila.web.ui.AssetFullHelper)(
   val noRobots = raw("""<meta content="noindex,nofollow" name="robots">""")
 
   val favicons = raw:
-    s"""<link rel="alternate icon" type="image/png" href="/assets/logo/gogame-favicon-64.png">""" +
-      s"""<link id="favicon" rel="icon" type="image/svg+xml" href="/assets/logo/gogame-favicon.svg">"""
+    s"""<link rel="alternate icon" type="image/png" href="/assets/logo/twostones-favicon-64.png">""" +
+      s"""<link id="favicon" rel="icon" type="image/svg+xml" href="/assets/logo/twostones-favicon.svg">"""
 
   def blindModeForm(using ctx: Context) = raw:
     val btnText =
@@ -306,7 +306,7 @@ final class layout(helpers: Helpers, assetHelper: lila.web.ui.AssetFullHelper)(
             if ctx.kid.yes then span(title := trans.site.kidMode.txt(), cls := "kiddo")(":)")
             else ctx.isBot.option(botImage),
             div(cls := "site-icon")(
-              img(src := staticAssetPath("logo/gogame-favicon.svg"), alt := "", attr("width") := "32", attr("height") := "32")
+              img(src := staticAssetPath("logo/twostones-favicon.svg"), alt := "", attr("width") := "32", attr("height") := "32")
             ),
             div(cls := "site-name")(siteNameFrag)
           ),

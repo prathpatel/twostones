@@ -22,5 +22,4 @@
   <string name="declineVariant">ამ ვარიანტის თამაში ახლა არ მსურს.</string>
   <string name="declineNoBot">ბოტებისგან არ ვიღებ გამოწვევებს.</string>
   <string name="declineOnlyBot">მხოლოდ ბოტებისგან ვიღებ გამოწვევებს.</string>
-  <string name="inviteLichessUser">ან შეთავაზე ლიჩესის მომხმარებელს:</string>
 </resources>

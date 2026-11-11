@@ -69,28 +69,28 @@ object PrefForm:
   def pref(lichobile: Boolean) = Form(
     mapping(
       "display" -> mapping(
-        "animation" -> numberIn(Set(0, 1, 2, 3)),
-        "captured" -> booleanNumber,
-        "highlight" -> booleanNumber,
-        "destination" -> booleanNumber,
+        "animation" -> optional(numberIn(Set(0, 1, 2, 3))),
+        "captured" -> optional(booleanNumber),
+        "highlight" -> optional(booleanNumber),
+        "destination" -> optional(booleanNumber),
         "coords" -> checkedNumber(Pref.Coords.choices),
-        "replay" -> checkedNumber(Pref.Replay.choices),
+        "replay" -> optional(checkedNumber(Pref.Replay.choices)),
         "pieceNotation" -> optional(booleanNumber),
         fields.zen.map2(optional),
         "resizeHandle" -> optional(checkedNumber(Pref.ResizeHandle.choices))
       )(DisplayData.apply)(unapply),
       "behavior" -> mapping(
         "moveEvent" -> optional(numberIn(Set(0, 1, 2))),
-        fields.premove,
+        fields.premove.map2(optional),
         fields.takeback,
-        fields.autoQueen,
-        fields.autoThreefold,
+        fields.autoQueen.map2(optional),
+        fields.autoThreefold.map2(optional),
         fields.submitMove.map2: mapping =>
           if lichobile then
             import Pref.SubmitMove.lichobile as compat
             optional(numberIn(compat.choices).transform(compat.appToServer, compat.serverToApp))
           else optional(mapping),
-        fields.confirmResign,
+        fields.confirmResign.map2(optional),
         fields.keyboardMove.map2(optional),
         fields.voice.map2(optional),
         "rookCastle" -> optional(booleanNumber),
@@ -98,27 +98,27 @@ object PrefForm:
       )(BehaviorData.apply)(unapply),
       "clock" -> mapping(
         "tenths" -> checkedNumber(Pref.ClockTenths.choices),
-        "bar" -> booleanNumber,
-        "sound" -> booleanNumber,
-        fields.moretime
+        "bar" -> optional(booleanNumber),
+        "sound" -> optional(booleanNumber),
+        fields.moretime.map2(optional)
       )(ClockData.apply)(unapply),
       fields.follow,
       fields.challenge,
       fields.message,
       "studyInvite" -> optional(checkedNumber(Pref.StudyInvite.choices)),
-      "insightShare" -> numberIn(Set(0, 1, 2)),
+      "insightShare" -> optional(numberIn(Set(0, 1, 2))),
       fields.ratings.map2(optional),
       fields.flairs.map2(optional)
     )(PrefData.apply)(unapply)
   )
 
   case class DisplayData(
-      animation: Int,
-      captured: Int,
-      highlight: Int,
-      destination: Int,
+      animation: Option[Int],
+      captured: Option[Int],
+      highlight: Option[Int],
+      destination: Option[Int],
       coords: Int,
-      replay: Int,
+      replay: Option[Int],
       pieceNotation: Option[Int],
       zen: Option[Int],
       resizeHandle: Option[Int]
@@ -126,12 +126,12 @@ object PrefForm:
 
   case class BehaviorData(
       moveEvent: Option[Int],
-      premove: Int,
+      premove: Option[Int],
       takeback: Int,
-      autoQueen: Int,
-      autoThreefold: Int,
+      autoQueen: Option[Int],
+      autoThreefold: Option[Int],
       submitMove: Option[Int],
-      confirmResign: Int,
+      confirmResign: Option[Int],
       keyboardMove: Option[Int],
       voice: Option[Int],
       rookCastle: Option[Int],
@@ -140,9 +140,9 @@ object PrefForm:
 
   case class ClockData(
       tenths: Int,
-      bar: Int,
-      sound: Int,
-      moretime: Int
+      bar: Option[Int],
+      sound: Option[Int],
+      moretime: Option[Int]
   )
 
   case class PrefData(
@@ -153,34 +153,34 @@ object PrefForm:
       challenge: Int,
       message: Int,
       studyInvite: Option[Int],
-      insightShare: Int,
+      insightShare: Option[Int],
       ratings: Option[Int],
       flairs: Option[Boolean]
   ):
 
     def apply(pref: Pref) =
       pref.copy(
-        autoQueen = behavior.autoQueen,
-        autoThreefold = behavior.autoThreefold,
+        autoQueen = behavior.autoQueen | pref.autoQueen,
+        autoThreefold = behavior.autoThreefold | pref.autoThreefold,
         takeback = behavior.takeback,
-        moretime = clock.moretime,
+        moretime = clock.moretime | pref.moretime,
         clockTenths = clock.tenths,
-        clockBar = clock.bar == 1,
-        clockSound = clock.sound == 1,
+        clockBar = clock.bar.fold(pref.clockBar)(_ == 1),
+        clockSound = clock.sound.fold(pref.clockSound)(_ == 1),
         follow = follow == 1,
-        highlight = display.highlight == 1,
-        destination = display.destination == 1,
+        highlight = display.highlight.fold(pref.highlight)(_ == 1),
+        destination = display.destination.fold(pref.destination)(_ == 1),
         coords = display.coords,
-        replay = display.replay,
+        replay = display.replay | pref.replay,
         challenge = challenge,
         message = message,
-        studyInvite = studyInvite | Pref.default.studyInvite,
-        premove = behavior.premove == 1,
-        animation = display.animation,
-        submitMove = behavior.submitMove.getOrElse(0),
-        insightShare = insightShare,
-        confirmResign = behavior.confirmResign,
-        captured = display.captured == 1,
+        studyInvite = studyInvite | pref.studyInvite,
+        premove = behavior.premove.fold(pref.premove)(_ == 1),
+        animation = display.animation | pref.animation,
+        submitMove = behavior.submitMove | pref.submitMove,
+        insightShare = insightShare | pref.insightShare,
+        confirmResign = behavior.confirmResign | pref.confirmResign,
+        captured = display.captured.fold(pref.captured)(_ == 1),
         keyboardMove = behavior.keyboardMove | pref.keyboardMove,
         voice = if pref.voice.isEmpty && !behavior.voice.contains(1) then None else behavior.voice,
         zen = display.zen | pref.zen,
@@ -197,24 +197,24 @@ object PrefForm:
     def apply(pref: Pref): PrefData =
       PrefData(
         display = DisplayData(
-          highlight = if pref.highlight then 1 else 0,
-          destination = if pref.destination then 1 else 0,
-          animation = pref.animation,
+          highlight = (if pref.highlight then 1 else 0).some,
+          destination = (if pref.destination then 1 else 0).some,
+          animation = pref.animation.some,
           coords = pref.coords,
-          replay = pref.replay,
-          captured = if pref.captured then 1 else 0,
+          replay = pref.replay.some,
+          captured = (if pref.captured then 1 else 0).some,
           zen = pref.zen.some,
           resizeHandle = pref.resizeHandle.some,
           pieceNotation = pref.pieceNotation.some
         ),
         behavior = BehaviorData(
           moveEvent = pref.moveEvent.some,
-          premove = if pref.premove then 1 else 0,
+          premove = (if pref.premove then 1 else 0).some,
           takeback = pref.takeback,
-          autoQueen = pref.autoQueen,
-          autoThreefold = pref.autoThreefold,
+          autoQueen = pref.autoQueen.some,
+          autoThreefold = pref.autoThreefold.some,
           submitMove = pref.submitMove.some,
-          confirmResign = pref.confirmResign,
+          confirmResign = pref.confirmResign.some,
           keyboardMove = pref.keyboardMove.some,
           voice = pref.voice.getOrElse(0).some,
           rookCastle = pref.rookCastle.some,
@@ -222,15 +222,15 @@ object PrefForm:
         ),
         clock = ClockData(
           tenths = pref.clockTenths,
-          bar = if pref.clockBar then 1 else 0,
-          sound = if pref.clockSound then 1 else 0,
-          moretime = pref.moretime
+          bar = (if pref.clockBar then 1 else 0).some,
+          sound = (if pref.clockSound then 1 else 0).some,
+          moretime = pref.moretime.some
         ),
         follow = if pref.follow then 1 else 0,
         challenge = pref.challenge,
         message = pref.message,
         studyInvite = pref.studyInvite.some,
-        insightShare = pref.insightShare,
+        insightShare = pref.insightShare.some,
         ratings = pref.ratings.some,
         flairs = pref.flairs.some
       )

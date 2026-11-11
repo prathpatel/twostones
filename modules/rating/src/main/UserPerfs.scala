@@ -5,7 +5,7 @@ import scalalib.HeapSort
 
 import scala.collection.View
 
-import lila.core.perf.{ KeyedPerf, Perf, PuzPerf, UserPerfs }
+import lila.core.perf.{ KeyedPerf, Perf, UserPerfs }
 import lila.core.user.LightPerf
 import lila.rating.PerfExt.*
 
@@ -21,16 +21,7 @@ object UserPerfsExt:
       PerfKey.blitz -> p.blitz,
       PerfKey.rapid -> p.rapid,
       PerfKey.classical -> p.classical,
-      PerfKey.correspondence -> p.correspondence,
-      PerfKey.chess960 -> p.chess960,
-      PerfKey.kingOfTheHill -> p.kingOfTheHill,
-      PerfKey.threeCheck -> p.threeCheck,
-      PerfKey.antichess -> p.antichess,
-      PerfKey.atomic -> p.atomic,
-      PerfKey.horde -> p.horde,
-      PerfKey.racingKings -> p.racingKings,
-      PerfKey.crazyhouse -> p.crazyhouse,
-      PerfKey.puzzle -> p.puzzle
+      PerfKey.correspondence -> p.correspondence
     )
 
     def best8Perfs: List[PerfKey] = UserPerfs.firstRow ::: bestOf(UserPerfs.secondRow, 4)
@@ -45,14 +36,14 @@ object UserPerfsExt:
     def hasEstablishedRating(pk: PerfKey) = p(pk).established
 
     def bestRatedPerf: Option[KeyedPerf] =
-      val ps = perfsList.view.filter(p => p._1 != PerfKey.puzzle && p._1 != PerfKey.standard)
+      val ps = perfsList.view.filter(p => p._1 != PerfKey.standard)
       val minNb = (ps.map(_._2).sumNb / 10).atLeast(1)
       ps.filter(_._2.nb >= minNb)
         .maxByOption(_._2.intRating)
         .map(KeyedPerf.apply)
 
     def bestPerfs(nb: Int): List[KeyedPerf] =
-      val ps = PerfType.nonPuzzle.view.map(pt => pt.key -> p(pt))
+      val ps = PerfType.all.view.map(pt => pt.key -> p(pt))
       val minNb = (ps.map(_._2).sumNb / 15).atLeast(1)
       HeapSort.topNToList(ps.filter(p => p._2.nb >= minNb), nb).map(KeyedPerf.apply)
 
@@ -71,58 +62,34 @@ object UserPerfsExt:
 
     def bestPerf(types: List[PerfKey]): Perf = bestFromPerfs(types.view.map(p(_)))
 
-    def dubiousPuzzle = UserPerfs.dubiousPuzzle(p)
 
   private given Ordering[IntRating] = intOrdering
   private given [A]: Ordering[(A, Perf)] = Ordering.by(_._2.intRating)
 
 object UserPerfs:
 
-  def dubiousPuzzle(perfs: UserPerfs): Boolean = dubiousPuzzle(perfs.puzzle, perfs.standard)
-
-  def dubiousPuzzle(puzzle: Perf, standard: Perf): Boolean =
-    puzzle.glicko.rating > 3000 && !standard.glicko.establishedIntRating.exists(_ > IntRating(2100)) ||
-      puzzle.glicko.rating > 2900 && !standard.glicko.establishedIntRating.exists(_ > IntRating(2000)) ||
-      puzzle.glicko.rating > 2700 && !standard.glicko.establishedIntRating.exists(_ > IntRating(1900)) ||
-      puzzle.glicko.rating > 2500 && !standard.glicko.establishedIntRating.exists(_ > IntRating(1800))
-
-  private val puzPerfDefault = PuzPerf(0, 0)
 
   def default(id: UserId) =
     val p = lila.rating.Perf.default
     new UserPerfs(
       id,
-      p,
-      p,
-      p,
-      p,
-      p,
-      p,
-      p,
-      p,
-      p,
-      p,
-      p,
-      p,
-      p,
-      p,
-      p,
-      p,
-      puzPerfDefault,
-      puzPerfDefault,
-      puzPerfDefault
+      bullet = p,
+      blitz = p,
+      rapid = p,
+      classical = p,
+      correspondence = p,
+      standard = p,
+      ultraBullet = p
     )
   def defaultManaged(id: UserId) =
     val managed = lila.rating.Perf.defaultManaged
-    val managedPuzzle = lila.rating.Perf.defaultManagedPuzzle
     default(id).copy(
       standard = managed,
       bullet = managed,
       blitz = managed,
       rapid = managed,
       classical = managed,
-      correspondence = managed,
-      puzzle = managedPuzzle
+      correspondence = managed
     )
 
   def defaultBot(id: UserId) =
@@ -133,8 +100,7 @@ object UserPerfs:
       blitz = bot,
       rapid = bot,
       classical = bot,
-      correspondence = bot,
-      chess960 = bot
+      correspondence = bot
     )
 
   import lila.db.BSON
@@ -158,24 +124,12 @@ object UserPerfs:
       new UserPerfs(
         id = r.get[UserId]("_id"),
         standard = perf("standard"),
-        chess960 = perf("chess960"),
-        kingOfTheHill = perf("kingOfTheHill"),
-        threeCheck = perf("threeCheck"),
-        antichess = perf("antichess"),
-        atomic = perf("atomic"),
-        horde = perf("horde"),
-        racingKings = perf("racingKings"),
-        crazyhouse = perf("crazyhouse"),
         ultraBullet = perf("ultraBullet"),
         bullet = perf("bullet"),
         blitz = perf("blitz"),
         rapid = perf("rapid"),
         classical = perf("classical"),
-        correspondence = perf("correspondence"),
-        puzzle = perf("puzzle"),
-        storm = r.getD[PuzPerf]("storm", puzPerfDefault),
-        racer = r.getD[PuzPerf]("racer", puzPerfDefault),
-        streak = r.getD[PuzPerf]("streak", puzPerfDefault)
+        correspondence = perf("correspondence")
       )
 
     private inline def notNew(p: Perf): Option[Perf] = p.nonEmpty.option(p)
@@ -184,24 +138,12 @@ object UserPerfs:
       BSONDocument(
         "id" -> o.id,
         "standard" -> notNew(o.standard),
-        "chess960" -> notNew(o.chess960),
-        "kingOfTheHill" -> notNew(o.kingOfTheHill),
-        "threeCheck" -> notNew(o.threeCheck),
-        "antichess" -> notNew(o.antichess),
-        "atomic" -> notNew(o.atomic),
-        "horde" -> notNew(o.horde),
-        "racingKings" -> notNew(o.racingKings),
-        "crazyhouse" -> notNew(o.crazyhouse),
         "ultraBullet" -> notNew(o.ultraBullet),
         "bullet" -> notNew(o.bullet),
         "blitz" -> notNew(o.blitz),
         "rapid" -> notNew(o.rapid),
         "classical" -> notNew(o.classical),
-        "correspondence" -> notNew(o.correspondence),
-        "puzzle" -> notNew(o.puzzle),
-        "storm" -> o.storm.nonEmpty.option(o.storm),
-        "racer" -> o.racer.nonEmpty.option(o.racer),
-        "streak" -> o.streak.nonEmpty.option(o.streak)
+        "correspondence" -> notNew(o.correspondence)
       )
 
   case class Leaderboards(
@@ -209,30 +151,14 @@ object UserPerfs:
       bullet: List[LightPerf],
       blitz: List[LightPerf],
       rapid: List[LightPerf],
-      classical: List[LightPerf],
-      crazyhouse: List[LightPerf],
-      chess960: List[LightPerf],
-      kingOfTheHill: List[LightPerf],
-      threeCheck: List[LightPerf],
-      antichess: List[LightPerf],
-      atomic: List[LightPerf],
-      horde: List[LightPerf],
-      racingKings: List[LightPerf]
+      classical: List[LightPerf]
   )
 
-  val emptyLeaderboards = Leaderboards(Nil, Nil, Nil, Nil, Nil, Nil, Nil, Nil, Nil, Nil, Nil, Nil, Nil)
+  val emptyLeaderboards = Leaderboards(Nil, Nil, Nil, Nil, Nil)
 
   private[rating] val firstRow: List[PerfKey] =
     List(PerfKey.bullet, PerfKey.blitz, PerfKey.rapid, PerfKey.classical)
   private[rating] val secondRow: List[PerfKey] = List(
     PerfKey.correspondence,
-    PerfKey.ultraBullet,
-    PerfKey.crazyhouse,
-    PerfKey.chess960,
-    PerfKey.kingOfTheHill,
-    PerfKey.threeCheck,
-    PerfKey.antichess,
-    PerfKey.atomic,
-    PerfKey.horde,
-    PerfKey.racingKings
+    PerfKey.ultraBullet
   )

@@ -11,7 +11,6 @@
   <string name="closeAccountForeverLabel">Закрити назавжди: його неможливо буде відкрити</string>
   <string name="closeAccountForeverWarning">Не дозволяти відкриття облікового запису. Якщо ви оберете цю опцію, навіть адміністратори не зможуть відкрити ваш обліковий запис за вашим запитом.</string>
   <string name="deleteYourAccount">Видалити обліковий запис</string>
-  <string name="deleteAccountWarning">Коли ви видалите обліковий запис, він видалиться з Lichess, і навіть адміністратори не зможуть його відновити.</string>
   <string name="wouldYouLikeToXInstead" comment="%s is close your account">Бажаєте натомість %s?</string>
   <string name="closeYourAccount">закрити обліковий запис</string>
   <string name="deleteAccountConfirmText">Я розумію, що видалені облікові записи неможливо відновити</string>

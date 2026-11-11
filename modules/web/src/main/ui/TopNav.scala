@@ -12,7 +12,7 @@ final class TopNav(helpers: Helpers, siteName: String):
   private def linkTitle(url: String, name: Frag)(using ctx: Context) =
     if ctx.blind then h3(name) else a(href := url)(name)
 
-  def apply(seesClassMenu: Boolean, hasDgt: Boolean)(using ctx: Context) =
+  def apply(seesClassMenu: Boolean)(using ctx: Context) =
     st.nav(id := "topnav", cls := "hover")(
       st.section(
         linkTitle(

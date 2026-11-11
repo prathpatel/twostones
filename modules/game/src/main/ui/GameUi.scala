@@ -108,12 +108,10 @@ final class GameUi(helpers: Helpers):
     import chess.{ White, Black, Status as S }
     game.status match
       case S.Aborted => abortReason(game).txt()
-      case S.Mate => trans.site.checkmate.txt()
       case S.Resign =>
         (if game.loser.exists(_.color.white) then trans.site.whiteResigned else trans.site.blackResigned)
           .txt()
       case S.UnknownFinish => trans.site.finished.txt()
-      case S.Stalemate => trans.site.stalemate.txt()
       case S.Timeout =>
         (game.loser, game.turnColor) match
           case (Some(p), _) if p.color.white => trans.site.whiteLeftTheGame.txt()
@@ -121,8 +119,6 @@ final class GameUi(helpers: Helpers):
           case (None, White) => trans.site.whiteLeftTheGame.txt() + " • " + trans.site.draw.txt()
           case (None, Black) => trans.site.blackLeftTheGame.txt() + " • " + trans.site.draw.txt()
       case S.Draw => s"Jigo (${game.score.result})"
-      case S.InsufficientMaterialClaim =>
-        trans.site.drawClaimed.txt() + " • " + trans.site.insufficientMaterial.txt()
       case S.Outoftime =>
         (game.turnColor, game.loser) match
           case (White, Some(_)) => trans.site.whiteRanOutOfTime.txt()
@@ -134,6 +130,7 @@ final class GameUi(helpers: Helpers):
         else trans.site.blackDidntMove.txt()
       case S.Cheat => trans.site.cheatDetected.txt()
       case S.VariantEnd => game.score.result
+      // chess endings (mate, stalemate...) can't happen in Go
       case _ => ""
 
   object crosstable:
@@ -204,7 +201,7 @@ final class GameUi(helpers: Helpers):
           div(cls := "header", dataIcon := gameIcon(g))(
             div(cls := "header__text")(
               source(g),
-              g.pgnImport.flatMap(_.date).fold[Frag](pastMomentWithPreload(g.createdAt))(frag(_)),
+              pastMomentWithPreload(g.createdAt),
               contextLink.map(l => frag(separator, l))
             )
           ),
@@ -217,10 +214,7 @@ final class GameUi(helpers: Helpers):
           if g.playedPlies > 0 && ctx.isAuth then opening(g) else frag(br, br),
           g.metadata.analysed.option(
             div(cls := "metadata text", dataIcon := Icon.BarChart)(trans.site.computerAnalysisAvailable())
-          ),
-          g.pgnImport.flatMap(_.user).map { user =>
-            div(cls := "metadata")("PGN import by ", userIdLink(user.some))
-          }
+          )
         )
       )
 
@@ -236,9 +230,6 @@ final class GameUi(helpers: Helpers):
         if g.sourceIs(_.Import) then
           frag(
             span("IMPORT"),
-            g.pgnImport.flatMap(_.user).map { user =>
-              frag(" ", trans.site.by(userIdLink(user.some, None, withOnline = false)))
-            },
             separator,
             g.boardSize.name
           )

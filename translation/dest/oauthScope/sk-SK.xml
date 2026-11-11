@@ -38,7 +38,6 @@
   <string name="apiDocumentationLinks" comment="The first parameter links to a personal token app example. The second parameter links to the API documentation">Tu je %1$s a %2$s.</string>
   <string name="personalTokenAppExample">príklad aplikácie osobného tokenu</string>
   <string name="apiDocumentation">API dokumentácia</string>
-  <string name="newToken">Nový prístupový token</string>
   <string name="apiAccessTokens">Prístupové tokeny API</string>
   <string name="created">Vytvorený %s</string>
   <string name="lastUsed">Naposledy použitý: %s</string>

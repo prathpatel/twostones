@@ -9,9 +9,7 @@
   <string name="oauthCatUserAccount">사용자 계정</string>
   <string name="oauthCatInteractions">상호 작용</string>
   <string name="oauthCatPlayGames">게임 플레이</string>
-  <string name="oauthCatStudiesBroadcasts">연구 &amp; 방송</string>
   <string name="oauthCatExternalPlay">외부 플레이</string>
-  <string name="oauthCatExternalEngine">외부 엔진</string>
   <string name="doNotShareIt">토큰은 계정에 대한 액세스 권한을 부여합니다. 누구와도 공유하지 마세요!</string>
   <string name="copyTokenNow">지금 새 개인 액세스 토큰을 복사했는지 확인하십시오. 다시 볼 수 없게 됩니다.</string>
   <string name="preferenceRead">설정 보기</string>
@@ -48,7 +46,6 @@
   <string name="apiDocumentationLinks" comment="The first parameter links to a personal token app example. The second parameter links to the API documentation">여기 %1$s와 %2$s가 있습니다.</string>
   <string name="personalTokenAppExample">개인용 토큰 앱의 예시</string>
   <string name="apiDocumentation">API 문서</string>
-  <string name="newToken">새로운 액세스 토큰</string>
   <string name="apiAccessTokens">API 액세스 토큰</string>
   <string name="created">생성됨: %s</string>
   <string name="lastUsed">최근 사용: %s</string>

@@ -9,7 +9,6 @@ import lila.ui.{ PageFlags, RenderedPage }
 
 object page:
 
-  val pieceSetImages = lila.web.ui.PieceSetImages(assetHelper)
 
   val ui = lila.web.ui.layout(helpers, assetHelper)(
     popularAlternateLanguages = lila.i18n.LangList.popularAlternateLanguages,
@@ -63,7 +62,6 @@ object page:
           ,
           cssTag("lib.theme.all"),
           cssTag("site"),
-          pref.is3d.option(cssTag("lib.board-3d")),
           ctx.data.inquiry.isDefined.option(cssTag("mod.inquiry")),
           ctx.impersonatedBy.isDefined.option(cssTag("mod.impersonate")),
           ctx.blind.option(cssTag("bits.blind")),
@@ -72,7 +70,7 @@ object page:
             content := p.openGraph.fold(trans.site.siteDescription.txt())(o => o.description),
             name := "description"
           ),
-          link(rel := "mask-icon", href := staticAssetPath("logo/gogame-favicon.svg"), attr("color") := "black"),
+          link(rel := "mask-icon", href := staticAssetPath("logo/twostones-favicon.svg"), attr("color") := "black"),
           favicons,
           preventIndexing.option(noRobots),
           noTranslate,
@@ -142,10 +140,7 @@ object page:
               challenges = ctx.nbChallenges,
               notifications = ctx.nbNotifications.value,
               error = ctx.data.error,
-              topnav = topnav(
-                seesClassMenu = ctx.seesClassMenu,
-                hasDgt = ctx.pref.hasDgt
-              )
+              topnav = topnav(seesClassMenu = ctx.seesClassMenu)
             )
           ,
           div(

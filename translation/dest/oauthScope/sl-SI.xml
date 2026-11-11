@@ -9,9 +9,7 @@
   <string name="oauthCatUserAccount">Uporabniški račun</string>
   <string name="oauthCatInteractions">Interakcije</string>
   <string name="oauthCatPlayGames">Igraj igre</string>
-  <string name="oauthCatStudiesBroadcasts">Študije &amp; oddaje</string>
   <string name="oauthCatExternalPlay">Zunanja igra</string>
-  <string name="oauthCatExternalEngine">Zunanji motor</string>
   <string name="doNotShareIt">Žeton bo omogočil dostop do vašega računa. NE delite z nikomer!</string>
   <string name="copyTokenNow">Prepričajte se, da ste zdaj kopirali svoj novi žeton osebnega dostopa. Ne boste ga mogli več videti!</string>
   <string name="preferenceRead">Preberite nastavitve</string>
@@ -48,7 +46,6 @@
   <string name="apiDocumentationLinks" comment="The first parameter links to a personal token app example. The second parameter links to the API documentation">Tukaj sta %1$s in %2$s.</string>
   <string name="personalTokenAppExample">primer aplikacije osebnega žetona</string>
   <string name="apiDocumentation">API dokumentacija</string>
-  <string name="newToken">Nov dostopni žeton</string>
   <string name="apiAccessTokens">Dostopni žeton za API</string>
   <string name="created">Ustvarjeno %s</string>
   <string name="lastUsed">Nazadnje uporabljeno %s</string>

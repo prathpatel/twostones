@@ -9,9 +9,7 @@
   <string name="oauthCatUserAccount">Обліковий запис користувача</string>
   <string name="oauthCatInteractions">Взаємодії</string>
   <string name="oauthCatPlayGames">Грати ігри</string>
-  <string name="oauthCatStudiesBroadcasts">Дослідження й трансляції</string>
   <string name="oauthCatExternalPlay">Зовнішні ігри</string>
-  <string name="oauthCatExternalEngine">Зовнішній рушій</string>
   <string name="doNotShareIt">Токен надає доступ до вашого облікового запису. Не поширюйте його нікому!</string>
   <string name="copyTokenNow">Переконайтеся, що ви скопіювали ваш токен. Ви не зможете побачити його ще раз!</string>
   <string name="preferenceRead">Переглядати налаштування</string>
@@ -48,7 +46,6 @@
   <string name="apiDocumentationLinks" comment="The first parameter links to a personal token app example. The second parameter links to the API documentation">Ось %1$s та %2$s.</string>
   <string name="personalTokenAppExample">приклад особистого додатка з токеном</string>
   <string name="apiDocumentation">документація API</string>
-  <string name="newToken">Новий токен доступу</string>
   <string name="apiAccessTokens">Токени доступу до API</string>
   <string name="created">Створено %s</string>
   <string name="lastUsed">Востаннє використано %s</string>

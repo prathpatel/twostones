@@ -7,7 +7,7 @@ import lila.db.dsl.Coll
 
 object Db:
   /** the database used when the mongodb uri names none */
-  val defaultName = "gogame"
+  val defaultName = "twostones"
 
 final class AsyncDb(
     name: String,

@@ -43,7 +43,7 @@ export interface PubsubEvents {
   }) => void;
   'socket.in.announce': (data: { msg?: string; date?: string }) => void;
   'socket.in.endData': (data: any) => void;
-  'socket.in.fen': (data: {
+  'socket.in.position': (data: {
     id: string;
     board: string;
     color?: Color;
@@ -71,7 +71,6 @@ export interface PubsubEvents {
   'socket.in.redirect': (d: RedirectTo) => void;
   'socket.in.reload': (data: any) => void;
   'socket.in.sk1': (signed: string) => void;
-  'socket.in.tournamentReminder': (data: { id: string; name: string }) => void;
   'socket.in.unblockedBy': (userId: string) => void;
   'socket.in.serverRestart': () => void;
   'socket.lag': (lag: number) => void;

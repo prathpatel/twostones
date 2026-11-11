@@ -1,6 +1,6 @@
 # Guide for coding agents
 
-This repository is **GoGame**, a Go (Baduk/Weiqi) server forked from Lichess's
+This repository is **TwoStones**, a Go (Baduk/Weiqi) server forked from Lichess's
 [lila](https://github.com/lichess-org/lila) and [lila-ws](https://github.com/lichess-org/lila-ws).
 Read [README.md](README.md) first.
 

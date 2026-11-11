@@ -9,9 +9,7 @@
   <string name="oauthCatUserAccount">用户账户</string>
   <string name="oauthCatInteractions">互动</string>
   <string name="oauthCatPlayGames">对弈</string>
-  <string name="oauthCatStudiesBroadcasts">研习与转播</string>
   <string name="oauthCatExternalPlay">外部对弈</string>
-  <string name="oauthCatExternalEngine">外部引擎</string>
   <string name="doNotShareIt">该令牌将授予对您账户的访问权限。请勿与任何人共享！</string>
   <string name="copyTokenNow">请务必立即复制您的新个人访问令牌。您将无法再次看到它！</string>
   <string name="preferenceRead">读取偏好设置</string>
@@ -48,7 +46,6 @@
   <string name="apiDocumentationLinks" comment="The first parameter links to a personal token app example. The second parameter links to the API documentation">详见 %1$s 和 %2$s。</string>
   <string name="personalTokenAppExample">个人令牌应用示例</string>
   <string name="apiDocumentation">API 文档</string>
-  <string name="newToken">新建访问令牌</string>
   <string name="apiAccessTokens">API 访问令牌</string>
   <string name="created">创建于 %s</string>
   <string name="lastUsed">最后使用于 %s</string>

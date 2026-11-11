@@ -10,5 +10,4 @@
   <string name="disableTwoFactor">টু-ফ্যাক্টর অথেন্টিকেশন বন্ধ করুন</string>
   <string name="twoFactorEnabled">টু-ফ্যাক্টর অথেন্টিকেশন চালু হয়েছে</string>
   <string name="openTwoFactorApp">অথেন্টিকেশন কোড দেখতে আপনার ডিভাইসে টু-ফ্যাক্টর অথেন্টিকেশন অ্যাপ চালু করুন এবং আপনার পরিচয় নিশ্চিত করুন।</string>
-  <string name="setupReminder">অনুগ্রহপুর্বক টূ-ফ্যাক্টর অথেন্টিকেশন চালু করুন</string>
 </resources>

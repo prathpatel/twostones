@@ -18,7 +18,7 @@ final class AccountUi(helpers: Helpers):
 
   def categName(categ: PrefCateg)(using Translate): String = categ match
     case PrefCateg.Display => trans.preferences.display.txt()
-    case PrefCateg.ChessClock => "Clock"
+    case PrefCateg.Clock => "Clock"
     case PrefCateg.GameBehavior => trans.preferences.gameBehavior.txt()
     case PrefCateg.Privacy => trans.preferences.privacy.txt()
 

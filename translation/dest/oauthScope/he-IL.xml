@@ -38,7 +38,6 @@
   <string name="apiDocumentationLinks" comment="The first parameter links to a personal token app example. The second parameter links to the API documentation">הנה %1$s ופה ניתן למצוא %2$s.</string>
   <string name="personalTokenAppExample">דוגמה ליישומון של תווים אישיים</string>
   <string name="apiDocumentation">תיעוד ה־API</string>
-  <string name="newToken">תו גישה חדש</string>
   <string name="apiAccessTokens">תווי גישה ל־API</string>
   <string name="created">נוצר %s</string>
   <string name="lastUsed">היה בשימוש לאחרונה %s</string>

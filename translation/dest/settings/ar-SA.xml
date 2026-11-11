@@ -11,7 +11,6 @@
   <string name="closeAccountForeverLabel">إغلاق نهائي: منع إعادة فتح الحساب نهائيًا</string>
   <string name="closeAccountForeverWarning">منع إعادة فتح الحساب لاحقًا. إذا حدّدت هذا الخيار، فلن يتمكن حتى المسؤولون من إعادة فتح حسابك بناءً على طلبك.</string>
   <string name="deleteYourAccount">حذف حسابك</string>
-  <string name="deleteAccountWarning">بمجرد حذف حسابك، ستتم إزالته من Lichess، ولن يتمكن المسؤولون لدينا من استعادته لك.</string>
   <string name="wouldYouLikeToXInstead" comment="%s is close your account">هل تفضّل %s بدلًا من ذلك؟</string>
   <string name="closeYourAccount">إغلاق حسابك</string>
   <string name="deleteAccountConfirmText">أفهم أن الحسابات المحذوفة لا يمكن استعادتها</string>

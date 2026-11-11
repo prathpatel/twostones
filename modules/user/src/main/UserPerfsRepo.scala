@@ -81,15 +81,6 @@ final class UserPerfsRepo(c: Coll)(using Executor) extends lila.core.user.PerfsR
         _.flatMap(_.child(perf.value))
           .flatMap(_.getAsOpt[Glicko]("gl"))
 
-  def addPuzRun(field: String, userId: UserId, score: Int): Funit =
-    coll.update
-      .one(
-        bid(userId),
-        inc(s"$field.runs" -> 1) ++
-          bdoc("$max" -> bdoc(s"$field.score" -> score)),
-        upsert = true
-      )
-      .void
 
   private def docPerf(doc: Bdoc, perfKey: PerfKey): Option[Perf] =
     doc.getAsOpt[Perf](perfKey.value)
@@ -160,10 +151,6 @@ final class UserPerfsRepo(c: Coll)(using Executor) extends lila.core.user.PerfsR
   def intRatingOf(userId: UserId, pk: PerfKey): Fu[IntRating] =
     perfOf(userId, pk).map(_.intRating)
 
-  def dubiousPuzzle(id: UserId, puzzle: Perf): Fu[Boolean] =
-    (puzzle.glicko.rating >= 2500).so:
-      perfOptionOf(id, PerfType.Standard).map:
-        _.forall(defaults.dubiousPuzzle(puzzle, _))
 
   object aggregate:
     val byId = lookup.simple(coll, "perfs", "_id", "_id")

@@ -90,14 +90,14 @@ export default class RoundCtrl {
     this.error = undefined;
     // optimistic update, confirmed by the server's move event
     this.applyLocal(key, next);
-    this.send('move', { u: key }, true);
+    this.send('move', { m: key }, true);
   };
 
   pass = (): void => {
     if (!this.isMyTurn() || this.inScoring()) return;
     const next = go.play(this.live, 'pass');
     if (typeof next !== 'string') this.applyLocal('pass', next);
-    this.send('move', { u: 'pass' }, true);
+    this.send('move', { m: 'pass' }, true);
   };
 
   private applyLocal(key: string, next: go.Position) {
@@ -233,29 +233,29 @@ export default class RoundCtrl {
   };
 
   private onMove(m: MoveEvent) {
-    const confirmsLocal = m.ply === this.data.game.turns && this.moves[this.moves.length - 1] === m.uci;
+    const confirmsLocal = m.ply === this.data.game.turns && this.moves[this.moves.length - 1] === m.move;
     if (!confirmsLocal) {
       if (m.ply !== this.data.game.turns + 1) {
         site.reload(); // we missed something
         return;
       }
-      const next = go.play(this.live, m.uci);
+      const next = go.play(this.live, m.move);
       if (typeof next === 'string') {
         site.reload();
         return;
       }
       const wasLive = this.isLive();
-      this.moves.push(m.uci);
+      this.moves.push(m.move);
       this.positions.push(next);
       if (wasLive) this.viewing = this.positions.length - 1;
       this.data.game.turns = m.ply;
-      this.playSound(m.uci === 'pass' ? 'pass' : (m.captured?.length ?? 0) > 0 ? 'capture' : 'move');
+      this.playSound(m.move === 'pass' ? 'pass' : (m.captured?.length ?? 0) > 0 ? 'capture' : 'move');
     }
     // the server board is authoritative
     const server = go.parseBoard(m.board);
     if (server.join('') !== this.live.board.join('')) this.live.board = server;
     this.data.game.player = m.ply % 2 === 0 ? 'white' : 'black';
-    this.data.game.go.lastMove = m.uci;
+    this.data.game.go.lastMove = m.move;
     this.data.game.go.prisoners = m.prisoners;
     this.data.game.go.ko = m.ko;
     if (!m.scoring) this.data.game.go.scoring = undefined;

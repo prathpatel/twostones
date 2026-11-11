@@ -41,6 +41,8 @@ final class EmailConfirmMailer(
     extends EmailConfirm:
 
   import Mailer.html.*
+  // the footer of every email links to this site's pages
+  private given RouteUrl = routeUrl
 
   def effective = true
 
@@ -277,5 +279,5 @@ $url
 
 ${trans.common_linkNotWorking.txt()}
 
-${trans.emailConfirm_justIgnore.txt("https://lichess.org")}
+${trans.emailConfirm_justIgnore.txt()}
 """

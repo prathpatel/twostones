@@ -111,8 +111,8 @@ export interface RoundOpts {
 }
 
 export interface MoveEvent {
-  uci: string;
-  san: string;
+  move: string; // SGF coordinates ("pd") or "pass"
+  coord: string; // as printed on the board ("Q16")
   board: string;
   ply: number;
   prisoners: { black: number; white: number };

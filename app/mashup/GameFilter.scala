@@ -25,7 +25,6 @@ object GameFilterMenu:
         (user.count.draw > 0).option(GameFilter.draw),
         (nbs.playing > 0).option(GameFilter.playing),
         (nbs.bookmark > 0).option(GameFilter.bookmark),
-        (nbs.imported > 0).option(GameFilter.imported),
         (isAuth && user.count.game > 0).option(GameFilter.search)
       ).flatten
     )
@@ -39,7 +38,6 @@ object GameFilterMenu:
   ): Option[Int] =
     filter match
       case GameFilter.bookmark => nbs.map(_.bookmark)
-      case GameFilter.imported => nbs.map(_.imported)
       case GameFilter.all => user.count.game.some
       case GameFilter.me => nbs.flatMap(_.withMe)
       case GameFilter.rated => user.count.rated.some
@@ -66,12 +64,6 @@ object GameFilterMenu:
       def std(query: Bdoc) = pagBuilder.recentlyCreated(query, nb)(page)
       filter match
         case GameFilter.bookmark => bookmarkApi.gamePaginatorByUser(user, page)
-        case GameFilter.imported =>
-          pagBuilder(
-            selector = Query.imported(user.id),
-            sort = sort.desc("pgni.ca"),
-            nb = nb
-          )(page)
         case GameFilter.all =>
           std(Query.started(user.id)).flatMap:
             _.mapFutureResults(gameProxyRepo.upgradeIfPresent)
