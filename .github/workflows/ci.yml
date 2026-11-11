@@ -14,14 +14,17 @@ jobs:
           distribution: temurin
           java-version: 21
       - uses: sbt/setup-sbt@v1
+      # sbt 2 builds in a server it starts in the background, which outlives the step (lila's
+      # takes up to 8 GB, .sbtopts): with a second one for lila-ws, the runner ran out of
+      # memory. "shutdown" stops it at the end of each step.
       - name: Compile and test lila
         run: |
           cp .sbtopts.default .sbtopts
           cp conf/application.conf.default conf/application.conf
-          sbt "test; compile"
+          sbt "test; compile; shutdown"
       - name: Compile lila-ws
         working-directory: ws
-        run: sbt compile
+        run: sbt "compile; shutdown"
 
   ui:
     runs-on: ubuntu-latest

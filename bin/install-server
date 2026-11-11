@@ -97,10 +97,18 @@ sudo -u "$user" git config --global --add safe.directory "$dir" 2>/dev/null || t
 
 say "Building the front end"
 as_user ./ui/build
+# sbt 2 builds in a server it starts in the background, which keeps running afterwards
+# (lila's takes up to 8 GB): shut it down after the build, and also when the build fails
+build() { # folder, sbt runner
+  if ! as_user "cd $1 && $2 'stage; shutdown' </dev/null"; then
+    as_user "cd $1 && sbt shutdown </dev/null" >/dev/null 2>&1 || true
+    die "the build in $1 failed"
+  fi
+}
 say "Building lila"
-as_user ./lila.sh stage </dev/null
+build . ./lila.sh
 say "Building lila-ws"
-as_user "cd ws && sbt stage </dev/null"
+build ws sbt
 say "KataGo"
 as_user bin/setup-katago
 
@@ -120,6 +128,24 @@ wait_primary() { # mongosh arguments: wait until this MongoDB accepts writes
   done
   die "MongoDB did not start (journalctl -u mongod)"
 }
+
+# MongoDB's cache defaults to half the memory: 4 GB leaves room for lila, lila-ws and KataGo.
+# Added inside the existing storage: block (the other storage settings stay), only once.
+if ! grep -qE '^[[:space:]]*cacheSizeGB:' /etc/mongod.conf; then
+  if grep -qE '^[[:space:]]+wiredTiger:' /etc/mongod.conf; then
+    say "MongoDB: /etc/mongod.conf has its own wiredTiger settings: add cacheSizeGB: 4 under engineConfig yourself"
+  else
+    say "MongoDB: cache limited to 4 GB"
+    if grep -q '^storage:' /etc/mongod.conf; then
+      awk '{ print } /^storage:/ && !done { print "  wiredTiger:\n    engineConfig:\n      cacheSizeGB: 4"; done = 1 }' \
+        /etc/mongod.conf >/etc/mongod.conf.new
+      cat /etc/mongod.conf.new >/etc/mongod.conf && rm /etc/mongod.conf.new
+    else
+      printf '\nstorage:\n  wiredTiger:\n    engineConfig:\n      cacheSizeGB: 4\n' >>/etc/mongod.conf
+    fi
+    systemctl restart mongod
+  fi
+fi
 
 say "MongoDB: a one-member replica set, with passwords"
 # A replica set, even of one member, lets backups take a consistent snapshot (mongodump --oplog)
