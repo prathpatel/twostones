@@ -14,12 +14,6 @@ object SystemMsg:
   def mustRead(userId: UserId, text: String) = SystemMsg(userId, text, true)
   def standard(userId: UserId, text: String) = SystemMsg(userId, text, false)
 
-case class PayoutMessages(
-    userIds: List[UserId],
-    tourName: String,
-    tourUrl: Url,
-    finishedAt: Instant = nowInstant
-)
 
 type ID = String
 

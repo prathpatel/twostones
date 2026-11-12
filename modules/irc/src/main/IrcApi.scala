@@ -153,13 +153,6 @@ final class IrcApi(
         s" by **${markdown.modLink(mod)}**" +
         note.so(n => s"\nnote: $n")
 
-  def payoutNotify(p: lila.core.msg.PayoutMessages): Funit =
-    val messages =
-      s"${markdown.link(p.tourUrl, p.tourName)}\n\nPlayers notified:" :: p.userIds.map(id =>
-        markdown.userLink(lightUser(id))
-      )
-    messages.sequentiallyVoid: content =>
-      zulip.sendAndGetLink(_.adminPrizes, p.tourName)(content)
 
   def broadcasterDm(topicUserId: UserId, senderId: UserId, content: String): Funit =
     zulip(_.broadcastDms, s"/${lightUser(topicUserId).name}"):

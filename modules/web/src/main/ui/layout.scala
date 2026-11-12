@@ -283,9 +283,7 @@ final class layout(helpers: Helpers, assetHelper: lila.web.ui.AssetFullHelper)(
           title := trans.team.teams.txt()
         )
 
-    private val siteNameFrag: Frag =
-      if siteName == "lichess.org" then frag("lichess", span(".org"))
-      else frag(siteName)
+    private val siteNameFrag: Frag = frag(siteName)
 
     def apply(
         zenable: Boolean,
