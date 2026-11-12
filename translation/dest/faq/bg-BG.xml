@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">ЧЗВ</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess е комбинация от думите live/light/libre (на живо/леко/свободно) и chess (шахмат). Произнася се %1$s.</string>
   <string name="keyboardShortcuts">Какви клавишни комбинации има?</string>
   <string name="explainingEnPassant">Това е легален ход, известен като „преминаване“. Статията в Wikipedia дава %1$s.
 

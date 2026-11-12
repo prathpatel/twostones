@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">Întrebări frecvente</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess e o combinație între live/light/liber și șah. E pronunțat %1$s.</string>
   <string name="keyboardShortcuts">Ce comenzi rapide de la tastatură există?</string>
   <string name="explainingEnPassant">Este o mișcare legală numită și \"en passant\". Articolul de pe Wikipedia iți va face o %1$s.
 

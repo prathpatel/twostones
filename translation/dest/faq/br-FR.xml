@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">FAG</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Ur ger savet digant pevar ger all eo, \"live/light/libre\" ha \"chess\". Distaget e vez %1$s.</string>
   <string name="positions">lec\'hiadurioù</string>
   <string name="accounts">Kontoù</string>
 </resources>

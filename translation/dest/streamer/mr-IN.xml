@@ -5,7 +5,6 @@
   <string name="rules">प्रसारण नियम</string>
   <string name="connect">विद्युतसंबंध जोडा</string>
   <string name="disconnect">विद्युतसंबंध तोडा</string>
-  <string name="streamerName">तुमचे प्रसारक नाव Lichess वर</string>
   <string name="visibility">प्रसारक पृष्ठावर दृश्यमान</string>
   <string name="headline">मथळा</string>
   <string name="maxSize">कमाल आकार: %s</string>

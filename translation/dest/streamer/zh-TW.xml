@@ -3,7 +3,6 @@
   <string name="live">直播</string>
   <string name="offline">離線</string>
   <string name="rules">實況規則</string>
-  <string name="streamerName">您在Lichess上的直播名稱</string>
   <string name="visibility">可見於實況主頁面上</string>
   <string name="headline">標題</string>
   <string name="maxSize">檔案大小限制：%s</string>

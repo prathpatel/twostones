@@ -3,7 +3,6 @@
   <string name="live">CANLI!</string>
   <string name="offline">OFLAYN</string>
   <string name="rules">Yayım qaydaları</string>
-  <string name="streamerName">Lichess yayımçı adınız</string>
   <string name="visibility">Yayımçılar səhifəsində görünsün</string>
   <string name="headline">Başlıq</string>
   <string name="maxSize">Maks ölçü: %s</string>

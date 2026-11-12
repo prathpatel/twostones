@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">Preguntas frecuentes</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess es una combinación de live/light/libre (en directo, ligero y libre, en inglés) y chess (ajedrez, en inglés). Se pronuncia %1$s.</string>
   <string name="keyboardShortcuts">¿Qué atajos de teclado hay?</string>
   <string name="explainingEnPassant">Este movimiento es legal, y se llama \"captura al paso\". El artículo de Wikipedia da una %1$s al mismo.
 

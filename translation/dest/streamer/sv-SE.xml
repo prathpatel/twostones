@@ -4,7 +4,6 @@
   <string name="offline">OFFLINE</string>
   <string name="rules">Regler för videosändningar</string>
   <string name="connect">Koppla</string>
-  <string name="streamerName">Ditt sändningsnamn på Lichess</string>
   <string name="visibility">Synlig på videokanal-sidan</string>
   <string name="headline">Rubrik</string>
   <string name="maxSize">Max storlek: %s</string>

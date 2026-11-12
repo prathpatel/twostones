@@ -3,7 +3,6 @@
   <string name="live">EN DIRECTO!</string>
   <string name="offline">DESCONNECTAU</string>
   <string name="rules">Reglas d\'emisión</string>
-  <string name="streamerName">Lo tuyo nombre de presentador en Lichess</string>
   <string name="visibility">Visible en a pachina de presentadors</string>
   <string name="headline">Encabezau</string>
   <string name="maxSize">Grandaria maxima: %s</string>

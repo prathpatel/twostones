@@ -3,7 +3,6 @@
   <string name="live">Тікелей эфир!</string>
   <string name="offline">Эфирден тыс</string>
   <string name="rules">Стрим жүргізудің ережелері</string>
-  <string name="streamerName">Личестегі стример атыңыз</string>
   <string name="visibility">Стримерлер парақшасында көріну</string>
   <string name="headline">Басты тақырып</string>
   <string name="maxSize">Өлшемнің шегі: %s</string>

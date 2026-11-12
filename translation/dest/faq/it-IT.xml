@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">Domande Frequenti</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess è una combinazione di live/light/libre e scacchi. Si pronuncia %1$s.</string>
   <string name="keyboardShortcuts">Quali scorciatoie da tastiera sono disponibili?</string>
   <string name="explainingEnPassant">Questa è una mossa legale conosciuta come \"en passant\" (\"al varco\"). L\'articolo di Wikipedia fornisce una %1$s.
 

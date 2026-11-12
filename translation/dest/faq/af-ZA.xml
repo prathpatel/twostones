@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">Gereelde vrae</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess is \'n kombinasie van lewendige/ligte/libre en skaak. Dit word as %1$s uitgespreek.</string>
   <string name="keyboardShortcuts">Watter sleutelbordkortpaaie is daar?</string>
   <string name="explainingEnPassant">Dit is \'n wettige stap wat bekend staan ​​as \'en passant\'. Die Wikipedia-artikel gee \'n %1$s.
 

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">KKK</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess on sõnade live/light/libre ja chess kombinatsioon. Seda hääldatakse %1$s.</string>
   <string name="positions">positsioonid</string>
   <string name="accounts">Kasutajatunnused</string>
 </resources>

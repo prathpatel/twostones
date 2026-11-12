@@ -5,7 +5,6 @@
   <string name="rules">Streaming Reglä</string>
   <string name="connect">Verbinde</string>
   <string name="disconnect">Verbindig tränne</string>
-  <string name="streamerName">Din Streamername uf Lichess</string>
   <string name="visibility">Sichtbar uf de Streamersite</string>
   <string name="headline">Titel</string>
   <string name="maxSize">Maximali Grössi: %s</string>

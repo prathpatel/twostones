@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">Veelgestelde vragen (FAQ)</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess is een samentrekking van \'live/light/libre\' en \'chess\'. Het wordt uitgesproken als %1$s.</string>
   <string name="keyboardShortcuts">Welke sneltoetsen zijn er?</string>
   <string name="explainingEnPassant">Dit is een geldige zet die bekend staat als \"en passant\" slaan. Het Wikipedia-artikel geeft een %1$s.
 

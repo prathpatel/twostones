@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">BUJ</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">\"Lichess\" ir vārdu \"live/light/libre\" (angļ. val. tiešraidē/viegls/brīvs) un \"chess\" (šahs) savienojums. To izrunā %1$s.</string>
   <string name="keyboardShortcuts">Kādas saīsnes ir pieejamas?</string>
   <string name="explainingEnPassant">Tas ir likumīgs gājiens, pazīstams kā \"en passant\". Vikipēdias raksts sniedz %1$s.
 

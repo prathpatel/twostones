@@ -3,7 +3,6 @@
   <string name="live">LANGSUNG!</string>
   <string name="offline">OFFLINE</string>
   <string name="rules">Aturan streaming</string>
-  <string name="streamerName">Nama streamer Anda di Lichess</string>
   <string name="visibility">Terlihat di halaman streamer</string>
   <string name="headline">Berita utama</string>
   <string name="maxSize">Ukuran maksimal: %s</string>

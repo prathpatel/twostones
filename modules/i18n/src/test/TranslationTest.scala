@@ -62,10 +62,10 @@ Il est décrit dans la section 3.7 (d) des link2 :
 Voir les link3 sur ce coup pour vous entraîner."""
     )
   test("user backslashes"):
-    given Lang = Lang("ar", "SA")
+    given Lang = Lang("ur", "PK")
     assertEquals(
-      I18nKey.faq.lichessCombinationLiveLightLibrePronounced.txt("link1"),
-      """كلمة Lichess مزيج من live/light/libre (مباشر\خفيف\حر) و chess (شطرنج). تنطق link1."""
+      I18nKey.site.keyMoveBackwardOrForward.txt(),
+      """چال اگلی\پچھلی"""
     )
 
   private def argsForKey(k: String): List[String] =

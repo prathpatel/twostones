@@ -5,7 +5,6 @@
   <string name="rules">قواعد البث</string>
   <string name="connect">الاتصال </string>
   <string name="disconnect">قطع الاتصال</string>
-  <string name="streamerName">اسم البث الخاص بك على Lichess</string>
   <string name="visibility">إظهار على قائمة بثوث اللاعبين</string>
   <string name="headline">العنوان</string>
   <string name="maxSize">الحجم الأقصى: %s</string>

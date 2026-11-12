@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">DUK</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess yra gyvų (live), lengvų (light) ir laisvų (libre) šachmatų kombinacija. Jis tariamas %1$s.</string>
   <string name="keyboardShortcuts">Kokių yra sparčiųjų klavišų?</string>
   <string name="explainingEnPassant">Tai yra legalus ėjimas vadinamas \"kirtimu prasilenkiant\". Šis Vikipedijos straipsnis suteikia %1$s.
 

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">TSS</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess, live/light/libre yəni canlı/yüngül/azad ilə chess (şahmat) sözlərinin kombinasiyasıdır. %1$s kimi tələffüz edilir.</string>
   <string name="explainingEnPassant">Bu, \"keçiddə götürmə\" kimi tanınan qanuni bir gedişdir. Vikipediya məqaləsi buna %1$s verir.
 
 %2$s 3.7 (d) bölməsində bu cür təsvir edilmişdir:

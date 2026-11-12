@@ -5,7 +5,6 @@
   <string name="rules">Rregulla transmetimi</string>
   <string name="connect">Lidhu</string>
   <string name="disconnect">Shkëputu</string>
-  <string name="streamerName">Emri i transmetuesit tuaj në Lichess</string>
   <string name="visibility">E dukshme në faqen e transmetuesve</string>
   <string name="headline">Titulli</string>
   <string name="maxSize">Madhësi maks.: %s</string>

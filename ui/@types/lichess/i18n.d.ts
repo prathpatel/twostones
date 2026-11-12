@@ -229,8 +229,6 @@ interface I18n {
     faqAbbreviation: string;
     /** What keyboard shortcuts are there? */
     keyboardShortcuts: string;
-    /** Lichess is a combination of live/light/libre and chess. It is pronounced %1$s. */
-    lichessCombinationLiveLightLibrePronounced: I18nFormat;
     /** positions */
     positions: string;
   };
@@ -1795,8 +1793,6 @@ interface I18n {
     offline: string;
     /** Streaming rules */
     rules: string;
-    /** Your streamer name on Lichess */
-    streamerName: string;
     /** Visible on the streamers page */
     visibility: string;
   };
@@ -1953,8 +1949,6 @@ interface I18n {
     all: string;
     /** Best */
     best: string;
-    /** By Lichess */
-    byLichess: string;
     /** Community */
     community: string;
     /** Etiquette */

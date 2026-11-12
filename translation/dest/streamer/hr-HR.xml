@@ -3,7 +3,6 @@
   <string name="live">UŽIVO!</string>
   <string name="offline">NIJE NA MREŽI</string>
   <string name="rules">Pravila emitiranja</string>
-  <string name="streamerName">Ime Vašeg Lichess kanala emitiranja</string>
   <string name="visibility">Vidljivo na stranici kanala za emitirnje</string>
   <string name="headline">Naslov</string>
   <string name="maxSize">Maksimalna veličina: %s</string>

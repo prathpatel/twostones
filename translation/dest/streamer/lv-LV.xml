@@ -3,7 +3,6 @@
   <string name="live">TIEŠRAIDĒ!</string>
   <string name="offline">BEZSAISTĒ</string>
   <string name="rules">Straumēšanas noteikumi</string>
-  <string name="streamerName">Jūsu straumētāja vārds Lichess</string>
   <string name="visibility">Redzams straumētāju lapā</string>
   <string name="headline">Virsraksts</string>
   <string name="maxSize">Maks. izmērs: %s</string>

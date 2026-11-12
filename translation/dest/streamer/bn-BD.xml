@@ -3,7 +3,6 @@
   <string name="live">লাইভ!</string>
   <string name="offline">আই সময় উপস্তি নেই</string>
   <string name="rules">স্ট্রিমিং এর নিয়ম-কানুন</string>
-  <string name="streamerName">লিচেসে আপনার স্ট্রিমার নাম</string>
   <string name="visibility">স্ট্রিমারদের পেজে সদৃশ থাক</string>
   <string name="headline">হেডলাইন</string>
   <string name="maxSize">সর্বোচ্চ আকার: %s</string>

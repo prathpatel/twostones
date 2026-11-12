@@ -3,7 +3,6 @@
   <string name="live">நேரலை!</string>
   <string name="offline">அகல்நிலை</string>
   <string name="rules">தொடரோட்ட விதிமுறைகள்</string>
-  <string name="streamerName">லிசெஸ் இல் உங்கள் தொடரோடி பெயர்</string>
   <string name="visibility">தொடரோடிகள் பக்கத்தில் புலப்படும்</string>
   <string name="headline">தலையங்கம்</string>
   <string name="maxSize">அதிகபட்ச அளவு: %s</string>

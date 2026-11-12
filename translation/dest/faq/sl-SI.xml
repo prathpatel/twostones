@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">Odgovori na pogosto zastavljena vprašanja</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess je kombinacija live/light/ libre in šaha. Izgovarja se %1$s.</string>
   <string name="keyboardShortcuts">Katere bližnjice na tipkovnici obstajajo?</string>
   <string name="explainingEnPassant">To je pravilna poteza, znana kot \"en passant\". Članek v Wikipediji vsebuje %1$s.
 

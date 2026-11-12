@@ -5,7 +5,6 @@
   <string name="rules">Regler for videosendingar</string>
   <string name="connect">Kople til</string>
   <string name="disconnect">Kople frå</string>
-  <string name="streamerName">Strøymarnamn på Lichess</string>
   <string name="visibility">Synleg på videokanal-sida</string>
   <string name="headline">Overskrift</string>
   <string name="maxSize">Maks storleik: %s</string>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">ЧаПи</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess — це поєднання live/light/libre, тобто «наживо», «легко», «вільно» і «chess», тобто «шахи». Вимовляється %1$s.</string>
   <string name="keyboardShortcuts">Які є комбінації клавіш?</string>
   <string name="explainingEnPassant">Це дозволений хід, відомий як \"взяття на проході\". Стаття Вікіпедії дає %1$s.
 

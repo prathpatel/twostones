@@ -5,7 +5,6 @@
   <string name="rules">સ્ટ્રીમિંગ નિયમો</string>
   <string name="connect">જોડો</string>
   <string name="disconnect">ડિસ્કનેક્ટ કરો</string>
-  <string name="streamerName">Lichess પર તમારું સ્ટ્રીમર નામ</string>
   <string name="visibility">સ્ટ્રીમર્સ પેજ પર દૃશ્યમાન</string>
   <string name="headline">હેડલાઇન</string>
   <string name="maxSize">મહત્તમ કદ: %s</string>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">FAQ</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess är en kombination av \"live\"/\"light\"/\"libre\" och \"chess\". Det uttalas %1$s.</string>
   <string name="keyboardShortcuts">Vilka kortkommandon finns det?</string>
   <string name="explainingEnPassant">Detta är ett giltigt drag som kallas \"en passant\". Denna Wikipedia-artikel ger en %1$s.
 

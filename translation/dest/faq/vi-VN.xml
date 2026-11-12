@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">Những câu hỏi thường gặp</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess là một sự kết hợp của live/light/libre (trực tiếp/nhẹ/miễn phí) và chess (cờ vua). Nó được phát âm là %1$s.</string>
   <string name="keyboardShortcuts">Có những phím tắt nào?</string>
   <string name="explainingEnPassant">Đây là một nước đi hợp lệ được gọi là \"bắt tốt qua đường\". Bài viết trên Wikipedia cho một %1$s.
 

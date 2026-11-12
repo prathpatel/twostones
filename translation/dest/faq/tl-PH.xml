@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">MMT</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Ang Lichess ay isang pinaghalong live/light/libre at ahedres. Ibinibigkas ito ng %1$s.</string>
   <string name="keyboardShortcuts">Anong mga keyboard shortcuts ang meron?</string>
   <string name="explainingEnPassant">Itong legal na tira ay kilala bilang \"en passant\". Ang artikulong ito sa Wikipedia ay nagbibigay ng %1$s.
 

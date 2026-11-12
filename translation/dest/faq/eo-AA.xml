@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">Plej Oftaj Demandoj</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess estas kombino de realtempe/malpeza/libera (angle: live/light/libre) kaj ŝako (angle: chess). Ĝi estas prononcita %1$s.</string>
   <string name="keyboardShortcuts">Kiuj flumklavoj estas tie?</string>
   <string name="explainingEnPassant">Tio estas laŭleĝa movo nomata «preterpasa preno». La Vikipedia paĝo donas %1$s.
 

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">વારંવાર પૂછાતા પ્રશ્નો</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess એ live/light/libre અને chess નું સંયોજન છે. તેનો ઉચ્ચાર %1$s થાય છે.</string>
   <string name="keyboardShortcuts">કયા કીબોર્ડ શોર્ટકટ્સ છે?</string>
   <string name="explainingEnPassant">આ એક કાયદેસરની ચાલ છે જે \"en passant\" તરીકે ઓળખાય છે. વિકિપીડિયા લેખ એક %1$s આપે છે.
 

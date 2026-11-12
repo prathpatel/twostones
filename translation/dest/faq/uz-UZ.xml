@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">FAQ</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess bu live/light/libre va chess sözlarining kombinatsiyasi. %1$s deb talaffuz qilinadi.</string>
   <string name="keyboardShortcuts">Qanday klaviatura yorliqlari mavjud?</string>
   <string name="explainingEnPassant">Bu \"en passant\" deb nomlangan qonuniy yurişdir. Vikipediyadagi uşbu maqolada bu haqida %1$s berilgan.
 

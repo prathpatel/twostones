@@ -5,7 +5,6 @@
   <string name="rules">Yayın kuralları</string>
   <string name="connect">Bağla</string>
   <string name="disconnect">Bağlantıyı kes</string>
-  <string name="streamerName">Lichess üzerindeki yayıncı isminiz</string>
   <string name="visibility">Yayıncılar sayfasına görünsün</string>
   <string name="headline">Başlık</string>
   <string name="maxSize">Azami boyut: %s</string>

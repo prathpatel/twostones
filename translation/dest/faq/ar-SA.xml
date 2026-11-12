@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">الأسئلة الشائعة</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">كلمة Lichess مزيج من live/light/libre (مباشر\خفيف\حر) و chess (شطرنج). تنطق %1$s.</string>
   <string name="keyboardShortcuts">ما هي اختصارات لوحة المفاتيح؟</string>
   <string name="explainingEnPassant">إنها نقلة قانونية تُعرف باسم \"الأخذ بالتجاوز\". وتقدم ويكيبيديا مقالة %1$s:
 

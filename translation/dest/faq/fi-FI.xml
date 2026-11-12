@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">FAQ</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess on sanojen live/light/libre ja chess yhdistelmä. Se lausutaan näin: %1$s.</string>
   <string name="keyboardShortcuts">Mitä pikanäppäimiä voi käyttää?</string>
   <string name="explainingEnPassant">Tämä sallittu siirto tunnetaan ohestalyöntinä (\"en passant\"). Wikipediassa on %1$s ohestalyöntiin.
 

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">FAQ</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess ass eng Kombinatioun vun live/light/libre an Schach. Et gëtt %1$s ausgesprach.</string>
   <string name="keyboardShortcuts">Wéieng Tastaturkürzel ginn et?</string>
   <string name="positions">Stellungen</string>
   <string name="configure">konfiguréieren</string>

@@ -5,7 +5,6 @@
   <string name="rules">Normes de retransmissió</string>
   <string name="connect">Connecta</string>
   <string name="disconnect">Desconnecta</string>
-  <string name="streamerName">El teu nom de retransmissor a Lichess</string>
   <string name="visibility">Visible a la pàgina de retransmissors</string>
   <string name="headline">Encapçalament</string>
   <string name="maxSize">Mida màxim: %s</string>

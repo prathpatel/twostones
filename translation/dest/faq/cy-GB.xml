@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">HOF</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Mae Lichess yn gyfuniad o \"live/light/libre\" a \"chess\". Mae\'n cael ei ddatganu fel %1$s.</string>
   <string name="positions">safleoedd</string>
   <string name="configure">ffurfweddu</string>
   <string name="accounts">Cyfrifau</string>

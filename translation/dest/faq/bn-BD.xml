@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">FAQ</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess মানে হলো Live/Light/Libre and Chess. তাই এটার উচ্চারান %1$s.</string>
   <string name="keyboardShortcuts">কি কি কীবোর্ড শর্টকাট আছে?</string>
   <string name="positions">পজিশন</string>
   <string name="configure">কনফিগার</string>

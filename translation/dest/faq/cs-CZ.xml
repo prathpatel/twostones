@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">Často kladené dotazy (FAQ)</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess je kombinace slov live/light/libre a chess z angličtiny. Vyslovuje se %1$s.</string>
   <string name="keyboardShortcuts">Jaké klávesové zkratky jsou k dispozici?</string>
   <string name="explainingEnPassant">Tento tah je však platný a podle pravidel, a nazývá se \"en passant\", neboli braní mimochodem. Můžete si přečíst tento článek na Wikipedii: %1$s.
 

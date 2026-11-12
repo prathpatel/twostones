@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">CCanna</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Is meascán de bheo/éadrom/saoirse agus ficheall é Lichess. Fuaimnítear é %1$s.</string>
   <string name="explainingEnPassant">Is beart dlíthiúil é seo d\'arbh ainm \"en passant\". Tugann an t-alt Wikipedia %1$s.
 
 Déantar cur síos air i gcuid 3.7 (d) den %2$s:

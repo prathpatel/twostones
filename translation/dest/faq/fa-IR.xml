@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">پرسش‌های متداول</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">واژه Lichess آمیخته‌ای از واژگان live (زنده)، light (سَبُک)، libre (آزاد و متن‌باز) و chess (شطرنج) است. تلفظ Lichess %1$s است.</string>
   <string name="keyboardShortcuts">چه میانبرهای صفحه‌کلیدی وجود دارند؟</string>
   <string name="explainingEnPassant">این یک حرکت قانونی است که به عنوان \"آن‌پاسان\" شناخته می‌شود. این مقاله ویکی‌پدیا اطلاعاتی در مورد آن ارائه می‌دهد: %1$s.
 

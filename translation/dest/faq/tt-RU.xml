@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">ЕБС</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess - яши/яктылык/китапханә һәм шаһматның берләшүе. Бу %1$s дип әйтелә.</string>
   <string name="positions">позициясе</string>
   <string name="configure">конфигурацияләү</string>
   <string name="accounts">Хисап</string>

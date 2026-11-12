@@ -5,7 +5,6 @@
   <string name="rules">Pravila emitovanja</string>
   <string name="connect">Spoji se</string>
   <string name="disconnect">Odspojite se</string>
-  <string name="streamerName">Ime Vašeg Lichess emiter kanala</string>
   <string name="visibility">Vidljivo na stranici kanala za emitovanje</string>
   <string name="headline">Naslov</string>
   <string name="maxSize">Maksimalna veličina: %s</string>

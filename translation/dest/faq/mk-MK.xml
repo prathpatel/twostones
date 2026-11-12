@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">ЧПП</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess е комбинација од од анг. „live/light/libre“ - во живо/лесно/слободно и анг. „chess“ - шах. Се изговара „%1$s“.</string>
   <string name="accounts">Сметки</string>
 </resources>

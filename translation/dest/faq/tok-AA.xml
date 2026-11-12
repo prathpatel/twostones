@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">lipu pi wile sona</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">nimi Lichess li kulupu pi nimi ni: \"live/light/libre\" en \"chess\". o toki %1$s e ni.</string>
   <string name="positions">lon</string>
   <string name="configure">ante</string>
   <string name="accounts">lipu sina</string>

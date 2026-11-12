@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">АрФар</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">\"Lichess\" у \"live/light/libre\" æмæ \"chess\"-ы комбинаци — удæгас, рог æмæ сæрибар шахмæттæ. Дзурын хъæуы афтæ: %1$s.</string>
   <string name="explainingEnPassant">Уый у цыд, зындгонд номæй «ацæуæны байст». Уацхъуыд уырыссаг Википедийы дæтты %1$s.
 
 Он описан в разделе 3.7 (d), %2$s:

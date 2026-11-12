@@ -5,7 +5,6 @@
   <string name="rules">Pravidlá streamovania</string>
   <string name="connect">Pripojiť sa</string>
   <string name="disconnect">Odpojiť sa</string>
-  <string name="streamerName">Vaše streamerské meno na Lichessi</string>
   <string name="visibility">Viditeľnosť na streamerskej stránke</string>
   <string name="headline">Titulok</string>
   <string name="maxSize">Maximálna veľkosť: %s</string>

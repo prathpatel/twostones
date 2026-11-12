@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">FAQ</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess er ein samanseting av live/light/libre og chess. Tað verður úttalað %1$s.</string>
   <string name="positions">støður</string>
   <string name="configure">stilla</string>
   <string name="accounts">Kontur</string>

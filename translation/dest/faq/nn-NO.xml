@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">Ofte stilte spørsmål (FAQ)</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess er ein kombinasjon av live/light/libre og chess. Uttalen er %1$s.</string>
   <string name="keyboardShortcuts">Kva tastatursnarvegar finst?</string>
   <string name="explainingEnPassant">Dette er eit lovleg trekk kalla «en passant» («i forbifarta»). Wikipedia-artikkelen gir ein %1$s.
 
