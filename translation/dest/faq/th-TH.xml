@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">คำถามที่พบบ่อย</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess เป็นการผสมผสานคำว่า live/light/libre กับ chess คำว่า Lichess อ่านออกเสียงว่า %1$s</string>
   <string name="keyboardShortcuts">มีทางลัดคีย์บอร์ดใดบ้าง</string>
   <string name="explainingEnPassant">นี่เป็นการเดินตามกฎที่เรียกว่า \"en passant\" บทความในวิกิพีเดียให้ค่า %1$s
 มีการอธิบายไว้ในส่วนที่ 3.7.3.1 และ 3.7.3.2 ของ %2$s:

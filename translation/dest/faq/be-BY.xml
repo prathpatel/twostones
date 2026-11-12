@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">Частыя пытанні</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess — гэта камбінацыя live/light/libre(жывы/лёгкі/вольны) і chess(шахматы). Lichess вымаўляцца як %1$s.</string>
   <string name="keyboardShortcuts">Якія ёсць спалучэнні клавіш?</string>
   <string name="explainingEnPassant">Гэта дазволены ход, які называецца \"ўзяцце на праходзе\". Артыкул на вікіпедыі дае %1$s.
 

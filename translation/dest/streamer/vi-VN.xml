@@ -5,7 +5,6 @@
   <string name="rules">Luật phát trực tiếp</string>
   <string name="connect">Kết nối</string>
   <string name="disconnect">Ngắt kết nối</string>
-  <string name="streamerName">Tên luồng của bạn trên Lichess</string>
   <string name="visibility">Hiện lên ở trang các Streamer</string>
   <string name="headline">Tiêu đề</string>
   <string name="maxSize">Kích cỡ tối đa: %s</string>

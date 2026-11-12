@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">Tez-tezden soralatuǵın sorawlar</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess live/light/libre hám chess sózleriniń qosındısı. Ol %1$s dep aytıladı.</string>
   <string name="configure">sazlaw</string>
   <string name="accounts">Akkauntlar</string>
 </resources>

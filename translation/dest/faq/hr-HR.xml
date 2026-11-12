@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">Često Postavljana Pitanja</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess je šah opisan sa izrazima uživo/lako/beslatno. Izgovara se kao %1$s.</string>
   <string name="keyboardShortcuts">Koje tipkovničke prečice postoje?</string>
   <string name="explainingEnPassant">Ovaj potez važi u šahu i poznat je kao \"en passant\". Članak na Wikipediji daje %1$s poteza \"en passant\".
 

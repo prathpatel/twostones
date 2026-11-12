@@ -5,7 +5,6 @@
   <string name="rules">Κανόνες μετάδοσης</string>
   <string name="connect">Σύνδεση</string>
   <string name="disconnect">Αποσύνδεση</string>
-  <string name="streamerName">Το όνομα σας ως streamer στο Lichess</string>
   <string name="visibility">Ορατή στη σελίδα των streamers</string>
   <string name="headline">Κεφαλίδα</string>
   <string name="maxSize">Μέγιστο μέγεθος: %s</string>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">PBR</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess është kombinim i “live”/“light”/“libre” dhe “chess”. Shqiptohet %1$s.</string>
   <string name="keyboardShortcuts">Çfarë shkurtore tastiere ka?</string>
   <string name="explainingEnPassant">Kjo është një lëvizje e ligjshme, e njohur si “me prerje”. Artikulli i Wikipedia-s jep një %1$s.
 

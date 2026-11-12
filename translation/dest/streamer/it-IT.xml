@@ -5,7 +5,6 @@
   <string name="rules">Regole di streaming</string>
   <string name="connect">Connetti</string>
   <string name="disconnect">Disconnetti</string>
-  <string name="streamerName">Il tuo nome da streamer su Lichess</string>
   <string name="visibility">Visibile sulla pagina degli streamer</string>
   <string name="headline">Intestazione</string>
   <string name="maxSize">Dimensione massima: %s</string>

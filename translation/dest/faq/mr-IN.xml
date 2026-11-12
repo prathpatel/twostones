@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">वारंवार विचारलेले प्रश्न</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess हा थेट/चैतन्यशील/मुक्त बुद्धिबळाचे मिश्रण आहे. त्याचा उच्चार %1$s असा होतो.</string>
   <string name="keyboardShortcuts">कोणते कळफलक शॉर्टकट आहेत?</string>
   <string name="explainingEnPassant">ही एक कायदेशीर चाल आहे जी फ्रेंचमध्ये \"एऑन पासऑ\" (मराठीत उत्तीर्ण मध्ये) म्हणून ओळखली जाते. विकिपीडिया लेखात %1$s दिला आहे.
 

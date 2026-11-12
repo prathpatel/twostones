@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">常見問題</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess來自\'直播/光明/自由\'(live/light/libre) 加上\'國際象棋\'(chess) 的組合，讀做%1$s。</string>
   <string name="keyboardShortcuts">有哪些快捷鍵？</string>
   <string name="explainingEnPassant">這是一個叫做“吃過路兵”的合法著法。維基百科文章給出了一個%1$s。
 

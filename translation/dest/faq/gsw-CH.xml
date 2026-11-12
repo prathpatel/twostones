@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">Hüfig gschtellti Frage (FAQ)</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess isch e Kombinazion us live/light/libre und Schach. Usgschproche wirds: %1$s.</string>
   <string name="keyboardShortcuts">Was für Taschtaturchürzel gits da?</string>
   <string name="explainingEnPassant">Das isch en regelkonforme Zug, bekannt als \"en passant\". De Wikipedia Artikel git e %1$s.
 

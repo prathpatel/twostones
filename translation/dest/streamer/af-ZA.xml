@@ -3,7 +3,6 @@
   <string name="live">Regstreeks!</string>
   <string name="offline">AFLYN</string>
   <string name="rules">Uitsaai reëls</string>
-  <string name="streamerName">Jou uitsendingsnaam op Lichess</string>
   <string name="visibility">Sigbaar op die aanbiederblad</string>
   <string name="headline">Hoofopskrif</string>
   <string name="maxSize">Maksimum grootte: %s</string>

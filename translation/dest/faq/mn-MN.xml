@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">Олон асуугддаг асуултууд</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess гэдэг нь шууд(live)/хөнгөн(light)/эрх чөлөө(libre) болон шатар(chess) гэх үгсийн нийлбэр юм. Ингэж дуудна %1$s.</string>
   <string name="explainingEnPassant">Энэ нь \"en passant\" гэгддэг нүүдэл. Энэ Wikipedia нийтлэл %1$s.
 
 %2$s-ий 3.7.3.1 ба 3.7.3.2-ын хэсгүүдэд заахдаа:

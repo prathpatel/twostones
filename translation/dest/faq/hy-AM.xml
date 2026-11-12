@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">ՀՏՀ</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess-ը live/light/libre և chess բառերի համադրությունից է` կենդանի, թեթև և ազատ շախմատ։ Lichess-ն արտասանվում է %1$s։</string>
   <string name="explainingEnPassant">Այս քայլը հայտնի է որպես «կողանցիկ հարված»։ Վիքիպեդիայի հոդվածը տալիս է %1$s։
 
 Այն նկարագրված է 3․7 (d) բաժնում, %2$s․

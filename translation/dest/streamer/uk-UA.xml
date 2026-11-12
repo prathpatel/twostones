@@ -5,7 +5,6 @@
   <string name="rules">Правила трансляцій</string>
   <string name="connect">Приєднати</string>
   <string name="disconnect">Від\'єднати</string>
-  <string name="streamerName">Ваше ім\'я для трансляцій на Lichess</string>
   <string name="visibility">Видимий на сторінці стримерів</string>
   <string name="headline">Заголовок</string>
   <string name="maxSize">Максимальний розмір: %s</string>

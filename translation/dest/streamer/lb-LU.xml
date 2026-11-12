@@ -5,7 +5,6 @@
   <string name="rules">Streaming-Reegelen</string>
   <string name="connect">Connectéieren</string>
   <string name="disconnect">Deconnectéieren</string>
-  <string name="streamerName">Däi Streamernumm op Lichess</string>
   <string name="visibility">Siichtbar op der Streamersäit</string>
   <string name="headline">Iwwerschrëft</string>
   <string name="maxSize">Maximal Gréisst: %s</string>

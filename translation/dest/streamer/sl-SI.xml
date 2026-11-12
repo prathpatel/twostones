@@ -5,7 +5,6 @@
   <string name="rules">Pravila za vodenje prenosa</string>
   <string name="connect">Poveži</string>
   <string name="disconnect">Prekini povezavo</string>
-  <string name="streamerName">Vaše ime kot voditelj prenosa na Lichess</string>
   <string name="visibility">Viden na strani voditeljev prenosov</string>
   <string name="headline">Naslov</string>
   <string name="maxSize">Največja velikost: %s</string>

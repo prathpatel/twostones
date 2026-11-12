@@ -5,7 +5,6 @@
   <string name="rules">חוקי שידור</string>
   <string name="connect">חיבור</string>
   <string name="disconnect">ניתוק</string>
-  <string name="streamerName">השם שלכם כשדרנים ב־Lichess</string>
   <string name="visibility">גלוי בעמוד השדרנים</string>
   <string name="headline">כּוֹתֶרֶת</string>
   <string name="maxSize">גודל מרבי: %s</string>

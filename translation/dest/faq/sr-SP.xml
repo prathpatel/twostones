@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">Најчешће Постављена Питања</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess је комбинација речи live/light/libre (уживо/лако/слободно) и chess (шах). Изговара се %1$s.</string>
   <string name="explainingEnPassant">Ово је легалан потез познат као \"ан пасан\". Википедија чланак даје %1$s.
 
 Описан је у члановима 3.7.3.1 и 3.7.3.2 %2$s:

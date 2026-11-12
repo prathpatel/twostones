@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">SSS</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess, \"live/light/libre\" kelimeleri ile satranç anlamına gelen \"chess\" kelimesinin birleşimiyle oluşturulmuştur.
-
-%1$s  diye okunur.</string>
   <string name="keyboardShortcuts">Burada hangi klavye kısayolları var?</string>
   <string name="explainingEnPassant">Bu \"geçerken alma\" olarak bilinen yasal bir hamledir. Vikipedi\'de bu konu üzerine %1$s mevcut.
 

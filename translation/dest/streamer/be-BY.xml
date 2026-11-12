@@ -5,7 +5,6 @@
   <string name="rules">Правілы стрымаў</string>
   <string name="connect">Далучыцца</string>
   <string name="disconnect">Адключыцца</string>
-  <string name="streamerName">Ваша стрымерскае імя на Lichess</string>
   <string name="visibility">Паказваць на старонке са стрымерамі</string>
   <string name="headline">Загаловак</string>
   <string name="maxSize">Максімальны памер: %s</string>

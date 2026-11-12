@@ -3,7 +3,6 @@
   <string name="live">GYVAI!</string>
   <string name="offline">NEPRISIJUNGĘ</string>
   <string name="rules">Transliacijų taisyklės</string>
-  <string name="streamerName">Jūsų transliuotojo vardas Lichess</string>
   <string name="visibility">Matomas transliuotojų puslapyje</string>
   <string name="headline">Antraštė</string>
   <string name="maxSize">Maksimalus dydis: %s</string>

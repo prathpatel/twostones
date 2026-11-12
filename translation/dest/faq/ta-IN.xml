@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">அடிக்கடிகேட்கக்கூடிய கேள்விகள்</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">லைச்சஸ் என்பது லைவ்/லைட்/லிப்ரே மற்றும் செஸ் ஆகியவற்றின் கலவையாகும். இது %1$s என உச்சரிக்கப்படுகிறது.</string>
   <string name="keyboardShortcuts">என்னென்ன விசைப்பலகை குறுக்குவழிகள் உள்ளன?</string>
   <string name="explainingEnPassant">இது \"en passant\" என்று அழைக்கப்படும் ஒரு சட்டப்பூர்வ நகர்வு. விக்கிபீடியா கட்டுரை %1$s ஐ வழங்குகிறது.
 

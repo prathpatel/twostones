@@ -5,7 +5,6 @@
   <string name="rules">Strim qiliş qoidalari</string>
   <string name="connect">Ulaş</string>
   <string name="disconnect">Uziş</string>
-  <string name="streamerName">Lichessʼdagi strimer ismingiz</string>
   <string name="visibility">Strimerlar sahifasida körinsin</string>
   <string name="headline">Sarlavha</string>
   <string name="maxSize">Maksimal hajmi: %s</string>

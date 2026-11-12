@@ -5,7 +5,6 @@
   <string name="rules">Normas das transmisións</string>
   <string name="connect">Conectar</string>
   <string name="disconnect">Desconectar</string>
-  <string name="streamerName">O teu nome de presentador en Lichess</string>
   <string name="visibility">Visible na páxina de presentadores</string>
   <string name="headline">Titular</string>
   <string name="maxSize">Tamaño máximo: %s</string>

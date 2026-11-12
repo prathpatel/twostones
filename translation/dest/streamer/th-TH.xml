@@ -5,7 +5,6 @@
   <string name="rules">กฎในการสตรีม</string>
   <string name="connect">เชื่อมต่อ</string>
   <string name="disconnect">ยกเลิกการเชื่อมต่อ</string>
-  <string name="streamerName">ชื่อสตรีมเมอร์ของคุณบน Lichess</string>
   <string name="visibility">สามารถมองเห็นได้ในหน้าของสตรีมเมอร์</string>
   <string name="headline">หัวเรื่อง</string>
   <string name="maxSize">ขนาดใหญ่สุด: %s</string>

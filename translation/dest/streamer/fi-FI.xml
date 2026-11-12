@@ -5,7 +5,6 @@
   <string name="rules">Striimaussäännöt</string>
   <string name="connect">Yhdistä</string>
   <string name="disconnect">Katkaise yhteys</string>
-  <string name="streamerName">Striimaajanimesi Lichessissä</string>
   <string name="visibility">Näkyy striimaajat-sivulla</string>
   <string name="headline">Otsikko</string>
   <string name="maxSize">Enimmäiskoko: %s</string>

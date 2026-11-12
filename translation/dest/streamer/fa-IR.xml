@@ -5,7 +5,6 @@
   <string name="rules">قاعده‌های جَریانیدن</string>
   <string name="connect">اتصال</string>
   <string name="disconnect">قطع</string>
-  <string name="streamerName">نام جَریانگرتان در Lichess</string>
   <string name="visibility">نمایان در صفحهٔ جَریانگران</string>
   <string name="headline">عنوان .</string>
   <string name="maxSize">بیشترین اندازه یا حجم: %s</string>

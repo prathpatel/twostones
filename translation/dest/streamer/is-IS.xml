@@ -5,7 +5,6 @@
   <string name="rules">Reglur um að streyma</string>
   <string name="connect">Tengjast</string>
   <string name="disconnect">Aftengjast</string>
-  <string name="streamerName">Streymaranafn þitt á Lichess</string>
   <string name="visibility">Sýnilegt á síðu streymara</string>
   <string name="headline">Fyrirsögn</string>
   <string name="maxSize">Hámarksstærð: %s</string>

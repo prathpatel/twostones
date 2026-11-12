@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">Сұрақ-Жауап</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Личес деген live/light/libre деген сөз бен chess сөзінің қосындысы. Ол %1$s деп оқылады.</string>
   <string name="keyboardShortcuts">Бұнда пернетіркестер қандай?</string>
   <string name="explainingEnPassant">Бұл ережеге сай \"жолай басу\" жүрісі. Википедия мақаласында %1$s беріп тұр.
 

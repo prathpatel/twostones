@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">שאלות נפוצות</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess הוא הלחם של Live, Light, Libre - חיים, אור וחופש; ו־Chess - שחמט. מבטאים זאת כך: %1$s.</string>
   <string name="keyboardShortcuts">באילו קיצורי מקלדת ניתן להשתמש?</string>
   <string name="explainingEnPassant">זהו מסע חוקי הידוע בכינויו \"הכאה דרך הילוכו״. הערך הויקיפדי נותן %1$s. 
 

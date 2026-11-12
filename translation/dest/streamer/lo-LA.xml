@@ -5,7 +5,6 @@
   <string name="rules">ກົດລະບຽບການສຕຣີມ</string>
   <string name="connect">ເຊື່ອມຕໍ່</string>
   <string name="disconnect">ຍົກເລີກການເຊື່ອມຕໍ່</string>
-  <string name="streamerName">ຊື່ຜູ້ສຕຣີມເມີຂອງທ່ານໃນ Lichess</string>
   <string name="visibility">ສະແດງຢູ່ໃນໜ້າຜູ້ສຕຣີມເມີ</string>
   <string name="headline">ຫົວຂໍ້ແນະນຳ</string>
   <string name="maxSize">ຂະໜາດສູງສຸດ: %s</string>

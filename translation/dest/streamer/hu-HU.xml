@@ -5,7 +5,6 @@
   <string name="rules">Közvetítés szabályai</string>
   <string name="connect">Kapcsolódás</string>
   <string name="disconnect">Kapcsolat bontása</string>
-  <string name="streamerName">A közvetítői neved a Lichess-en</string>
   <string name="visibility">Megjelenik a közvetítők oldalán</string>
   <string name="headline">Főcím</string>
   <string name="maxSize">Maximális méret: %s</string>

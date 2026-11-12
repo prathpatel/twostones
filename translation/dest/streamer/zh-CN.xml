@@ -5,7 +5,6 @@
   <string name="rules">直播规则</string>
   <string name="connect">连接</string>
   <string name="disconnect">断开连接</string>
-  <string name="streamerName">您在 Lichess 上的主播名称</string>
   <string name="visibility">显示在主播页面</string>
   <string name="headline">标题</string>
   <string name="maxSize">最大尺寸：%s</string>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">ČPP</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess je kombinacija \"uživo / lahko / slobodno\" i šaha. Izgovara se %1$s.</string>
   <string name="keyboardShortcuts">Koje prečice na tastaturi postoje?</string>
   <string name="explainingEnPassant">Ovo je legalan potez poznat kao \"en passant\". Članak na Wikipediji na engleskom jeziku daje %1$s.
 

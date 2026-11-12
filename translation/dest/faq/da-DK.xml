@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">FAQ</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess er en kombination af live/light/libre og chess. Det udtales %1$s.</string>
   <string name="keyboardShortcuts">Hvilke tastaturgenveje findes der?</string>
   <string name="explainingEnPassant">Dette er et lovligt træk kendt som \"en passant\". Wikipedia-artiklen giver en %1$s.
 

@@ -5,7 +5,6 @@
   <string name="rules">Zuzenekoetarako arauak</string>
   <string name="connect">Konektatu</string>
   <string name="disconnect">Deskonektatu</string>
-  <string name="streamerName">Zure esatari-izena Lichessen</string>
   <string name="visibility">Esatarien orrialdean ikusgai</string>
   <string name="headline">Izenburua</string>
   <string name="maxSize">Gehienezko tamaina: %s</string>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">FAQ</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess ist eine Kombination aus live/light/libre und Schach. Es wird %1$s ausgesprochen.</string>
   <string name="keyboardShortcuts">Welche Tastaturkürzel gibt es?</string>
   <string name="explainingEnPassant">Dies ist ein erlaubter Zug, bekannt als \"en passant\". Der Wikipedia-Artikel gibt einen %1$s.
 

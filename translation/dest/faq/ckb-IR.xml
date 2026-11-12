@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">پرسیارەکان باوەکان</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">لیچێس تێکەڵەیەکە لە زیندوو/ئاسان/ئازاد و شەترەنج. بە %1$s دەخوێندرێتەوە.</string>
   <string name="keyboardShortcuts">چ کورتکراوەی کیبۆردێکت هەیە؟</string>
   <string name="explainingEnPassant">ئەمە جوڵەیەکی یاساییە، بە \"تێپەڕاند\" \"ئەن پاسێنت\" دەناسرێت. ویکپیدیا ئەم داڕشتنەمان پێدەدات%1$s.
 ڕوونکراوەتەوە لە بەشی 3.7 (d) لە%2$s:

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">പതിവായി ചോദിക്കുന്ന ചോദ്യങ്ങൾ</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Live/light/libre തത്സമയം, ഭാരം കുറഞ്ഞ, സൗ ജന്യ സ്വതന്ത്രമായ chess ന്റേ സംയോജനം ആണ് Lichess. അതിനെ ഉച്ചരിക്കുന്നതു %1$s.</string>
   <string name="accounts">അക്കൗണ്ടുകള്‍</string>
 </resources>

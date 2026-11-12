@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">Algengar Spurningar</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess er blanda af lifandi (e. live), létt (e. light), frítt (e. libre) og skák (e. chess). Orðið er borið fram %1$s.</string>
   <string name="keyboardShortcuts">Hvaða flýtilyklar eru til?</string>
   <string name="explainingEnPassant">Þetta er löglegur leikur er kallast „framhjáhlaup“. Wikipedíugreinin sýnir %1$s.
 

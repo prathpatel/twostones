@@ -3,7 +3,6 @@
   <string name="live">ಲೈವ್!</string>
   <string name="offline">ಆಫ್‌ಲೈನ್</string>
   <string name="rules">ಸ್ಟ್ರೀಮಿಂಗ್ ನಿಯಮಗಳು</string>
-  <string name="streamerName">Lichess ನಲ್ಲಿ ನಿಮ್ಮ ಸ್ಟ್ರೀಮರ್ ಹೆಸರು</string>
   <string name="visibility">ಸ್ಟ್ರೀಮರ್‌ಗಳ ಪುಟದಲ್ಲಿ ಗೋಚರಿಸುತ್ತದೆ</string>
   <string name="headline">ಶೀರ್ಷಿಕೆ</string>
   <string name="maxSize">ಗರಿಷ್ಠ ಗಾತ್ರ: %s</string>

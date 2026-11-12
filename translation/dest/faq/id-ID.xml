@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">Pertanyaan Umum</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess adalah kombinasi antara langsung/ringan/kebebasan dan catur. Itu diucapkan %1$s.</string>
   <string name="keyboardShortcuts">Apa saja pintasan papan ketik yang ada?</string>
   <string name="explainingEnPassant">Ini merupakan gerakan legal yang dinamakan \"en passant\". Artikel Wikipedia memberikan sebuah %1$s.
 

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">Συχνές ερωτήσεις</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Το Lichess είναι ένας συνδυασμός των «live/light/libre». Προφέρεται ως %1$s.</string>
   <string name="keyboardShortcuts">Υπάρχουν συντομεύσεις με το πληκτρολόγιο;</string>
   <string name="explainingEnPassant">Αυτή είναι μια νόμιμη κίνηση γνωστή ως «en passant» (αν πασσάν). Το άρθρο της Βικιπαίδειας δίνει μια %1$s.
 

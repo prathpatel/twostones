@@ -5,7 +5,6 @@
   <string name="rules">Правила стримов</string>
   <string name="connect">Подключиться</string>
   <string name="disconnect">Отключиться</string>
-  <string name="streamerName">Ваше имя стримера на Lichess</string>
   <string name="visibility">Видимость на странице стримеров</string>
   <string name="headline">Заголовок</string>
   <string name="maxSize">Максимальный размер: %s</string>

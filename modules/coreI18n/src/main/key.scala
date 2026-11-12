@@ -137,7 +137,6 @@ object I18nKey:
 
   object faq:
     val `faqAbbreviation`: I18nKey = "faq:faqAbbreviation"
-    val `lichessCombinationLiveLightLibrePronounced`: I18nKey = "faq:lichessCombinationLiveLightLibrePronounced"
     val `keyboardShortcuts`: I18nKey = "faq:keyboardShortcuts"
     val `explainingEnPassant`: I18nKey = "faq:explainingEnPassant"
     val `positions`: I18nKey = "faq:positions"
@@ -942,7 +941,6 @@ object I18nKey:
     val `rules`: I18nKey = "streamer:rules"
     val `connect`: I18nKey = "streamer:connect"
     val `disconnect`: I18nKey = "streamer:disconnect"
-    val `streamerName`: I18nKey = "streamer:streamerName"
     val `visibility`: I18nKey = "streamer:visibility"
     val `headline`: I18nKey = "streamer:headline"
     val `maxSize`: I18nKey = "streamer:maxSize"
@@ -1030,7 +1028,6 @@ object I18nKey:
     val `community`: I18nKey = "ublog:community"
     val `best`: I18nKey = "ublog:best"
     val `all`: I18nKey = "ublog:all"
-    val `byLichess`: I18nKey = "ublog:byLichess"
     val `etiquette`: I18nKey = "ublog:etiquette"
 
   object variant:

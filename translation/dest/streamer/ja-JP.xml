@@ -5,7 +5,6 @@
   <string name="rules">配信のルール</string>
   <string name="connect">アカウント連携</string>
   <string name="disconnect">アカウント連携を外す</string>
-  <string name="streamerName">Lichess での配信者名</string>
   <string name="visibility">配信者ページに表示</string>
   <string name="headline">見出し</string>
   <string name="maxSize">最大サイズ：%s</string>

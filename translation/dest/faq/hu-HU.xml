@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">GYIK</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">A Lichess a \"live/light/libre\" (élő/könnyed/szabad) és \"chess\" (sakk) szavak kombinációja. Így ejtsd ki: %1$s.</string>
   <string name="keyboardShortcuts">Melyek az elérhető gyorsbilllentyűk?</string>
   <string name="explainingEnPassant">Ez egy szabályos lépés, amit \"en passant\"-nak hívnak. A Wikipédia szócikk %1$s.
 

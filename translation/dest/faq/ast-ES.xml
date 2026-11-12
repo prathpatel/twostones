@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">Entrugues frecuentes</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">Lichess ye una combinación de live/light/llibre (en directu , llixeru y llibre , n\'inglés) y chess (axedrez, n\'inglés). Pronúnciase %1$s.</string>
   <string name="keyboardShortcuts">¿Qué atayos de tecláu hai?</string>
   <string name="explainingEnPassant">Esti movimientu ye llegal, y llámase \"tomar al pasu\". L\'artículu de Wikipedia da una %1$s al mesmu.
 

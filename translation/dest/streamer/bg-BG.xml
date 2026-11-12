@@ -5,7 +5,6 @@
   <string name="rules">Правила за стриймове</string>
   <string name="connect">Свързване</string>
   <string name="disconnect">Прекъсване</string>
-  <string name="streamerName">Име на вашата стрийм страница в Lichess</string>
   <string name="visibility">Видимо на публичната страницата със стриймъри</string>
   <string name="headline">Заглавие</string>
   <string name="maxSize">Максимална големина: %s</string>

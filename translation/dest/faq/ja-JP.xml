@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="faqAbbreviation">FAQ</string>
-  <string name="lichessCombinationLiveLightLibrePronounced">「Lichess」はlive（ライブ）/light（軽い）/libre（自由） と chess の組み合わせです。発音は %1$s です。</string>
   <string name="keyboardShortcuts">操作のショートカットキーはありますか？</string>
   <string name="explainingEnPassant">それは「アンパッサン (en passant)」というルールです。ウィキペディアの記事がまず%1$sになるでしょう。
 これは%2$sの第 3.7 (d) 項にあります。

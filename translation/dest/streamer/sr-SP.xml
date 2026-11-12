@@ -3,7 +3,6 @@
   <string name="live">УЖИВО!</string>
   <string name="offline">НИЈЕ НА МРЕЖИ</string>
   <string name="rules">Правила стримовања</string>
-  <string name="streamerName">Твоје стримерско име на Lichess-у</string>
   <string name="visibility">Видљив на страници стримера</string>
   <string name="headline">Наслов</string>
   <string name="maxSize">Максимална величина: %s</string>

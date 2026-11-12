@@ -5,7 +5,6 @@
   <string name="rules">Regulament pentru streaming</string>
   <string name="connect">Conectare</string>
   <string name="disconnect">Deconectare</string>
-  <string name="streamerName">Numele tău de streamer pe Lichess</string>
   <string name="visibility">Vizibil pe pagina streamerilor</string>
   <string name="headline">Titlu</string>
   <string name="maxSize">Dimensiune maximă: %s</string>
