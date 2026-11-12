@@ -11,7 +11,8 @@ export const ratingView = ({ opts, data, setupCtrl }: LobbyController): MaybeVNo
 
   const perf = setupCtrl.selectedPerf();
 
-  if (!perf) return undefined;
+  // unlimited games are never rated, so no rating applies
+  if (!perf || setupCtrl.timeControl.mode() === 'unlimited') return undefined;
 
   return h(
     'div.ratings',

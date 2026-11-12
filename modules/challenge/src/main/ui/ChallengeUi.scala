@@ -38,9 +38,11 @@ final class ChallengeUi(helpers: Helpers):
       .css("challenge.page")
 
   private def challengeTitle(c: Challenge)(using ctx: Context) =
-    val speed = c.clock.map(_.config).fold(chess.Speed.Correspondence.name) { clock =>
-      s"${chess.Speed(clock).name} (${clock.show})"
-    }
+    val speed = c.clock.map(_.config) match
+      case Some(clock) => s"${chess.Speed(clock).name} (${clock.show})"
+      case None =>
+        c.daysPerTurn.fold(trans.site.unlimited.txt()): days =>
+          s"${chess.Speed.Correspondence.name} (${pluralize("day", days.value)} per move)"
     val variant = s" ${c.boardSize.name}"
     val challenger = c.challengerUser.fold(trans.site.anonymous.txt()): reg =>
       s"${titleNameOrId(reg.id)}${ctx.pref.showRatings.so(s" (${reg.rating.show})")}"
