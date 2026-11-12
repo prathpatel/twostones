@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">スタンダード</string>
-  <string name="standardTitle">チェスの標準ルール (FIDE)</string>
   <string name="atomic">アトミック</string>
   <string name="racingKings">キング・レース</string>
   <string name="crazyhouse">クレージーハウス</string>

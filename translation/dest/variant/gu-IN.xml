@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">સ્ટાન્ડર્ડ</string>
-  <string name="standardTitle">ચેસના માનક નિયમો (FIDE)</string>
   <string name="atomic">એટોમિક</string>
   <string name="racingKings">રેસિંગ કિંગ્સ</string>
   <string name="crazyhouse">ક્રેઝીહાઉસ</string>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">Standard</string>
-  <string name="standardTitle">Yasayên standard yên kişikê (FIDE)</string>
   <string name="atomic">Atomîk</string>
   <string name="racingKings">Racing Kings</string>
 </resources>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">Standardowe</string>
-  <string name="standardTitle">Standardowe zasady szachów (FIDE)</string>
   <string name="atomic">Atomowe</string>
   <string name="racingKings">Wyścig królów</string>
   <string name="crazyhouse">Crazyhouse</string>

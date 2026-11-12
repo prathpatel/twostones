@@ -745,8 +745,6 @@ interface I18n {
     abortTheGame: string;
     /** About */
     about: string;
-    /** About bots */
-    aboutBotsOnLichess: string;
     /** About %s */
     aboutX: I18nFormat;
     /** Accept */
@@ -1973,7 +1971,7 @@ interface I18n {
     racingKings: string;
     /** Standard */
     standard: string;
-    /** Standard rules of chess (FIDE) */
+    /** Standard rules of Go */
     standardTitle: string;
   };
   voiceCommands: {

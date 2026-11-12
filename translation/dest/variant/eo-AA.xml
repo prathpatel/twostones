@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">Normala</string>
-  <string name="standardTitle">Normal reguloj ŝakaj (FIDE)</string>
   <string name="atomic">Atoma</string>
   <string name="racingKings">Konkuro reĝa</string>
   <string name="crazyhouse">Frenezeja</string>

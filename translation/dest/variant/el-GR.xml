@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">Κανονικό</string>
-  <string name="standardTitle">Πρότυποι κανόνες του σκακιού (FIDE)</string>
   <string name="atomic">Πυρηνικό</string>
   <string name="racingKings">Βασιλικός αγώνας</string>
   <string name="crazyhouse">Τρελάδικο</string>

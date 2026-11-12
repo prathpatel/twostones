@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">Стандартен</string>
-  <string name="standardTitle">Стандартни правила на шаха (ФИДЕ)</string>
   <string name="atomic">Атомен шах</string>
   <string name="racingKings">Препускащи царе</string>
   <string name="crazyhouse">Крейзихаус</string>

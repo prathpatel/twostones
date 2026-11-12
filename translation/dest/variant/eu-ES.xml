@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">Ohikoa</string>
-  <string name="standardTitle">Xakearen Lege arruntak (FIDE)</string>
   <string name="atomic">Atomikoa</string>
   <string name="racingKings">Errege korrikalariak</string>
   <string name="crazyhouse">Auto-fitxa-pasa</string>

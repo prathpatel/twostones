@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">Standard</string>
-  <string name="standardTitle">Standardregler for sjakk (FIDE)</string>
   <string name="atomic">Atomsjakk</string>
   <string name="racingKings">Kongeløp</string>
   <string name="crazyhouse">Galimatias</string>

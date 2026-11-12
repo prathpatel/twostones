@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">Звычайныя шахматы</string>
-  <string name="standardTitle">Стандартныя правілы шахмат (ФІДЭ)</string>
   <string name="atomic">Атамныя шахматы</string>
   <string name="racingKings">Гонка каралёў</string>
   <string name="crazyhouse">Шведкі на дваіх</string>

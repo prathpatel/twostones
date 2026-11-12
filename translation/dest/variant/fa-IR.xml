@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">اِستانده</string>
-  <string name="standardTitle">قانون‌های اِستاندهٔ شطرنج (فیده)</string>
   <string name="atomic">اِنفجار</string>
   <string name="racingKings">دویِ شاهان</string>
   <string name="crazyhouse">دیوانه‌خانه</string>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">Standard</string>
-  <string name="standardTitle">Standardregler för schack (FIDE)</string>
   <string name="atomic">Atomiskt</string>
   <string name="racingKings">Racingkungar</string>
   <string name="crazyhouse">Crazyhouse</string>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">الأساسي</string>
-  <string name="standardTitle">قواعد الشطرنج القياسية (FIDE)</string>
   <string name="atomic">ذري</string>
   <string name="racingKings">سباق الملوك</string>
   <string name="crazyhouse">البيت المجنون</string>

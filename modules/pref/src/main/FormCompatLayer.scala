@@ -27,13 +27,9 @@ object FormCompatLayer:
           "behavior",
           List(
             "moveEvent",
-            "premove",
             "takeback",
-            "autoQueen",
-            "autoThreefold",
             "submitMove",
-            "confirmResign",
-            "keyboardMove"
+            "confirmResign"
           )
         )
       )
@@ -47,7 +43,6 @@ object FormCompatLayer:
             "destination",
             "coords",
             "replay",
-            "pieceNotation",
             "blindfold"
           )
         )

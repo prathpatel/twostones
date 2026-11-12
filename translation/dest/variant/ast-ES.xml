@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">Estándar</string>
-  <string name="standardTitle">Riegles d\'axedrez estándar (FIDE)</string>
   <string name="atomic">Atómicu</string>
   <string name="racingKings">Reyes en carrera</string>
   <string name="crazyhouse">Revuelta</string>

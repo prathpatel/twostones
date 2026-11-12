@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">Normaali</string>
-  <string name="standardTitle">Shakin perussäännöt (FIDE)</string>
   <string name="atomic">Atomishakki</string>
   <string name="racingKings">Kuninkaiden kilpajuoksu</string>
   <string name="crazyhouse">Crazyhouse</string>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">Стандардна</string>
-  <string name="standardTitle">Стандардна правила шаха (ФИДЕ)</string>
   <string name="atomic">Атомски</string>
   <string name="racingKings">Трка Краљева</string>
   <string name="fromPosition">Из Позиције</string>

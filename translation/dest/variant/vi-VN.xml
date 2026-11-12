@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">Tiêu chuẩn</string>
-  <string name="standardTitle">Luật cờ vua tiêu chuẩn (FIDE)</string>
   <string name="atomic">Cờ nguyên tử</string>
   <string name="racingKings">Vua chạy đua</string>
   <string name="crazyhouse">Cờ đặt quân</string>
