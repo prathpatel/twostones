@@ -66,12 +66,6 @@ final class Env(
 
   Bus.sub[lila.core.msg.SystemMsg](api.systemPost(_))
 
-  private val payoutsUrl = appConfig.get[Url]("payouts.portal")
-
-  Bus.sub[lila.core.msg.PayoutMessages]: p =>
-    payoutsUrl.value.nonEmpty.so:
-      p.userIds.foreach: userId =>
-        api.postPreset(userId, MsgPreset.payoutEligible(payoutsUrl, p))
 
   Bus.sub[TellUserIn]:
     case TellUserIn.Read(userId, msg) =>

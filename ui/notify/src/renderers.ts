@@ -125,9 +125,9 @@ export default function makeRenderers(): Renderers {
     planStart: {
       html: n =>
         generic(n, '/patron', licon.Wings, [
-          h('span', [h('strong', 'You just became a lichess Patron.'), drawTime(n)]),
+          h('span', [h('strong', 'You just became a Patron.'), drawTime(n)]),
         ]),
-      text: _ => 'You just became a lichess Patron.',
+      text: _ => 'You just became a Patron.',
     },
     planExpire: {
       html: n =>

@@ -32,4 +32,3 @@ final class Env(
 
   // type can be inferred but clearer to leave it
   Bus.sub[ChargeEvent](api.charge(_))
-  Bus.sub[lila.core.msg.PayoutMessages](api.payoutNotify(_))

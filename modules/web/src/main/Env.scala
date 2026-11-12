@@ -50,38 +50,11 @@ final class Env(
   PrometheusReporter.setupPeriodicMonitor()
 
   object settings:
-    import lila.core.data.{ Strings, UserIds }
+    import lila.core.data.Strings
     import lila.memo.SettingStore.Strings.given
-    import lila.memo.SettingStore.UserIds.given
 
     val noDelaySecret = settingStore[Strings](
       "noDelaySecrets",
       default = Strings(Nil),
       text = "Secret tokens that allows fetching ongoing games without the delay. Separated by commas.".some
     )
-    val prizeTournamentMakers = settingStore[UserIds](
-      "prizeTournamentMakers",
-      default = UserIds(Nil),
-      text =
-        "User IDs who can make prize tournaments (arena & swiss) without a warning. Separated by commas.".some,
-      perm = _.ManageTournament
-    )
-    val apiExplorerGamesPerSecond = settingStore[Int](
-      "apiExplorerGamesPerSecond",
-      default = 300,
-      text = "Opening explorer games per second".some
-    )
-
-  object lichobileDisables:
-    import lila.core.data.Strings
-    import lila.memo.SettingStore.Strings.given
-    import lila.core.i18n.{ I18nKey, Translate }
-
-    val setting = settingStore[Strings](
-      "lichobileDisables",
-      default = Strings(List("anonPuzzle")),
-      text = "Parts of the websites that are disabled for lichobile".some
-    )
-    def anonPuzzle(using Translate): Option[String] =
-      Option.when(setting.get().value.contains("anonPuzzle")):
-        I18nKey.msg.oldAppNoLongerSupportsPuzzles.txt("lichess.org/app")

@@ -127,11 +127,6 @@ object Form:
   ): Mapping[String] =
     cleanFewSymbolsText(minLength, maxLength, maxSymbols).verifying(nonEmptyOrSpace)
 
-  private val eventNameConstraint = Constraints.pattern(
-    regex = """[\p{L}\p{N}-\s:.,;'°ª\+]+""".r,
-    error = "Invalid characters; only letters, numbers, and common punctuation marks are accepted."
-  )
-
   private val symbolsRegex =
     raw"[\p{So}\p{block=Emoticons}\p{block=Miscellaneous Symbols and Pictographs}\p{block=Supplemental Symbols and Pictographs}]".r
 
@@ -148,19 +143,6 @@ object Form:
       regex = """[\w-]+""".r,
       error = "Invalid characters; only letters, numbers, and dashes are accepted."
     )
-
-  def eventName(minLength: Int, maxLength: Int, verifiedUser: Boolean) =
-    addLengthConstraints(cleanText, minLength, maxLength).verifying(
-      eventNameConstraint,
-      mustNotContainLichess(verifiedUser)
-    )
-
-  object mustNotContainLichess:
-    // \u0131\u0307 is ı (\u0131) with an i dot (\u0307)
-    private val regex = "(?iu)l(?:[i\u0456]|\u0131\u0307?)[c\u0441][h\u04bb][e\u0435][s\u0455]".r
-    def apply(verifiedUser: Boolean) = Constraint[String]: t =>
-      if regex.find(t) && !verifiedUser then V.Invalid(V.ValidationError("Must not contain \"lichess\""))
-      else V.Valid
 
   def stringIn(choices: Options[String]) =
     text.verifying(mustBeOneOf(choices.map(_._1)), hasKey(choices, _))
@@ -242,7 +224,6 @@ object Form:
         else V.Invalid(V.ValidationError("error.maxLength", length))
       }
 
-
   object url:
     import io.mola.galimatias.URL
     given Formatter[URL] = formatter.stringTryFormatter: s =>
@@ -312,7 +293,6 @@ object Form:
   ): Formatter[T] with
     def bind(key: String, data: Map[String, String]) = base.bind(key, data).map(sr.apply)
     def unbind(key: String, value: T) = base.unbind(key, rs(value))
-
 
   given Formatter[PerfKey] = formatter.stringOptionFormatter[PerfKey](_.value, PerfKey(_))
   val perfKey: Mapping[PerfKey] = typeIn[PerfKey](PerfKey.all)

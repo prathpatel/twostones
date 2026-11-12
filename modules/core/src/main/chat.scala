@@ -33,8 +33,6 @@ enum BusChan:
 object BusChan:
   type Select = BusChan.type => BusChan
 
-val etiquetteUrl = Url("lichess.org/page/chat-etiquette")
-
 enum PublicSource(val typeName: String, val someId: Any):
   case Tournament(id: TourId) extends PublicSource("tournament", id)
   case Simul(id: SimulId) extends PublicSource("simul", id)
@@ -72,10 +70,10 @@ object ResourceId extends OpaqueString[ResourceId]
 
 enum TimeoutReason(val key: String, val name: String):
   lazy val shortName = name.split(';').headOption | name
-  case PublicShaming extends TimeoutReason("shaming", "public shaming; please use lichess.org/report")
-  case Insult extends TimeoutReason("insult", s"disrespecting other players; see $etiquetteUrl")
-  case Spam extends TimeoutReason("spam", s"spamming the chat; see $etiquetteUrl")
-  case Other extends TimeoutReason("other", s"inappropriate behavior; see $etiquetteUrl")
+  case PublicShaming extends TimeoutReason("shaming", "public shaming; please use the report form instead")
+  case Insult extends TimeoutReason("insult", "disrespecting other players; see the Terms of Service")
+  case Spam extends TimeoutReason("spam", "spamming the chat; see the Terms of Service")
+  case Other extends TimeoutReason("other", "inappropriate behavior; see the Terms of Service")
 object TimeoutReason:
   val all = values.toList
   def apply(key: String) = all.find(_.key == key)
