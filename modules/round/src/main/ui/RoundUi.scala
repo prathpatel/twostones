@@ -69,8 +69,11 @@ final class RoundUi(helpers: Helpers, gameUi: lila.game.ui.GameUi):
     val speedAndClock =
       if game.sourceIs(_.Import) then "imported"
       else
-        game.clock.fold(chess.Speed.Correspondence.name): c =>
-          s"${chess.Speed(c.config).name} (${c.config.show})"
+        game.clock match
+          case Some(c) => s"${chess.Speed(c.config).name} (${c.config.show})"
+          case None =>
+            game.daysPerTurn.fold("unlimited"): days =>
+              s"${chess.Speed.Correspondence.name} (${pluralize("day", days.value)} per move)"
 
     val rated = game.rated.name
     val variant = s"${game.boardSize.name} Go"

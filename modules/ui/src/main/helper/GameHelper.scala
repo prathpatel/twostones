@@ -15,9 +15,8 @@ trait GameHelper:
   val gameLink = a(noFollow)
 
   def titleGame(g: Game) =
-    val speed = chess.Speed(g.clock.map(_.config)).name
-    val variant = g.variant.exotic.so(s" ${g.variant.name}")
-    s"$speed$variant Chess • ${playerText(g.whitePlayer)} vs ${playerText(g.blackPlayer)}"
+    val time = if g.isUnlimited then "Unlimited" else g.speed.name
+    s"$time ${g.boardSize.name} Go • ${playerText(g.whitePlayer)} vs ${playerText(g.blackPlayer)}"
 
   def shortClockName(clock: Option[Clock.Config])(using t: Translate): Frag =
     clock.fold[Frag](trans.site.unlimited())(shortClockName)
