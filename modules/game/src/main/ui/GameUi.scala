@@ -237,7 +237,8 @@ final class GameUi(helpers: Helpers):
           frag(
             showClock(g),
             separator,
-            s"${g.boardSize.name} • ${g.perfType.trans}",
+            g.boardSize.name,
+            (!g.isUnlimited).option(s" • ${g.perfType.trans}"),
             separator,
             ratedName(g.rated)
           )

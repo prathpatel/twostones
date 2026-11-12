@@ -30,8 +30,8 @@ def meta(
               ui.widgets.showClock(game),
               separator,
               ratedName(game.rated),
-              separator,
-              span(title := game.perfType.desc)(game.perfType.trans)
+              (!game.isUnlimited).option:
+                frag(separator, span(title := game.perfType.desc)(game.perfType.trans))
             ),
             pastMomentWithPreload(game.createdAt)
           ),

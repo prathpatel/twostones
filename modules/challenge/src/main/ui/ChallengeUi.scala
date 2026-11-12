@@ -60,7 +60,9 @@ final class ChallengeUi(helpers: Helpers):
         )(
           div(
             span(cls := "variant-link")(
-              s"${c.boardSize.name} • ${c.perfType.trans}",
+              c.boardSize.name,
+              // an unlimited game has no time category: the clock line below says "Unlimited"
+              (!c.unlimited).option(s" • ${c.perfType.trans}"),
               (c.handicap > 0).option(s" • ${c.handicap} stones handicap")
             ),
             br,

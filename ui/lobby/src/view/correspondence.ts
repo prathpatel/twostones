@@ -14,7 +14,9 @@ function renderSeek(ctrl: LobbyController, seek: Seek) {
       key: seek.id,
       role: 'button',
       tabindex: 0,
-      title: isJoinAction ? `${i18n.site.joinTheGame} - ${perfName(seek.perf.key)}` : i18n.site.cancel,
+      title: isJoinAction
+        ? `${i18n.site.joinTheGame} - ${seek.days ? perfName(seek.perf.key) : i18n.site.unlimited}`
+        : i18n.site.cancel,
       'data-id': seek.id,
     },
     [
