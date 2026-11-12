@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">ปกติ</string>
-  <string name="standardTitle">กฎกติกาหมากรุกมาตรฐาน (สหพันธ์หมากรุกโลก)</string>
   <string name="atomic">หมากปรมาณู</string>
   <string name="racingKings">แข่งคิง</string>
   <string name="crazyhouse">บ้านอลเวง</string>

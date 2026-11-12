@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">nasin Standard</string>
-  <string name="standardTitle">lawa pi musi pi lawa mije moli (FIDE)</string>
   <string name="atomic">nasin Atomic</string>
   <string name="racingKings">nasin pi lawa mije tawa wawa</string>
   <string name="crazyhouse">nasin Crazyhouse</string>

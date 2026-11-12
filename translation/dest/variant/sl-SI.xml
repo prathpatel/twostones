@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">Običajno</string>
-  <string name="standardTitle">Standardna pravila šaha (FIDE)</string>
   <string name="atomic">Atomski šah</string>
   <string name="racingKings">Dirkanje kraljev</string>
   <string name="crazyhouse">Nora hiša</string>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">Standard</string>
-  <string name="standardTitle">Règles standard des échecs (FIDE)</string>
   <string name="atomic">Atomique</string>
   <string name="racingKings">Sprint des rois</string>
   <string name="crazyhouse">Crazyhouse</string>

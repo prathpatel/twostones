@@ -305,7 +305,6 @@ Friends playing: %2$s</string>
   <string name="automaticallyProceedToNextGameAfterMoving">Automatically proceed to next game after moving</string>
   <string name="autoSwitch">Auto switch</string>
   <string name="puzzles">Puzzles</string>
-  <string name="aboutBotsOnLichess">About bots</string>
   <string name="featuredBots">Featured bots</string>
   <string name="tryPlayingTheseInnovativeChessEngines">Try playing these Go engines! They are our favourites.</string>
   <string name="communityBots">Community bots</string>

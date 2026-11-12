@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">Estàndard</string>
-  <string name="standardTitle">Regles d\'escacs estàndard (FIDE)</string>
   <string name="atomic">Atòmic</string>
   <string name="racingKings">Carrera de reis</string>
   <string name="crazyhouse">Passa peces</string>

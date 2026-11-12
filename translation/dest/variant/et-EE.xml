@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">Tavaline</string>
-  <string name="standardTitle">Tavapäraste malereeglitega (FIDE)</string>
   <string name="atomic">Aatomimale</string>
   <string name="racingKings">Kuningate võidujooks</string>
   <string name="crazyhouse">Pealepanemismale</string>

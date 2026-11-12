@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">Standaard</string>
-  <string name="standardTitle">Standaard schaakregels (FIDE)</string>
   <string name="atomic">Atoomschaak</string>
   <string name="racingKings">Rennende koningen</string>
   <string name="crazyhouse">Gekkenhuisschaak</string>

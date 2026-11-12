@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">ມາດຕະຖານ</string>
-  <string name="standardTitle">ກົດກະຕິການມາດຕະຖານຂອງໝາກຮຸກ (FIDE)</string>
   <string name="atomic">Atomic</string>
   <string name="racingKings">Racing Kings</string>
   <string name="crazyhouse">Crazyhouse</string>

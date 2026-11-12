@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">Standardní</string>
-  <string name="standardTitle">Standardní pravidla šachů (FIDE)</string>
   <string name="atomic">Atomic</string>
   <string name="racingKings">Racing Kings</string>
   <string name="crazyhouse">Crazyhouse</string>

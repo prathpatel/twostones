@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">Schtandard</string>
-  <string name="standardTitle">Schtandard-Schachregle (FIDE)</string>
   <string name="atomic">Atom-Schach</string>
   <string name="racingKings">Ränn-Könige</string>
   <string name="crazyhouse">Isetz-Schach</string>

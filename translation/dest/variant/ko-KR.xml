@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">스탠다드</string>
-  <string name="standardTitle">체스(FIDE)의 표준 규칙</string>
   <string name="atomic">아토믹</string>
   <string name="racingKings">킹 경주</string>
   <string name="crazyhouse">크레이지하우스</string>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">Standardna</string>
-  <string name="standardTitle">Standardna pravila šaha (FIDE)</string>
   <string name="atomic">Atomski</string>
   <string name="racingKings">Kraljevi trka</string>
   <string name="crazyhouse">Luda kuća</string>

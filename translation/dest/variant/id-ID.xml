@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">Standar</string>
-  <string name="standardTitle">Aturan catur standar (FIDE)</string>
   <string name="atomic">Atomik</string>
   <string name="racingKings">Balapan Raja</string>
   <string name="crazyhouse">Crazyhouse</string>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">Hefðbundin</string>
-  <string name="standardTitle">Hinar almennu reglur skákar (FIDE)</string>
   <string name="atomic">Kjarnorka</string>
   <string name="racingKings">Kóngakappskák</string>
   <string name="crazyhouse">Geðveikraskák</string>

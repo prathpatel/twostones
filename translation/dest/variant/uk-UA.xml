@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">Стандартні шахи</string>
-  <string name="standardTitle">Стандартні правила шахів (FIDE)</string>
   <string name="atomic">Атомічні шахи</string>
   <string name="racingKings">Королівські перегони</string>
   <string name="crazyhouse">Шалені шахи</string>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">Standart</string>
-  <string name="standardTitle">Standart şaxmat qoidalari (FIDE)</string>
   <string name="atomic">Atomik şaxmat</string>
   <string name="racingKings">Şohlar poygasi</string>
   <string name="crazyhouse">Kreyzihaus</string>

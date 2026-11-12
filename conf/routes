@@ -53,8 +53,6 @@ GET   /api/player                      controllers.User.apiList
 GET   /dasher                          controllers.Dasher.get
 
 # Blog/Ublog
-GET   /blog                            controllers.Main.movedPermanently(to = "/@/Lichess/blog")
-GET   /blog.atom                       controllers.Main.movedPermanently(to = "/@/Lichess/blog.atom")
 
 # Training - Puzzle
 

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">Pamantayan</string>
-  <string name="standardTitle">Pamantayang tuntunin ng chess (FIDE)</string>
   <string name="atomic">Atomic</string>
   <string name="racingKings">Karerang Hari</string>
   <string name="crazyhouse">Crazyhouse</string>

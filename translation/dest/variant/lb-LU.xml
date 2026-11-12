@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">Standard</string>
-  <string name="standardTitle">Standardschachreegelen (FIDE)</string>
   <string name="atomic">Atomschach</string>
   <string name="racingKings">Rennend Kinneken</string>
   <string name="crazyhouse">Crazyhouse</string>

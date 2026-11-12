@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="standard">पारंपारिक</string>
-  <string name="standardTitle">बुद्धिबळाचे पारंपारिक नियम (FIDE)</string>
   <string name="atomic">अणु</string>
   <string name="racingKings">धावते राजे</string>
   <string name="crazyhouse">वेडाघर</string>
