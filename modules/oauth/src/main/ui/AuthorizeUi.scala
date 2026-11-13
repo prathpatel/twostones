@@ -21,7 +21,7 @@ final class AuthorizeUi(helpers: Helpers)(
     val otherUserRequested = prompt.userId.filterNot(me.is(_)).map(lightUserFallback)
     val cssClass = customUi.map(_.cssClass)
     val logo = customUi.map(customLogo) |
-      img(src := "/assets/logo/twostones-favicon.svg", alt := "TwoStones logo", cls := "oauth__logo")
+      TwoStonesLogo.mark(96, "oauth__logo", "TwoStones logo".some)
     Page(signedClient.fold("Authorization")(c => s"Allow ${c.displayName}"))
       .css("bits.oauth")
       .js(Esm("bits.oauth"))

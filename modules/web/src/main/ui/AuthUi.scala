@@ -34,7 +34,7 @@ final class AuthUi(helpers: Helpers):
       div(cls := "oauth__connection__between"):
         iconTag(Icon.Checkmark)(cls := "oauth__connection__check")
       ,
-      img(src := assetPath("logo/twostones-favicon.svg"), alt := "TwoStones", cls := "oauth__connection__site")
+      lila.ui.TwoStonesLogo.mark(70, "oauth__connection__site", "TwoStones".some)
     )
 
   def login(form: Form[?], isRememberMe: Boolean = true)(using

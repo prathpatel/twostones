@@ -77,3 +77,12 @@
     margin-inline-end: 0.5em;
   }
 }
+
+// the inline logo (lila.ui.TwoStonesLogo): its outline is light on dark themes, dark on the light one
+.ts-mark .ink {
+  stroke: #f4f1ea;
+
+  @include if-light {
+    stroke: #141414;
+  }
+}

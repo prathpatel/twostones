@@ -300,7 +300,7 @@ final class layout(helpers: Helpers, assetHelper: lila.web.ui.AssetFullHelper)(
             if ctx.kid.yes then span(title := trans.site.kidMode.txt(), cls := "kiddo")(":)")
             else ctx.isBot.option(botImage),
             div(cls := "site-icon")(
-              img(src := staticAssetPath("logo/twostones-favicon.svg"), alt := "", attr("width") := "32", attr("height") := "32")
+              lila.ui.TwoStonesLogo.mark(32)
             ),
             div(cls := "site-name")(siteNameFrag)
           ),
