@@ -70,7 +70,7 @@ object page:
             content := p.openGraph.fold(trans.site.siteDescription.txt())(o => o.description),
             name := "description"
           ),
-          link(rel := "mask-icon", href := staticAssetPath("logo/twostones-favicon.svg"), attr("color") := "black"),
+          link(rel := "mask-icon", href := staticAssetPath("logo/twostones-mask.svg"), attr("color") := "black"),
           favicons,
           preventIndexing.option(noRobots),
           noTranslate,
