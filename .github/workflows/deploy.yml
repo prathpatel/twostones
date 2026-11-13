@@ -1,0 +1,30 @@
+name: Deploy TwoStones
+
+# After CI passes on a push to main, the production server deploys that exact commit.
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
+    branches: [main]
+
+permissions:
+  contents: read
+
+# one deploy at a time; a newer one waits for the running one instead of cancelling it
+concurrency:
+  group: twostones-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: >-
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'push' &&
+      github.event.workflow_run.head_repository.full_name == github.repository
+    runs-on: [self-hosted, twostones-production]
+    environment: production
+    steps:
+      - name: Deploy
+        env:
+          SHA: ${{ github.event.workflow_run.head_sha }}
+        run: sudo -n /usr/local/libexec/twostones/deploy "$SHA"
