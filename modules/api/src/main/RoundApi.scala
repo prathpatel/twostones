@@ -9,6 +9,7 @@ import lila.core.perm.Granter
 import lila.core.user.GameUsers
 import lila.mon.extensions.*
 import lila.round.{ ExportOptions, JsonView }
+import lila.round.RoundGame.{ hasChat, justCreated }
 
 final private[api] class RoundApi(
     jsonView: JsonView,
@@ -16,8 +17,34 @@ final private[api] class RoundApi(
     bookmarkApi: lila.bookmark.BookmarkApi,
     userApi: lila.user.UserApi,
     prefApi: lila.pref.PrefApi,
-    userLag: lila.socket.UserLagCache
+    userLag: lila.socket.UserLagCache,
+    chatApi: lila.chat.ChatApi,
+    chatJson: lila.chat.ChatJsonView
 )(using Executor):
+
+  /** The game as the mobile app receives it on its game socket, without an HTTP request: the
+    * player's view when [[asPlayer]], otherwise a spectator's.
+    */
+  def mobile(pov: Pov, asPlayer: Boolean, meId: Option[MyId]): Fu[JsObject] =
+    for
+      me <- meId.so(userApi.me)
+      myPref <- me.fold(fuccess(lila.pref.Pref.default))(m => prefApi.get(m.value))
+      users <- userApi.gamePlayers(pov.game.userIdPair, pov.game.perfKey)
+      flags = ExportOptions(rating = myPref.showRatings)(using me)
+      json <-
+        if asPlayer then
+          prefApi
+            .get(users.map(_.map(_.user)), pov.color, myPref)
+            .flatMap(jsonView.playerJson(pov, _, users, flags))
+            .dmap(withOpponentSignal(pov))
+        else jsonView.watcherJson(pov, users, myPref.some, meId.map(_.userId), none, flags)
+      chat <- (asPlayer && pov.game.hasChat).so:
+        chatApi.playerChat
+          .findIf(pov.game.id.into(ChatId), !pov.game.justCreated)
+          .flatMap(chatJson.asyncLines)
+          .dmap(lines => Json.obj("lines" -> lines.value).some)
+      bookmarked <- bookmarkApi.exists(pov.game, meId.map(_.userId))
+    yield withBookmark(bookmarked)(json).add("chat" -> chat)
 
   def player(pov: Pov, users: Preload[GameUsers])(using ctx: Context): Fu[JsObject] = {
     for

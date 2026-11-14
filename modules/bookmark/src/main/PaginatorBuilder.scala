@@ -17,6 +17,31 @@ final class PaginatorBuilder(
       maxPerPage = MaxPerPage(12)
     )
 
+  /** The games bookmarked by [[userId]], the most recently created first, created before [[until]]. */
+  def gamesByUser(userId: UserId, max: Int, until: Option[Instant]): Fu[List[Game]] =
+    coll
+      .aggregateList(max, _.sec): framework =>
+        import framework.*
+        Match(bdoc("u" -> userId)) -> List(
+          Project(bdoc("_id" -> false, "g" -> true)),
+          PipelineOperator(
+            bdoc(
+              "$lookup" -> bdoc(
+                "from" -> gameRepo.coll.name,
+                "as" -> "game",
+                "localField" -> "g",
+                "foreignField" -> "_id"
+              )
+            )
+          ),
+          Unwind("game"),
+          ReplaceRootField("game"),
+          Match(until.so(d => bdoc("ca" -> bdoc("$lt" -> d)))),
+          Sort(Descending("ca")),
+          Limit(max)
+        )
+      .map(_.flatMap(gameRepo.gameHandler.readOpt))
+
   final class UserAdapter(user: User) extends AdapterLike[Game]:
 
     def nbResults: Fu[Int] = coll.countSel(selector)

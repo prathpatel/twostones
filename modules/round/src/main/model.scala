@@ -14,3 +14,15 @@ object UrgentGames extends TotalWrapper[UrgentGames, List[Pov]]:
         pov.isMyTurn &&
           (pov.game.hasClock || !from.hasClock) &&
           (pov.game.nonAi || from.hasAi)
+
+/** Asks for the JSON of a game, as the mobile app receives it when its game socket connects.
+  *
+  * [[pov]] is the side of the player when [[asPlayer]] (the request carried the player's full ID),
+  * otherwise the side a spectator watches from.
+  */
+case class MobileGameJson(
+    pov: Pov,
+    asPlayer: Boolean,
+    me: Option[MyId],
+    promise: Promise[play.api.libs.json.JsObject]
+)

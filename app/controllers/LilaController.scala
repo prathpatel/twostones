@@ -77,9 +77,11 @@ abstract private[controllers] class LilaController(val env: Env)
     action(parser)(handleOpenBody(f))
 
   private def handleOpenBody[A](f: BodyContext[A] ?=> Fu[Result])(using Request[A]): Fu[Result] =
-    CSRF:
-      makeBodyContext.flatMap:
-        f(using _)
+    if isMobileBearer then handleScopedBody[A](mobileScope)(ctx ?=> _ ?=> f(using ctx))
+    else
+      CSRF:
+        makeBodyContext.flatMap:
+          f(using _)
 
   /* Anonymous, authenticated, and oauth requests */
   def OpenOrScoped(selectors: OAuthScope.Selector*)(
@@ -91,9 +93,11 @@ abstract private[controllers] class LilaController(val env: Env)
       else handleOpen(f)
 
   private def handleOpen(f: Context ?=> Fu[Result])(using RequestHeader): Fu[Result] =
-    CSRF:
-      makeContext.flatMap:
-        f(using _)
+    if isMobileBearer then handleScoped(mobileScope)(_ ?=> _ ?=> f)
+    else
+      CSRF:
+        makeContext.flatMap:
+          f(using _)
 
   /* Anonymous, authenticated, and oauth requests with a body */
   def OpenOrScopedBody[A](parser: BodyParser[A])(selectors: OAuthScope.Selector*)(
@@ -154,7 +158,8 @@ abstract private[controllers] class LilaController(val env: Env)
     action(parser)(handleAuth(f))
 
   private def handleAuth(f: Context ?=> Me ?=> Fu[Result])(using RequestHeader): Fu[Result] =
-    CSRF:
+    if isMobileBearer then handleScoped(mobileScope)(f)
+    else CSRF:
       makeContext.flatMap: ctx =>
         ctx.me.fold(authenticationFailed(using ctx))(f(using ctx)(using _))
 
@@ -169,7 +174,8 @@ abstract private[controllers] class LilaController(val env: Env)
     action(parser)(handleAuthBody(f))
 
   private def handleAuthBody[A](f: BodyContext[A] ?=> Me ?=> Fu[Result])(using Request[A]): Fu[Result] =
-    CSRF:
+    if isMobileBearer then handleScopedBody(mobileScope)(f)
+    else CSRF:
       makeBodyContext.flatMap: ctx =>
         ctx.me.fold(authenticationFailed(using ctx))(f(using ctx)(using _))
 
@@ -379,6 +385,12 @@ abstract private[controllers] class LilaController(val env: Env)
 
   protected def hasOAuthBearer(using req: RequestHeader) =
     req.headers.get(HeaderNames.AUTHORIZATION).exists(_.startsWith("Bearer "))
+
+  /* The TwoStones app signs in with a token of the mobile scope, which it sends to the routes of
+   * the website as well: they accept it like a session. */
+  private def isMobileBearer(using RequestHeader) = hasOAuthBearer && lila.common.HTTPRequest.isLichessMobile
+
+  private val mobileScope: Seq[OAuthScope.Selector] = Seq(_.Web.Mobile)
 
   private def bindPatchForm[T](form: Form[T])(using req: Request[?], formBinding: FormBinding): Form[T] =
     form.bind:

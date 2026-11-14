@@ -152,8 +152,14 @@ final class RoundSocket(
       preloadRoundsWithVersions(versions)
       send(Protocol.Out.versioningReady)
     case P.In.Ping(id) => send(P.Out.pong(id))
-    case Protocol.In.GetGame(_, anyId, _) =>
-      logger.debug(s"mobile game request ignored: $anyId")
+    case Protocol.In.GetGame(reqId, anyId, me) =>
+      for
+        game <- getGame(anyId.gameId)
+        pov = game.map: g =>
+          anyId.playerId.flatMap(g.playerById).fold(Pov(g, Color.white) -> false)(Pov(g, _) -> true)
+        json <- pov.so: (pov, asPlayer) =>
+          Bus.ask[JsObject, MobileGameJson](MobileGameJson(pov, asPlayer, me, _)).dmap(some)
+      do send(Protocol.Out.respond(reqId, json | Json.obj("error" -> "Game not found")))
 
     case Protocol.In.WsLatency(millis) => MoveLatMonitor.wsLatency.set(millis)
     case P.In.WsBoot =>

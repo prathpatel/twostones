@@ -52,6 +52,10 @@ final class BookmarkApi(val coll: Coll, gameApi: GameApi, paginator: PaginatorBu
 
   def gamePaginatorByUser(user: User, page: Int) = paginator.byUser(user, page)
 
+  /** The games bookmarked by [[userId]], the most recently created first, created before [[until]]. */
+  def gamesByUser(userId: UserId, max: Int, until: Option[Instant]): Fu[List[Game]] =
+    paginator.gamesByUser(userId, max, until)
+
   private def add(gameId: GameId, userId: UserId, date: Instant): Funit =
     coll.insert
       .one:

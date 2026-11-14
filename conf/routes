@@ -156,6 +156,10 @@ POST /inbox/:username/delete           controllers.Msg.convoDelete(username: Use
 
 # Lichess Mobile
 GET   /api/mobile/following            controllers.Relation.apiMobileFollowing
+GET   /api/mobile/game/$id<\w{8}>    controllers.MobileGame.game(id: GameId)
+GET   /api/mobile/games/user/:user     controllers.MobileGame.byUser(user: UserStr)
+GET   /api/mobile/games/bookmarks      controllers.MobileGame.bookmarks
+POST  /api/mobile/games/ids            controllers.MobileGame.byIds
 
 
 # Stats

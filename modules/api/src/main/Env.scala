@@ -63,6 +63,9 @@ final class Env(
   Bus.sub[IsChatFresh]:
     case IsChatFresh(source, promise) =>
       promise.completeWith(chatFreshness.of(source))
+  Bus.sub[lila.round.MobileGameJson]:
+    case lila.round.MobileGameJson(pov, asPlayer, me, promise) =>
+      promise.completeWith(roundApi.mobile(pov, asPlayer, me))
   Bus.sub[lila.core.security.GarbageCollect]: gc =>
     accountTermination.garbageCollect(gc.userId)
   Bus.sub[lila.core.playban.RageSitClose]: close =>

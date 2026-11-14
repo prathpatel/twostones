@@ -117,6 +117,7 @@ final class LilaComponents(
   lazy val i18n: I18n = wire[I18n]
   lazy val lobby: Lobby = wire[Lobby]
   lazy val main: Main = wire[Main]
+  lazy val mobileGame: MobileGame = wire[MobileGame]
   lazy val msg: Msg = wire[Msg]
   lazy val notifyC: Notify = wire[Notify]
   lazy val oAuth: OAuth = wire[OAuth]
